@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-10T18:52:12Z",
+  "generated_at": "2026-06-10T21:16:28Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -648,6 +648,294 @@
       "stage": "group",
       "group": "Group J",
       "kickoff_utc": "2026-06-28T02:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M073",
+      "home": "2A",
+      "away": "2B",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-06-28T19:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M076",
+      "home": "1C",
+      "away": "2F",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-06-29T17:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M074",
+      "home": "1E",
+      "away": "3A/B/C/D/F",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-06-29T20:30Z",
+      "result": null
+    },
+    {
+      "match_id": "M075",
+      "home": "1F",
+      "away": "2C",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-06-30T01:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M078",
+      "home": "2E",
+      "away": "2I",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-06-30T17:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M077",
+      "home": "1I",
+      "away": "3C/D/F/G/H",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-06-30T21:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M079",
+      "home": "1A",
+      "away": "3C/E/F/H/I",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-01T01:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M080",
+      "home": "1L",
+      "away": "3E/H/I/J/K",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-01T16:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M082",
+      "home": "1G",
+      "away": "3A/E/H/I/J",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-01T20:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M081",
+      "home": "1D",
+      "away": "3B/E/F/I/J",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-02T00:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M084",
+      "home": "1H",
+      "away": "2J",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-02T19:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M083",
+      "home": "2K",
+      "away": "2L",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-02T23:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M085",
+      "home": "1B",
+      "away": "3E/F/G/I/J",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-03T03:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M088",
+      "home": "2D",
+      "away": "2G",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-03T18:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M086",
+      "home": "1J",
+      "away": "2H",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-03T22:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M087",
+      "home": "1K",
+      "away": "3D/E/I/J/L",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-04T01:30Z",
+      "result": null
+    },
+    {
+      "match_id": "M090",
+      "home": "W73",
+      "away": "W75",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-04T17:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M089",
+      "home": "W74",
+      "away": "W77",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-04T21:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M091",
+      "home": "W76",
+      "away": "W78",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-05T20:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M092",
+      "home": "W79",
+      "away": "W80",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-06T00:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M093",
+      "home": "W83",
+      "away": "W84",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-06T19:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M094",
+      "home": "W81",
+      "away": "W82",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-07T00:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M095",
+      "home": "W86",
+      "away": "W88",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-07T16:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M096",
+      "home": "W85",
+      "away": "W87",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-07T20:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M097",
+      "home": "W89",
+      "away": "W90",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-09T20:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M098",
+      "home": "W93",
+      "away": "W94",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-10T19:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M099",
+      "home": "W91",
+      "away": "W92",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-11T21:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M100",
+      "home": "W95",
+      "away": "W96",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-12T01:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M101",
+      "home": "W97",
+      "away": "W98",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-14T19:00Z",
+      "result": null
+    },
+    {
+      "match_id": "M102",
+      "home": "W99",
+      "away": "W100",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-15T19:00Z",
+      "result": null
+    },
+    {
+      "match_id": "l101-l102",
+      "home": "L101",
+      "away": "L102",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-18T21:00Z",
+      "result": null
+    },
+    {
+      "match_id": "w101-w102",
+      "home": "W101",
+      "away": "W102",
+      "stage": "knockout",
+      "group": null,
+      "kickoff_utc": "2026-07-19T19:00Z",
       "result": null
     }
   ],
