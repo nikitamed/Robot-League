@@ -152,7 +152,10 @@ pre { background: #070b14; border: 1px solid var(--line); border-radius: 10px; p
 
 /* --- bracket --- */
 .bracket-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
-.bracket { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(215px, 1fr); gap: 14px; min-width: 1300px; align-items: stretch; }
+.bracket { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(215px, 1fr); gap: 26px; min-width: 1340px; align-items: stretch; }
+.bracket svg.bk-lines { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.bracket svg.bk-lines path { fill: none; stroke: rgba(43, 255, 136, .30); stroke-width: 1.5; }
+.round { position: relative; z-index: 1; }
 .round { display: flex; flex-direction: column; justify-content: space-around; gap: 10px; }
 .round-title { font: 800 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--brand); text-align: center; padding: 4px 0 2px; }
 .tie { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; backdrop-filter: blur(6px); }

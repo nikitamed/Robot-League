@@ -269,9 +269,29 @@ function buildBracket() {
   const r32 = r16.flatMap(fx => refs(fx).map(n => byNum[n]));
   const num = (fx) => +(fx.match_id.match(/^M(\d+)$/) || [])[1];
 
+  // Flow-chart edges: group -> R32 (from slot codes; dashed while projected),
+  // then each tie -> the tie that consumes its winner.
+  const teamGroup = {};
+  for (const [letter, teams] of Object.entries(groups)) for (const t of teams) teamGroup[t] = letter;
+  const edges = [];
+  const groupEdge = (code, fx) => {
+    let m, letter = null, dashed = true;
+    if (teamSet.has(code)) { letter = teamGroup[code]; dashed = false; }      // slot resolved to a real team
+    else if ((m = code.match(/^[12]([A-L])$/))) letter = m[1];
+    else if (/^3/.test(code)) { const t = thirdSlots[code]; letter = t ? teamGroup[t] : null; }
+    if (letter) edges.push({ from: `G-${letter}`, to: fx.match_id, dashed });
+  };
+  for (const fx of [...r32, ...r16, ...qf, ...sf, ...(final ? [final] : [])]) {
+    for (const code of [fx.home, fx.away]) {
+      const m = code.match(/^W(\d+)$/i);
+      if (m && byNum[+m[1]]) edges.push({ from: byNum[+m[1]].match_id, to: fx.match_id, dashed: false });
+      else groupEdge(code, fx);
+    }
+  }
+
   return {
     projected: kos.some(fx => !teamSet.has(fx.home)),
-    proj, thirdSlots, reach,
+    proj, thirdSlots, reach, edges,
     rounds: [
       { title: "Round of 32", ties: r32.map(fx => tie(fx, nextKey(num(fx)))) },
       { title: "Round of 16", ties: r16.map(fx => tie(fx, nextKey(num(fx)))) },
@@ -281,6 +301,39 @@ function buildBracket() {
     ],
     thirdPlace: third ? tie(third, "reach_final") : null,
   };
+}
+
+// Measured SVG overlay connecting the wallchart cards. Re-drawn on resize.
+function drawBracketLines(container) {
+  const edges = container._edges || [];
+  let svg = container.querySelector("svg.bk-lines");
+  if (!svg) {
+    svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", "bk-lines");
+    container.prepend(svg);
+  }
+  const W = container.scrollWidth, H = container.scrollHeight;
+  svg.setAttribute("width", W); svg.setAttribute("height", H);
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const base = container.getBoundingClientRect();
+  const anchor = (id) => {
+    const n = container.querySelector(`[data-bk="${id}"]`);
+    if (!n) return null;
+    const r = n.getBoundingClientRect();
+    return {
+      right: { x: r.right - base.x + container.scrollLeft, y: r.y - base.y + r.height / 2 },
+      left: { x: r.x - base.x + container.scrollLeft, y: r.y - base.y + r.height / 2 },
+    };
+  };
+  const paths = [];
+  for (const e of edges) {
+    const a = anchor(e.from), b = anchor(e.to);
+    if (!a || !b) continue;
+    const x1 = a.right.x, y1 = a.right.y, x2 = b.left.x, y2 = b.left.y;
+    const dx = Math.max(14, (x2 - x1) / 2);
+    paths.push(`<path d="M ${x1} ${y1} C ${x1 + dx} ${y1}, ${x2 - dx} ${y2}, ${x2} ${y2}"${e.dashed ? ` stroke-dasharray="4 4"` : ""}/>`);
+  }
+  svg.innerHTML = paths.join("");
 }
 
 // --- components ---
@@ -297,7 +350,7 @@ function tieCard(t, { final = false } = {}) {
     return `<div class="tie-team ${fav ? "fav" : "outp"}">${name}<span class="p">${p == null ? "" : pct(p)}</span></div>`;
   };
   const fx = t.fx;
-  return `<a class="tie${final ? " final" : ""}" href="#/match/${encodeURIComponent(fx.match_id)}">
+  return `<a class="tie${final ? " final" : ""}" data-bk="${esc(fx.match_id)}" href="#/match/${encodeURIComponent(fx.match_id)}">
     <div class="meta">${esc(fmtDT(fx.kickoff_utc))}${fx.ground ? " · " + esc(city(fx.ground)) : ""}</div>
     ${row(t.a, t.pa)}${row(t.b, t.pb)}
   </a>`;
@@ -513,7 +566,7 @@ function bracketGroupsColumn(b) {
       const note = direct ? pct((b.reach[t] || {}).reach_r32) : asThird ? "3rd ✓" : pct((b.reach[t] || {}).reach_r32);
       return `<div class="tie-team ${cls}">${team(t)}<span class="p">${note}</span></div>`;
     }).join("");
-    return `<div class="tie bgroup"><div class="meta">GROUP ${L}</div>${rows}</div>`;
+    return `<div class="tie bgroup" data-bk="G-${esc(L)}"><div class="meta">GROUP ${L}</div>${rows}</div>`;
   }).join("");
   return `<div class="round groupscol"><div class="round-title">Group stage</div>${cards}</div>`;
 }
@@ -536,6 +589,13 @@ function viewBracket() {
     <div class="bracket-scroll"><div class="bracket">${cols}</div></div>
     ${b.thirdPlace ? `<h2>Third-place match</h2><div style="max-width:280px">${tieCard(b.thirdPlace)}</div>` : ""}
   </section>`);
+  node._after = () => {
+    const c = node.querySelector(".bracket");
+    if (!c) return;
+    c._edges = b.edges;
+    drawBracketLines(c);
+    requestAnimationFrame(() => drawBracketLines(c)); // settle after first paint
+  };
   return node;
 }
 
@@ -855,6 +915,10 @@ async function main() {
   document.getElementById("genmeta").textContent = `record updated ${fmtDT(DB.generated_at)}`;
   fillTicker();
   window.addEventListener("hashchange", render);
+  window.addEventListener("resize", () => {
+    const c = document.querySelector(".bracket");
+    if (c && c._edges) drawBracketLines(c);
+  });
   render();
 }
 main();
