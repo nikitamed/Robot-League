@@ -288,6 +288,12 @@ function buildBracket() {
       else groupEdge(code, fx);
     }
   }
+  if (third) {
+    // The third-place match is structurally fed by the semifinal losers.
+    const unresolved = !teamSet.has(third.home);
+    for (const n of [101, 102]) if (byNum[n])
+      edges.push({ from: byNum[n].match_id, to: third.match_id, dashed: unresolved, loser: true });
+  }
 
   return {
     projected: kos.some(fx => !teamSet.has(fx.home)),
@@ -299,7 +305,7 @@ function buildBracket() {
       { title: "Semifinals", ties: sf.map(fx => tie(fx, nextKey(num(fx)))) },
       { title: "Final", ties: final ? [tie(final, "champion")] : [] },
     ],
-    thirdPlace: third ? tie(third, "reach_final") : null,
+    thirdPlace: third ? tie(third, "reach_sf") : null,
   };
 }
 
@@ -331,7 +337,7 @@ function drawBracketLines(container) {
     if (!a || !b) continue;
     const x1 = a.right.x, y1 = a.right.y, x2 = b.left.x, y2 = b.left.y;
     const dx = Math.max(14, (x2 - x1) / 2);
-    paths.push(`<path d="M ${x1} ${y1} C ${x1 + dx} ${y1}, ${x2 - dx} ${y2}, ${x2} ${y2}"${e.dashed ? ` stroke-dasharray="4 4"` : ""}/>`);
+    paths.push(`<path${e.loser ? ` class="loser"` : ""} d="M ${x1} ${y1} C ${x1 + dx} ${y1}, ${x2 - dx} ${y2}, ${x2} ${y2}"${e.dashed ? ` stroke-dasharray="4 4"` : ""}/>`);
   }
   svg.innerHTML = paths.join("");
 }
@@ -582,6 +588,7 @@ function viewBracket() {
     <div class="round">
       <div class="round-title">${esc(rd.title)}</div>
       ${rd.ties.map(t => tieCard(t, { final: rd.title === "Final" })).join("")}
+      ${rd.title === "Final" && b.thirdPlace ? `<div class="round-title third-title">Third place</div>${tieCard(b.thirdPlace)}` : ""}
     </div>`).join("");
   const node = el(`<section>
     <h1>Bracket</h1>
@@ -589,7 +596,6 @@ function viewBracket() {
       ? "The full wallchart, from the twelve groups to the final. Until the group stage decides the real pairings, this is the bracket <strong>the ten AI models collectively expect</strong>. In each group, the <span class='good'>top two</span> advance directly and the teams in <span style='color:#e8b64c'>gold</span> are projected to sneak through as one of the eight best third-placed sides — every percentage is that team's chance of reaching the knockouts. Dashed lines are projections; they turn solid as real results lock the slots in."
       : "The knockout bracket, with the ten models' average view of who advances from each tie."}</p>
     <div class="bracket-scroll"><div class="bracket">${cols}</div></div>
-    ${b.thirdPlace ? `<h2>Third-place match</h2><div style="max-width:280px">${tieCard(b.thirdPlace)}</div>` : ""}
   </section>`);
   node._after = () => {
     const c = node.querySelector(".bracket");
