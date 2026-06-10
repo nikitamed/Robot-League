@@ -563,8 +563,10 @@ function bracketGroupsColumn(b) {
       const direct = t === p.first || t === p.second;
       const asThird = thirdTeams.has(t);
       const cls = direct ? "fav" : asThird ? "third" : "outp";
-      const note = direct ? pct((b.reach[t] || {}).reach_r32) : asThird ? "3rd ✓" : pct((b.reach[t] || {}).reach_r32);
-      return `<div class="tie-team ${cls}">${team(t)}<span class="p">${note}</span></div>`;
+      const tip = direct ? "projected to qualify directly (top two)"
+        : asThird ? "projected to qualify as one of the eight best third-placed teams"
+        : "projected to go out in the group stage";
+      return `<div class="tie-team ${cls}" title="${tip}">${team(t)}<span class="p">${pct((b.reach[t] || {}).reach_r32)}</span></div>`;
     }).join("");
     return `<div class="tie bgroup" data-bk="G-${esc(L)}"><div class="meta">GROUP ${L}</div>${rows}</div>`;
   }).join("");
@@ -584,7 +586,7 @@ function viewBracket() {
   const node = el(`<section>
     <h1>Bracket</h1>
     <p class="lede">${b.projected
-      ? "The full wallchart, from the twelve groups to the final. Until the group stage decides the real pairings, this is the bracket <strong>the ten AI models collectively expect</strong>: highlighted teams are each group's projected qualifiers (<span class='good'>top two</span> advance directly, “3rd ✓” marks a projected best-third qualifier), and each percentage is the models' average view. It updates automatically as real teams qualify."
+      ? "The full wallchart, from the twelve groups to the final. Until the group stage decides the real pairings, this is the bracket <strong>the ten AI models collectively expect</strong>. In each group, the <span class='good'>top two</span> advance directly and the teams in <span style='color:#e8b64c'>gold</span> are projected to sneak through as one of the eight best third-placed sides — every percentage is that team's chance of reaching the knockouts. Dashed lines are projections; they turn solid as real results lock the slots in."
       : "The knockout bracket, with the ten models' average view of who advances from each tie."}</p>
     <div class="bracket-scroll"><div class="bracket">${cols}</div></div>
     ${b.thirdPlace ? `<h2>Third-place match</h2><div style="max-width:280px">${tieCard(b.thirdPlace)}</div>` : ""}
