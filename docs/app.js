@@ -405,21 +405,26 @@ function wireStripToggles(node) {
   });
 }
 
-function groupsGrid() {
-  const groups = groupMembers();
-  if (!Object.keys(groups).length) return "";
-  const { models } = latestForecast();
-  const reach = consensusReach(models);
+function groupStandings() {
   const stats = {};
   for (const fx of DB.fixtures) {
     if (fx.stage !== "group" || !outcomeVec(fx)) continue;
     const r = fx.result;
     for (const [t, gf, ga] of [[fx.home, r.home_goals, r.away_goals], [fx.away, r.away_goals, r.home_goals]]) {
-      const s = (stats[t] ||= { p: 0, w: 0, d: 0, l: 0, gd: 0 });
-      s.gd += gf - ga;
+      const s = (stats[t] ||= { p: 0, w: 0, d: 0, l: 0, gd: 0, gf: 0, ga: 0 });
+      s.gd += gf - ga; s.gf += gf; s.ga += ga;
       if (gf > ga) { s.p += 3; s.w++; } else if (gf === ga) { s.p += 1; s.d++; } else s.l++;
     }
   }
+  return stats;
+}
+
+function groupsGrid() {
+  const groups = groupMembers();
+  if (!Object.keys(groups).length) return "";
+  const { models } = latestForecast();
+  const reach = consensusReach(models);
+  const stats = groupStandings();
   const anyPlayed = Object.keys(stats).length > 0;
   const cards = Object.keys(groups).sort().map(letter => {
     const teams = groups[letter].slice().sort((a, b) => {
@@ -435,10 +440,10 @@ function groupsGrid() {
         <span class="gbar" title="Average chance of reaching the knockout round (10 AI models): ${pct1(adv)}"><span style="width:${(adv || 0) * 100}%"></span></span>
       </div>`;
     }).join("");
-    return `<div class="group-card"><h3>Group ${letter}</h3>${rows}</div>`;
+    return `<div class="group-card"><h3><a class="glink" href="#/group/${esc(letter)}">Group ${letter} →</a></h3>${rows}</div>`;
   }).join("");
   return `<h2>The twelve groups</h2>
-    <p class="muted">${anyPlayed ? "Live standings, with each team's chance of reaching the knockout round (green bar — the average view of the ten AI models)." : "No matches played yet. The green bar is each team's chance of reaching the knockout round — the average view of the ten AI models."}</p>
+    <p class="muted">${anyPlayed ? "Live standings, with each team's chance of reaching the knockout round (green bar — the average view of the ten AI models)." : "No matches played yet. The green bar is each team's chance of reaching the knockout round — the average view of the ten AI models."} Click a group for its full breakdown.</p>
     <div class="groups">${cards}</div>`;
 }
 
@@ -595,7 +600,7 @@ function bracketGroupsColumn(b) {
         : "projected to go out in the group stage";
       return `<div class="tie-team ${cls}" title="${tip}">${teamLink(t)}<span class="p">${pct((b.reach[t] || {}).reach_r32)}</span></div>`;
     }).join("");
-    return `<div class="tie bgroup" data-bk="G-${esc(L)}"><div class="meta">GROUP ${L}</div>${rows}</div>`;
+    return `<div class="tie bgroup" data-bk="G-${esc(L)}" data-href="#/group/${esc(L)}" title="Open group page"><div class="meta">GROUP ${L} →</div>${rows}</div>`;
   }).join("");
   return `<div class="round groupscol"><div class="round-title">Group stage</div>${cards}</div>`;
 }
@@ -687,7 +692,7 @@ function viewMatch(id) {
   const node = el(`<section>
     <a class="back" href="#/matches">← Matches</a>
     <h1>${teamLink(fx.home)} <span class="dim">v</span> ${teamLink(fx.away)}</h1>
-    <p class="lede">${esc(fx.group || "Knockout")}${fx.ground ? " · " + esc(fx.ground) : ""} · ${resultLine}</p>
+    <p class="lede">${fx.group ? `<a class="tlink" href="#/group/${esc(fx.group.replace("Group", "").trim())}">${esc(fx.group)}</a>` : "Knockout"}${fx.ground ? " · " + esc(fx.ground) : ""} · ${resultLine}</p>
     ${preds.length ? `<h2>Every forecast at a glance</h2><p class="muted">Each dot is one forecaster's probability; the white line is the betting market. Hover any dot for details.</p>${probStrip(preds, m)}` : ""}
     ${batchNote}
     <h2>The forecasts</h2>
@@ -728,7 +733,7 @@ function viewTeam(name) {
   const node = el(`<section>
     <a class="back" href="#/">← Leaderboard</a>
     <h1>${flag(t)}${esc(t)}</h1>
-    <p class="lede">${letter ? `Group ${letter} · ` : ""}How the ten AI models — and the non-AI baselines — rate this team's World Cup.</p>
+    <p class="lede">${letter ? `<a class="tlink" href="#/group/${esc(letter)}">Group ${esc(letter)}</a> · ` : ""}How the ten AI models — and the non-AI baselines — rate this team's World Cup.</p>
     <div class="hero">
       <div class="hero-card"><div class="hero-kicker">Chance to win the World Cup</div><div class="hero-num">${pct1(r.champion)}</div><div class="hero-sub">average of ten AI models</div></div>
       <div class="hero-card alt"><div class="hero-kicker">Reach the knockouts · strength rating</div><div class="hero-num">${pct(r.reach_r32)} <span class="dim">·</span> ${ratingMean == null ? "—" : ratingMean.toFixed(0)}<span class="hero-sub" style="font-size:16px">/100</span></div><div class="hero-sub">knockout chance · consensus rating</div></div>
@@ -753,6 +758,85 @@ function viewTeam(name) {
       for (const f of all) if (f.method === "M3") (byCp[f.as_of] ||= []).push({ model: f.model, team: f.team, p_champion: f.reach.champion });
       WCViz.trajectory(tj, cps, byCp, t, shortModel);
     }
+  };
+  return node;
+}
+
+function viewGroup(letter) {
+  const L = decodeURIComponent(letter).toUpperCase();
+  const groups = groupMembers();
+  const members = groups[L];
+  if (!members) return el(`<section><a class="back" href="#/">← Leaderboard</a><p>Unknown group.</p></section>`);
+  const { models } = latestForecast();
+  const reach = consensusReach(models);
+  const stats = groupStandings();
+  const anyPlayed = members.some(t => stats[t]);
+  const order = members.slice().sort((a, b) => {
+    const sa = stats[a] || { p: 0, gd: 0, gf: 0 }, sb = stats[b] || { p: 0, gd: 0, gf: 0 };
+    return (sb.p - sa.p) || (sb.gd - sa.gd) || (sb.gf - sa.gf)
+      || (((reach[b] || {}).reach_r32 || 0) - ((reach[a] || {}).reach_r32 || 0));
+  });
+
+  const standingsRows = order.map((t, i) => {
+    const s = stats[t], r = reach[t] || {};
+    return `<tr${i < 2 ? ` class="lead"` : ""}>
+      <td class="num muted">${i + 1}</td>
+      <td>${teamLink(t)}</td>
+      <td class="num">${s ? `${s.w}-${s.d}-${s.l}` : "—"}</td>
+      <td class="num">${s ? (s.gd >= 0 ? "+" : "") + s.gd : "—"}</td>
+      <td class="num">${s ? s.p : "—"}</td>
+      <td class="num">${pct(r.reach_r32)}</td>
+    </tr>`;
+  }).join("");
+
+  // Finishing-position distribution (consensus): where each team is expected to land.
+  const posBars = order.map(t => {
+    const r = reach[t] || {};
+    const seg = (v, cls, label) => `<span class="${cls}" style="width:${(v || 0) * 100}%" title="${label}: ${pct1(v)}"></span>`;
+    return `<div class="grow posrow">
+      <span class="gname">${teamLink(t)}</span>
+      <div class="bar posbar">
+        ${seg(r.win_group, "g1", "Wins the group")}${seg(r.runner_up, "g2", "Finishes second")}${seg(r.third, "g3", "Finishes third")}${seg(r.fourth, "g4", "Finishes last")}
+      </div>
+    </div>`;
+  }).join("");
+
+  const fixtures = DB.fixtures.filter(fx => fx.group === `Group ${L}`)
+    .sort((a, b) => (a.kickoff_utc || "").localeCompare(b.kickoff_utc || ""));
+  const cards = fixtures.map(fx => {
+    const ens = (DB._predsByMatch[fx.match_id] || []).find(p => p.method === "ENS" && p.p_home != null);
+    const bar = ens ? hdaBar(ens.p_home, ens.p_draw, ens.p_away) : "";
+    const res = fx.result && fx.result.home_goals != null ? `<span class="result">${fx.result.home_goals}–${fx.result.away_goals}</span>` : `<span class="muted">${esc(fmtDT(fx.kickoff_utc))}</span>`;
+    return `<a class="card" href="#/match/${encodeURIComponent(fx.match_id)}">
+      <div class="teams">${team(fx.home)} <span class="dim">v</span> ${team(fx.away)}</div>
+      <div class="meta">${res}${fx.ground ? " · " + esc(city(fx.ground)) : ""}</div>${bar}</a>`;
+  }).join("");
+
+  const node = el(`<section>
+    <a class="back" href="#/bracket">← Bracket</a>
+    <h1>Group ${esc(L)}</h1>
+    <p class="lede">${anyPlayed ? "Live standings and what the ten AI models expect from here." : "Nothing decided yet — this is how the ten AI models expect the group to go."} The top two qualify directly; a strong third place can still sneak through as one of the eight best thirds.</p>
+    <h2>Standings</h2>
+    ${tableWrap(`<table><thead><tr><th class="num">#</th><th>Team</th><th class="num" title="wins-draws-losses">W-D-L</th><th class="num" title="goal difference">+/−</th><th class="num">points</th><th class="num">reaches knockouts</th></tr></thead><tbody>${standingsRows}</tbody></table>`)}
+    <h2>Where each team is expected to finish</h2>
+    <p class="muted">The models' average view, all four finishing positions per team — hover any segment.</p>
+    <div class="group-card posgrid">${posBars}
+      <div class="legend">
+        <span><span class="dot" style="background:#2bff88"></span>Wins the group</span>
+        <span><span class="dot" style="background:#5b8cff"></span>Second</span>
+        <span><span class="dot" style="background:#e8b64c"></span>Third</span>
+        <span><span class="dot" style="background:#4a566f"></span>Last</span>
+      </div>
+    </div>
+    <h2>Chance to reach the knockouts — bars are the ten-model average, dots are each model</h2>
+    ${chartBox("group-quals", 240)}
+    <h2>The matches</h2>
+    <div class="cards">${cards}</div>
+  </section>`);
+  node._after = () => {
+    const c = node.querySelector("#group-quals");
+    if (c) WCViz.titleRace(c, models.filter(f => members.includes(f.team))
+      .map(f => ({ team: f.team, model: f.model, p_champion: f.reach.reach_r32 || 0 })), shortModel, 4);
   };
   return node;
 }
@@ -917,6 +1001,7 @@ function render() {
   let node;
   if ((m = h.match(/^#\/match\/(.+)$/))) node = viewMatch(decodeURIComponent(m[1]));
   else if ((m = h.match(/^#\/team\/(.+)$/))) node = viewTeam(m[1]);
+  else if ((m = h.match(/^#\/group\/(.+)$/))) node = viewGroup(m[1]);
   else if (h.startsWith("#/bracket")) node = viewBracket();
   else if (h.startsWith("#/matches")) node = viewMatches();
   else if (h.startsWith("#/forecast")) node = viewForecast();
