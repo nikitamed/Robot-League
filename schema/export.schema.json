@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WC2026 export contract",
+  "description": "The versioned JSON the static site reads. Bump schema_version on breaking changes.",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "fixtures", "predictions", "market_odds", "tournament_forecast", "team_ratings", "leaderboard"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "generated_at": { "type": "string" },
+    "fixtures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["match_id", "home", "away", "stage", "result"],
+        "properties": {
+          "match_id": { "type": "string" },
+          "home": { "type": "string" },
+          "away": { "type": "string" },
+          "stage": { "enum": ["group", "knockout"] },
+          "group": { "type": ["string", "null"] },
+          "kickoff_utc": { "type": ["string", "null"] },
+          "result": {
+            "type": ["object", "null"],
+            "properties": {
+              "home_goals": { "type": ["integer", "null"] },
+              "away_goals": { "type": ["integer", "null"] },
+              "advanced_team": { "type": ["string", "null"] }
+            }
+          }
+        }
+      }
+    },
+    "predictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["match_id", "method", "as_of"],
+        "properties": {
+          "match_id": { "type": "string" },
+          "model": { "type": ["string", "null"] },
+          "method": { "type": "string" },
+          "as_of": { "type": "string" },
+          "p_home": { "type": ["number", "null"] },
+          "p_draw": { "type": ["number", "null"] },
+          "p_away": { "type": ["number", "null"] },
+          "p_advance_home": { "type": ["number", "null"] },
+          "p_advance_away": { "type": ["number", "null"] },
+          "rationale": { "type": ["string", "null"] },
+          "input_hash": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "market_odds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["match_id", "as_of", "snapshot", "source"],
+        "properties": {
+          "match_id": { "type": "string" },
+          "as_of": { "type": "string" },
+          "snapshot": { "type": "string" },
+          "source": { "type": "string" },
+          "o_home": { "type": ["number", "null"] },
+          "o_draw": { "type": ["number", "null"] },
+          "o_away": { "type": ["number", "null"] },
+          "captured_at": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "tournament_forecast": { "type": "array" },
+    "team_ratings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["team", "model", "as_of", "rating"],
+        "properties": {
+          "team": { "type": "string" },
+          "model": { "type": ["string", "null"] },
+          "as_of": { "type": "string" },
+          "rating": { "type": "number" }
+        }
+      }
+    },
+    "leaderboard": { "type": "array" }
+  }
+}
