@@ -19,6 +19,8 @@
     "grok-4.3": "#e36464",
     "deepseek-v4-pro": "#b07ce8",
     "deepseek-v4-flash": "#7e57b5",
+    "B1": "#c79a3a",   // Elo baseline (pseudo-model key)
+    "B2": "#8f7427",   // squad-value baseline
   };
   const FALLBACKS = ["#5b8cff", "#36c98b", "#f2b134", "#e36464", "#b07ce8", "#8b94a7"];
   let fallbackIdx = 0;
@@ -161,8 +163,8 @@
       options: {
         responsive: true, maintainAspectRatio: false, parsing: false,
         scales: {
-          x: { type: "linear", title: { display: true, text: "matches scored" }, ticks: { precision: 0 } },
-          y: { title: { display: true, text: "cumulative mean RPS (lower is better)" } },
+          x: { type: "linear", title: { display: true, text: "matches played" }, ticks: { precision: 0 } },
+          y: { title: { display: true, text: "average forecast error — lower is better" } },
         },
         plugins: {
           tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${c.parsed.y.toFixed(4)}` } },
@@ -208,5 +210,29 @@
     });
   }
 
-  window.WCViz = { modelColor, SERIES_COLORS, titleRace, reachCurves, trajectory, rpsOverTime, skillBars };
+  // --- per-team ratings by model (team page) ---------------------------------
+  // entries: [{model, label, rating}]
+  function ratingBars(canvas, entries) {
+    const rows = entries.slice().sort((a, b) => b.rating - a.rating);
+    return mount(canvas, {
+      type: "bar",
+      data: {
+        labels: rows.map(r => r.label),
+        datasets: [{
+          data: rows.map(r => r.rating),
+          backgroundColor: rows.map(r => modelColor(r.model) + "55"),
+          borderColor: rows.map(r => modelColor(r.model)),
+          borderWidth: 1.5,
+        }],
+      },
+      options: {
+        indexAxis: "y", responsive: true, maintainAspectRatio: false,
+        scales: { x: { min: 0, max: 100, title: { display: true, text: "strength rating (0–100)" } } },
+        plugins: { legend: { display: false },
+          tooltip: { callbacks: { label: (c) => `${c.parsed.x.toFixed(1)} / 100` } } },
+      },
+    });
+  }
+
+  window.WCViz = { modelColor, SERIES_COLORS, titleRace, reachCurves, trajectory, rpsOverTime, skillBars, ratingBars };
 })();

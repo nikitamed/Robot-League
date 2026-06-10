@@ -12,12 +12,19 @@ const el = (h) => { const d = document.createElement("div"); d.innerHTML = h; re
 const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 const MODEL_LABELS = {
-  "claude-fable-5": "Fable 5", "claude-opus-4-8": "Opus 4.8", "claude-haiku-4-5": "Haiku 4.5",
+  "claude-fable-5": "Claude Fable 5", "claude-opus-4-8": "Claude Opus 4.8", "claude-haiku-4-5": "Claude Haiku 4.5",
   "gpt-5.5-2026-04-23": "GPT-5.5", "gpt-5.4-mini-2026-03-17": "GPT-5.4 mini",
   "gemini-3.1-pro-preview": "Gemini 3.1 Pro", "gemini-3.5-flash": "Gemini 3.5 Flash",
   "grok-4.3": "Grok 4.3", "deepseek-v4-pro": "DeepSeek v4 Pro", "deepseek-v4-flash": "DeepSeek v4 Flash",
+  "B1": "Elo baseline", "B2": "Squad-value baseline",
 };
 const shortModel = (m) => MODEL_LABELS[m] || (m || "").replace(/^claude-/, "").replace(/-\d{8}$/, "");
+// Plain-language names for the forecasting methods (codes stay in tooltips).
+const METHOD_LABELS = {
+  M1: "Blind", M2: "Web search", M3: "Ratings engine", M1c: "Blind + standings", M2c: "Search + standings",
+  ENS: "Ensemble", B1: "Elo baseline", B2: "Squad-value baseline", MKT: "Betting market",
+};
+const methodName = (m) => METHOD_LABELS[m] || m;
 
 const FLAGS = {
   "Algeria": "🇩🇿", "Argentina": "🇦🇷", "Australia": "🇦🇺", "Austria": "🇦🇹", "Belgium": "🇧🇪",
@@ -34,14 +41,17 @@ const FLAGS = {
 };
 const flag = (t) => FLAGS[t] ? `<span class="flag">${FLAGS[t]}</span>` : "";
 const team = (t) => `${flag(t)}${esc(t)}`;
+const teamLink = (t) => FLAGS[t] ? `<a class="tlink" href="#/team/${encodeURIComponent(t)}">${team(t)}</a>` : esc(t);
 
 const pct = (x) => (x == null ? "—" : (100 * x).toFixed(0) + "%");
 const pct1 = (x) => (x == null ? "—" : (100 * x).toFixed(1) + "%");
 const f3 = (x) => (x == null ? "—" : x.toFixed(3));
 const f4 = (x) => (x == null ? "—" : x.toFixed(4));
 const mean = (a) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : null);
-const kickoffDate = (s) => (s || "").replace("T", " ").replace("Z", "Z");
-const shortDate = (s) => { const m = (s || "").match(/^\d{4}-(\d{2})-(\d{2})T(\d{2}:\d{2})/); return m ? `${["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+m[1]]} ${+m[2]} · ${m[3]}Z` : s; };
+
+// All displayed times are the VISITOR'S local time (the record itself stays UTC).
+const fmtDT = (iso) => { const d = new Date(iso); return isFinite(d) ? d.toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) : (iso || ""); };
+const fmtFull = (iso) => { const d = new Date(iso); return isFinite(d) ? d.toLocaleString([], { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }) : (iso || ""); };
 const city = (g) => (g || "").replace(/\s*\(.*\)$/, "");
 
 const CHECKPOINT_ORDER = ["pre-tournament", "md1", "md2", "md3", "group-end", "r32", "r16", "qf", "sf", "final"];
@@ -56,7 +66,9 @@ function devig(o) { const inv = [1 / o.o_home, 1 / o.o_draw, 1 / o.o_away]; cons
 function mktVector(mid) {
   const all = DB._oddsByMatch[mid] || [];
   const rows = all.some(r => r.snapshot === "T-3h") ? all.filter(r => r.snapshot === "T-3h") : all;
-  const pref = rows.find(r => /pinnacle/i.test(r.source)) || rows.find(r => /betfair/i.test(r.source));
+  const latest = (re) => rows.filter(r => re.test(r.source))
+    .sort((a, b) => (a.captured_at || "").localeCompare(b.captured_at || "")).pop();
+  const pref = latest(/pinnacle/i) || latest(/betfair/i);
   return pref ? { source: pref.source, p: devig(pref) } : null;
 }
 function outcomeVec(fx) {
@@ -71,7 +83,7 @@ function seriesMeta(p) {
   const isLLM = p.model != null;
   return {
     key: isLLM ? `${p.method}·${p.model}` : p.method,
-    label: isLLM ? `${p.method} · ${shortModel(p.model)}` : p.method,
+    label: isLLM ? `${methodName(p.method)} · ${shortModel(p.model)}` : methodName(p.method),
     kind: (p.method === "B1" || p.method === "B2") ? "base" : (p.method === "ENS" ? "ens" : "m"),
   };
 }
@@ -94,7 +106,7 @@ function leaderboard() {
     const m = seriesMeta(p);
     add(m.key, m.label, m.kind, p.match_id, [p.p_home, p.p_draw, p.p_away]);
   }
-  for (const fx of DB.fixtures) { const m = mktVector(fx.match_id); if (m) add("MKT", `MKT · ${m.source}`, "mkt", fx.match_id, m.p); }
+  for (const fx of DB.fixtures) { const m = mktVector(fx.match_id); if (m) add("MKT", `Betting market (${m.source})`, "mkt", fx.match_id, m.p); }
   const mktMean = mean(series.MKT ? series.MKT.rpss : []);
   const rows = Object.entries(series).map(([k, v]) => ({ key: k, label: v.label, kind: v.kind, rps: mean(v.rpss), n: v.rpss.length, byMid: v.byMid }));
   rows.forEach(r => r.skill = (mktMean != null && r.key !== "MKT") ? (mktMean - r.rps) : null);
@@ -118,13 +130,13 @@ function rpsSeriesOverTime() {
   if (played.length < 2) return null;
   const primary = (SCORES && SCORES.primary_model) || "claude-fable-5";
   const wanted = new Map([
-    [`M1·${primary}`, { key: `M1 · ${shortModel(primary)}`, color: WCViz.SERIES_COLORS.M1 }],
-    [`M2·${primary}`, { key: `M2 · ${shortModel(primary)}`, color: WCViz.SERIES_COLORS.M2 }],
-    [`M3·${primary}`, { key: `M3 · ${shortModel(primary)}`, color: WCViz.SERIES_COLORS.M3 }],
-    ["ENS", { key: "ENS", color: WCViz.SERIES_COLORS.ENS }],
-    ["B1", { key: "B1 Elo", color: WCViz.SERIES_COLORS.B1 }],
-    ["B2", { key: "B2 value", color: WCViz.SERIES_COLORS.B2 }],
-    ["MKT", { key: "MKT", color: WCViz.SERIES_COLORS.MKT }],
+    [`M1·${primary}`, { key: `Blind · ${shortModel(primary)}`, color: WCViz.SERIES_COLORS.M1 }],
+    [`M2·${primary}`, { key: `Web search · ${shortModel(primary)}`, color: WCViz.SERIES_COLORS.M2 }],
+    [`M3·${primary}`, { key: `Ratings engine · ${shortModel(primary)}`, color: WCViz.SERIES_COLORS.M3 }],
+    ["ENS", { key: "Ensemble", color: WCViz.SERIES_COLORS.ENS }],
+    ["B1", { key: "Elo baseline", color: WCViz.SERIES_COLORS.B1 }],
+    ["B2", { key: "Squad-value baseline", color: WCViz.SERIES_COLORS.B2 }],
+    ["MKT", { key: "Betting market", color: WCViz.SERIES_COLORS.MKT }],
   ]);
   const acc = new Map([...wanted.keys()].map(k => [k, { sum: 0, n: 0, points: [] }]));
   for (const fx of played) {
@@ -144,17 +156,22 @@ function rpsSeriesOverTime() {
   return series.length ? series : null;
 }
 
-// --- consensus forecast helpers (latest checkpoint) ---
+// --- forecast helpers (latest checkpoint; consensus = the 10 AI models only) ---
 function latestForecast() {
   const all = (DB.tournament_forecast || []).filter(f => f.reach);
-  if (!all.length) return { rows: [], cps: [], latest: null, all };
+  if (!all.length) return { rows: [], models: [], baselines: [], cps: [], latest: null, all };
   const cps = orderCheckpoints([...new Set(all.map(f => f.as_of))]);
   const latest = cps[cps.length - 1];
-  return { rows: all.filter(f => f.as_of === latest), cps, latest, all };
+  const rows = all.filter(f => f.as_of === latest);
+  return {
+    rows, cps, latest, all,
+    models: rows.filter(f => f.method === "M3"),
+    baselines: rows.filter(f => f.method === "B1" || f.method === "B2"),
+  };
 }
-function consensusReach(rows) {
+function consensusReach(modelRows) {
   const by = {};
-  for (const f of rows) (by[f.team] ||= []).push(f.reach);
+  for (const f of modelRows) (by[f.team] ||= []).push(f.reach);
   const out = {};
   for (const [t, rs] of Object.entries(by)) {
     out[t] = {};
@@ -173,16 +190,15 @@ function groupMembers() {
   return Object.fromEntries(Object.entries(groups).map(([k, v]) => [k, [...v]]));
 }
 
-// --- bracket projection ---
+// --- bracket projection (consensus of the 10 models) ---
 function buildBracket() {
   const kos = DB.fixtures.filter(fx => fx.stage === "knockout");
   if (!kos.length) return null;
-  const { rows } = latestForecast();
-  const reach = consensusReach(rows);
+  const { models } = latestForecast();
+  const reach = consensusReach(models);
   const groups = groupMembers();
   const teamSet = new Set(Object.values(groups).flat());
 
-  // Group projections: 1st = top win_group; 2nd = top runner_up among rest; 3rd likewise.
   const proj = {};
   for (const [letter, teams] of Object.entries(groups)) {
     const left = [...teams];
@@ -192,7 +208,6 @@ function buildBracket() {
     };
     proj[letter] = { first: take("win_group"), second: take("runner_up"), third: take("third") };
   }
-  // Best-third slots: assign highest consensus `third` candidates to compatible slots.
   const thirdSlots = {};
   const thirdCodes = [...new Set(kos.flatMap(fx => [fx.home, fx.away]))].filter(c => /^3/.test(c));
   const candidates = Object.entries(proj)
@@ -209,8 +224,8 @@ function buildBracket() {
     const m = fx.match_id.match(/^M(\d+)$/);
     if (m) byNum[+m[1]] = fx;
   }
-  const final = kos.find(fx => /^W10[12]$/i.test(fx.home) || (teamSet.has(fx.home) && !byNum[104] && /w101/i.test(fx.match_id)));
-  const third = kos.find(fx => /^L10[12]$/i.test(fx.home) || /l101/i.test(fx.match_id));
+  const final = kos.find(fx => /^W10[12]$/i.test(fx.home));
+  const third = kos.find(fx => /^L10[12]$/i.test(fx.home));
   const nextKey = (num) => num <= 88 ? "reach_r16" : num <= 96 ? "reach_qf" : num <= 100 ? "reach_sf" : "reach_final";
 
   const memo = {};
@@ -242,14 +257,9 @@ function buildBracket() {
     const pa = a.team ? ((reach[a.team] || {})[key] || 0) : 0;
     const pb = b.team ? ((reach[b.team] || {})[key] || 0) : 0;
     const tot = pa + pb;
-    return {
-      fx, a, b,
-      pa: tot ? pa / tot : null, pb: tot ? pb / tot : null,
-      projected: a.projected || b.projected,
-    };
+    return { fx, a, b, pa: tot ? pa / tot : null, pb: tot ? pb / tot : null, projected: a.projected || b.projected };
   }
 
-  // Column layout from the final backwards: each round in the order its parents consume it.
   const refs = (fx) => [fx.home, fx.away].map(c => (c.match(/^[WL](\d+)$/i) || [])[1]).filter(Boolean).map(Number);
   const sf = final ? refs(final).map(n => byNum[n]) : [byNum[101], byNum[102]].filter(Boolean);
   const qf = sf.flatMap(fx => refs(fx).map(n => byNum[n]));
@@ -258,7 +268,7 @@ function buildBracket() {
   const num = (fx) => +(fx.match_id.match(/^M(\d+)$/) || [])[1];
 
   return {
-    projected: Object.keys(byNum).length && kos.some(fx => !teamSet.has(fx.home)),
+    projected: kos.some(fx => !teamSet.has(fx.home)),
     rounds: [
       { title: "Round of 32", ties: r32.map(fx => tie(fx, nextKey(num(fx)))) },
       { title: "Round of 16", ties: r16.map(fx => tie(fx, nextKey(num(fx)))) },
@@ -280,14 +290,14 @@ function chartBox(id, h = 320) { return `<div class="chartbox" style="height:${h
 function tieCard(t, { final = false } = {}) {
   const row = (side, p) => {
     const fav = p != null && p >= 0.5;
-    const name = side.team ? team(side.team) : `<span class="dim">TBD</span>`;
+    const name = side.team ? team(side.team) : `<span class="dim">To be decided</span>`;
     return `<div class="tie-team ${fav ? "fav" : "outp"}">${name}<span class="p">${p == null ? "" : pct(p)}</span></div>`;
   };
   const fx = t.fx;
-  return `<div class="tie${final ? " final" : ""}">
-    <div class="meta">${esc(fx.match_id)} · ${esc(shortDate(fx.kickoff_utc))}${fx.ground ? " · " + esc(city(fx.ground)) : ""}</div>
+  return `<a class="tie${final ? " final" : ""}" href="#/match/${encodeURIComponent(fx.match_id)}">
+    <div class="meta">${esc(fmtDT(fx.kickoff_utc))}${fx.ground ? " · " + esc(city(fx.ground)) : ""}</div>
     ${row(t.a, t.pa)}${row(t.b, t.pb)}
-  </div>`;
+  </a>`;
 }
 
 function probStrip(preds, mkt) {
@@ -295,28 +305,28 @@ function probStrip(preds, mkt) {
     const dots = preds.map(p => {
       const v = [p.p_home, p.p_draw, p.p_away][idx];
       const color = WCViz.SERIES_COLORS[p.method.replace(/c$/, "")] || "#8b94a7";
-      const name = p.model ? `${p.method} · ${shortModel(p.model)}` : p.method;
+      const name = p.model ? `${methodName(p.method)} · ${shortModel(p.model)}` : methodName(p.method);
       return `<span class="dotp" style="left:${v * 100}%; background:${color}" title="${esc(name)}: ${pct1(v)}"></span>`;
     }).join("");
-    const mark = mkt ? `<span class="mktmark" style="left:${mkt.p[idx] * 100}%" title="MKT · ${esc(mkt.source)}: ${pct1(mkt.p[idx])}"></span>` : "";
+    const mark = mkt ? `<span class="mktmark" style="left:${mkt.p[idx] * 100}%" title="Betting market (${esc(mkt.source)}): ${pct1(mkt.p[idx])}"></span>` : "";
     return `<div class="striprow"><span class="striplabel">${label}</span><div class="striptrack">${dots}${mark}</div></div>`;
   };
   return `<div class="strip">${rowFor("Home", 0)}${rowFor("Draw", 1)}${rowFor("Away", 2)}
     <div class="legend">
-      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.M1}"></span>M1 blind</span>
-      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.M2}"></span>M2 search</span>
-      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.M3}"></span>M3 engine</span>
-      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.ENS}"></span>ENS</span>
-      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.B1}"></span>B1/B2</span>
-      <span><span class="dot mktdot"></span>MKT</span>
+      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.M1}"></span>Blind</span>
+      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.M2}"></span>Web search</span>
+      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.M3}"></span>Ratings engine</span>
+      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.ENS}"></span>Ensemble</span>
+      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.B1}"></span>Baselines</span>
+      <span><span class="dot mktdot"></span>Betting market</span>
     </div></div>`;
 }
 
 function groupsGrid() {
   const groups = groupMembers();
   if (!Object.keys(groups).length) return "";
-  const { rows } = latestForecast();
-  const reach = consensusReach(rows);
+  const { models } = latestForecast();
+  const reach = consensusReach(models);
   const stats = {};
   for (const fx of DB.fixtures) {
     if (fx.stage !== "group" || !outcomeVec(fx)) continue;
@@ -336,15 +346,16 @@ function groupsGrid() {
     const rows = teams.map(t => {
       const s = stats[t], adv = (reach[t] || {}).reach_r32;
       return `<div class="grow">
-        <span class="gname">${team(t)}</span>
-        <span class="gpts" title="W-D-L">${s ? `${s.w}-${s.d}-${s.l}` : "—"}</span>
+        <span class="gname">${teamLink(t)}</span>
+        <span class="gpts" title="wins-draws-losses">${s ? `${s.w}-${s.d}-${s.l}` : "—"}</span>
         <span class="gpts" title="points">${s ? s.p : "·"}</span>
-        <span class="gbar" title="consensus P(reach R32): ${pct1(adv)}"><span style="width:${(adv || 0) * 100}%"></span></span>
+        <span class="gbar" title="Average chance of reaching the knockout round (10 AI models): ${pct1(adv)}"><span style="width:${(adv || 0) * 100}%"></span></span>
       </div>`;
     }).join("");
     return `<div class="group-card"><h3>Group ${letter}</h3>${rows}</div>`;
   }).join("");
-  return `<h2>Groups — ${anyPlayed ? "standings + consensus advance odds" : "consensus advance odds (no matches played yet)"}</h2>
+  return `<h2>The twelve groups</h2>
+    <p class="muted">${anyPlayed ? "Live standings, with each team's chance of reaching the knockout round (green bar — the average view of the ten AI models)." : "No matches played yet. The green bar is each team's chance of reaching the knockout round — the average view of the ten AI models."}</p>
     <div class="groups">${cards}</div>`;
 }
 
@@ -357,11 +368,11 @@ function fillTicker() {
     .sort((a, b) => (a.kickoff_utc || "").localeCompare(b.kickoff_utc || ""))[0];
   const played = playedFixtures().length;
   const parts = [
-    `<b>RECORD</b> ${esc(DB.generated_at)}`,
-    `<b>T−3h LOCKS</b> ${captured}/72`,
+    `<b>UPDATED</b> ${esc(fmtDT(DB.generated_at))}`,
+    `<b>LOCKED FORECASTS</b> ${captured} of 72 matches`,
     played ? `<b>PLAYED</b> ${played}` : null,
-    next ? `<b>NEXT</b> ${flag(next.home)}${esc(next.home)} v ${esc(next.away)}${flag(next.away)} · ${esc(shortDate(next.kickoff_utc))}` : null,
-    `<b>10 MODELS</b> 5 labs · M1 blind / M2 search / M3 engine`,
+    next ? `<b>NEXT</b> ${flag(next.home)}${esc(next.home)} v ${esc(next.away)}${flag(next.away)} · ${esc(fmtDT(next.kickoff_utc))}` : null,
+    `<b>10 AI MODELS</b> from 5 labs`,
   ].filter(Boolean);
   t.innerHTML = parts.join(`<span class="sep">│</span>`);
 }
@@ -378,30 +389,30 @@ function markNav() {
 function heroStrip() {
   const next = DB.fixtures.filter(fx => !outcomeVec(fx))
     .sort((a, b) => (a.kickoff_utc || "").localeCompare(b.kickoff_utc || ""))[0];
-  const { rows } = latestForecast();
-  const reach = consensusReach(rows);
+  const { models } = latestForecast();
+  const reach = consensusReach(models);
   const fav = Object.entries(reach).sort((a, b) => (b[1].champion || 0) - (a[1].champion || 0))[0];
   const { rows: lb } = leaderboard();
   const leaderCard = lb.length
     ? (() => { const top = lb.find(r => r.key !== "MKT") || lb[0]; return `
       <div class="hero-card">
-        <div class="hero-kicker">Leading the market race</div>
+        <div class="hero-kicker">Best forecaster so far</div>
         <div class="hero-big">${esc(top.label)}</div>
-        <div class="hero-sub">RPS <span class="mono">${f3(top.rps)}</span> over ${top.n} matches ·
-          skill vs MKT <span class="${top.skill >= 0 ? "good" : "bad"} mono">${top.skill >= 0 ? "+" : ""}${f3(top.skill)}</span></div>
+        <div class="hero-sub">average forecast error <span class="mono">${f3(top.rps)}</span> over ${top.n} matches ·
+          vs the betting market: <span class="${top.skill >= 0 ? "good" : "bad"} mono">${top.skill >= 0 ? "ahead +" : "behind "}${f3(top.skill)}</span></div>
       </div>`; })()
     : (fav ? `
       <div class="hero-card">
-        <div class="hero-kicker">Consensus title favorite</div>
-        <div class="hero-big">${team(fav[0])}</div>
-        <div class="hero-sub">P(champion) <span class="mono">${pct1(fav[1].champion)}</span> · mean of 10 models, 50,000-run brackets</div>
+        <div class="hero-kicker">The models' title favorite</div>
+        <div class="hero-big">${teamLink(fav[0])}</div>
+        <div class="hero-sub">${pct1(fav[1].champion)} chance to win it all — the average of ten AI models, each simulating the tournament 50,000 times</div>
       </div>` : "");
   const locked = next && (DB._predsByMatch[next.match_id] || []).some(p => p.as_of === "T-3h");
   const nextCard = next ? `
     <div class="hero-card alt">
       <div class="hero-kicker">${locked ? "Forecasts locked ✓ · kickoff in" : "Next forecasts lock in"}</div>
       <div class="countdown" id="countdown" data-kickoff="${esc(next.kickoff_utc)}" data-locked="${locked ? 1 : 0}">—</div>
-      <div class="hero-sub">${flag(next.home)}${esc(next.home)} v ${esc(next.away)}${flag(next.away)} · ${esc(shortDate(next.kickoff_utc))}${next.ground ? " · " + esc(city(next.ground)) : ""}</div>
+      <div class="hero-sub">${flag(next.home)}${esc(next.home)} v ${esc(next.away)}${flag(next.away)} · ${esc(fmtFull(next.kickoff_utc))}${next.ground ? " · " + esc(city(next.ground)) : ""}</div>
     </div>` : "";
   return (leaderCard || nextCard) ? `<div class="hero">${leaderCard}${nextCard}</div>` : "";
 }
@@ -426,11 +437,11 @@ function startCountdown() {
 
 function viewLeaderboard() {
   const { rows, mktMean } = leaderboard();
-  const lede = `<p class="lede">Ten frontier models forecast every match three ways, against an ensemble, two baselines, and the de-vigged market. Ranked Probability Score — lower is better; skill is improvement over the market. The market is the benchmark, not a competitor.</p>`;
+  const lede = `<p class="lede">Ten AI models forecast every match of the World Cup — and we score them against the one opponent that's genuinely hard to beat: <strong>the betting market</strong>. Every forecast is locked and published before kickoff, so nobody can quietly rewrite history.</p>`;
   if (!rows.length) {
     const node = el(`<section>
       <h1>Leaderboard</h1>${lede}${heroStrip()}
-      <div class="note">No completed matches yet — the board fills in after the first final whistle. The models' pre-committed views are on <a href="#/bracket">Bracket</a>, <a href="#/forecast">Forecast</a>, and <a href="#/matches">Matches</a>.</div>
+      <div class="note">No matches have been played yet — the scoreboard starts filling in after the first final whistle. In the meantime: the <a href="#/bracket">projected bracket</a>, the <a href="#/forecast">title odds</a>, and every <a href="#/matches">match forecast</a> are already locked in below.</div>
       ${groupsGrid()}
     </section>`);
     node._after = startCountdown;
@@ -443,7 +454,7 @@ function viewLeaderboard() {
     const seq = trendable.map(mid => r.byMid[mid]).filter(v => v != null).slice(-14);
     return `<tr${i === 0 ? ` class="lead"` : ""}>
       <td class="num muted">${r.key === "MKT" ? "—" : i + 1}</td>
-      <td><span class="pill ${pillClass(r.kind)}">${esc(r.label)}</span></td>
+      <td><span class="pill ${pillClass(r.kind)}" title="${esc(r.key)}">${esc(r.label)}</span></td>
       <td class="num">${r.n}</td>
       <td class="num">${f3(r.rps)}</td>
       <td class="num">${skill}</td>
@@ -453,20 +464,20 @@ function viewLeaderboard() {
 
   const h1 = SCORES && SCORES.h1;
   const h1Panel = h1 ? `
-    <h2>H1 — does web search change forecast skill?</h2>
-    <div class="note">Paired RPS(M2) − RPS(M1) for <strong>${esc(shortModel(h1.model))}</strong> over ${h1.n} matches
-      (negative = search <em>helps</em>): <strong class="${h1.mean < 0 ? "good" : "bad"}">${h1.mean >= 0 ? "+" : ""}${f4(h1.mean)}</strong>,
-      95% CI [${f4(h1.ci_low)}, ${f4(h1.ci_high)}], two-sided p = ${h1.p_two_sided.toFixed(4)}
-      <span class="muted">(clustered bootstrap, n_boot=${h1.n_boot}, frozen pre-kickoff)</span>.</div>` : "";
+    <h2>The official question: does web search make AI forecasts better?</h2>
+    <div class="note">Same model, same match, two forecasts — one blind, one allowed to search the web. Across ${h1.n} matches, searching changed <strong>${esc(shortModel(h1.model))}</strong>'s average forecast error by
+      <strong class="${h1.mean < 0 ? "good" : "bad"}">${h1.mean >= 0 ? "+" : ""}${f4(h1.mean)}</strong>
+      (${h1.mean < 0 ? "search is helping" : "search is hurting"}; 95% confidence range ${f4(h1.ci_low)} to ${f4(h1.ci_high)}).
+      This is the one question this experiment formally registered in advance — the analysis code was frozen before any match was played.</div>` : "";
 
   const node = el(`<section>
     <h1>Leaderboard</h1>${lede}${heroStrip()}
-    ${tableWrap(`<table><thead><tr><th class="num">#</th><th>Series</th><th class="num">n</th><th class="num">RPS</th><th class="num">vs MKT</th><th>trend</th></tr></thead><tbody>${body}</tbody></table>`)}
-    <p class="muted" style="margin-top:10px">M1 blind · M2 web search · M3 ratings→engine · ENS ensemble · B1 Elo · B2 squad value · MKT de-vigged market${mktMean != null ? ` (mean RPS ${f3(mktMean)})` : ""}.</p>
+    ${tableWrap(`<table><thead><tr><th class="num">#</th><th>Forecaster</th><th class="num">matches</th><th class="num" title="Ranked Probability Score">forecast error</th><th class="num">vs market</th><th>trend</th></tr></thead><tbody>${body}</tbody></table>`)}
+    <p class="muted" style="margin-top:10px">Forecast error is the Ranked Probability Score — how far each probability forecast landed from what actually happened; <strong>lower is better</strong>. “vs market” is how much better (+) or worse (−) than the betting market${mktMean != null ? ` (market average ${f3(mktMean)})` : ""}.</p>
     ${h1Panel}
-    <h2>The race</h2>
+    <h2>The race — who's been closest to reality</h2>
     ${chartBox("rps-over-time", 340)}
-    ${SCORES && SCORES.leaderboard && SCORES.leaderboard.length ? `<h2>Skill vs market — official scorer, 95% CI</h2>${chartBox("skill-bars", 430)}` : ""}
+    ${SCORES && SCORES.leaderboard && SCORES.leaderboard.length ? `<h2>Official scores with uncertainty ranges</h2>${chartBox("skill-bars", 430)}` : ""}
     ${groupsGrid()}
   </section>`);
 
@@ -475,10 +486,10 @@ function viewLeaderboard() {
     const series = rpsSeriesOverTime();
     const box = node.querySelector("#rps-over-time");
     if (series && box) WCViz.rpsOverTime(box, series);
-    else if (box) box.closest(".chartbox").outerHTML = `<div class="note">The cumulative-RPS race appears once at least two matches are scored.</div>`;
+    else if (box) box.closest(".chartbox").outerHTML = `<div class="note">This chart appears once at least two matches have been played.</div>`;
     const sb = node.querySelector("#skill-bars");
     if (sb) WCViz.skillBars(sb, SCORES.leaderboard.map(r => ({
-      ...r, label: r.model ? `${r.method} · ${shortModel(r.model)}` : r.method,
+      ...r, label: r.model ? `${methodName(r.method)} · ${shortModel(r.model)}` : methodName(r.method),
     })));
   };
   return node;
@@ -497,8 +508,8 @@ function viewBracket() {
   const node = el(`<section>
     <h1>Bracket</h1>
     <p class="lede">${b.projected
-      ? "Slots resolve as the group stage completes — until then this is the <strong>consensus projection</strong>: ten models' most likely qualifier per slot, advancing whoever carries the higher mean reach probability. Percentages are head-to-head consensus within each tie."
-      : "The knockout bracket, with the models' consensus advancement odds per tie."}</p>
+      ? "The knockout slots are decided by the group stage — until then, this is the bracket <strong>the ten AI models collectively expect</strong>: each slot shows the most likely qualifier, and each percentage is the models' average view of who advances from that tie. It updates automatically as real teams qualify."
+      : "The knockout bracket, with the ten models' average view of who advances from each tie."}</p>
     <div class="bracket-scroll"><div class="bracket">${cols}</div></div>
     ${b.thirdPlace ? `<h2>Third-place match</h2><div style="max-width:280px">${tieCard(b.thirdPlace)}</div>` : ""}
     ${groupsGrid()}
@@ -510,19 +521,19 @@ function viewMatches() {
   const groupCards = (list) => list.map(fx => {
     const ens = (DB._predsByMatch[fx.match_id] || []).find(p => p.method === "ENS" && p.p_home != null);
     const bar = ens ? hdaBar(ens.p_home, ens.p_draw, ens.p_away) : "";
-    const res = fx.result && fx.result.home_goals != null ? `<span class="result">${fx.result.home_goals}–${fx.result.away_goals}</span>` : `<span class="muted">scheduled</span>`;
+    const res = fx.result && fx.result.home_goals != null ? `<span class="result">${fx.result.home_goals}–${fx.result.away_goals}</span>` : `<span class="muted">${esc(fmtDT(fx.kickoff_utc))}</span>`;
     return `<a class="card" href="#/match/${encodeURIComponent(fx.match_id)}">
       <div class="teams">${team(fx.home)} <span class="dim">v</span> ${team(fx.away)}</div>
-      <div class="meta">${esc(fx.group || fx.stage)} · ${esc(shortDate(fx.kickoff_utc))} · ${res}</div>
+      <div class="meta">${esc(fx.group || "Knockout")} · ${res}</div>
       ${bar}
     </a>`;
   }).join("");
   const grp = DB.fixtures.filter(fx => fx.stage === "group");
   const ko = DB.fixtures.filter(fx => fx.stage === "knockout");
   return el(`<section><h1>Matches</h1>
-    <p class="lede">Pre-committed probability vectors per fixture, locked at T−3h. Bar shows the ensemble (blue home / grey draw / red away).</p>
+    <p class="lede">Every match, every forecast — locked before kickoff. The bar on each card is the combined view of all ten models (blue = home win, grey = draw, red = away win). Click any match for the full breakdown.</p>
     <div class="cards">${groupCards(grp)}</div>
-    ${ko.length ? `<h2>Knockout — slots resolve after the group stage · see the <a href="#/bracket">Bracket</a></h2><div class="cards">${groupCards(ko)}</div>` : ""}
+    ${ko.length ? `<h2>Knockout rounds — pairings settle after the group stage · see the <a href="#/bracket">projected bracket</a></h2><div class="cards">${groupCards(ko)}</div>` : ""}
   </section>`);
 }
 
@@ -531,9 +542,10 @@ function viewMatch(id) {
   if (!fx) return el(`<section><a class="back" href="#/matches">← Matches</a><p>Unknown match.</p></section>`);
   const preds = (DB._predsByMatch[id] || []).filter(p => p.p_home != null);
   const o = outcomeVec(fx);
-  const rowFor = (label, kind, p, hash) => {
+  const isLocked = preds.some(p => p.as_of === "T-3h");
+  const rowFor = (label, kind, p, hash, code) => {
     const r = o ? rps([p.p_home, p.p_draw, p.p_away], o) : null;
-    return `<tr><td><span class="pill ${pillClass(kind)}">${esc(label)}</span></td>
+    return `<tr><td><span class="pill ${pillClass(kind)}" title="${esc(code || "")}">${esc(label)}</span></td>
       <td class="num">${pct(p.p_home)}</td><td class="num">${pct(p.p_draw)}</td><td class="num">${pct(p.p_away)}</td>
       <td class="shapecol">${hdaBar(p.p_home, p.p_draw, p.p_away)}</td>
       <td class="num">${f3(r)}</td>
@@ -541,43 +553,108 @@ function viewMatch(id) {
   };
   const predRows = preds.map(p => {
     const m = seriesMeta(p);
-    return rowFor(m.label, m.kind, p, p.input_hash);
+    return rowFor(m.label, m.kind, p, p.input_hash, m.key);
   }).join("");
   const m = mktVector(id);
-  const mktRow = m ? rowFor(`MKT · ${m.source}`, "mkt", { p_home: m.p[0], p_draw: m.p[1], p_away: m.p[2] }, null) : "";
-  const oddsRows = (DB._oddsByMatch[id] || []).map(r => `<tr><td>${esc(r.source)}</td><td class="muted">${esc(r.snapshot)}</td><td class="num">${r.o_home}</td><td class="num">${r.o_draw}</td><td class="num">${r.o_away}</td></tr>`).join("");
+  const mktRow = m ? rowFor(`Betting market (${m.source})`, "mkt", { p_home: m.p[0], p_draw: m.p[1], p_away: m.p[2] }, null, "de-vigged") : "";
+  const oddsRows = (DB._oddsByMatch[id] || []).map(r => `<tr><td>${esc(r.source)}</td><td class="muted">${esc(fmtDT(r.captured_at))}</td><td class="num">${r.o_home}</td><td class="num">${r.o_draw}</td><td class="num">${r.o_away}</td></tr>`).join("");
   const resultLine = o
     ? `<span class="result">${fx.result.home_goals}–${fx.result.away_goals}</span> · <span class="win">${["home win", "draw", "away win"][o[0] ? 0 : o[1] ? 1 : 2]}</span>`
-    : `<span class="muted">not yet played</span>`;
+    : `<span class="muted">${esc(fmtFull(fx.kickoff_utc))}</span>`;
+  const rationales = preds.filter(p => p.rationale && p.model && (p.method === "M1" || p.method === "M2"))
+    .map(p => `<details><summary>${esc(methodName(p.method))} · ${esc(shortModel(p.model))} — home ${pct(p.p_home)}, draw ${pct(p.p_draw)}, away ${pct(p.p_away)}</summary><p>${esc(p.rationale)}</p></details>`).join("");
+  const batchNote = preds.length
+    ? (isLocked
+      ? `<div class="note">These forecasts are <strong>locked</strong> — captured 3 hours before kickoff and published with cryptographic fingerprints before the match started.</div>`
+      : `<div class="note">These are the <strong>pre-tournament forecasts</strong>, made before the World Cup began. They update one final time — and lock for scoring — 3 hours before kickoff.</div>`)
+    : "";
   return el(`<section>
     <a class="back" href="#/matches">← Matches</a>
-    <h1>${team(fx.home)} <span class="dim">v</span> ${team(fx.away)}</h1>
-    <p class="lede">${esc(fx.group || fx.stage)} · ${esc(kickoffDate(fx.kickoff_utc))}${fx.ground ? " · " + esc(fx.ground) : ""} · Result: ${resultLine}</p>
-    ${preds.length ? `<h2>Where every series stands</h2>${probStrip(preds, m)}` : ""}
-    <h2>Pre-committed forecasts</h2>
-    ${tableWrap(`<table><thead><tr><th>Series</th><th class="num">Home</th><th class="num">Draw</th><th class="num">Away</th><th>shape</th><th class="num">RPS</th><th class="hashcol">hash</th></tr></thead>
-      <tbody>${predRows || `<tr><td colspan="7" class="muted">Forecasts lock at T−3h before kickoff.</td></tr>`}${mktRow}</tbody></table>`)}
-    <h2>Raw market odds</h2>
-    ${tableWrap(`<table><thead><tr><th>Book</th><th>snapshot</th><th class="num">Home</th><th class="num">Draw</th><th class="num">Away</th></tr></thead><tbody>${oddsRows || `<tr><td colspan="5" class="muted">none captured yet — captured at T−3h before kickoff</td></tr>`}</tbody></table>`)}
+    <h1>${teamLink(fx.home)} <span class="dim">v</span> ${teamLink(fx.away)}</h1>
+    <p class="lede">${esc(fx.group || "Knockout")}${fx.ground ? " · " + esc(fx.ground) : ""} · ${resultLine}</p>
+    ${preds.length ? `<h2>Every forecast at a glance</h2><p class="muted">Each dot is one forecaster's probability; the white line is the betting market. Hover any dot for details.</p>${probStrip(preds, m)}` : ""}
+    ${batchNote}
+    <h2>The forecasts</h2>
+    ${tableWrap(`<table><thead><tr><th>Forecaster</th><th class="num">Home win</th><th class="num">Draw</th><th class="num">Away win</th><th>shape</th><th class="num" title="Ranked Probability Score — lower is better">error</th><th class="hashcol">fingerprint</th></tr></thead>
+      <tbody>${predRows || `<tr><td colspan="7" class="muted">Forecasts for this match lock 3 hours before kickoff.</td></tr>`}${mktRow}</tbody></table>`)}
+    ${rationales ? `<h2>In the models' own words</h2><div class="rationales">${rationales}</div>` : ""}
+    <h2>Bookmaker odds, as captured</h2>
+    ${tableWrap(`<table><thead><tr><th>Bookmaker</th><th>captured</th><th class="num">Home</th><th class="num">Draw</th><th class="num">Away</th></tr></thead><tbody>${oddsRows || `<tr><td colspan="5" class="muted">Odds are captured 3 hours before kickoff.</td></tr>`}</tbody></table>`)}
   </section>`);
 }
 
+function viewTeam(name) {
+  const t = decodeURIComponent(name);
+  if (!FLAGS[t]) return el(`<section><a class="back" href="#/">← Leaderboard</a><p>Unknown team.</p></section>`);
+  const groups = groupMembers();
+  const letter = Object.keys(groups).find(g => groups[g].includes(t));
+  const { models, baselines, cps, all } = latestForecast();
+  const reach = consensusReach(models);
+  const r = reach[t] || {};
+  const ratings = (DB.team_ratings || []).filter(x => x.team === t);
+  const rcps = orderCheckpoints([...new Set(ratings.map(x => x.as_of))]);
+  const latestRatings = ratings.filter(x => x.as_of === rcps[rcps.length - 1]);
+  const ratingMean = mean(latestRatings.map(x => x.rating));
+  const fixtures = DB.fixtures.filter(fx => fx.home === t || fx.away === t)
+    .sort((a, b) => (a.kickoff_utc || "").localeCompare(b.kickoff_utc || ""));
+  const cards = fixtures.map(fx => {
+    const ens = (DB._predsByMatch[fx.match_id] || []).find(p => p.method === "ENS" && p.p_home != null);
+    const bar = ens ? hdaBar(ens.p_home, ens.p_draw, ens.p_away) : "";
+    const res = fx.result && fx.result.home_goals != null ? `<span class="result">${fx.result.home_goals}–${fx.result.away_goals}</span>` : `<span class="muted">${esc(fmtDT(fx.kickoff_utc))}</span>`;
+    return `<a class="card" href="#/match/${encodeURIComponent(fx.match_id)}">
+      <div class="teams">${team(fx.home)} <span class="dim">v</span> ${team(fx.away)}</div>
+      <div class="meta">${esc(fx.group || "Knockout")} · ${res}</div>${bar}</a>`;
+  }).join("");
+  const teamRows = models.filter(f => f.team === t)
+    .concat(baselines.filter(f => f.team === t).map(f => ({ ...f, model: f.method })));
+  const node = el(`<section>
+    <a class="back" href="#/">← Leaderboard</a>
+    <h1>${flag(t)}${esc(t)}</h1>
+    <p class="lede">${letter ? `Group ${letter} · ` : ""}How the ten AI models — and the non-AI baselines — rate this team's World Cup.</p>
+    <div class="hero">
+      <div class="hero-card"><div class="hero-kicker">Chance to win the World Cup</div><div class="hero-num">${pct1(r.champion)}</div><div class="hero-sub">average of ten AI models</div></div>
+      <div class="hero-card alt"><div class="hero-kicker">Reach the knockouts · strength rating</div><div class="hero-num">${pct(r.reach_r32)} <span class="dim">·</span> ${ratingMean == null ? "—" : ratingMean.toFixed(0)}<span class="hero-sub" style="font-size:16px">/100</span></div><div class="hero-sub">knockout chance · consensus rating</div></div>
+    </div>
+    <h2>Road through the tournament — every forecaster</h2>
+    <p class="muted">How likely each round is, line by line: the ten models in color, the two non-AI baselines in gold.</p>
+    ${chartBox("team-reach", 320)}
+    <h2>How strong is ${esc(t)}? Each model's rating</h2>
+    ${chartBox("team-ratings", Math.max(220, latestRatings.length * 26 + 70))}
+    ${cps.length > 1 ? `<h2>Title odds over time</h2>${chartBox("team-traj", 280)}` : ""}
+    <h2>${esc(t)}'s matches</h2>
+    <div class="cards">${cards}</div>
+  </section>`);
+  node._after = () => {
+    const rc = node.querySelector("#team-reach");
+    if (rc && teamRows.length) WCViz.reachCurves(rc, teamRows, shortModel);
+    const rb = node.querySelector("#team-ratings");
+    if (rb && latestRatings.length) WCViz.ratingBars(rb, latestRatings.map(x => ({ model: x.model, label: shortModel(x.model), rating: x.rating })));
+    const tj = node.querySelector("#team-traj");
+    if (tj) {
+      const byCp = {};
+      for (const f of all) if (f.method === "M3") (byCp[f.as_of] ||= []).push({ model: f.model, team: f.team, p_champion: f.reach.champion });
+      WCViz.trajectory(tj, cps, byCp, t, shortModel);
+    }
+  };
+  return node;
+}
+
 function viewForecast() {
-  const { rows: fc, cps, latest, all: fcAll } = latestForecast();
-  if (!fc.length) {
-    return el(`<section><h1>Forecast</h1>
-      <div class="note">No tournament forecast in this export yet.</div></section>`);
+  const { rows: fcRows, models, baselines, cps, latest, all: fcAll } = latestForecast();
+  if (!fcRows.length) {
+    return el(`<section><h1>Forecast</h1><div class="note">No tournament forecast in this export yet.</div></section>`);
   }
-  const models = [...new Set(fc.map(f => f.model))];
-  const champ = fc.some(f => f.reach.champion != null);
+  const champ = fcRows.some(f => f.reach.champion != null);
   const key = champ ? "champion" : "reach_r32";
+  const display = models.concat(baselines.map(f => ({ ...f, model: f.method })));
+  const multi = new Set(display.map(f => f.model)).size > 1;
 
   const consensus = {};
-  for (const f of fc) (consensus[f.team] ||= []).push(f.reach[key] || 0);
+  for (const f of models) (consensus[f.team] ||= []).push(f.reach[key] || 0);
   const teamsByConsensus = Object.entries(consensus).map(([t, v]) => ({ t, m: mean(v) })).sort((a, b) => b.m - a.m);
   const topTeam = teamsByConsensus[0] && teamsByConsensus[0].t;
 
-  const rows = fc.slice().sort((a, b) => b.reach[key] - a.reach[key]).map((f, i) => {
+  const rows = display.slice().sort((a, b) => (b.reach[key] || 0) - (a.reach[key] || 0)).map((f, i) => {
     const r = f.reach;
     const tail = champ
       ? `<td class="num">${pct(r.reach_sf)}</td><td class="num">${pct(r.reach_final)}</td>
@@ -586,43 +663,43 @@ function viewForecast() {
       : `<td class="shapecol"><div class="bar brand"><span class="h" style="width:${r.reach_r32 * 100}%"></span></div></td>`;
     return `<tr>
       <td class="num muted">${i + 1}</td>
-      <td>${team(f.team)}${models.length > 1 ? ` <span class="dim mono">${esc(shortModel(f.model))}</span>` : ""}</td>
+      <td>${teamLink(f.team)}${multi ? ` <span class="dim mono">${esc(shortModel(f.model))}</span>` : ""}</td>
       <td class="num">${pct(r.win_group)}</td>
       <td class="num">${pct(r.reach_r32)}</td>
       ${tail}
     </tr>`;
   }).join("");
   const head = champ
-    ? `<th class="num">#</th><th>Team</th><th class="num">Win group</th><th class="num">R32</th><th class="num">Semi</th><th class="num">Final</th><th class="num">Champion</th><th>title odds</th>`
-    : `<th class="num">#</th><th>Team</th><th class="num">Win group</th><th class="num">Reach R32</th><th>shape</th>`;
+    ? `<th class="num">#</th><th>Team</th><th class="num">Wins group</th><th class="num">Knockouts</th><th class="num">Semifinal</th><th class="num">Final</th><th class="num">Champion</th><th>title odds</th>`
+    : `<th class="num">#</th><th>Team</th><th class="num">Wins group</th><th class="num">Reaches knockouts</th><th>shape</th>`;
 
   const teamOptions = teamsByConsensus.map(({ t }) => `<option value="${esc(t)}"${t === topTeam ? " selected" : ""}>${esc(t)}</option>`).join("");
 
   const node = el(`<section>
     <h1>Forecast</h1>
-    <p class="lede">What ten models believe: a 50,000-run Monte Carlo over each model's M3 ratings — group round-robins (FIFA tiebreakers + 8 best thirds) into the bracket. Checkpoint <code>${esc(latest)}</code>.</p>
-    ${champ ? `<h2>The title race — bars = consensus, dots = each model</h2>${chartBox("title-race", 430)}` : ""}
+    <p class="lede">Before the tournament, each AI rated all 48 teams — then we played the entire World Cup <strong>50,000 times per model</strong> in simulation: every group, every tiebreaker, every knockout round. These are the odds that came out. Two non-AI baselines (Elo ratings and squad market value) run through the exact same simulation, so you can see whether the AIs actually know anything the obvious yardsticks don't.</p>
+    ${champ ? `<h2>The title race — bars are the ten-model average; dots are each forecaster</h2>${chartBox("title-race", 430)}` : ""}
     <h2>Road to the final · <select id="team-pick" class="picker">${teamOptions}</select></h2>
     ${chartBox("reach-curves", 300)}
-    ${cps.length > 1 ? `<h2>Champion-odds trajectory by checkpoint</h2>${chartBox("trajectory", 300)}` : ""}
+    ${cps.length > 1 ? `<h2>Title odds over time</h2>${chartBox("trajectory", 300)}` : ""}
     ${ratingsHeatmap()}
-    <h2>Full table</h2>
-    <div class="note">Champion probability is n=1 and unfalsifiable — tracked as a trajectory vs. the market's futures, never scored. Third-place R32 slotting uses a valid assignment respecting FIFA's constraints (the exact combination table is approximated).</div>
+    <h2>Full table — every forecaster, every team</h2>
+    <div class="note">A team's "chance to win it all" can't be proven right or wrong by a single tournament — it's tracked for honesty, not scored. Forecast quality is judged on the match-by-match <a href="#/">leaderboard</a>.</div>
     ${tableWrap(`<table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>`)}
   </section>`);
 
   node._after = () => {
     const tr = node.querySelector("#title-race");
-    if (tr && champ) WCViz.titleRace(tr, fc.map(f => ({ team: f.team, model: f.model, p_champion: f.reach.champion || 0 })), shortModel);
+    if (tr && champ) WCViz.titleRace(tr, display.map(f => ({ team: f.team, model: f.model, p_champion: f.reach.champion || 0 })), shortModel);
     const rc = node.querySelector("#reach-curves");
-    const drawReach = (t) => rc && WCViz.reachCurves(rc, fc.filter(f => f.team === t), shortModel);
+    const drawReach = (t) => rc && WCViz.reachCurves(rc, display.filter(f => f.team === t), shortModel);
     drawReach(topTeam);
     const pick = node.querySelector("#team-pick");
     if (pick) pick.addEventListener("change", () => drawReach(pick.value));
     const tj = node.querySelector("#trajectory");
     if (tj) {
       const byCp = {};
-      for (const f of fcAll) (byCp[f.as_of] ||= []).push({ model: f.model, team: f.team, p_champion: f.reach.champion });
+      for (const f of fcAll) if (f.method === "M3") (byCp[f.as_of] ||= []).push({ model: f.model, team: f.team, p_champion: f.reach.champion });
       WCViz.trajectory(tj, cps, byCp, topTeam, shortModel);
     }
   };
@@ -646,7 +723,7 @@ function ratingsHeatmap() {
   const head = `<div class="hm-cell hm-head hm-team">Team</div>` +
     models.map(m => `<div class="hm-cell hm-head" title="${esc(m)}">${esc(shortModel(m))}</div>`).join("");
   const body = teams.map(x =>
-    `<div class="hm-cell hm-team">${team(x.t)}</div>` +
+    `<div class="hm-cell hm-team">${teamLink(x.t)}</div>` +
     models.map(mo => {
       const v = x.m[mo];
       return v == null
@@ -654,36 +731,63 @@ function ratingsHeatmap() {
         : `<div class="hm-cell" style="background:${shade(v)}" title="${esc(shortModel(mo))} · ${esc(x.t)}: ${v.toFixed(1)}">${Math.round(v)}</div>`;
     }).join("")
   ).join("");
-  return `<h2>Model ratings — where the ten models disagree</h2>
-    <p class="muted">M3 mean ratings (0–100), checkpoint <code>${esc(latest)}</code>, sorted by consensus. Brighter = stronger.</p>
-    <div class="hm-scroll"><div class="hm" style="grid-template-columns: minmax(130px, 180px) repeat(${models.length}, minmax(46px, 1fr))">${head}${body}</div></div>`;
+  return `<h2>Where the models disagree</h2>
+    <p class="muted">Each AI rated every team's strength from 0 to 100 before the tournament. Brighter green = stronger. Read across a row to spot the teams the models argue about.</p>
+    <div class="hm-scroll"><div class="hm" style="grid-template-columns: minmax(150px, 190px) repeat(${models.length}, minmax(46px, 1fr))">${head}${body}</div></div>`;
 }
 
 function viewVerify() {
   const rows = DB.predictions.filter(p => p.input_hash).slice(0, 200).map(p =>
-    `<tr><td class="mono">${esc(p.match_id)}</td><td><span class="pill ${pillClass(p.model ? "m" : "base")}">${esc(p.method)}${p.model ? " · " + esc(shortModel(p.model)) : ""}</span></td><td class="mono muted hashfull">${esc(p.input_hash)}</td></tr>`).join("");
+    `<tr><td class="mono"><a href="#/match/${encodeURIComponent(p.match_id)}">${esc(p.match_id)}</a></td><td><span class="pill ${pillClass(p.model ? "m" : "base")}">${esc(methodName(p.method))}${p.model ? " · " + esc(shortModel(p.model)) : ""}</span></td><td class="mono muted hashfull">${esc(p.input_hash)}</td></tr>`).join("");
   return el(`<section>
     <h1>Verify</h1>
-    <p class="lede">Every forecast is committed before kickoff and carries a SHA-256 of its inputs. Each T−3h batch is one append-only git commit on the public record, so the history proves a prediction existed before the match.</p>
-    <div class="note">How to check: <code>git log</code> the capture commit for a matchday, recompute the SHA-256 of a prediction's canonical inputs, and confirm it matches the manifest in the commit message — dated before the match. GitHub's push receive-time is an external timestamp the committer cannot back-date.</div>
-    ${tableWrap(`<table><thead><tr><th>match_id</th><th>series</th><th>input_hash (SHA-256)</th></tr></thead><tbody>${rows || `<tr><td colspan="3" class="muted">Per-match predictions arrive with the first T−3h capture batch.</td></tr>`}</tbody></table>`)}
+    <p class="lede">Don't take our word for any of this. Every forecast is published to a public git repository <strong>before</strong> the match it predicts, stamped with a cryptographic fingerprint (a SHA-256 hash). GitHub records when each push arrived — a timestamp we can't fake or back-date.</p>
+    <div class="note">To check a forecast yourself: open the <a href="https://github.com/nikitamed/Robot-League" target="_blank" rel="noopener">public record</a>, find the commit for a match day in the git history, confirm it's dated before the match was played, and compare the fingerprints in the commit message with the ones below. If we'd changed a single digit of any forecast after the fact, the fingerprints wouldn't match.</div>
+    ${tableWrap(`<table><thead><tr><th>match</th><th>forecaster</th><th>fingerprint (SHA-256)</th></tr></thead><tbody>${rows || `<tr><td colspan="3" class="muted">Per-match fingerprints appear with the first locked batch.</td></tr>`}</tbody></table>`)}
   </section>`);
 }
 
 function viewAbout() {
   return el(`<section>
-    <h1>About</h1>
-    <p class="lede">The real question isn't who wins the World Cup — it's <strong>when an LLM's probability estimates can be trusted</strong>. This is a preregistered, leakage-proof experiment that scores frontier-model forecasts against a near-efficient betting market.</p>
-    <h2>How it works</h2>
+    <h1>How it works</h1>
+    <p class="lede">Everyone says AI can predict things. Nobody usually checks. This project takes ten of the world's most advanced AI models, makes them forecast <strong>every match of the 2026 World Cup</strong>, and scores them against the toughest forecaster on Earth: the betting market. In public. With receipts.</p>
+
+    <h2>What happens before every match</h2>
     <div class="kv">
-      <div>Spine</div><div>RPS on the 90-minute 1X2 result; Brier &amp; log-loss as companions.</div>
-      <div>Primary question</div><div>M2−M1: does web search change forecast skill? (paired, within-model, group stage)</div>
-      <div>Roster</div><div>10 pinned models, 5 labs: Fable 5 · Opus 4.8 · Haiku 4.5 · GPT-5.5 · GPT-5.4 mini · Gemini 3.1 Pro · Gemini 3.5 Flash · Grok 4.3 · DeepSeek v4 Pro · v4 Flash.</div>
-      <div>Methods</div><div>M1 blind · M2 web search · M3 ratings→Dixon-Coles · ENS · B1 Elo · B2 squad value · MKT market.</div>
-      <div>Pre-commitment</div><div>Locked at T−3h, SHA-256 hashed, append-only public git history.</div>
-      <div>Honesty</div><div>Losses to the market are featured, not hidden — the honesty is the product.</div>
+      <div>3 hours before kickoff</div><div>Each AI gives its final probabilities for the match — home win, draw, away win. At the same moment we save the bookmakers' odds. Everything is locked, fingerprinted, and pushed to a public record. After that, nothing can be edited.</div>
+      <div>After the final whistle</div><div>The real result comes in, and every forecaster's error gets measured. The <a href="#/">leaderboard</a> updates automatically.</div>
     </div>
-    <div class="note" style="margin-top:18px">Forecasts and odds lock at T−3h before each kickoff; results and scores fill in as matches finish. This site reads only the committed JSON record — no backend.</div>
+
+    <h2>Each AI forecasts three ways</h2>
+    <div class="kv">
+      <div>Blind</div><div>Just the fixture — no internet. Pure prior knowledge: what the model already "knows" about football. <span class="dim">(code: M1)</span></div>
+      <div>Web search</div><div>The same question, but the model may search the live web first — injuries, lineups, form, news. Comparing this to Blind is the experiment's core question. <span class="dim">(M2)</span></div>
+      <div>Ratings engine</div><div>The model rates all 48 teams 0–100, and a classic football statistics engine (the Dixon-Coles model bookmakers' quants grew up on) turns those ratings into match odds and 50,000 simulated tournaments. <span class="dim">(M3)</span></div>
+    </div>
+
+    <h2>Who they're up against</h2>
+    <div class="kv">
+      <div>Betting market</div><div>Bookmaker odds with the built-in profit margin removed — the standard for "the best available forecast." Beating it consistently is genuinely hard. <span class="dim">(MKT, primarily Pinnacle)</span></div>
+      <div>Elo baseline</div><div>The classic chess-style rating system applied to national teams. Zero AI involved. If a model can't beat this, it isn't adding anything. <span class="dim">(B1)</span></div>
+      <div>Squad-value baseline</div><div>Just the market value of each squad in euros. Embarrassingly simple — embarrassingly hard to beat. <span class="dim">(B2)</span></div>
+      <div>Ensemble</div><div>The average of all the AI forecasts — crowds are often wiser than their members. <span class="dim">(ENS)</span></div>
+    </div>
+
+    <h2>How scoring works, in plain words</h2>
+    <div class="note">Say a model gives Mexico a 60% chance to win, and Mexico wins. Good forecast — small error. If Mexico had lost, that 60% would cost a bigger error. The score (the <strong>Ranked Probability Score</strong>) also cares about <em>how wrong</em>: confidently predicting a home win when the away side wins hurts more than predicting a draw. Every forecaster gets the same matches, so the average error is directly comparable. <strong>Lower is better.</strong></div>
+
+    <h2>Why you can trust it</h2>
+    <div class="kv">
+      <div>Locked before kickoff</div><div>Forecasts can't be edited after the fact — each batch is published with cryptographic fingerprints before the match starts. <a href="#/verify">Check one yourself</a>.</div>
+      <div>Rules fixed in advance</div><div>The methodology — what gets measured, how, and the one official question — was written down, hashed, and published <em>before the first match</em>. No moving the goalposts.</div>
+      <div>One official question</div><div>Does giving an AI web search make its forecasts better or worse? (Same model, same match, search on vs. off.) Everything else here is shown for interest, clearly labeled.</div>
+      <div>Losses stay up</div><div>If the AIs lose to the bookmakers — or to the embarrassingly simple baselines — that's the result. The honesty is the product.</div>
+    </div>
+
+    <h2>The fine print</h2>
+    <p class="muted">The full locked protocol (the preregistration), every forecast, the raw captured odds, and this site live in the public record:
+    <a href="https://github.com/nikitamed/Robot-League" target="_blank" rel="noopener">github.com/nikitamed/Robot-League</a>.
+    The roster: Claude Fable 5, Claude Opus 4.8, Claude Haiku 4.5, GPT-5.5, GPT-5.4 mini, Gemini 3.1 Pro, Gemini 3.5 Flash, Grok 4.3, DeepSeek v4 Pro, DeepSeek v4 Flash — exact model versions pinned in the protocol. Times on this site are shown in your local timezone.</p>
   </section>`);
 }
 
@@ -691,9 +795,10 @@ function viewAbout() {
 function render() {
   if (TICK) { clearInterval(TICK); TICK = null; }
   const h = location.hash || "#/";
-  const m = h.match(/^#\/match\/(.+)$/);
+  let m;
   let node;
-  if (m) node = viewMatch(decodeURIComponent(m[1]));
+  if ((m = h.match(/^#\/match\/(.+)$/))) node = viewMatch(decodeURIComponent(m[1]));
+  else if ((m = h.match(/^#\/team\/(.+)$/))) node = viewTeam(m[1]);
   else if (h.startsWith("#/bracket")) node = viewBracket();
   else if (h.startsWith("#/matches")) node = viewMatches();
   else if (h.startsWith("#/forecast")) node = viewForecast();
@@ -725,7 +830,7 @@ async function main() {
   DB._fixById = Object.fromEntries(DB.fixtures.map(f => [f.match_id, f]));
   DB._oddsByMatch = {}; for (const o of DB.market_odds) (DB._oddsByMatch[o.match_id] ||= []).push(o);
   DB._predsByMatch = {}; for (const p of DB.predictions) (DB._predsByMatch[p.match_id] ||= []).push(p);
-  document.getElementById("genmeta").textContent = `export ${DB.schema_version} · ${DB.generated_at}`;
+  document.getElementById("genmeta").textContent = `record updated ${fmtDT(DB.generated_at)}`;
   fillTicker();
   window.addEventListener("hashchange", render);
   render();
