@@ -26,20 +26,22 @@ const METHOD_LABELS = {
 };
 const methodName = (m) => METHOD_LABELS[m] || m;
 
+// Vendored SVG flags (site/vendor/flags, lipis/flag-icons, MIT) — Windows does
+// not render country-flag emoji, so images are the only portable option.
 const FLAGS = {
-  "Algeria": "🇩🇿", "Argentina": "🇦🇷", "Australia": "🇦🇺", "Austria": "🇦🇹", "Belgium": "🇧🇪",
-  "Bosnia & Herzegovina": "🇧🇦", "Brazil": "🇧🇷", "Canada": "🇨🇦", "Cape Verde": "🇨🇻",
-  "Colombia": "🇨🇴", "Croatia": "🇭🇷", "Curaçao": "🇨🇼", "Czech Republic": "🇨🇿",
-  "DR Congo": "🇨🇩", "Ecuador": "🇪🇨", "Egypt": "🇪🇬", "England": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "France": "🇫🇷",
-  "Germany": "🇩🇪", "Ghana": "🇬🇭", "Haiti": "🇭🇹", "Iran": "🇮🇷", "Iraq": "🇮🇶",
-  "Ivory Coast": "🇨🇮", "Japan": "🇯🇵", "Jordan": "🇯🇴", "Mexico": "🇲🇽", "Morocco": "🇲🇦",
-  "Netherlands": "🇳🇱", "New Zealand": "🇳🇿", "Norway": "🇳🇴", "Panama": "🇵🇦",
-  "Paraguay": "🇵🇾", "Portugal": "🇵🇹", "Qatar": "🇶🇦", "Saudi Arabia": "🇸🇦",
-  "Scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Senegal": "🇸🇳", "South Africa": "🇿🇦", "South Korea": "🇰🇷",
-  "Spain": "🇪🇸", "Sweden": "🇸🇪", "Switzerland": "🇨🇭", "Tunisia": "🇹🇳", "Turkey": "🇹🇷",
-  "United States": "🇺🇸", "Uruguay": "🇺🇾", "Uzbekistan": "🇺🇿",
+  "Algeria": "dz", "Argentina": "ar", "Australia": "au", "Austria": "at", "Belgium": "be",
+  "Bosnia & Herzegovina": "ba", "Brazil": "br", "Canada": "ca", "Cape Verde": "cv",
+  "Colombia": "co", "Croatia": "hr", "Curaçao": "cw", "Czech Republic": "cz",
+  "DR Congo": "cd", "Ecuador": "ec", "Egypt": "eg", "England": "gb-eng", "France": "fr",
+  "Germany": "de", "Ghana": "gh", "Haiti": "ht", "Iran": "ir", "Iraq": "iq",
+  "Ivory Coast": "ci", "Japan": "jp", "Jordan": "jo", "Mexico": "mx", "Morocco": "ma",
+  "Netherlands": "nl", "New Zealand": "nz", "Norway": "no", "Panama": "pa",
+  "Paraguay": "py", "Portugal": "pt", "Qatar": "qa", "Saudi Arabia": "sa",
+  "Scotland": "gb-sct", "Senegal": "sn", "South Africa": "za", "South Korea": "kr",
+  "Spain": "es", "Sweden": "se", "Switzerland": "ch", "Tunisia": "tn", "Turkey": "tr",
+  "United States": "us", "Uruguay": "uy", "Uzbekistan": "uz",
 };
-const flag = (t) => FLAGS[t] ? `<span class="flag">${FLAGS[t]}</span>` : "";
+const flag = (t) => FLAGS[t] ? `<img class="flag" src="./vendor/flags/${FLAGS[t]}.svg" alt="" loading="lazy">` : "";
 const team = (t) => `${flag(t)}${esc(t)}`;
 const teamLink = (t) => FLAGS[t] ? `<a class="tlink" href="#/team/${encodeURIComponent(t)}">${team(t)}</a>` : esc(t);
 
@@ -269,6 +271,7 @@ function buildBracket() {
 
   return {
     projected: kos.some(fx => !teamSet.has(fx.home)),
+    proj, thirdSlots, reach,
     rounds: [
       { title: "Round of 32", ties: r32.map(fx => tie(fx, nextKey(num(fx)))) },
       { title: "Round of 16", ties: r16.map(fx => tie(fx, nextKey(num(fx)))) },
@@ -495,12 +498,32 @@ function viewLeaderboard() {
   return node;
 }
 
+function bracketGroupsColumn(b) {
+  const groups = groupMembers();
+  const thirdTeams = new Set(Object.values(b.thirdSlots));
+  const cards = Object.keys(groups).sort().map(L => {
+    const p = b.proj[L] || {};
+    const rest = groups[L].filter(t => t !== p.first && t !== p.second)
+      .sort((a, c) => ((b.reach[c] || {}).reach_r32 || 0) - ((b.reach[a] || {}).reach_r32 || 0));
+    const ordered = [p.first, p.second, ...rest].filter(Boolean);
+    const rows = ordered.map(t => {
+      const direct = t === p.first || t === p.second;
+      const asThird = thirdTeams.has(t);
+      const cls = direct ? "fav" : asThird ? "third" : "outp";
+      const note = direct ? pct((b.reach[t] || {}).reach_r32) : asThird ? "3rd ✓" : pct((b.reach[t] || {}).reach_r32);
+      return `<div class="tie-team ${cls}">${team(t)}<span class="p">${note}</span></div>`;
+    }).join("");
+    return `<div class="tie bgroup"><div class="meta">GROUP ${L}</div>${rows}</div>`;
+  }).join("");
+  return `<div class="round groupscol"><div class="round-title">Group stage</div>${cards}</div>`;
+}
+
 function viewBracket() {
   const b = buildBracket();
   if (!b) {
     return el(`<section><h1>Bracket</h1><div class="note">No knockout fixtures in this export yet.</div></section>`);
   }
-  const cols = b.rounds.map(rd => `
+  const cols = bracketGroupsColumn(b) + b.rounds.map(rd => `
     <div class="round">
       <div class="round-title">${esc(rd.title)}</div>
       ${rd.ties.map(t => tieCard(t, { final: rd.title === "Final" })).join("")}
@@ -508,11 +531,10 @@ function viewBracket() {
   const node = el(`<section>
     <h1>Bracket</h1>
     <p class="lede">${b.projected
-      ? "The knockout slots are decided by the group stage — until then, this is the bracket <strong>the ten AI models collectively expect</strong>: each slot shows the most likely qualifier, and each percentage is the models' average view of who advances from that tie. It updates automatically as real teams qualify."
+      ? "The full wallchart, from the twelve groups to the final. Until the group stage decides the real pairings, this is the bracket <strong>the ten AI models collectively expect</strong>: highlighted teams are each group's projected qualifiers (<span class='good'>top two</span> advance directly, “3rd ✓” marks a projected best-third qualifier), and each percentage is the models' average view. It updates automatically as real teams qualify."
       : "The knockout bracket, with the ten models' average view of who advances from each tie."}</p>
     <div class="bracket-scroll"><div class="bracket">${cols}</div></div>
     ${b.thirdPlace ? `<h2>Third-place match</h2><div style="max-width:280px">${tieCard(b.thirdPlace)}</div>` : ""}
-    ${groupsGrid()}
   </section>`);
   return node;
 }
