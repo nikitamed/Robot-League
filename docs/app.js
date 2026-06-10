@@ -352,36 +352,57 @@ function chartBox(id, h = 320) { return `<div class="chartbox" style="height:${h
 function tieCard(t, { final = false } = {}) {
   const row = (side, p) => {
     const fav = p != null && p >= 0.5;
-    const name = side.team ? team(side.team) : `<span class="dim">To be decided</span>`;
+    const name = side.team ? teamLink(side.team) : `<span class="dim">To be decided</span>`;
     return `<div class="tie-team ${fav ? "fav" : "outp"}">${name}<span class="p">${p == null ? "" : pct(p)}</span></div>`;
   };
   const fx = t.fx;
-  return `<a class="tie${final ? " final" : ""}" data-bk="${esc(fx.match_id)}" href="#/match/${encodeURIComponent(fx.match_id)}">
+  // div, not <a>: team names inside are links to team pages; clicking anywhere
+  // else opens the match page (delegated handler on the bracket container).
+  return `<div class="tie${final ? " final" : ""}" data-bk="${esc(fx.match_id)}" data-href="#/match/${encodeURIComponent(fx.match_id)}" title="Open match page">
     <div class="meta">${esc(fmtDT(fx.kickoff_utc))}${fx.ground ? " · " + esc(city(fx.ground)) : ""}</div>
     ${row(t.a, t.pa)}${row(t.b, t.pb)}
-  </a>`;
+  </div>`;
 }
+
+// Probability strip: dots ride in per-family lanes (Blind / Web search /
+// Ratings engine / Ensemble+baselines) so agreement doesn't pile dots on top
+// of each other; legend chips toggle families on and off.
+const STRIP_FAMS = [
+  ["M1", "Blind", () => WCViz.SERIES_COLORS.M1],
+  ["M2", "Web search", () => WCViz.SERIES_COLORS.M2],
+  ["M3", "Ratings engine", () => WCViz.SERIES_COLORS.M3],
+  ["OTH", "Ensemble + baselines", () => WCViz.SERIES_COLORS.B1],
+];
+const FAM_LANE = { M1: 18, M2: 41, M3: 64, OTH: 86 };
+const famOf = (method) => { const m = method.replace(/c$/, ""); return FAM_LANE[m] != null ? m : "OTH"; };
 
 function probStrip(preds, mkt) {
   const rowFor = (label, idx) => {
     const dots = preds.map(p => {
       const v = [p.p_home, p.p_draw, p.p_away][idx];
-      const color = WCViz.SERIES_COLORS[p.method.replace(/c$/, "")] || "#8b94a7";
+      const fam = famOf(p.method);
+      const color = WCViz.SERIES_COLORS[p.method.replace(/c$/, "")] || WCViz.SERIES_COLORS.B1;
       const name = p.model ? `${methodName(p.method)} · ${shortModel(p.model)}` : methodName(p.method);
-      return `<span class="dotp" style="left:${v * 100}%; background:${color}" title="${esc(name)}: ${pct1(v)}"></span>`;
+      return `<span class="dotp" data-fam="${fam}" style="left:${v * 100}%; top:${FAM_LANE[fam]}%; background:${color}" title="${esc(name)}: ${pct1(v)}"></span>`;
     }).join("");
     const mark = mkt ? `<span class="mktmark" style="left:${mkt.p[idx] * 100}%" title="Betting market (${esc(mkt.source)}): ${pct1(mkt.p[idx])}"></span>` : "";
     return `<div class="striprow"><span class="striplabel">${label}</span><div class="striptrack">${dots}${mark}</div></div>`;
   };
+  const chips = STRIP_FAMS.map(([fam, label, color]) =>
+    `<button class="lg" data-fam="${fam}" type="button" title="Click to hide or show"><span class="dot" style="background:${color()}"></span>${label}</button>`).join("");
   return `<div class="strip">${rowFor("Home", 0)}${rowFor("Draw", 1)}${rowFor("Away", 2)}
-    <div class="legend">
-      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.M1}"></span>Blind</span>
-      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.M2}"></span>Web search</span>
-      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.M3}"></span>Ratings engine</span>
-      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.ENS}"></span>Ensemble</span>
-      <span><span class="dot" style="background:${WCViz.SERIES_COLORS.B1}"></span>Baselines</span>
-      <span><span class="dot mktdot"></span>Betting market</span>
-    </div></div>`;
+    <div class="legend">${chips}<span><span class="dot mktdot"></span>Betting market</span></div></div>`;
+}
+
+function wireStripToggles(node) {
+  node.querySelectorAll(".strip").forEach(strip => {
+    strip.addEventListener("click", (e) => {
+      const btn = e.target.closest(".lg");
+      if (!btn) return;
+      btn.classList.toggle("off");
+      strip.classList.toggle(`off-${btn.dataset.fam}`);
+    });
+  });
 }
 
 function groupsGrid() {
@@ -572,7 +593,7 @@ function bracketGroupsColumn(b) {
       const tip = direct ? "projected to qualify directly (top two)"
         : asThird ? "projected to qualify as one of the eight best third-placed teams"
         : "projected to go out in the group stage";
-      return `<div class="tie-team ${cls}" title="${tip}">${team(t)}<span class="p">${pct((b.reach[t] || {}).reach_r32)}</span></div>`;
+      return `<div class="tie-team ${cls}" title="${tip}">${teamLink(t)}<span class="p">${pct((b.reach[t] || {}).reach_r32)}</span></div>`;
     }).join("");
     return `<div class="tie bgroup" data-bk="G-${esc(L)}"><div class="meta">GROUP ${L}</div>${rows}</div>`;
   }).join("");
@@ -603,6 +624,11 @@ function viewBracket() {
     c._edges = b.edges;
     drawBracketLines(c);
     requestAnimationFrame(() => drawBracketLines(c)); // settle after first paint
+    c.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return; // team links navigate themselves
+      const t = e.target.closest("[data-href]");
+      if (t) location.hash = t.dataset.href;
+    });
   };
   return node;
 }
@@ -658,7 +684,7 @@ function viewMatch(id) {
       ? `<div class="note">These forecasts are <strong>locked</strong> — captured 3 hours before kickoff and published with cryptographic fingerprints before the match started.</div>`
       : `<div class="note">These are the <strong>pre-tournament forecasts</strong>, made before the World Cup began. They update one final time — and lock for scoring — 3 hours before kickoff.</div>`)
     : "";
-  return el(`<section>
+  const node = el(`<section>
     <a class="back" href="#/matches">← Matches</a>
     <h1>${teamLink(fx.home)} <span class="dim">v</span> ${teamLink(fx.away)}</h1>
     <p class="lede">${esc(fx.group || "Knockout")}${fx.ground ? " · " + esc(fx.ground) : ""} · ${resultLine}</p>
@@ -671,6 +697,8 @@ function viewMatch(id) {
     <h2>Bookmaker odds, as captured</h2>
     ${tableWrap(`<table><thead><tr><th>Bookmaker</th><th>captured</th><th class="num">Home</th><th class="num">Draw</th><th class="num">Away</th></tr></thead><tbody>${oddsRows || `<tr><td colspan="5" class="muted">Odds are captured 3 hours before kickoff.</td></tr>`}</tbody></table>`)}
   </section>`);
+  node._after = () => wireStripToggles(node);
+  return node;
 }
 
 function viewTeam(name) {

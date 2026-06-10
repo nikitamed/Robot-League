@@ -138,9 +138,15 @@ pre { background: #070b14; border: 1px solid var(--line); border-radius: 10px; p
 .strip { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; backdrop-filter: blur(6px); }
 .striprow { display: flex; align-items: center; gap: 12px; margin: 15px 0; }
 .striplabel { width: 48px; color: var(--dim); font: 700 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; flex: none; }
-.striptrack { position: relative; flex: 1; height: 24px; background: rgba(8,12,22,.85); border-radius: 7px; }
-.dotp { position: absolute; top: 50%; width: 11px; height: 11px; border-radius: 50%; transform: translate(-50%, -50%); border: 1.5px solid rgba(4,6,12,.9); cursor: help; }
+.striptrack { position: relative; flex: 1; height: 42px; background: rgba(8,12,22,.85); border-radius: 8px; }
+.dotp { position: absolute; width: 11px; height: 11px; border-radius: 50%; transform: translate(-50%, -50%); border: 1.5px solid rgba(4,6,12,.9); cursor: help; opacity: .82; }
+.dotp:hover { opacity: 1; z-index: 2; }
+.strip.off-M1 .dotp[data-fam="M1"], .strip.off-M2 .dotp[data-fam="M2"],
+.strip.off-M3 .dotp[data-fam="M3"], .strip.off-OTH .dotp[data-fam="OTH"] { display: none; }
 .mktmark { position: absolute; top: -3px; bottom: -3px; width: 3px; background: #fff; transform: translateX(-50%); border-radius: 2px; box-shadow: 0 0 8px rgba(255,255,255,.5); cursor: help; }
+.lg { display: inline-flex; align-items: center; gap: 5px; background: var(--panel2); color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 11px; font: 600 12px var(--display); cursor: pointer; }
+.lg:hover { color: var(--ink); border-color: #3a4a6e; }
+.lg.off { opacity: .4; text-decoration: line-through; }
 
 /* --- ratings heatmap --- */
 .hm-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: 12px; }
@@ -169,8 +175,8 @@ pre { background: #070b14; border: 1px solid var(--line); border-radius: 10px; p
 .tie-team.outp { color: var(--dim); font-weight: 500; }
 .tie.final { border-color: rgba(43,255,136,.5); box-shadow: 0 0 24px rgba(43,255,136,.10); }
 .tie.final .meta { color: var(--brand); }
-a.tie { display: block; color: inherit; text-decoration: none; transition: border-color .08s ease; }
-a.tie:hover { border-color: rgba(43,255,136,.45); }
+.tie[data-href] { cursor: pointer; transition: border-color .08s ease; }
+.tie[data-href]:hover { border-color: rgba(43,255,136,.45); }
 .tie-team.third { color: var(--muted); }
 .tie-team.third .p { color: #e8b64c; }
 .bgroup .tie-team { padding: 2px 0; font-size: 13px; }
