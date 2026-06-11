@@ -14,7 +14,7 @@ let TICK = null;   // live countdown interval
 //   https://app.kit.com/forms/1234567/subscriptions
 // Empty action -> the capture box renders nowhere (safe to deploy unconfigured).
 const EMAIL_FORM = {
-  action: "",
+  action: "https://app.kit.com/forms/9551637/subscriptions",
 };
 const app = () => document.getElementById("app");
 const el = (h) => { const d = document.createElement("div"); d.innerHTML = h; return d.firstElementChild; };

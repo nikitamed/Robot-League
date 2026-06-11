@@ -29,6 +29,7 @@ header { border-bottom: 1px solid var(--line); background: rgba(5, 8, 16, .85); 
 header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 60px; flex-wrap: wrap; padding-top: 6px; padding-bottom: 6px; }
 .brand { font-weight: 800; font-size: 17px; letter-spacing: .04em; color: var(--ink); text-decoration: none; text-transform: uppercase; white-space: nowrap; }
 .brand b { color: var(--brand); }
+.brand img.mark { height: 29px; vertical-align: -9px; margin-right: 9px; }
 .brand .tag { font: 700 10.5px var(--mono); color: var(--bg0); background: var(--brand); padding: 2px 7px; border-radius: 4px; margin-left: 8px; vertical-align: 2px; letter-spacing: .08em; }
 nav { display: flex; flex-wrap: wrap; }
 nav a { color: var(--muted); text-decoration: none; margin-left: 4px; font-size: 13px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 11px 9px; border-bottom: 2px solid transparent; }
