@@ -34,6 +34,23 @@ const METHOD_LABELS = {
   ENS: "Ensemble", B1: "Elo baseline", B2: "Squad-value baseline", MKT: "Betting market",
 };
 const methodName = (m) => METHOD_LABELS[m] || m;
+// Capability-ladder tiers (roster.yaml): flagship / mid rung / cheaper sibling.
+const MODEL_TIERS = {
+  "claude-fable-5": "flagship", "gpt-5.5-2026-04-23": "flagship", "gemini-3.1-pro-preview": "flagship",
+  "grok-4.3": "flagship", "deepseek-v4-pro": "flagship",
+  "claude-opus-4-8": "mid",
+  "claude-haiku-4-5": "sibling", "gpt-5.4-mini-2026-03-17": "sibling",
+  "gemini-3.5-flash": "sibling", "deepseek-v4-flash": "sibling",
+};
+
+// Leaderboard view state: collapsed top-10 with method/tier filters.
+const LB_TOP_N = 10;
+const LB_TYPES = {
+  all: ["All", null], blind: ["Blind", ["M1", "M1c"]], search: ["Web search", ["M2", "M2c"]],
+  ratings: ["Ratings engine", ["M3"]], bench: ["Ensemble & baselines", ["ENS", "B1", "B2"]],
+};
+const LB_TIERS = { all: "All", flagship: "Flagship", mid: "Mid rung", sibling: "Fast & cheap" };
+const LB_VIEW = { type: "all", tier: "all", expanded: false };
 
 // Vendored SVG flags (site/vendor/flags, lipis/flag-icons, MIT) — Windows does
 // not render country-flag emoji, so images are the only portable option.
@@ -471,6 +488,17 @@ function emailCapture() {
   </div>`;
 }
 
+// Compact one-line variant for high on the page; the full box stays at the bottom.
+function emailSlim() {
+  if (!EMAIL_FORM.action) return "";
+  return `<form class="capture-slim" action="${esc(EMAIL_FORM.action)}" method="post" target="_blank" rel="noopener">
+    <span class="hero-kicker">Follow the race</span>
+    <span class="slim-copy">One email per match day — who's beating the market, forecasts locked before kickoff.</span>
+    <input type="email" name="email_address" required placeholder="you@example.com" autocomplete="email" aria-label="Email address">
+    <button type="submit">Sign up</button>
+  </form>`;
+}
+
 // --- ticker + nav ---
 function fillTicker() {
   const t = document.getElementById("ticker");
@@ -552,28 +580,56 @@ function viewLeaderboard() {
   const lede = `<p class="lede">Ten AI models forecast every match of the World Cup — and we score them against the one opponent that's genuinely hard to beat: <strong>the betting market</strong>. Every forecast is locked and published before kickoff, so nobody can quietly rewrite history.</p>`;
   if (!rows.length) {
     const node = el(`<section>
-      <h1>Leaderboard</h1>${lede}${heroStrip()}
+      <h1>Leaderboard</h1>${lede}${heroStrip()}${emailSlim()}
       <div class="note">No matches have been played yet — the scoreboard starts filling in after the first final whistle. In the meantime: the <a href="#/bracket">projected bracket</a>, the <a href="#/forecast">title odds</a>, and every <a href="#/matches">match forecast</a> are already locked in below.</div>
-      ${emailCapture()}
       ${groupsGrid()}
     </section>`);
     node._after = startCountdown;
     return node;
   }
   const trendable = playedFixtures().map(fx => fx.match_id);
-  const body = rows.map((r, i) => {
+  rows.forEach((r, i) => { r._rank = r.key === "MKT" ? "—" : i + 1; });
+  const rowHtml = (r) => {
     const skill = r.skill == null ? `<span class="muted">benchmark</span>`
       : `<span class="${r.skill >= 0 ? "good" : "bad"}">${r.skill >= 0 ? "+" : ""}${f3(r.skill)}</span>`;
     const seq = trendable.map(mid => r.byMid[mid]).filter(v => v != null).slice(-14);
-    return `<tr${i === 0 ? ` class="lead"` : ""}>
-      <td class="num muted">${r.key === "MKT" ? "—" : i + 1}</td>
+    return `<tr${r === rows[0] ? ` class="lead"` : ""}>
+      <td class="num muted">${r._rank}</td>
       <td><span class="pill ${pillClass(r.kind)}" title="${esc(r.key)}">${esc(r.label)}</span></td>
       <td class="num">${r.n}</td>
       <td class="num">${f3(r.rps)}</td>
       <td class="num">${skill}</td>
       <td>${sparkline(seq)}</td>
     </tr>`;
-  }).join("");
+  };
+  const filtered = () => {
+    const methods = LB_TYPES[LB_VIEW.type][1];
+    return rows.filter(r => {
+      if (r.key === "MKT") return true; // the benchmark is always on the board
+      const [method, model] = r.key.split("·");
+      if (methods && !methods.includes(method)) return false;
+      if (LB_VIEW.tier !== "all" && MODEL_TIERS[model] !== LB_VIEW.tier) return false;
+      return true;
+    });
+  };
+  const tbodyHtml = () => {
+    const f = filtered();
+    const cut = !LB_VIEW.expanded && f.length > LB_TOP_N + 1;
+    let vis = cut ? f.slice(0, LB_TOP_N) : f;
+    const mkt = f.find(r => r.key === "MKT");
+    if (mkt && !vis.includes(mkt)) vis = [...vis, mkt];
+    const more = cut
+      ? `<tr class="morerow"><td colspan="6"><button type="button" data-expand="1">Show all ${f.length} forecasters ▾</button></td></tr>`
+      : (f.length > LB_TOP_N + 1 ? `<tr class="morerow"><td colspan="6"><button type="button" data-expand="0">Show top ${LB_TOP_N} only ▴</button></td></tr>` : "");
+    return vis.map(rowHtml).join("") + more;
+  };
+  const pillsHtml = () =>
+    `<span class="flabel">Method</span>` +
+    Object.entries(LB_TYPES).map(([k, [label]]) =>
+      `<button type="button" class="fpill${LB_VIEW.type === k ? " on" : ""}" data-type="${k}">${label}</button>`).join("") +
+    `<span class="fsep"></span><span class="flabel">Tier</span>` +
+    Object.entries(LB_TIERS).map(([k, label]) =>
+      `<button type="button" class="fpill${LB_VIEW.tier === k ? " on" : ""}" data-tier="${k}">${label}</button>`).join("");
 
   const h1 = SCORES && SCORES.h1;
   const h1Panel = h1 ? `
@@ -584,19 +640,34 @@ function viewLeaderboard() {
       This is the one question this experiment formally registered in advance — the analysis code was frozen before any match was played.</div>` : "";
 
   const node = el(`<section>
-    <h1>Leaderboard</h1>${lede}${heroStrip()}
-    ${tableWrap(`<table><thead><tr><th class="num">#</th><th>Forecaster</th><th class="num">matches</th><th class="num" title="Ranked Probability Score">forecast error</th><th class="num">vs market</th><th>trend</th></tr></thead><tbody>${body}</tbody></table>`)}
+    <h1>Leaderboard</h1>${lede}${heroStrip()}${emailSlim()}
+    <div class="lbfilters" id="lb-filters">${pillsHtml()}</div>
+    ${tableWrap(`<table><thead><tr><th class="num">#</th><th>Forecaster</th><th class="num">matches</th><th class="num" title="Ranked Probability Score">forecast error</th><th class="num">vs market</th><th>trend</th></tr></thead><tbody id="lb-body">${tbodyHtml()}</tbody></table>`)}
     <p class="muted" style="margin-top:10px">Forecast error is the Ranked Probability Score — how far each probability forecast landed from what actually happened; <strong>lower is better</strong>. “vs market” is how much better (+) or worse (−) than the betting market${mktMean != null ? ` (market average ${f3(mktMean)})` : ""}.</p>
     ${h1Panel}
     <h2>The race — who's been closest to reality</h2>
     ${chartBox("rps-over-time", 340)}
     ${SCORES && SCORES.leaderboard && SCORES.leaderboard.length ? `<h2>Official scores with uncertainty ranges</h2>${chartBox("skill-bars", 430)}` : ""}
-    ${emailCapture()}
     ${groupsGrid()}
   </section>`);
 
   node._after = () => {
     startCountdown();
+    const fl = node.querySelector("#lb-filters");
+    const tb = node.querySelector("#lb-body");
+    const refresh = () => { fl.innerHTML = pillsHtml(); tb.innerHTML = tbodyHtml(); };
+    fl.addEventListener("click", (e) => {
+      const b = e.target.closest(".fpill"); if (!b) return;
+      if (b.dataset.type) LB_VIEW.type = b.dataset.type;
+      if (b.dataset.tier) LB_VIEW.tier = b.dataset.tier;
+      LB_VIEW.expanded = false;
+      refresh();
+    });
+    tb.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-expand]"); if (!b) return;
+      LB_VIEW.expanded = b.dataset.expand === "1";
+      refresh();
+    });
     const series = rpsSeriesOverTime();
     const box = node.querySelector("#rps-over-time");
     if (series && box) WCViz.rpsOverTime(box, series);
