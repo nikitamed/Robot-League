@@ -186,6 +186,16 @@ with its justification — it is not a free parameter to tune against outcomes.
 | Sub-study | H3: capability ladder | RPS skill, cost-vs-skill | paired bootstrap | Holm–Bonferroni within family |
 | Descriptive | leaderboard, ENS, baselines, per-stage | RPS/Brier/log-loss vs MKT | bootstrap CIs clustered on matches | — |
 
+## Amendments (dated; the locked text above is never rewritten)
+
+- **2026-06-11, before the first T−3h capture.** §6 M1/M2 sampling: the two
+  **diagnostic** samples (sample_idx 1–2, stored-but-unscored) are dropped for
+  cost; each (model, method, match) captures the scored sample only
+  (sample_idx 0, unchanged settings). Diagnostics were exploratory material
+  outside every registered analysis — the scored record, H1, and all §9
+  analyses are unaffected. config.yaml `n_diagnostic` 2 → 0. The 2,232-forecast
+  pre-tournament batch (captured 2026-06-10 with diagnostics) is unaffected.
+
 ## 10. Lock checklist — ALL RESOLVED (2026-06-10)
 
 - [x] Pooling vs. named primary model (§2) — **(b)**, primary `claude-fable-5`;
