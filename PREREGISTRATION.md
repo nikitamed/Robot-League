@@ -188,6 +188,12 @@ with its justification — it is not a free parameter to tune against outcomes.
 
 ## Amendments (dated; the locked text above is never rewritten)
 
+- **2026-06-11 (evening).** Results sourcing redundancy: when the openfootball
+  feed lags a finished match (observed: opener score absent ~2.5h after full
+  time), the same regulation 90-minute score may be ingested from API-Football
+  (`score.fulltime`, statuses FT/AET/PEN), joined to fixtures by canonical team
+  pair. Identical ground truth, identical spine — no scoring rule changes.
+
 - **2026-06-11, before the first T−3h capture.** §6 M1/M2 sampling: the two
   **diagnostic** samples (sample_idx 1–2, stored-but-unscored) are dropped for
   cost; each (model, method, match) captures the scored sample only
