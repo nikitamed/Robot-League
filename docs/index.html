@@ -39,5 +39,18 @@
   <script src="./vendor/chart.umd.min.js"></script>
   <script src="./charts.js"></script>
   <script src="./app.js"></script>
+
+  <!-- GoatCounter: cookieless pageview counts, no PII, no consent needed.
+       Hash routes are the site's pages, so they're appended to the counted path;
+       localhost hits are ignored by count.js itself. -->
+  <script>
+    window.goatcounter = {
+      path: function(p) { return location.hash.length > 1 ? p + location.hash : p; },
+    };
+    window.addEventListener("hashchange", function() {
+      if (window.goatcounter.count) window.goatcounter.count({ path: location.pathname + location.hash });
+    });
+  </script>
+  <script data-goatcounter="https://robotleague.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
