@@ -7,6 +7,15 @@
 let DB = null;     // export.json
 let SCORES = null; // scores.json (optional; null until the scorer has run)
 let TICK = null;   // live countdown interval
+
+// Email capture (Kit / ConvertKit). Zero-backend: a plain form POST to the
+// Kit inline-form endpoint; double opt-in and sending live on the Kit side.
+// Set `action` to the form's endpoint, e.g.
+//   https://app.kit.com/forms/1234567/subscriptions
+// Empty action -> the capture box renders nowhere (safe to deploy unconfigured).
+const EMAIL_FORM = {
+  action: "",
+};
 const app = () => document.getElementById("app");
 const el = (h) => { const d = document.createElement("div"); d.innerHTML = h; return d.firstElementChild; };
 const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -447,6 +456,21 @@ function groupsGrid() {
     <div class="groups">${cards}</div>`;
 }
 
+function emailCapture() {
+  if (!EMAIL_FORM.action) return "";
+  return `<div class="capture">
+    <div>
+      <div class="hero-kicker">Follow the race</div>
+      <div class="capture-head">One email per match day.</div>
+      <div class="hero-sub">Which AI is beating the market, the day's locked forecasts before kickoff, and the biggest disagreements. No spam — unsubscribe anytime.</div>
+    </div>
+    <form class="capture-form" action="${esc(EMAIL_FORM.action)}" method="post" target="_blank" rel="noopener">
+      <input type="email" name="email_address" required placeholder="you@example.com" autocomplete="email" aria-label="Email address">
+      <button type="submit">Get the recaps</button>
+    </form>
+  </div>`;
+}
+
 // --- ticker + nav ---
 function fillTicker() {
   const t = document.getElementById("ticker");
@@ -530,6 +554,7 @@ function viewLeaderboard() {
     const node = el(`<section>
       <h1>Leaderboard</h1>${lede}${heroStrip()}
       <div class="note">No matches have been played yet — the scoreboard starts filling in after the first final whistle. In the meantime: the <a href="#/bracket">projected bracket</a>, the <a href="#/forecast">title odds</a>, and every <a href="#/matches">match forecast</a> are already locked in below.</div>
+      ${emailCapture()}
       ${groupsGrid()}
     </section>`);
     node._after = startCountdown;
@@ -566,6 +591,7 @@ function viewLeaderboard() {
     <h2>The race — who's been closest to reality</h2>
     ${chartBox("rps-over-time", 340)}
     ${SCORES && SCORES.leaderboard && SCORES.leaderboard.length ? `<h2>Official scores with uncertainty ranges</h2>${chartBox("skill-bars", 430)}` : ""}
+    ${emailCapture()}
     ${groupsGrid()}
   </section>`);
 
@@ -990,6 +1016,7 @@ function viewAbout() {
     <p class="muted">The full locked protocol (the preregistration), every forecast, the raw captured odds, and this site live in the public record:
     <a href="https://github.com/nikitamed/Robot-League" target="_blank" rel="noopener">github.com/nikitamed/Robot-League</a>.
     The roster: Claude Fable 5, Claude Opus 4.8, Claude Haiku 4.5, GPT-5.5, GPT-5.4 mini, Gemini 3.1 Pro, Gemini 3.5 Flash, Grok 4.3, DeepSeek v4 Pro, DeepSeek v4 Flash — exact model versions pinned in the protocol. Times on this site are shown in your local timezone.</p>
+    ${emailCapture()}
   </section>`);
 }
 

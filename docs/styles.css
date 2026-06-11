@@ -203,6 +203,23 @@ pre { background: #070b14; border: 1px solid var(--line); border-radius: 10px; p
 .grow .gbar { grid-column: 1 / -1; height: 5px; border-radius: 3px; background: rgba(8,12,22,.8); overflow: hidden; margin-bottom: 2px; }
 .grow .gbar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--brand2), var(--brand)); }
 
+/* --- email capture --- */
+.capture { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; align-items: center; margin: 26px 0 8px;
+  border: 1px solid rgba(43,255,136,.35); border-radius: 14px; padding: 18px 20px;
+  background: linear-gradient(135deg, rgba(43,255,136,.10), rgba(13,21,38,.65) 50%), var(--panel); backdrop-filter: blur(8px); }
+.capture-head { font-size: 21px; font-weight: 800; margin: 5px 0 3px; letter-spacing: .01em; }
+.capture-form { display: flex; gap: 8px; }
+.capture-form input { flex: 1; min-width: 0; background: rgba(8,12,22,.85); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 9px; padding: 11px 13px; font: 500 14px var(--display); }
+.capture-form input:focus { outline: none; border-color: var(--brand2); }
+.capture-form button { background: linear-gradient(135deg, var(--brand), var(--brand2)); color: #04130a;
+  border: none; border-radius: 9px; padding: 11px 16px; font: 800 13px var(--display);
+  letter-spacing: .05em; text-transform: uppercase; cursor: pointer; white-space: nowrap; }
+.capture-form button:hover { filter: brightness(1.08); }
+@media (max-width: 720px) {
+  .capture { grid-template-columns: 1fr; }
+}
+
 footer { border-top: 1px solid var(--line); background: rgba(5,8,16,.8); }
 footer .wrap { display: flex; justify-content: space-between; gap: 12px; padding: 14px 20px; font: 500 12px var(--mono); color: var(--dim); flex-wrap: wrap; }
 
