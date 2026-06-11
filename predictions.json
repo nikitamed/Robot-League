@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-10T21:33:36Z",
+  "generated_at": "2026-06-11T16:00:38Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -1750,6 +1750,19 @@
       "match_id": "GA-mexico-south_africa",
       "model": null,
       "method": "B1",
+      "as_of": "T-3h",
+      "p_home": 0.6715709066916747,
+      "p_draw": 0.19931437774305452,
+      "p_away": 0.12911471556527068,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "fe547607858f4726268a7546476d907a13a7cf3b843130aefa315dadfbfc5c10"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": null,
+      "method": "B1",
       "as_of": "pre-tournament",
       "p_home": 0.6715709066916747,
       "p_draw": 0.19931437774305452,
@@ -1758,6 +1771,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "587e956feb4f86692cf4f720283388d17b5e7981e87b2c83072b6ea5cd5790b8"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": null,
+      "method": "B2",
+      "as_of": "T-3h",
+      "p_home": 0.44940306107287054,
+      "p_draw": 0.2638537548019421,
+      "p_away": 0.2867431841251873,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "43378b5fa4adb551d1d91cab6d165bf82c87267270293d23edb5179e0e3775ae"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -1776,6 +1802,19 @@
       "match_id": "GA-mexico-south_africa",
       "model": null,
       "method": "ENS",
+      "as_of": "T-3h",
+      "p_home": 0.6105944444444444,
+      "p_draw": 0.2377388888888889,
+      "p_away": 0.15166666666666667,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "10f5f981c7b4bfad8e946081441c2492bef54c9d55043156d45c16035a577d74"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": null,
+      "method": "ENS",
       "as_of": "pre-tournament",
       "p_home": 0.6179444444444444,
       "p_draw": 0.23511111111111113,
@@ -1784,6 +1823,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "d2f1ccf9bde39c139a770efd867ab045de9517cacd42ce8bd069ec8cf41874c7"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-fable-5",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.58,
+      "p_draw": 0.245,
+      "p_away": 0.175,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "85708ee93faf2366a070903b5f2dc267d4ef3ba521d3b3152bf497ea221c3804"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -1802,6 +1854,19 @@
       "match_id": "GA-mexico-south_africa",
       "model": "claude-haiku-4-5",
       "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.52,
+      "p_draw": 0.26,
+      "p_away": 0.22,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "30c9d28927ca5a2963124b97c6b1eaf6840b22be5dfda2a66399713095f3109b"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-haiku-4-5",
+      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.52,
       "p_draw": 0.26,
@@ -1810,6 +1875,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "25a961ae7e0c5dcee0452f25e1c60f5f2ec535667b6963a9ccc230b85a071281"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-opus-4-8",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.58,
+      "p_draw": 0.25,
+      "p_away": 0.17,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico, likely a host nation with home advantage and stronger squad depth, should be favored. South Africa is competitive but ranked lower with less attacking firepower. Mexico's edge in quality and crowd support tilts this clearly in their favor, though upsets remain possible.",
+      "input_hash": "521fefbc35d1b57de2fb91d4d32c211bcb8b978823ec70287cf9c12ea025caf5"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -1828,6 +1906,19 @@
       "match_id": "GA-mexico-south_africa",
       "model": "deepseek-v4-flash",
       "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.6,
+      "p_draw": 0.25,
+      "p_away": 0.15,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico co-host, stronger squad and recent form. South Africa competitive but underdog. Most likely Mexico win, but draw not improbable.",
+      "input_hash": "b6be4f7ca4863b9ab9c16bc558852ccbf11ebfdfcc61748388c902fffdc072fd"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "deepseek-v4-flash",
+      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.7,
       "p_draw": 0.2,
@@ -1836,6 +1927,19 @@
       "p_advance_away": null,
       "rationale": "Mexico hosts and has higher Elo; South Africa is weaker but can defend. Likely Mexico win, but draw not unlikely.",
       "input_hash": "48c821681bcd47c6a41aaeeb9cbbdf79c2b7db0020f5c8b2d4c501f0cf715322"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "deepseek-v4-pro",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.621,
+      "p_draw": 0.247,
+      "p_away": 0.132,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico has superior squad depth and World Cup pedigree, but South Africa's physicality and potential home-continent support could make it tight. Expect a narrow win or draw.",
+      "input_hash": "9bfdeb7716012408226c75c2fdec95b83bf960eb4d72e7ad1995d89b16987751"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -1854,6 +1958,19 @@
       "match_id": "GA-mexico-south_africa",
       "model": "gemini-3.1-pro-preview",
       "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.678,
+      "p_draw": 0.214,
+      "p_away": 0.108,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico benefits from significant co-host advantage and possesses a stronger, more experienced squad. South Africa has improved recently but struggles against top-tier opposition outside Africa. Given the venue and historical pedigree, Mexico are heavy favorites, though a resilient South African defense keeps draw probability viable.",
+      "input_hash": "82461c5d5f276cdfdbaa50ec2f44d6ef8d90a3493814b2e3b3a0cb0a8c1d9933"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.685,
       "p_draw": 0.212,
@@ -1862,6 +1979,19 @@
       "p_advance_away": null,
       "rationale": "Mexico benefits from a significant co-host advantage and possesses superior squad depth and international experience. South Africa showed resilience in recent AFCONs but historically struggles against high-pressing, technically superior teams outside their continent. The talent gap and venue heavily favor El Tri.",
       "input_hash": "9a0af82f249c8040df9ff894a2d7d918e2d7f544ad2471c049f49cd55cd225e6"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "gemini-3.5-flash",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.614,
+      "p_draw": 0.228,
+      "p_away": 0.158,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico benefits from significant home advantage as co-hosts of the 2026 tournament. While South Africa possesses athletic and organized defensive structures, Mexico's superior technical depth and historical strength in home conditions make them clear favorites to secure three points in this group stage matchup.",
+      "input_hash": "a432f8c329fcdcb5f549917b9b8b9eedbb3e00630a4d69ddfa76782f6b92d305"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -1891,6 +2021,32 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.44,
+      "p_draw": 0.3,
+      "p_away": 0.26,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "b629fbc72538c17e3ec303dead0bc0b70d6f3c54de0baf1e2935b3f50c65aff6"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.592,
+      "p_draw": 0.248,
+      "p_away": 0.16,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "aee88568f7d9548381e87a734a23f59c3e3eedb2c226dc97afd20f07b0612689"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
       "model": "gpt-5.5-2026-04-23",
       "method": "M1",
       "as_of": "pre-tournament",
@@ -1917,6 +2073,19 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
+      "model": "grok-4.3",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.53,
+      "p_draw": 0.29,
+      "p_away": 0.18,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico holds a clear FIFA ranking and squad-quality edge over South Africa; both sides are inconsistent but Mexico\u2019s deeper talent pool yields moderate favoritism on neutral ground.",
+      "input_hash": "91d4ee24c3168e718280754fe6450551e86654f9261c75d275f8ef605a9115b2"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
       "model": "claude-fable-5",
       "method": "M2",
       "as_of": "pre-tournament",
@@ -1927,6 +2096,32 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "307272158896db2275bc1ba9de5bd71fbc1db5e6bd9dcf5caf697c9fcd812a82"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-fable-5",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.685,
+      "p_draw": 0.205,
+      "p_away": 0.11,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "fbd2593638ed0d97efe1e010f99cd3f3f8ba62349cb93465abc9d558f211e29f"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-haiku-4-5",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.6847,
+      "p_draw": 0.1923,
+      "p_away": 0.123,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico heavily favored: 14th-ranked hosts with 8-match unbeaten run, 80k home crowd, vs 60th-ranked South Africa returning after 16-year absence. South Africa showed inconsistency in recent friendlies. Historical 2010 draw provides minor upset potential.",
+      "input_hash": "91a1194b643461547508cf9ccd3b0542bad84495c6f5092f52ab3a1dff14febb"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -1945,6 +2140,19 @@
       "match_id": "GA-mexico-south_africa",
       "model": "claude-opus-4-8",
       "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.62,
+      "p_draw": 0.24,
+      "p_away": 0.14,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico (#14, host, Gold Cup/Nations League champions) opens the tournament with home advantage and a deeper, more experienced squad. South Africa (#60) is well-organized under Broos with elite keeper Williams but goal-shy, reliant on out-of-form Foster. Tournament-opener pressure and Bafana's defensive discipline create modest upset/draw chances.",
+      "input_hash": "fbab2b25236712e2a676b62bccc1ffbb93f9cd7163e22a037908a2e06b520cf0"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-opus-4-8",
+      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.58,
       "p_draw": 0.27,
@@ -1958,6 +2166,19 @@
       "match_id": "GA-mexico-south_africa",
       "model": "gemini-3.1-pro-preview",
       "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.725,
+      "p_draw": 0.185,
+      "p_away": 0.09,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico boasts a significant home-field advantage, including high altitude and passionate support, alongside superior squad depth and World Cup pedigree. While South Africa showed resilience in recent AFCON tournaments, they historically struggle against stronger opposition outside Africa. Mexico's environment and quality make them heavy favorites.",
+      "input_hash": "6e014b17cde00ad5efaa76943f52e6e12c3fb54a94f8fd8fcafc371e5ec78741"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.662,
       "p_draw": 0.221,
@@ -1966,6 +2187,19 @@
       "p_advance_away": null,
       "rationale": "Mexico benefits from significant home advantage as co-hosts and possesses superior squad depth and international experience. South Africa impressed at the recent AFCON but struggles against high-pressing, technically superior sides outside Africa. Mexico's historical group stage consistency and passionate home support make them clear favorites.",
       "input_hash": "ece22348acd7c50f1d90c1dfece8f5a6dc2d3810abc24d7e8e65f28e7382c02e"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "gemini-3.5-flash",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.681,
+      "p_draw": 0.211,
+      "p_away": 0.108,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "As co-hosts, Mexico opens the 2026 World Cup at the Estadio Azteca with a significant home-field advantage. Javier Aguirre's side has shown defensive solidity in recent friendlies, while South Africa returns to the tournament for the first time since 2010. Bookmakers heavily favor El Tri, reflecting their superior squad depth and the intimidating home atmosphere.",
+      "input_hash": "482d4ff99177237bfbcfbcf740fb4fe48d43420fe2e87481ff616e6a7bbe06cc"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -1995,6 +2229,19 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.487,
+      "p_draw": 0.281,
+      "p_away": 0.232,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "d417b28f958eab9f79b691c4bb9f061c892478dd0b145b52c59357ba7ef0a190"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
       "model": "gpt-5.5-2026-04-23",
       "method": "M2",
       "as_of": "pre-tournament",
@@ -2005,6 +2252,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "2cec9e42801a1b6b8145a49afdb71fb17163234fc88251c8e77f0ec943a8606e"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.663,
+      "p_draw": 0.223,
+      "p_away": 0.114,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "ffe2aae0c7fb52f5facb1d36fa1395187de67904e0864c5a590d8ac8ff2641cb"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2021,6 +2281,19 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
+      "model": "grok-4.3",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.69,
+      "p_draw": 0.21,
+      "p_away": 0.1,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico ranked 15th (1681 pts) vs SA 60th; hosts at Azteca with massive edge. Markets price MEX ~69% win, draw ~21%, SA ~10%.",
+      "input_hash": "43048fe0ba05d18ed782e62e7eaf6cffaa2c1390a56b9a1c79e55cd6afe5278f"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
       "model": "claude-fable-5",
       "method": "M3",
       "as_of": "pre-tournament",
@@ -2031,6 +2304,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "84c868298e8b8e6915b7c8514e47cb09a615c09523d0682f5dcdc09aeadb4983"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-fable-5",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.5482095212200762,
+      "p_draw": 0.24284792754162957,
+      "p_away": 0.20894255123829444,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "99b23810066d2cf36c4fbc99cd649a2b4c37d20e6f5b8cb97a4d2db3836c41d0"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2047,6 +2333,19 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.6886279725473514,
+      "p_draw": 0.19193529671384613,
+      "p_away": 0.11943673073880237,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "d041efea4bb4bae22665b10ca3b3270862b5849e7dcce35c0db08e3b77bd6218"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
       "model": "claude-opus-4-8",
       "method": "M3",
       "as_of": "pre-tournament",
@@ -2057,6 +2356,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "38fa53b4cbf4d24216d1d1fc50198f04ecb2b9248975fe221029a8ed204243ab"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.5865948436114415,
+      "p_draw": 0.23122516136365495,
+      "p_away": 0.18217999502490334,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "26427ea67d65ccafd8739244704b0485c9acc271555df22b8ce42847ae46346f"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2073,6 +2385,19 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.625321149672901,
+      "p_draw": 0.21770579010049393,
+      "p_away": 0.15697306022660495,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "6fa716b06da814354973790800fd04fa5209f726814f1e8039a51de9d4c43a9c"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
       "model": "deepseek-v4-pro",
       "method": "M3",
       "as_of": "pre-tournament",
@@ -2083,6 +2408,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "d1e8291b8c8b85023f5b2d3b29968050602148c2c2e3ca28134273c8ea44606f"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.6025573596785144,
+      "p_draw": 0.22586570565247252,
+      "p_away": 0.1715769346690131,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "1abb59474345a3a5f6ab602d2e9575ca935d12d67c5180966eedd84a433b82b1"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2099,6 +2437,19 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.5549644720911764,
+      "p_draw": 0.24093508462365706,
+      "p_away": 0.20410044328516666,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "4e84207476f5bbeff99b4d55ebbda673d22f990326de1469111dcd9ffb8ed70e"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
       "model": "gemini-3.5-flash",
       "method": "M3",
       "as_of": "pre-tournament",
@@ -2109,6 +2460,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "1eb8576038ef7e64360c89be705d2cc6f710654e723a63d9ced90c6be92dbbe0"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.5288866750109156,
+      "p_draw": 0.24799799678248316,
+      "p_away": 0.22311532820660135,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "8e31c03379b0031d3e6f55abc7a3cb638148db7a205d792d2a967f50b5aaf853"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2125,6 +2489,32 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.613221793747419,
+      "p_draw": 0.222117774687697,
+      "p_away": 0.16466043156488408,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "bb03b4c12a3ad6b916ea1fa95f69cebe21247359cac02a2ca902edd0d1c91a57"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.5616873317096764,
+      "p_draw": 0.2389744534550598,
+      "p_away": 0.19933821483526384,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "baf62571636b1e04866db720139957043610e7e1616e98e552b7ee1dda18aa58"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
       "model": "gpt-5.5-2026-04-23",
       "method": "M3",
       "as_of": "pre-tournament",
@@ -2135,6 +2525,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "fcacc95c7bde3b72f337df64f161e50ec75ba6f728c7d4fcb0f3c06ec36e4df3"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "grok-4.3",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.6780097756155818,
+      "p_draw": 0.19656603385115715,
+      "p_away": 0.12542419053326115,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "21cb1eb95f0b636ffb3b6fa77003a434d262e36903dfcd87291cd8f5e0d4bad3"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -30039,6 +30442,46 @@
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
+      "match_id": "GA-mexico-south_africa",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 1.4,
+      "o_draw": 4.5,
+      "o_away": 8.5,
+      "captured_at": "2026-06-11T16:00:38Z"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 1.44,
+      "o_draw": 4.6,
+      "o_away": 9.0,
+      "captured_at": "2026-06-11T16:00:38Z"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Betfair Exchange",
+      "o_home": 1.44,
+      "o_draw": 4.8,
+      "o_away": 9.6,
+      "captured_at": "2026-06-11T16:00:38Z"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Kambi",
+      "o_home": 1.41,
+      "o_draw": 4.35,
+      "o_away": 9.0,
+      "captured_at": "2026-06-11T16:00:38Z"
+    },
+    {
       "match_id": "GA-mexico-south_korea",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
@@ -30052,10 +30495,10 @@
       "match_id": "GA-mexico-south_korea",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 1.8,
-      "o_draw": 3.5,
-      "o_away": 4.5,
+      "source": "Pinnacle",
+      "o_home": 1.75,
+      "o_draw": 3.6,
+      "o_away": 4.49,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30072,10 +30515,10 @@
       "match_id": "GA-mexico-south_korea",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 1.75,
-      "o_draw": 3.6,
-      "o_away": 4.49,
+      "source": "Bet365",
+      "o_home": 1.8,
+      "o_draw": 3.5,
+      "o_away": 4.5,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30142,6 +30585,16 @@
       "match_id": "GB-canada-qatar",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 1.29,
+      "o_draw": 5.05,
+      "o_away": 9.68,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GB-canada-qatar",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Betfair Exchange",
       "o_home": 1.34,
       "o_draw": 5.7,
@@ -30166,16 +30619,6 @@
       "o_home": 1.3,
       "o_draw": 5.1,
       "o_away": 11.5,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GB-canada-qatar",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 1.29,
-      "o_draw": 5.05,
-      "o_away": 9.68,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30242,16 +30685,6 @@
       "match_id": "GC-brazil-haiti",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 1.07,
-      "o_draw": 11.0,
-      "o_away": 29.0,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GC-brazil-haiti",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
       "source": "Kambi",
       "o_home": 1.08,
       "o_draw": 11.5,
@@ -30266,6 +30699,16 @@
       "o_home": 1.1,
       "o_draw": 14.5,
       "o_away": 38.0,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GC-brazil-haiti",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 1.07,
+      "o_draw": 11.0,
+      "o_away": 29.0,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30432,16 +30875,6 @@
       "match_id": "GD-turkey-paraguay",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 2.2,
-      "o_draw": 3.1,
-      "o_away": 3.5,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GD-turkey-paraguay",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
       "source": "Kambi",
       "o_home": 2.23,
       "o_draw": 3.2,
@@ -30452,20 +30885,20 @@
       "match_id": "GD-turkey-paraguay",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 2.2,
+      "o_draw": 3.1,
+      "o_away": 3.5,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GD-turkey-paraguay",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Betfair Exchange",
       "o_home": 2.28,
       "o_draw": 3.2,
       "o_away": 3.55,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GD-united_states-australia",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 1.77,
-      "o_draw": 4.0,
-      "o_away": 4.7,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30496,6 +30929,16 @@
       "o_home": 1.73,
       "o_draw": 3.9,
       "o_away": 4.33,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GD-united_states-australia",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Betfair Exchange",
+      "o_home": 1.77,
+      "o_draw": 4.0,
+      "o_away": 4.7,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30552,6 +30995,16 @@
       "match_id": "GE-ecuador-cura\u00e7ao",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 1.18,
+      "o_draw": 7.0,
+      "o_away": 13.0,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GE-ecuador-cura\u00e7ao",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Betfair Exchange",
       "o_home": 1.23,
       "o_draw": 7.4,
@@ -30566,16 +31019,6 @@
       "o_home": 1.18,
       "o_draw": 6.96,
       "o_away": 11.21,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GE-ecuador-cura\u00e7ao",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 1.18,
-      "o_draw": 7.0,
-      "o_away": 13.0,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30612,10 +31055,10 @@
       "match_id": "GE-germany-ivory_coast",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 1.58,
-      "o_draw": 4.1,
-      "o_away": 5.8,
+      "source": "Bet365",
+      "o_home": 1.55,
+      "o_draw": 4.2,
+      "o_away": 5.5,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30642,10 +31085,10 @@
       "match_id": "GE-germany-ivory_coast",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 1.55,
-      "o_draw": 4.2,
-      "o_away": 5.5,
+      "source": "Kambi",
+      "o_home": 1.58,
+      "o_draw": 4.1,
+      "o_away": 5.8,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30732,16 +31175,6 @@
       "match_id": "GF-netherlands-sweden",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 1.65,
-      "o_draw": 3.95,
-      "o_away": 5.3,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GF-netherlands-sweden",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
       "source": "Pinnacle",
       "o_home": 1.6,
       "o_draw": 4.01,
@@ -30756,6 +31189,16 @@
       "o_home": 1.68,
       "o_draw": 4.3,
       "o_away": 5.5,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GF-netherlands-sweden",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Kambi",
+      "o_home": 1.65,
+      "o_draw": 3.95,
+      "o_away": 5.3,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30812,16 +31255,6 @@
       "match_id": "GF-tunisia-japan",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 5.8,
-      "o_draw": 3.6,
-      "o_away": 1.72,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GF-tunisia-japan",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
       "source": "Kambi",
       "o_home": 5.1,
       "o_draw": 3.6,
@@ -30846,6 +31279,16 @@
       "o_home": 5.5,
       "o_draw": 3.5,
       "o_away": 1.67,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GF-tunisia-japan",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Betfair Exchange",
+      "o_home": 5.8,
+      "o_draw": 3.6,
+      "o_away": 1.72,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30892,16 +31335,6 @@
       "match_id": "GG-belgium-iran",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 1.42,
-      "o_draw": 5.0,
-      "o_away": 8.6,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GG-belgium-iran",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
       "source": "Pinnacle",
       "o_home": 1.37,
       "o_draw": 4.61,
@@ -30916,6 +31349,16 @@
       "o_home": 1.4,
       "o_draw": 4.75,
       "o_away": 7.0,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GG-belgium-iran",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Betfair Exchange",
+      "o_home": 1.42,
+      "o_draw": 5.0,
+      "o_away": 8.6,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -30972,6 +31415,16 @@
       "match_id": "GG-new_zealand-egypt",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 5.0,
+      "o_draw": 3.5,
+      "o_away": 1.73,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GG-new_zealand-egypt",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Pinnacle",
       "o_home": 4.33,
       "o_draw": 3.81,
@@ -30996,16 +31449,6 @@
       "o_home": 5.1,
       "o_draw": 3.9,
       "o_away": 1.79,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GG-new_zealand-egypt",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 5.0,
-      "o_draw": 3.5,
-      "o_away": 1.73,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -31132,16 +31575,6 @@
       "match_id": "GH-uruguay-cape_verde",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 1.46,
-      "o_draw": 4.35,
-      "o_away": 7.5,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GH-uruguay-cape_verde",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
       "source": "Betfair Exchange",
       "o_home": 1.46,
       "o_draw": 4.7,
@@ -31159,13 +31592,23 @@
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
+      "match_id": "GH-uruguay-cape_verde",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Kambi",
+      "o_home": 1.46,
+      "o_draw": 4.35,
+      "o_away": 7.5,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
       "match_id": "GI-france-iraq",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 1.11,
-      "o_draw": 9.0,
-      "o_away": 19.0,
+      "source": "Kambi",
+      "o_home": 1.13,
+      "o_draw": 8.5,
+      "o_away": 21.0,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -31182,20 +31625,20 @@
       "match_id": "GI-france-iraq",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 1.15,
-      "o_draw": 9.4,
-      "o_away": 24.0,
+      "source": "Bet365",
+      "o_home": 1.11,
+      "o_draw": 9.0,
+      "o_away": 19.0,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
       "match_id": "GI-france-iraq",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 1.13,
-      "o_draw": 8.5,
-      "o_away": 21.0,
+      "source": "Betfair Exchange",
+      "o_home": 1.15,
+      "o_draw": 9.4,
+      "o_away": 24.0,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -31282,16 +31725,6 @@
       "match_id": "GI-norway-senegal",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 2.1,
-      "o_draw": 3.3,
-      "o_away": 3.5,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GI-norway-senegal",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
       "source": "Kambi",
       "o_home": 2.15,
       "o_draw": 3.45,
@@ -31316,6 +31749,16 @@
       "o_home": 2.09,
       "o_draw": 3.51,
       "o_away": 3.28,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GI-norway-senegal",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 2.1,
+      "o_draw": 3.3,
+      "o_away": 3.5,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -31362,6 +31805,16 @@
       "match_id": "GJ-argentina-austria",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 1.61,
+      "o_draw": 3.71,
+      "o_away": 5.44,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GJ-argentina-austria",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Kambi",
       "o_home": 1.66,
       "o_draw": 3.9,
@@ -31386,16 +31839,6 @@
       "o_home": 1.66,
       "o_draw": 4.1,
       "o_away": 5.8,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GJ-argentina-austria",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 1.61,
-      "o_draw": 3.71,
-      "o_away": 5.44,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -31452,6 +31895,16 @@
       "match_id": "GJ-jordan-algeria",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Kambi",
+      "o_home": 6.25,
+      "o_draw": 4.1,
+      "o_away": 1.54,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GJ-jordan-algeria",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Betfair Exchange",
       "o_home": 7.0,
       "o_draw": 4.7,
@@ -31466,26 +31919,6 @@
       "o_home": 6.5,
       "o_draw": 3.8,
       "o_away": 1.53,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GJ-jordan-algeria",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 6.25,
-      "o_draw": 4.1,
-      "o_away": 1.54,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GK-colombia-dr_congo",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 1.51,
-      "o_draw": 4.3,
-      "o_away": 8.2,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -31506,6 +31939,16 @@
       "o_home": 1.5,
       "o_draw": 4.0,
       "o_away": 7.0,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GK-colombia-dr_congo",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Betfair Exchange",
+      "o_home": 1.51,
+      "o_draw": 4.3,
+      "o_away": 8.2,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
