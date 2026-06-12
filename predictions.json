@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-11T23:46:20Z",
+  "generated_at": "2026-06-12T04:00:37Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -22,7 +22,11 @@
       "stage": "group",
       "group": "Group A",
       "kickoff_utc": "2026-06-12T02:00Z",
-      "result": null
+      "result": {
+        "home_goals": 2,
+        "away_goals": 1,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
