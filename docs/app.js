@@ -97,7 +97,16 @@ function mktVector(mid) {
   const latest = (re) => rows.filter(r => re.test(r.source))
     .sort((a, b) => (a.captured_at || "").localeCompare(b.captured_at || "")).pop();
   const pref = latest(/pinnacle/i) || latest(/betfair/i);
-  return pref ? { source: pref.source, p: devig(pref) } : null;
+  if (pref) return { source: pref.source, p: devig(pref) };
+  // No sharp book: de-vigged consensus of the remaining books (prereg amendment 2026-06-13).
+  const bySource = new Map();
+  for (const r of rows.slice().sort((a, b) => (a.captured_at || "").localeCompare(b.captured_at || "")))
+    bySource.set(r.source, r);  // latest capture per source wins
+  const soft = [...bySource.values()];
+  if (!soft.length) return null;
+  const vecs = soft.map(devig);
+  const p = [0, 1, 2].map(i => vecs.reduce((s, v) => s + v[i], 0) / vecs.length);
+  return { source: `Consensus (${[...bySource.keys()].sort().join(", ")})`, p };
 }
 function outcomeVec(fx) {
   const r = fx.result; if (!r || r.home_goals == null) return null;

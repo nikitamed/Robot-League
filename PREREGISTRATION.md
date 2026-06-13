@@ -188,6 +188,22 @@ with its justification — it is not a free parameter to tune against outcomes.
 
 ## Amendments (dated; the locked text above is never rewritten)
 
+- **2026-06-13.** §3 MKT fallback extended. The locked chain is Pinnacle →
+  Betfair Exchange → (a fixture with neither sharp book is excluded). Observed on
+  matchday 2: TheStatsAPI carried only Bet365 and Kambi for Canada–Bosnia &
+  Herzegovina (`GB-canada-bosnia_&_herzegovina`), with no Pinnacle or Betfair
+  line at any snapshot, which would drop that fixture from the model-vs-market
+  comparison. Amendment: when neither sharp book is present, MKT for that fixture
+  is the **de-vigged consensus** — the per-leg mean of the individually de-vigged
+  1X2 vectors of the remaining captured books — and the substitution is logged
+  (`consensus_matches`). Only a fixture with no usable book at all is excluded.
+  This is strictly a fallback: Pinnacle and Betfair Exchange keep their existing
+  precedence and are unaffected wherever present. Rationale: a soft-book consensus
+  is a weaker efficient-market proxy than a sharp book, but a materially better
+  benchmark than discarding the fixture; the substitution is per-match auditable.
+  Absolute model scores (RPS/Brier/log-loss) never depended on MKT and are
+  unchanged. Scoring code: `src/wc2026/score/mkt.py`.
+
 - **2026-06-11 (evening).** Results sourcing redundancy: when the openfootball
   feed lags a finished match (observed: opener score absent ~2.5h after full
   time), the same regulation 90-minute score may be ingested from API-Football
