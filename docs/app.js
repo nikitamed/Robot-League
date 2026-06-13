@@ -557,13 +557,17 @@ function heroStrip() {
         <div class="hero-sub">${pct1(fav[1].champion)} chance to win it all — the average of ten AI models, each simulating the tournament 50,000 times</div>
       </div>` : "");
   const locked = next && (DB._predsByMatch[next.match_id] || []).some(p => p.as_of === "T-3h");
+  const playing = next && Date.parse(next.kickoff_utc) <= Date.now();
+  const kicker = playing ? "Match in progress"
+    : locked ? "Forecasts locked ✓ · kickoff in"
+      : "Next forecasts lock in";
   const homeTok = next && FLAGS[next.home]
     ? `<a class="tlink" href="#/team/${encodeURIComponent(next.home)}">${flag(next.home)}${esc(next.home)}</a>` : next ? esc(next.home) : "";
   const awayTok = next && FLAGS[next.away]
     ? `<a class="tlink" href="#/team/${encodeURIComponent(next.away)}">${esc(next.away)}${flag(next.away)}</a>` : next ? esc(next.away) : "";
   const nextCard = next ? `
     <div class="hero-card alt" data-href="#/match/${encodeURIComponent(next.match_id)}" title="Open match page">
-      <div class="hero-kicker">${locked ? "Forecasts locked ✓ · kickoff in" : "Next forecasts lock in"}</div>
+      <div class="hero-kicker">${kicker}</div>
       <div class="countdown" id="countdown" data-kickoff="${esc(next.kickoff_utc)}" data-locked="${locked ? 1 : 0}">—</div>
       <div class="hero-sub">${homeTok} v ${awayTok} · ${esc(fmtFull(next.kickoff_utc))}${next.ground ? " · " + esc(city(next.ground)) : ""}</div>
     </div>` : "";
@@ -580,11 +584,16 @@ function startCountdown() {
   });
   const kick = Date.parse(node.dataset.kickoff);
   if (!isFinite(kick)) { node.textContent = "—"; return; }
+  if (Date.now() >= kick) { node.classList.add("live"); node.textContent = "● LIVE"; return; } // match underway
   const locked = node.dataset.locked === "1";
   const target = locked ? kick : kick - 3 * 3600 * 1000;
   const tick = () => {
     const ms = target - Date.now();
-    if (ms <= 0) { node.textContent = locked ? "KICKOFF" : "LOCKING…"; return; }
+    if (ms <= 0) {
+      if (locked) { node.classList.add("live"); node.textContent = "● LIVE"; }
+      else node.textContent = "LOCKING…";
+      return;
+    }
     const d = Math.floor(ms / 86400000), h = Math.floor(ms / 3600000) % 24,
       m = Math.floor(ms / 60000) % 60, s = Math.floor(ms / 1000) % 60;
     node.textContent = `${d ? d + "d " : ""}${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
