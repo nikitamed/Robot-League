@@ -64,6 +64,8 @@ a { color: var(--accent); }
 .hero-card.alt { background: linear-gradient(135deg, rgba(91,140,255,.12), rgba(13,21,38,.6) 45%), var(--panel); }
 .hero-kicker { font: 700 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--brand); }
 .hero-card.alt .hero-kicker { color: var(--accent); }
+.hero-card[data-href] { cursor: pointer; transition: border-color .08s ease; }
+.hero-card[data-href]:hover { border-color: rgba(43,255,136,.45); }
 .hero-big { font-size: 30px; font-weight: 800; margin: 6px 0 2px; letter-spacing: .01em; }
 .hero-sub { color: var(--muted); font-size: 13.5px; }
 .hero-num { font: 800 38px/1 var(--mono); letter-spacing: -.02em; }

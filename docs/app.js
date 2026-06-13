@@ -557,11 +557,15 @@ function heroStrip() {
         <div class="hero-sub">${pct1(fav[1].champion)} chance to win it all — the average of ten AI models, each simulating the tournament 50,000 times</div>
       </div>` : "");
   const locked = next && (DB._predsByMatch[next.match_id] || []).some(p => p.as_of === "T-3h");
+  const homeTok = next && FLAGS[next.home]
+    ? `<a class="tlink" href="#/team/${encodeURIComponent(next.home)}">${flag(next.home)}${esc(next.home)}</a>` : next ? esc(next.home) : "";
+  const awayTok = next && FLAGS[next.away]
+    ? `<a class="tlink" href="#/team/${encodeURIComponent(next.away)}">${esc(next.away)}${flag(next.away)}</a>` : next ? esc(next.away) : "";
   const nextCard = next ? `
-    <div class="hero-card alt">
+    <div class="hero-card alt" data-href="#/match/${encodeURIComponent(next.match_id)}" title="Open match page">
       <div class="hero-kicker">${locked ? "Forecasts locked ✓ · kickoff in" : "Next forecasts lock in"}</div>
       <div class="countdown" id="countdown" data-kickoff="${esc(next.kickoff_utc)}" data-locked="${locked ? 1 : 0}">—</div>
-      <div class="hero-sub">${flag(next.home)}${esc(next.home)} v ${esc(next.away)}${flag(next.away)} · ${esc(fmtFull(next.kickoff_utc))}${next.ground ? " · " + esc(city(next.ground)) : ""}</div>
+      <div class="hero-sub">${homeTok} v ${awayTok} · ${esc(fmtFull(next.kickoff_utc))}${next.ground ? " · " + esc(city(next.ground)) : ""}</div>
     </div>` : "";
   return (leaderCard || nextCard) ? `<div class="hero">${leaderCard}${nextCard}</div>` : "";
 }
@@ -569,6 +573,11 @@ function heroStrip() {
 function startCountdown() {
   const node = document.getElementById("countdown");
   if (!node) return;
+  const card = node.closest("[data-href]");
+  if (card) card.addEventListener("click", (e) => {
+    if (e.target.closest("a")) return; // team links navigate themselves
+    location.hash = card.dataset.href;
+  });
   const kick = Date.parse(node.dataset.kickoff);
   if (!isFinite(kick)) { node.textContent = "—"; return; }
   const locked = node.dataset.locked === "1";
