@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-14T06:00:41Z",
+  "generated_at": "2026-06-14T14:00:25Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -1852,19 +1852,6 @@
       "match_id": "GA-mexico-south_africa",
       "model": null,
       "method": "ENS",
-      "as_of": "T-3h",
-      "p_home": 0.6105944444444444,
-      "p_draw": 0.2377388888888889,
-      "p_away": 0.15166666666666667,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "10f5f981c7b4bfad8e946081441c2492bef54c9d55043156d45c16035a577d74"
-    },
-    {
-      "match_id": "GA-mexico-south_africa",
-      "model": null,
-      "method": "ENS",
       "as_of": "pre-tournament",
       "p_home": 0.6179444444444444,
       "p_draw": 0.23511111111111113,
@@ -1876,16 +1863,16 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
-      "model": "claude-fable-5",
-      "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.58,
-      "p_draw": 0.25,
-      "p_away": 0.17,
+      "model": null,
+      "method": "ENS",
+      "as_of": "T-3h",
+      "p_home": 0.6105944444444444,
+      "p_draw": 0.2377388888888889,
+      "p_away": 0.15166666666666667,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Mexico are co-hosts with strong home support, FIFA rank ~15 vs South Africa ~60. Mexico historically solid in group stages at home tournaments. South Africa improving (AFCON 2024 third) but limited away pedigree. Clear but not overwhelming favorite; draws common in WC openers (cf. 2010 1-1).",
-      "input_hash": "41537db8be3908b6185f6175509c9d8f10baec48b5028a9d4b2cc046ed272771"
+      "rationale": null,
+      "input_hash": "10f5f981c7b4bfad8e946081441c2492bef54c9d55043156d45c16035a577d74"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -1899,6 +1886,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "85708ee93faf2366a070903b5f2dc267d4ef3ba521d3b3152bf497ea221c3804"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-fable-5",
+      "method": "M1",
+      "as_of": "pre-tournament",
+      "p_home": 0.58,
+      "p_draw": 0.25,
+      "p_away": 0.17,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico are co-hosts with strong home support, FIFA rank ~15 vs South Africa ~60. Mexico historically solid in group stages at home tournaments. South Africa improving (AFCON 2024 third) but limited away pedigree. Clear but not overwhelming favorite; draws common in WC openers (cf. 2010 1-1).",
+      "input_hash": "41537db8be3908b6185f6175509c9d8f10baec48b5028a9d4b2cc046ed272771"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2008,19 +2008,6 @@
       "match_id": "GA-mexico-south_africa",
       "model": "gemini-3.1-pro-preview",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.685,
-      "p_draw": 0.212,
-      "p_away": 0.103,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Mexico benefits from a significant co-host advantage and possesses superior squad depth and international experience. South Africa showed resilience in recent AFCONs but historically struggles against high-pressing, technically superior teams outside their continent. The talent gap and venue heavily favor El Tri.",
-      "input_hash": "9a0af82f249c8040df9ff894a2d7d918e2d7f544ad2471c049f49cd55cd225e6"
-    },
-    {
-      "match_id": "GA-mexico-south_africa",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M1",
       "as_of": "T-3h",
       "p_home": 0.678,
       "p_draw": 0.214,
@@ -2032,16 +2019,16 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
-      "model": "gemini-3.5-flash",
+      "model": "gemini-3.1-pro-preview",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.614,
-      "p_draw": 0.228,
-      "p_away": 0.158,
+      "as_of": "pre-tournament",
+      "p_home": 0.685,
+      "p_draw": 0.212,
+      "p_away": 0.103,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Mexico benefits from significant home advantage as co-hosts of the 2026 tournament. While South Africa possesses athletic and organized defensive structures, Mexico's superior technical depth and historical strength in home conditions make them clear favorites to secure three points in this group stage matchup.",
-      "input_hash": "a432f8c329fcdcb5f549917b9b8b9eedbb3e00630a4d69ddfa76782f6b92d305"
+      "rationale": "Mexico benefits from a significant co-host advantage and possesses superior squad depth and international experience. South Africa showed resilience in recent AFCONs but historically struggles against high-pressing, technically superior teams outside their continent. The talent gap and venue heavily favor El Tri.",
+      "input_hash": "9a0af82f249c8040df9ff894a2d7d918e2d7f544ad2471c049f49cd55cd225e6"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2058,16 +2045,16 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
-      "model": "gpt-5.4-mini-2026-03-17",
+      "model": "gemini-3.5-flash",
       "method": "M1",
       "as_of": "T-3h",
-      "p_home": 0.44,
-      "p_draw": 0.3,
-      "p_away": 0.26,
+      "p_home": 0.614,
+      "p_draw": 0.228,
+      "p_away": 0.158,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "b629fbc72538c17e3ec303dead0bc0b70d6f3c54de0baf1e2935b3f50c65aff6"
+      "rationale": "Mexico benefits from significant home advantage as co-hosts of the 2026 tournament. While South Africa possesses athletic and organized defensive structures, Mexico's superior technical depth and historical strength in home conditions make them clear favorites to secure three points in this group stage matchup.",
+      "input_hash": "a432f8c329fcdcb5f549917b9b8b9eedbb3e00630a4d69ddfa76782f6b92d305"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2084,16 +2071,16 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
-      "model": "gpt-5.5-2026-04-23",
+      "model": "gpt-5.4-mini-2026-03-17",
       "method": "M1",
       "as_of": "T-3h",
-      "p_home": 0.592,
-      "p_draw": 0.248,
-      "p_away": 0.16,
+      "p_home": 0.44,
+      "p_draw": 0.3,
+      "p_away": 0.26,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "aee88568f7d9548381e87a734a23f59c3e3eedb2c226dc97afd20f07b0612689"
+      "input_hash": "b629fbc72538c17e3ec303dead0bc0b70d6f3c54de0baf1e2935b3f50c65aff6"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2107,6 +2094,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "1163dd359d4b93e2e7d06ebd1500c37a7e27356ce00b904ec8154f58c1041fb4"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.592,
+      "p_draw": 0.248,
+      "p_away": 0.16,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "aee88568f7d9548381e87a734a23f59c3e3eedb2c226dc97afd20f07b0612689"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2164,19 +2164,6 @@
       "match_id": "GA-mexico-south_africa",
       "model": "claude-haiku-4-5",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.6847,
-      "p_draw": 0.1923,
-      "p_away": 0.123,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Mexico heavily favored: 14th-ranked hosts with 8-match unbeaten run, 80k home crowd, vs 60th-ranked South Africa returning after 16-year absence. South Africa showed inconsistency in recent friendlies. Historical 2010 draw provides minor upset potential.",
-      "input_hash": "91a1194b643461547508cf9ccd3b0542bad84495c6f5092f52ab3a1dff14febb"
-    },
-    {
-      "match_id": "GA-mexico-south_africa",
-      "model": "claude-haiku-4-5",
-      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.68,
       "p_draw": 0.18,
@@ -2188,16 +2175,16 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
-      "model": "claude-opus-4-8",
+      "model": "claude-haiku-4-5",
       "method": "M2",
       "as_of": "T-3h",
-      "p_home": 0.62,
-      "p_draw": 0.24,
-      "p_away": 0.14,
+      "p_home": 0.6847,
+      "p_draw": 0.1923,
+      "p_away": 0.123,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Mexico (#14, host, Gold Cup/Nations League champions) opens the tournament with home advantage and a deeper, more experienced squad. South Africa (#60) is well-organized under Broos with elite keeper Williams but goal-shy, reliant on out-of-form Foster. Tournament-opener pressure and Bafana's defensive discipline create modest upset/draw chances.",
-      "input_hash": "fbab2b25236712e2a676b62bccc1ffbb93f9cd7163e22a037908a2e06b520cf0"
+      "rationale": "Mexico heavily favored: 14th-ranked hosts with 8-match unbeaten run, 80k home crowd, vs 60th-ranked South Africa returning after 16-year absence. South Africa showed inconsistency in recent friendlies. Historical 2010 draw provides minor upset potential.",
+      "input_hash": "91a1194b643461547508cf9ccd3b0542bad84495c6f5092f52ab3a1dff14febb"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2211,6 +2198,19 @@
       "p_advance_away": null,
       "rationale": "Mexico (ranked ~15th) host at packed Estadio Azteca with strong squad; South Africa sit ~56-60th, defensively solid via Williams but weak in attack (Foster scored just 3 for Burnley). Home advantage, opener pressure, and quality gap favor Mexico, though Bafana's disciplined Broos setup can frustrate, raising draw odds.",
       "input_hash": "a1e49d97fdf10d1a501da5330cd5e974b1ae6d1ad9cf276c62722f8fb8e38832"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-opus-4-8",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.62,
+      "p_draw": 0.24,
+      "p_away": 0.14,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Mexico (#14, host, Gold Cup/Nations League champions) opens the tournament with home advantage and a deeper, more experienced squad. South Africa (#60) is well-organized under Broos with elite keeper Williams but goal-shy, reliant on out-of-form Foster. Tournament-opener pressure and Bafana's defensive discipline create modest upset/draw chances.",
+      "input_hash": "fbab2b25236712e2a676b62bccc1ffbb93f9cd7163e22a037908a2e06b520cf0"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2372,19 +2372,6 @@
       "match_id": "GA-mexico-south_africa",
       "model": "claude-haiku-4-5",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.6886279725473514,
-      "p_draw": 0.19193529671384613,
-      "p_away": 0.11943673073880237,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "ca2b2e5017d37d9827c02e955df64202c3a3f02a164b11854411d677c6ff26ca"
-    },
-    {
-      "match_id": "GA-mexico-south_africa",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.6886279725473514,
       "p_draw": 0.19193529671384613,
@@ -2393,6 +2380,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "d041efea4bb4bae22665b10ca3b3270862b5849e7dcce35c0db08e3b77bd6218"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.6886279725473514,
+      "p_draw": 0.19193529671384613,
+      "p_away": 0.11943673073880237,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "ca2b2e5017d37d9827c02e955df64202c3a3f02a164b11854411d677c6ff26ca"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2450,19 +2450,6 @@
       "match_id": "GA-mexico-south_africa",
       "model": "deepseek-v4-pro",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.6025573596785144,
-      "p_draw": 0.22586570565247252,
-      "p_away": 0.1715769346690131,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "d1e8291b8c8b85023f5b2d3b29968050602148c2c2e3ca28134273c8ea44606f"
-    },
-    {
-      "match_id": "GA-mexico-south_africa",
-      "model": "deepseek-v4-pro",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.6025573596785144,
       "p_draw": 0.22586570565247252,
@@ -2474,16 +2461,16 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
-      "model": "gemini-3.1-pro-preview",
+      "model": "deepseek-v4-pro",
       "method": "M3",
       "as_of": "pre-tournament",
-      "p_home": 0.5549644720911764,
-      "p_draw": 0.24093508462365706,
-      "p_away": 0.20410044328516666,
+      "p_home": 0.6025573596785144,
+      "p_draw": 0.22586570565247252,
+      "p_away": 0.1715769346690131,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "c6137b5290731e2faffcef2f096d1c89bc1a98c89d3e8f186a53f33a12e6ca9e"
+      "input_hash": "d1e8291b8c8b85023f5b2d3b29968050602148c2c2e3ca28134273c8ea44606f"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2497,6 +2484,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "4e84207476f5bbeff99b4d55ebbda673d22f990326de1469111dcd9ffb8ed70e"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.5549644720911764,
+      "p_draw": 0.24093508462365706,
+      "p_away": 0.20410044328516666,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "c6137b5290731e2faffcef2f096d1c89bc1a98c89d3e8f186a53f33a12e6ca9e"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2528,19 +2528,6 @@
       "match_id": "GA-mexico-south_africa",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.613221793747419,
-      "p_draw": 0.222117774687697,
-      "p_away": 0.16466043156488408,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "d15f0810d44b39d016e2ad6a14324668c5e522d9ba6ef64b74507d31e9194c3c"
-    },
-    {
-      "match_id": "GA-mexico-south_africa",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.613221793747419,
       "p_draw": 0.222117774687697,
@@ -2552,16 +2539,16 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
-      "model": "gpt-5.5-2026-04-23",
+      "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
       "as_of": "pre-tournament",
-      "p_home": 0.5616873317096764,
-      "p_draw": 0.2389744534550598,
-      "p_away": 0.19933821483526384,
+      "p_home": 0.613221793747419,
+      "p_draw": 0.222117774687697,
+      "p_away": 0.16466043156488408,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "fcacc95c7bde3b72f337df64f161e50ec75ba6f728c7d4fcb0f3c06ec36e4df3"
+      "input_hash": "d15f0810d44b39d016e2ad6a14324668c5e522d9ba6ef64b74507d31e9194c3c"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2578,16 +2565,16 @@
     },
     {
       "match_id": "GA-mexico-south_africa",
-      "model": "grok-4.3",
+      "model": "gpt-5.5-2026-04-23",
       "method": "M3",
-      "as_of": "T-3h",
-      "p_home": 0.6780097756155818,
-      "p_draw": 0.19656603385115715,
-      "p_away": 0.12542419053326115,
+      "as_of": "pre-tournament",
+      "p_home": 0.5616873317096764,
+      "p_draw": 0.2389744534550598,
+      "p_away": 0.19933821483526384,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "21cb1eb95f0b636ffb3b6fa77003a434d262e36903dfcd87291cd8f5e0d4bad3"
+      "input_hash": "fcacc95c7bde3b72f337df64f161e50ec75ba6f728c7d4fcb0f3c06ec36e4df3"
     },
     {
       "match_id": "GA-mexico-south_africa",
@@ -2601,6 +2588,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "286f5494419b9d69588b251f960ff8bc0dd556ba95d39a92022cc90d57256958"
+    },
+    {
+      "match_id": "GA-mexico-south_africa",
+      "model": "grok-4.3",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.6780097756155818,
+      "p_draw": 0.19656603385115715,
+      "p_away": 0.12542419053326115,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "21cb1eb95f0b636ffb3b6fa77003a434d262e36903dfcd87291cd8f5e0d4bad3"
     },
     {
       "match_id": "GA-mexico-south_korea",
@@ -3438,19 +3438,6 @@
       "match_id": "GA-south_korea-czech_republic",
       "model": null,
       "method": "B2",
-      "as_of": "pre-tournament",
-      "p_home": 0.34402039707775345,
-      "p_draw": 0.2774895960342743,
-      "p_away": 0.37849000688797224,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "579d3319dd4053dbd31c4c2978a09b40602ee9210dc7be156e155321efef87f5"
-    },
-    {
-      "match_id": "GA-south_korea-czech_republic",
-      "model": null,
-      "method": "B2",
       "as_of": "T-3h",
       "p_home": 0.34402039707775345,
       "p_draw": 0.2774895960342743,
@@ -3463,15 +3450,15 @@
     {
       "match_id": "GA-south_korea-czech_republic",
       "model": null,
-      "method": "ENS",
-      "as_of": "T-3h",
-      "p_home": 0.39237222222222223,
-      "p_draw": 0.29513333333333336,
-      "p_away": 0.31249444444444446,
+      "method": "B2",
+      "as_of": "pre-tournament",
+      "p_home": 0.34402039707775345,
+      "p_draw": 0.2774895960342743,
+      "p_away": 0.37849000688797224,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "ae4e6defd79eea8e1b414088e6055b1419b6cfb62567ce2cfe6b02addb2198b7"
+      "input_hash": "579d3319dd4053dbd31c4c2978a09b40602ee9210dc7be156e155321efef87f5"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3485,6 +3472,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "b50438bf3e0bfe8603f83c242940dbe71de14b1351416835110593ae0f7acb13"
+    },
+    {
+      "match_id": "GA-south_korea-czech_republic",
+      "model": null,
+      "method": "ENS",
+      "as_of": "T-3h",
+      "p_home": 0.39237222222222223,
+      "p_draw": 0.29513333333333336,
+      "p_away": 0.31249444444444446,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "ae4e6defd79eea8e1b414088e6055b1419b6cfb62567ce2cfe6b02addb2198b7"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3516,19 +3516,6 @@
       "match_id": "GA-south_korea-czech_republic",
       "model": "claude-haiku-4-5",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.42,
-      "p_draw": 0.28,
-      "p_away": 0.3,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "d390558eed7ab4ab5fd6368ae3fe4601868cdf8fff41fcf8e167f3646818b876"
-    },
-    {
-      "match_id": "GA-south_korea-czech_republic",
-      "model": "claude-haiku-4-5",
-      "method": "M1",
       "as_of": "T-3h",
       "p_home": 0.42,
       "p_draw": 0.28,
@@ -3540,16 +3527,16 @@
     },
     {
       "match_id": "GA-south_korea-czech_republic",
-      "model": "claude-opus-4-8",
+      "model": "claude-haiku-4-5",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.36,
+      "as_of": "pre-tournament",
+      "p_home": 0.42,
       "p_draw": 0.28,
-      "p_away": 0.36,
+      "p_away": 0.3,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Both sides are evenly matched mid-tier teams. Czech Republic has slightly higher European pedigree, but South Korea's pace and depth (Son, etc.) make this close. Neutral venue assumed; minimal home advantage. Expect a tight, balanced contest with notable draw probability.",
-      "input_hash": "f3cb538a7e2a60da3857fabfc0f1d3408099756d0e4dffff9f89a95884f50f95"
+      "rationale": null,
+      "input_hash": "d390558eed7ab4ab5fd6368ae3fe4601868cdf8fff41fcf8e167f3646818b876"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3563,6 +3550,19 @@
       "p_advance_away": null,
       "rationale": "Both sides are roughly comparable mid-tier teams. South Korea's pace and attacking talent (Son, Lee) slightly edge a transitional Czech side, but Czech physicality and set-pieces keep this close. Neutral venue, slight Korean nudge.",
       "input_hash": "9c98b1c08739b563268871261783c8315e8716effe5aa6c6766c1386a1168575"
+    },
+    {
+      "match_id": "GA-south_korea-czech_republic",
+      "model": "claude-opus-4-8",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.36,
+      "p_draw": 0.28,
+      "p_away": 0.36,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Both sides are evenly matched mid-tier teams. Czech Republic has slightly higher European pedigree, but South Korea's pace and depth (Son, etc.) make this close. Neutral venue assumed; minimal home advantage. Expect a tight, balanced contest with notable draw probability.",
+      "input_hash": "f3cb538a7e2a60da3857fabfc0f1d3408099756d0e4dffff9f89a95884f50f95"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3594,19 +3594,6 @@
       "match_id": "GA-south_korea-czech_republic",
       "model": "deepseek-v4-pro",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.33,
-      "p_draw": 0.3,
-      "p_away": 0.37,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Close group match; South Korea's Son-led attack is dangerous, but Czech Republic's physical European style may edge it. Draw plausible in a tight contest.",
-      "input_hash": "a4e2f7e551e19ec82f23fafb72039220ce34f44cd46ca08525e1a19ba97007e4"
-    },
-    {
-      "match_id": "GA-south_korea-czech_republic",
-      "model": "deepseek-v4-pro",
-      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.385,
       "p_draw": 0.275,
@@ -3618,16 +3605,16 @@
     },
     {
       "match_id": "GA-south_korea-czech_republic",
-      "model": "gemini-3.1-pro-preview",
+      "model": "deepseek-v4-pro",
       "method": "M1",
       "as_of": "T-3h",
-      "p_home": 0.345,
-      "p_draw": 0.285,
+      "p_home": 0.33,
+      "p_draw": 0.3,
       "p_away": 0.37,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "South Korea and the Czech Republic are closely matched in Elo ratings. Korea boasts elite individual talent like Son and Kim, while the Czechs offer physical robustness and tactical discipline. On a neutral ground, this projects as a highly competitive fixture with a slight edge to the European side due to overall squad depth.",
-      "input_hash": "52091965264ab78aa4b3f961149ff4b51f3881e86ca0ac08d844dbbead882072"
+      "rationale": "Close group match; South Korea's Son-led attack is dangerous, but Czech Republic's physical European style may edge it. Draw plausible in a tight contest.",
+      "input_hash": "a4e2f7e551e19ec82f23fafb72039220ce34f44cd46ca08525e1a19ba97007e4"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3641,6 +3628,19 @@
       "p_advance_away": null,
       "rationale": "South Korea and the Czech Republic are closely matched mid-tier sides. South Korea boasts superior top-end talent with players like Son and Kim Min-jae, giving them a marginal edge. However, the Czechs' physical, organized midfield makes this a highly competitive, balanced fixture.",
       "input_hash": "8da779561875fda59390663d82e90e87356d8f7a3c0dc3a735ecb3abd4267f34"
+    },
+    {
+      "match_id": "GA-south_korea-czech_republic",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.345,
+      "p_draw": 0.285,
+      "p_away": 0.37,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "South Korea and the Czech Republic are closely matched in Elo ratings. Korea boasts elite individual talent like Son and Kim, while the Czechs offer physical robustness and tactical discipline. On a neutral ground, this projects as a highly competitive fixture with a slight edge to the European side due to overall squad depth.",
+      "input_hash": "52091965264ab78aa4b3f961149ff4b51f3881e86ca0ac08d844dbbead882072"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3672,19 +3672,6 @@
       "match_id": "GA-south_korea-czech_republic",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.382,
-      "p_draw": 0.287,
-      "p_away": 0.331,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "4a93cec14d34d7710807f2e48419dc62d3dd0db8ed43852d0e1da97a6dc456bb"
-    },
-    {
-      "match_id": "GA-south_korea-czech_republic",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.366,
       "p_draw": 0.301,
@@ -3693,6 +3680,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "49185d53842a520014541740d98ff63e4d54eeed86e55602b38687e1201a9c15"
+    },
+    {
+      "match_id": "GA-south_korea-czech_republic",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.382,
+      "p_draw": 0.287,
+      "p_away": 0.331,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "4a93cec14d34d7710807f2e48419dc62d3dd0db8ed43852d0e1da97a6dc456bb"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3724,19 +3724,6 @@
       "match_id": "GA-south_korea-czech_republic",
       "model": "grok-4.3",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.465,
-      "p_draw": 0.29,
-      "p_away": 0.245,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "South Korea holds a clear FIFA ranking and squad-quality edge over Czech Republic, whose last World Cup was 2006; home venue adds modest boost.",
-      "input_hash": "9d87d1927abdc23b5fe4fb3601f40ad3bf3380613ebd6fd5211f05eaf7fe013d"
-    },
-    {
-      "match_id": "GA-south_korea-czech_republic",
-      "model": "grok-4.3",
-      "method": "M1",
       "as_of": "T-3h",
       "p_home": 0.53,
       "p_draw": 0.28,
@@ -3745,6 +3732,19 @@
       "p_advance_away": null,
       "rationale": "South Korea holds higher FIFA ranking, stronger squad depth via Son and Bundesliga players; Czechs have declined sharply and lack recent elite results. Modest home edge expected.",
       "input_hash": "532043a8fac893a6e66eba9a70cac682689b06c936b4be294bacac60efe26be9"
+    },
+    {
+      "match_id": "GA-south_korea-czech_republic",
+      "model": "grok-4.3",
+      "method": "M1",
+      "as_of": "pre-tournament",
+      "p_home": 0.465,
+      "p_draw": 0.29,
+      "p_away": 0.245,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "South Korea holds a clear FIFA ranking and squad-quality edge over Czech Republic, whose last World Cup was 2006; home venue adds modest boost.",
+      "input_hash": "9d87d1927abdc23b5fe4fb3601f40ad3bf3380613ebd6fd5211f05eaf7fe013d"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3776,19 +3776,6 @@
       "match_id": "GA-south_korea-czech_republic",
       "model": "claude-haiku-4-5",
       "method": "M2",
-      "as_of": "pre-tournament",
-      "p_home": 0.3847,
-      "p_draw": 0.2654,
-      "p_away": 0.3499,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "3788f07acc59483e18cdc09acbe16f4b762b2d55bc25440be7edeb85950869af"
-    },
-    {
-      "match_id": "GA-south_korea-czech_republic",
-      "model": "claude-haiku-4-5",
-      "method": "M2",
       "as_of": "T-3h",
       "p_home": 0.548,
       "p_draw": 0.278,
@@ -3800,16 +3787,16 @@
     },
     {
       "match_id": "GA-south_korea-czech_republic",
-      "model": "claude-opus-4-8",
+      "model": "claude-haiku-4-5",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.45,
-      "p_draw": 0.28,
-      "p_away": 0.27,
+      "as_of": "pre-tournament",
+      "p_home": 0.3847,
+      "p_draw": 0.2654,
+      "p_away": 0.3499,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "South Korea ranked 25th with elite spine (Son, Kim Min-jae, Lee Kang-in) vs Czechia ranked 41st, who qualified via playoff shootouts. Czechia are physical, set-piece threat with strong defense but lower individual ceiling. Korea's quality edge offset by poor opener history (no win since 2010) and Czechia's resilience.",
-      "input_hash": "c87ccc734f0d39168b64a8eee04b9021ec772fd80d7a251d958795d8734cf77a"
+      "rationale": null,
+      "input_hash": "3788f07acc59483e18cdc09acbe16f4b762b2d55bc25440be7edeb85950869af"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3823,6 +3810,19 @@
       "p_advance_away": null,
       "rationale": "Korea (FIFA 25th) slightly higher-ranked than Czechia (39th), unbeaten in Asian qualifying with Son/Lee Kang-in quality. Czechia are physical, set-piece-strong but limited attacking output, reliant on Schick. Neutral venue in Mexico. Close, evenly-matched tie; Korea marginal edge, high draw chance given Czech defensive structure.",
       "input_hash": "f42c413357211e37a85981e4ba956469daa0eb41bdfff608332e17272bf91c87"
+    },
+    {
+      "match_id": "GA-south_korea-czech_republic",
+      "model": "claude-opus-4-8",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.45,
+      "p_draw": 0.28,
+      "p_away": 0.27,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "South Korea ranked 25th with elite spine (Son, Kim Min-jae, Lee Kang-in) vs Czechia ranked 41st, who qualified via playoff shootouts. Czechia are physical, set-piece threat with strong defense but lower individual ceiling. Korea's quality edge offset by poor opener history (no win since 2010) and Czechia's resilience.",
+      "input_hash": "c87ccc734f0d39168b64a8eee04b9021ec772fd80d7a251d958795d8734cf77a"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3880,19 +3880,6 @@
       "match_id": "GA-south_korea-czech_republic",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.395,
-      "p_draw": 0.316,
-      "p_away": 0.289,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "a999f85fc69bd377ac224dcc99e65f454a91f55620f17d32ab93f5aae97a9ed6"
-    },
-    {
-      "match_id": "GA-south_korea-czech_republic",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.364,
       "p_draw": 0.305,
@@ -3901,6 +3888,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "5ca3e960589b8a779798834cd8657cfca019f11fa1d8d3ac552b9be015ae5fed"
+    },
+    {
+      "match_id": "GA-south_korea-czech_republic",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.395,
+      "p_draw": 0.316,
+      "p_away": 0.289,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "a999f85fc69bd377ac224dcc99e65f454a91f55620f17d32ab93f5aae97a9ed6"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3932,19 +3932,6 @@
       "match_id": "GA-south_korea-czech_republic",
       "model": "grok-4.3",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.47,
-      "p_draw": 0.29,
-      "p_away": 0.24,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "SK (25th FIFA) outrank Czechia (40th) with superior squad depth; favored at neutral venue in Group A opener.",
-      "input_hash": "9b8e4bbcad15df61f1caa8d08365e38f19cb34231af8813a5999c64e4d2841c8"
-    },
-    {
-      "match_id": "GA-south_korea-czech_republic",
-      "model": "grok-4.3",
-      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.49,
       "p_draw": 0.28,
@@ -3953,6 +3940,19 @@
       "p_advance_away": null,
       "rationale": "SK ranked 25th, Czech ~39th; SK's superior squad (Son, Kim Min-jae) gives edge on neutral ground despite Czech's recent uptick.",
       "input_hash": "17865cabd5660032cfb980d6e3b0b3446bc84d02c5d79002c77daa59bb396b1f"
+    },
+    {
+      "match_id": "GA-south_korea-czech_republic",
+      "model": "grok-4.3",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.47,
+      "p_draw": 0.29,
+      "p_away": 0.24,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "SK (25th FIFA) outrank Czechia (40th) with superior squad depth; favored at neutral venue in Group A opener.",
+      "input_hash": "9b8e4bbcad15df61f1caa8d08365e38f19cb34231af8813a5999c64e4d2841c8"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -3984,19 +3984,6 @@
       "match_id": "GA-south_korea-czech_republic",
       "model": "claude-haiku-4-5",
       "method": "M3",
-      "as_of": "T-3h",
-      "p_home": 0.32291021807388376,
-      "p_draw": 0.27630813521957986,
-      "p_away": 0.40078164670653627,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "53890320e2c17323d5c698c955edd7a37e6918d077903f25e546ae5abe0d5ebc"
-    },
-    {
-      "match_id": "GA-south_korea-czech_republic",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
       "as_of": "pre-tournament",
       "p_home": 0.32291021807388376,
       "p_draw": 0.27630813521957986,
@@ -4005,6 +3992,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "5514c4e990b6230b1d2e40a49374d9ffd79fedf6bc5c8f6c2460a282b4c46d9a"
+    },
+    {
+      "match_id": "GA-south_korea-czech_republic",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.32291021807388376,
+      "p_draw": 0.27630813521957986,
+      "p_away": 0.40078164670653627,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "53890320e2c17323d5c698c955edd7a37e6918d077903f25e546ae5abe0d5ebc"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -4114,19 +4114,6 @@
       "match_id": "GA-south_korea-czech_republic",
       "model": "gemini-3.5-flash",
       "method": "M3",
-      "as_of": "T-3h",
-      "p_home": 0.3821680167483196,
-      "p_draw": 0.2773563460608483,
-      "p_away": 0.3404756371908322,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "a3d95c7ccdaac80bc3d0c4e31ebfff7bc71b8f3a4af3e97c4ad98265bb60f941"
-    },
-    {
-      "match_id": "GA-south_korea-czech_republic",
-      "model": "gemini-3.5-flash",
-      "method": "M3",
       "as_of": "pre-tournament",
       "p_home": 0.3821680167483196,
       "p_draw": 0.2773563460608483,
@@ -4138,16 +4125,16 @@
     },
     {
       "match_id": "GA-south_korea-czech_republic",
-      "model": "gpt-5.4-mini-2026-03-17",
+      "model": "gemini-3.5-flash",
       "method": "M3",
       "as_of": "T-3h",
-      "p_home": 0.4685877143722519,
-      "p_draw": 0.26758947981663456,
-      "p_away": 0.2638228058111135,
+      "p_home": 0.3821680167483196,
+      "p_draw": 0.2773563460608483,
+      "p_away": 0.3404756371908322,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "4646caef1138ef170bba46a80e319036b4f2033b605f76ae36c4f5c4e7c0c9ad"
+      "input_hash": "a3d95c7ccdaac80bc3d0c4e31ebfff7bc71b8f3a4af3e97c4ad98265bb60f941"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -4161,6 +4148,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "6dc29e80f04de2f6436c7991a2a4137eee408e618d378f5eb3d9aa366034a087"
+    },
+    {
+      "match_id": "GA-south_korea-czech_republic",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.4685877143722519,
+      "p_draw": 0.26758947981663456,
+      "p_away": 0.2638228058111135,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "4646caef1138ef170bba46a80e319036b4f2033b605f76ae36c4f5c4e7c0c9ad"
     },
     {
       "match_id": "GA-south_korea-czech_republic",
@@ -4699,19 +4699,6 @@
       "match_id": "GB-canada-bosnia_&_herzegovina",
       "model": "claude-fable-5",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.47,
-      "p_draw": 0.27,
-      "p_away": 0.26,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Canada are co-hosts with home advantage, a higher FIFA ranking, and a stronger squad core (Davies, David, Buchanan). Bosnia rely heavily on Dzeko's aging influence and have inconsistent qualifying form, but possess physicality and counterattacking threat. Canada modest favourites, sizable draw probability typical of group-stage matches.",
-      "input_hash": "944ed9362d5c2fb7e5c12086b64ea5c69542c429bc9b47220c123baccb2d3436"
-    },
-    {
-      "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "claude-fable-5",
-      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.45,
       "p_draw": 0.27,
@@ -4723,16 +4710,16 @@
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "claude-haiku-4-5",
+      "model": "claude-fable-5",
       "method": "M1",
       "as_of": "T-3h",
-      "p_home": 0.38,
-      "p_draw": 0.28,
-      "p_away": 0.34,
+      "p_home": 0.47,
+      "p_draw": 0.27,
+      "p_away": 0.26,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "d1ceff2c1a3ab8dae966a8de4948da98163f36575f6bb190f8488f7d6f09006a"
+      "rationale": "Canada are co-hosts with home advantage, a higher FIFA ranking, and a stronger squad core (Davies, David, Buchanan). Bosnia rely heavily on Dzeko's aging influence and have inconsistent qualifying form, but possess physicality and counterattacking threat. Canada modest favourites, sizable draw probability typical of group-stage matches.",
+      "input_hash": "944ed9362d5c2fb7e5c12086b64ea5c69542c429bc9b47220c123baccb2d3436"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -4746,6 +4733,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "a050b5bd5d8339318f883b40084bc4bb6657c3b26d3c495926dec92cb35a034b"
+    },
+    {
+      "match_id": "GB-canada-bosnia_&_herzegovina",
+      "model": "claude-haiku-4-5",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.38,
+      "p_draw": 0.28,
+      "p_away": 0.34,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "d1ceff2c1a3ab8dae966a8de4948da98163f36575f6bb190f8488f7d6f09006a"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -4777,19 +4777,6 @@
       "match_id": "GB-canada-bosnia_&_herzegovina",
       "model": "deepseek-v4-flash",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.38,
-      "p_draw": 0.3,
-      "p_away": 0.32,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Canada has improved but Bosnia is experienced; match likely close with slight edge to Canada.",
-      "input_hash": "053d6ca298b2075d1fc3a0e532ebc7a5320321fd5aea496c813b971d1cac15a6"
-    },
-    {
-      "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "deepseek-v4-flash",
-      "method": "M1",
       "as_of": "T-3h",
       "p_home": 0.42,
       "p_draw": 0.3,
@@ -4801,16 +4788,16 @@
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "deepseek-v4-pro",
+      "model": "deepseek-v4-flash",
       "method": "M1",
       "as_of": "pre-tournament",
-      "p_home": 0.563,
-      "p_draw": 0.239,
-      "p_away": 0.198,
+      "p_home": 0.38,
+      "p_draw": 0.3,
+      "p_away": 0.32,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "968c66c7aa015f3fb7fc8974abfa306b7a97c792bf50c11c45409f8d0edfcbe6"
+      "rationale": "Canada has improved but Bosnia is experienced; match likely close with slight edge to Canada.",
+      "input_hash": "053d6ca298b2075d1fc3a0e532ebc7a5320321fd5aea496c813b971d1cac15a6"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -4827,16 +4814,16 @@
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "gemini-3.1-pro-preview",
+      "model": "deepseek-v4-pro",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.605,
-      "p_draw": 0.232,
-      "p_away": 0.163,
+      "as_of": "pre-tournament",
+      "p_home": 0.563,
+      "p_draw": 0.239,
+      "p_away": 0.198,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Canada benefits from significant host advantage and boasts top-tier talent like Davies and David, proven by their Copa America semi-final run. Bosnia has declined sharply, missing Euro 2024 with an aging squad and poor recent results. Canada's pace and home support make them clear favorites against a struggling European side.",
-      "input_hash": "348a75be3bd61160ca2f5e1cc3de934f74b3d72d33497aace184d714eaa99077"
+      "rationale": null,
+      "input_hash": "968c66c7aa015f3fb7fc8974abfa306b7a97c792bf50c11c45409f8d0edfcbe6"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -4853,16 +4840,16 @@
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "gemini-3.5-flash",
+      "model": "gemini-3.1-pro-preview",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.564,
-      "p_draw": 0.242,
-      "p_away": 0.194,
+      "as_of": "T-3h",
+      "p_home": 0.605,
+      "p_draw": 0.232,
+      "p_away": 0.163,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Canada benefits from home-field advantage as co-hosts and boasts a more dynamic squad featuring elite talents like Davies and David. Bosnia & Herzegovina has struggled in recent UEFA campaigns, showing defensive vulnerabilities and an aging core, making Canada the clear favorite in this group stage matchup.",
-      "input_hash": "7d5166542afb4b4fdd6e40943cfebd14e7a9df0e1dece50a3631ea675a2dc142"
+      "rationale": "Canada benefits from significant host advantage and boasts top-tier talent like Davies and David, proven by their Copa America semi-final run. Bosnia has declined sharply, missing Euro 2024 with an aging squad and poor recent results. Canada's pace and home support make them clear favorites against a struggling European side.",
+      "input_hash": "348a75be3bd61160ca2f5e1cc3de934f74b3d72d33497aace184d714eaa99077"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -4879,16 +4866,16 @@
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "gpt-5.4-mini-2026-03-17",
+      "model": "gemini-3.5-flash",
       "method": "M1",
       "as_of": "pre-tournament",
-      "p_home": 0.526,
-      "p_draw": 0.273,
-      "p_away": 0.201,
+      "p_home": 0.564,
+      "p_draw": 0.242,
+      "p_away": 0.194,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "c4b80dbdb4942d8ee03ddb2467f11a688a58ed7f3f537fbf37ad16ca3e2f4b35"
+      "rationale": "Canada benefits from home-field advantage as co-hosts and boasts a more dynamic squad featuring elite talents like Davies and David. Bosnia & Herzegovina has struggled in recent UEFA campaigns, showing defensive vulnerabilities and an aging core, making Canada the clear favorite in this group stage matchup.",
+      "input_hash": "7d5166542afb4b4fdd6e40943cfebd14e7a9df0e1dece50a3631ea675a2dc142"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -4902,6 +4889,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "6c2ffd9824ab3482fa0214e93fb877f7abb7b37f6cd1efdeb6edfd81f6348fbd"
+    },
+    {
+      "match_id": "GB-canada-bosnia_&_herzegovina",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M1",
+      "as_of": "pre-tournament",
+      "p_home": 0.526,
+      "p_draw": 0.273,
+      "p_away": 0.201,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "c4b80dbdb4942d8ee03ddb2467f11a688a58ed7f3f537fbf37ad16ca3e2f4b35"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -4959,19 +4959,6 @@
       "match_id": "GB-canada-bosnia_&_herzegovina",
       "model": "claude-fable-5",
       "method": "M2",
-      "as_of": "pre-tournament",
-      "p_home": 0.54,
-      "p_draw": 0.26,
-      "p_away": 0.2,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "aeccc7148b04e5e73b0fa612db5befc1a4ff0e1b24b4d15a750c8a02c30b5658"
-    },
-    {
-      "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "claude-fable-5",
-      "method": "M2",
       "as_of": "T-3h",
       "p_home": 0.53,
       "p_draw": 0.27,
@@ -4980,6 +4967,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "56407280a5cb8c31cf56440dfca6b5e8fbc1c3cb49c790ae66bad2a491789298"
+    },
+    {
+      "match_id": "GB-canada-bosnia_&_herzegovina",
+      "model": "claude-fable-5",
+      "method": "M2",
+      "as_of": "pre-tournament",
+      "p_home": 0.54,
+      "p_draw": 0.26,
+      "p_away": 0.2,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "aeccc7148b04e5e73b0fa612db5befc1a4ff0e1b24b4d15a750c8a02c30b5658"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -5011,19 +5011,6 @@
       "match_id": "GB-canada-bosnia_&_herzegovina",
       "model": "claude-opus-4-8",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.46,
-      "p_draw": 0.27,
-      "p_away": 0.27,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Canada hosts the opener in Toronto with a stronger, higher-ranked squad (Davies, J. David) versus Bosnia's aging, 65th-ranked side reliant on 40-year-old Dzeko. Home advantage plus quality edge favor Canada, but Bosnia's resilience and physical 4-4-2 keep draw/upset live.",
-      "input_hash": "b90c24fce88d8013a01c2eeb2c88e1fb70a3ee307f9f3f9a17d769a5eb827939"
-    },
-    {
-      "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "claude-opus-4-8",
-      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.42,
       "p_draw": 0.28,
@@ -5035,16 +5022,16 @@
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "gemini-3.1-pro-preview",
+      "model": "claude-opus-4-8",
       "method": "M2",
-      "as_of": "pre-tournament",
-      "p_home": 0.624,
-      "p_draw": 0.221,
-      "p_away": 0.155,
+      "as_of": "T-3h",
+      "p_home": 0.46,
+      "p_draw": 0.27,
+      "p_away": 0.27,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Canada enjoys a massive home-field advantage as co-hosts and superior form, highlighted by their 2024 Copa America semi-final run. Bosnia has regressed in recent UEFA campaigns, struggling with an aging squad. Canada's dynamic pace and attacking quality make them heavy favorites in this group stage clash.",
-      "input_hash": "54cad06daa40626c9ac1f7caf4cd76284a1b7133c1ded84dac3d684f1d49af95"
+      "rationale": "Canada hosts the opener in Toronto with a stronger, higher-ranked squad (Davies, J. David) versus Bosnia's aging, 65th-ranked side reliant on 40-year-old Dzeko. Home advantage plus quality edge favor Canada, but Bosnia's resilience and physical 4-4-2 keep draw/upset live.",
+      "input_hash": "b90c24fce88d8013a01c2eeb2c88e1fb70a3ee307f9f3f9a17d769a5eb827939"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -5058,6 +5045,19 @@
       "p_advance_away": null,
       "rationale": "Canada boasts a dynamic squad featuring Davies and David, plus significant home advantage as co-hosts. Bosnia has struggled recently, dealing with an aging core and transitional defense. With superior attacking talent and passionate home support, Canada are clear favorites, though World Cup pressure could slightly elevate draw chances.",
       "input_hash": "8b8103e6fb828d95e8b66d9eed3ac3e00e4ed0dafdcadfe24f87691dc7b74e6a"
+    },
+    {
+      "match_id": "GB-canada-bosnia_&_herzegovina",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M2",
+      "as_of": "pre-tournament",
+      "p_home": 0.624,
+      "p_draw": 0.221,
+      "p_away": 0.155,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Canada enjoys a massive home-field advantage as co-hosts and superior form, highlighted by their 2024 Copa America semi-final run. Bosnia has regressed in recent UEFA campaigns, struggling with an aging squad. Canada's dynamic pace and attacking quality make them heavy favorites in this group stage clash.",
+      "input_hash": "54cad06daa40626c9ac1f7caf4cd76284a1b7133c1ded84dac3d684f1d49af95"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -5089,19 +5089,6 @@
       "match_id": "GB-canada-bosnia_&_herzegovina",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M2",
-      "as_of": "pre-tournament",
-      "p_home": 0.455,
-      "p_draw": 0.285,
-      "p_away": 0.26,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "bac3357fb829daf4eb31a5a6ae811d2fbda020932efbee011f8cf7537a8a158c"
-    },
-    {
-      "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M2",
       "as_of": "T-3h",
       "p_home": 0.494,
       "p_draw": 0.282,
@@ -5110,6 +5097,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "5b6a8523aa87bc69e13e59a396a9962358bf15a11e91ffcf88f51f6a604fccbf"
+    },
+    {
+      "match_id": "GB-canada-bosnia_&_herzegovina",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M2",
+      "as_of": "pre-tournament",
+      "p_home": 0.455,
+      "p_draw": 0.285,
+      "p_away": 0.26,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "bac3357fb829daf4eb31a5a6ae811d2fbda020932efbee011f8cf7537a8a158c"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -5141,19 +5141,6 @@
       "match_id": "GB-canada-bosnia_&_herzegovina",
       "model": "grok-4.3",
       "method": "M2",
-      "as_of": "pre-tournament",
-      "p_home": 0.59,
-      "p_draw": 0.255,
-      "p_away": 0.155,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Canada (FIFA ~30) hosts with superior squad (Davies, David) vs Bosnia (~65) relying on Dzeko experience; hosts hold clear edge but European side dangerous on counter.",
-      "input_hash": "31d9697937303139bfb012c3a8162331f8d9096b9e93d016c7060ef9978722d0"
-    },
-    {
-      "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "grok-4.3",
-      "method": "M2",
       "as_of": "T-3h",
       "p_home": 0.53,
       "p_draw": 0.28,
@@ -5165,16 +5152,16 @@
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "claude-fable-5",
-      "method": "M3",
+      "model": "grok-4.3",
+      "method": "M2",
       "as_of": "pre-tournament",
-      "p_home": 0.4587008204333116,
-      "p_draw": 0.26246688333679546,
-      "p_away": 0.27883229622989303,
+      "p_home": 0.59,
+      "p_draw": 0.255,
+      "p_away": 0.155,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "ca0910cc6163002cadb3336fc771fd6a0f721dc4bf6058289c11bad2363f652a"
+      "rationale": "Canada (FIFA ~30) hosts with superior squad (Davies, David) vs Bosnia (~65) relying on Dzeko experience; hosts hold clear edge but European side dangerous on counter.",
+      "input_hash": "31d9697937303139bfb012c3a8162331f8d9096b9e93d016c7060ef9978722d0"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -5188,6 +5175,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "7e9a9b3e223a3b3a4afd7457a3bf462356a32b33e8fda45c945de91a9a69306f"
+    },
+    {
+      "match_id": "GB-canada-bosnia_&_herzegovina",
+      "model": "claude-fable-5",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.4587008204333116,
+      "p_draw": 0.26246688333679546,
+      "p_away": 0.27883229622989303,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "ca0910cc6163002cadb3336fc771fd6a0f721dc4bf6058289c11bad2363f652a"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -5219,19 +5219,6 @@
       "match_id": "GB-canada-bosnia_&_herzegovina",
       "model": "claude-opus-4-8",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.46988740279914254,
-      "p_draw": 0.2606275627465069,
-      "p_away": 0.26948503445435057,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "4d0fa1ec40f11da9456df93534a54d9dc8d84e4206ec4f9bc7494846713dddd9"
-    },
-    {
-      "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "claude-opus-4-8",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.46988740279914254,
       "p_draw": 0.2606275627465069,
@@ -5240,6 +5227,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "95ed6eecc84c66008b3102e0fca8fe7f88504905c3901ffbef0dfc1f2d70d026"
+    },
+    {
+      "match_id": "GB-canada-bosnia_&_herzegovina",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.46988740279914254,
+      "p_draw": 0.2606275627465069,
+      "p_away": 0.26948503445435057,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "4d0fa1ec40f11da9456df93534a54d9dc8d84e4206ec4f9bc7494846713dddd9"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -5375,19 +5375,6 @@
       "match_id": "GB-canada-bosnia_&_herzegovina",
       "model": "gpt-5.5-2026-04-23",
       "method": "M3",
-      "as_of": "T-3h",
-      "p_home": 0.4551334281080789,
-      "p_draw": 0.2630143882691105,
-      "p_away": 0.28185218362281067,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "92b436de85b2fc89cbe5241230ec98c1b280a0d50c2feab6fd8134f7f93560ff"
-    },
-    {
-      "match_id": "GB-canada-bosnia_&_herzegovina",
-      "model": "gpt-5.5-2026-04-23",
-      "method": "M3",
       "as_of": "pre-tournament",
       "p_home": 0.4551334281080789,
       "p_draw": 0.2630143882691105,
@@ -5396,6 +5383,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "948f14bb17677b99ddc55d9ed181f044bfa0a8b9da262ee1e70f169644f227df"
+    },
+    {
+      "match_id": "GB-canada-bosnia_&_herzegovina",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.4551334281080789,
+      "p_draw": 0.2630143882691105,
+      "p_away": 0.28185218362281067,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "92b436de85b2fc89cbe5241230ec98c1b280a0d50c2feab6fd8134f7f93560ff"
     },
     {
       "match_id": "GB-canada-bosnia_&_herzegovina",
@@ -5830,19 +5830,6 @@
       "match_id": "GB-qatar-switzerland",
       "model": null,
       "method": "B1",
-      "as_of": "T-3h",
-      "p_home": 0.10364321219214076,
-      "p_draw": 0.18551901658614292,
-      "p_away": 0.7108377712217163,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "781a5ddf929c77f34b0e85df67c16f1510e3e8a4e90b51b0748c1d28b1b9063a"
-    },
-    {
-      "match_id": "GB-qatar-switzerland",
-      "model": null,
-      "method": "B1",
       "as_of": "pre-tournament",
       "p_home": 0.10364321219214076,
       "p_draw": 0.18551901658614292,
@@ -5851,6 +5838,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "45b1969b2cd5ef7220703c617750ed5b9ba0c6c8cfac2a871afc090d36ec8e84"
+    },
+    {
+      "match_id": "GB-qatar-switzerland",
+      "model": null,
+      "method": "B1",
+      "as_of": "T-3h",
+      "p_home": 0.10364321219214076,
+      "p_draw": 0.18551901658614292,
+      "p_away": 0.7108377712217163,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "781a5ddf929c77f34b0e85df67c16f1510e3e8a4e90b51b0748c1d28b1b9063a"
     },
     {
       "match_id": "GB-qatar-switzerland",
@@ -5947,19 +5947,6 @@
       "match_id": "GB-qatar-switzerland",
       "model": "claude-opus-4-8",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.18,
-      "p_draw": 0.24,
-      "p_away": 0.58,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Switzerland is a solid European side with significantly higher quality and ranking than Qatar. Despite Qatar's host-region familiarity, Switzerland should be clear favorites, though group-stage upsets remain possible.",
-      "input_hash": "03b957fc3e810abe04b1edef02d06ec5a8c5335dbeb7532156bb751a2519da70"
-    },
-    {
-      "match_id": "GB-qatar-switzerland",
-      "model": "claude-opus-4-8",
-      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.2,
       "p_draw": 0.25,
@@ -5968,6 +5955,19 @@
       "p_advance_away": null,
       "rationale": "Switzerland are a solid European side ranked well above Qatar, with better squad depth and quality. Qatar improved on home soil historically but face a clear talent gap. Switzerland favored, though group-stage variance and Qatar's organization keep some draw chance.",
       "input_hash": "44b460d9d47d23a6453bd5db9e38203898987ce808b351283d6500a92516180d"
+    },
+    {
+      "match_id": "GB-qatar-switzerland",
+      "model": "claude-opus-4-8",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.18,
+      "p_draw": 0.24,
+      "p_away": 0.58,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Switzerland is a solid European side with significantly higher quality and ranking than Qatar. Despite Qatar's host-region familiarity, Switzerland should be clear favorites, though group-stage upsets remain possible.",
+      "input_hash": "03b957fc3e810abe04b1edef02d06ec5a8c5335dbeb7532156bb751a2519da70"
     },
     {
       "match_id": "GB-qatar-switzerland",
@@ -6051,19 +6051,6 @@
       "match_id": "GB-qatar-switzerland",
       "model": "gemini-3.5-flash",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.174,
-      "p_draw": 0.241,
-      "p_away": 0.585,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Switzerland boasts a vastly superior squad and consistent tournament pedigree compared to Qatar. On neutral ground, the Swiss are strong favorites, though Qatar's recent continental success suggests they can be competitive. Expect Switzerland to control possession and create higher-quality chances.",
-      "input_hash": "cbae474e3a4206c319e1a540e1f30dec4227588b6296e396af91e617e88346a9"
-    },
-    {
-      "match_id": "GB-qatar-switzerland",
-      "model": "gemini-3.5-flash",
-      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.164,
       "p_draw": 0.231,
@@ -6075,16 +6062,16 @@
     },
     {
       "match_id": "GB-qatar-switzerland",
-      "model": "gpt-5.4-mini-2026-03-17",
+      "model": "gemini-3.5-flash",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.19,
-      "p_draw": 0.28,
-      "p_away": 0.53,
+      "as_of": "T-3h",
+      "p_home": 0.174,
+      "p_draw": 0.241,
+      "p_away": 0.585,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "2e4bec7e80f7331b18a974051f5efb9e1f12490aeed23cc80c8a890684fe901b"
+      "rationale": "Switzerland boasts a vastly superior squad and consistent tournament pedigree compared to Qatar. On neutral ground, the Swiss are strong favorites, though Qatar's recent continental success suggests they can be competitive. Expect Switzerland to control possession and create higher-quality chances.",
+      "input_hash": "cbae474e3a4206c319e1a540e1f30dec4227588b6296e396af91e617e88346a9"
     },
     {
       "match_id": "GB-qatar-switzerland",
@@ -6101,16 +6088,16 @@
     },
     {
       "match_id": "GB-qatar-switzerland",
-      "model": "gpt-5.5-2026-04-23",
+      "model": "gpt-5.4-mini-2026-03-17",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.146,
-      "p_draw": 0.239,
-      "p_away": 0.615,
+      "as_of": "pre-tournament",
+      "p_home": 0.19,
+      "p_draw": 0.28,
+      "p_away": 0.53,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "d44585f0b5516d06d3de5a71fb82a38f5e68799440ef0071708460507188e2b9"
+      "input_hash": "2e4bec7e80f7331b18a974051f5efb9e1f12490aeed23cc80c8a890684fe901b"
     },
     {
       "match_id": "GB-qatar-switzerland",
@@ -6127,16 +6114,16 @@
     },
     {
       "match_id": "GB-qatar-switzerland",
-      "model": "grok-4.3",
+      "model": "gpt-5.5-2026-04-23",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.17,
-      "p_draw": 0.24,
-      "p_away": 0.59,
+      "as_of": "T-3h",
+      "p_home": 0.146,
+      "p_draw": 0.239,
+      "p_away": 0.615,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Switzerland rank ~30 places higher with superior squad depth and experience; Qatar struggled badly in 2022 and remain the weakest side in the group.",
-      "input_hash": "1f615575b68ecb1dd0a3ab208e986a237f0dddc9262ef74623d10676964b4702"
+      "rationale": null,
+      "input_hash": "d44585f0b5516d06d3de5a71fb82a38f5e68799440ef0071708460507188e2b9"
     },
     {
       "match_id": "GB-qatar-switzerland",
@@ -6150,6 +6137,19 @@
       "p_advance_away": null,
       "rationale": "Switzerland ranks ~30 places higher with superior squad depth and experience; Qatar rarely competes at this level.",
       "input_hash": "9925732ee609f0a891cd6259a00b410291dc95525689a5b804db8f6ff7e8ad98"
+    },
+    {
+      "match_id": "GB-qatar-switzerland",
+      "model": "grok-4.3",
+      "method": "M1",
+      "as_of": "pre-tournament",
+      "p_home": 0.17,
+      "p_draw": 0.24,
+      "p_away": 0.59,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Switzerland rank ~30 places higher with superior squad depth and experience; Qatar struggled badly in 2022 and remain the weakest side in the group.",
+      "input_hash": "1f615575b68ecb1dd0a3ab208e986a237f0dddc9262ef74623d10676964b4702"
     },
     {
       "match_id": "GB-qatar-switzerland",
@@ -6194,19 +6194,6 @@
       "match_id": "GB-qatar-switzerland",
       "model": "claude-opus-4-8",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.18,
-      "p_draw": 0.25,
-      "p_away": 0.57,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Switzerland (~#20 FIFA) clearly outclass Qatar (#56). Swiss dominated UEFA qualifying with 4 wins/2 draws, reached Euro 2024 QF, and are reliable last-16 operators. Qatar's recent form is poor: winless in 5, scoring just once. Despite Qatar fielding similar level squad value last in tournament. Swiss strongly favored.",
-      "input_hash": "461750bd8dcc4610492e43b95ac2d89ba99afdae9c07813ca9acc8f8aff10a25"
-    },
-    {
-      "match_id": "GB-qatar-switzerland",
-      "model": "claude-opus-4-8",
-      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.13,
       "p_draw": 0.21,
@@ -6215,6 +6202,19 @@
       "p_advance_away": null,
       "rationale": "Swiss #19 vs Qatar #57; Switzerland are a deep, defensively solid European side unbeaten in qualifying, strongly favored (market ~2/9). Qatar's recent form is poor (Arab Cup exit, scoreless vs Palestine). Class gap is significant, though tournament openers can be cagey, leaving modest draw/upset chances.",
       "input_hash": "c5ca6436d5e6d03d10bec3938c43911967c2981930f7c8cb4514e2e6693bc247"
+    },
+    {
+      "match_id": "GB-qatar-switzerland",
+      "model": "claude-opus-4-8",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.18,
+      "p_draw": 0.25,
+      "p_away": 0.57,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Switzerland (~#20 FIFA) clearly outclass Qatar (#56). Swiss dominated UEFA qualifying with 4 wins/2 draws, reached Euro 2024 QF, and are reliable last-16 operators. Qatar's recent form is poor: winless in 5, scoring just once. Despite Qatar fielding similar level squad value last in tournament. Swiss strongly favored.",
+      "input_hash": "461750bd8dcc4610492e43b95ac2d89ba99afdae9c07813ca9acc8f8aff10a25"
     },
     {
       "match_id": "GB-qatar-switzerland",
@@ -6298,19 +6298,6 @@
       "match_id": "GB-qatar-switzerland",
       "model": "gpt-5.5-2026-04-23",
       "method": "M2",
-      "as_of": "pre-tournament",
-      "p_home": 0.118,
-      "p_draw": 0.226,
-      "p_away": 0.656,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "857aa2e0677617b48491f2a41fed4efd25b8f0b7fe7c94ef817e5bd73e03c371"
-    },
-    {
-      "match_id": "GB-qatar-switzerland",
-      "model": "gpt-5.5-2026-04-23",
-      "method": "M2",
       "as_of": "T-3h",
       "p_home": 0.063,
       "p_draw": 0.138,
@@ -6319,6 +6306,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "cd03d176befba2018ff2e22d41330ec52235661e16e9ae90ffef43621728aedf"
+    },
+    {
+      "match_id": "GB-qatar-switzerland",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M2",
+      "as_of": "pre-tournament",
+      "p_home": 0.118,
+      "p_draw": 0.226,
+      "p_away": 0.656,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "857aa2e0677617b48491f2a41fed4efd25b8f0b7fe7c94ef817e5bd73e03c371"
     },
     {
       "match_id": "GB-qatar-switzerland",
@@ -6480,19 +6480,6 @@
       "match_id": "GB-qatar-switzerland",
       "model": "gemini-3.1-pro-preview",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.19969868026124346,
-      "p_draw": 0.2472265166229397,
-      "p_away": 0.5530748031158169,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "93cd7c30cecbdc874dfebcf17cd5558847ea3d7b17339153ff92faca6edcd876"
-    },
-    {
-      "match_id": "GB-qatar-switzerland",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.19969868026124346,
       "p_draw": 0.2472265166229397,
@@ -6501,6 +6488,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "34843b0ea76a09eaa2a450c8d3f8ec690bda257bb76f18401fea9a8c35293b21"
+    },
+    {
+      "match_id": "GB-qatar-switzerland",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.19969868026124346,
+      "p_draw": 0.2472265166229397,
+      "p_away": 0.5530748031158169,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "93cd7c30cecbdc874dfebcf17cd5558847ea3d7b17339153ff92faca6edcd876"
     },
     {
       "match_id": "GB-qatar-switzerland",
@@ -6558,19 +6558,6 @@
       "match_id": "GB-qatar-switzerland",
       "model": "gpt-5.5-2026-04-23",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.20317590993860596,
-      "p_draw": 0.24867697757783896,
-      "p_away": 0.5481471124835551,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "f0a89b380cfd4ae04d451644d48b98bdbbfae8fbf1a7c36194d10b8619825c5e"
-    },
-    {
-      "match_id": "GB-qatar-switzerland",
-      "model": "gpt-5.5-2026-04-23",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.20317590993860596,
       "p_draw": 0.24867697757783896,
@@ -6582,16 +6569,16 @@
     },
     {
       "match_id": "GB-qatar-switzerland",
-      "model": "grok-4.3",
+      "model": "gpt-5.5-2026-04-23",
       "method": "M3",
-      "as_of": "T-3h",
-      "p_home": 0.16559825860371669,
-      "p_draw": 0.23050303269860778,
-      "p_away": 0.6038987086976756,
+      "as_of": "pre-tournament",
+      "p_home": 0.20317590993860596,
+      "p_draw": 0.24867697757783896,
+      "p_away": 0.5481471124835551,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "d4dd1ad37033e28ca0eacc0e026b3aecea662cba041ef5b085590abd0e76a63d"
+      "input_hash": "f0a89b380cfd4ae04d451644d48b98bdbbfae8fbf1a7c36194d10b8619825c5e"
     },
     {
       "match_id": "GB-qatar-switzerland",
@@ -6605,6 +6592,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "864b34d6c165677126a5dc8700895e7ffebfcc525ec2772f32e665ed3f803333"
+    },
+    {
+      "match_id": "GB-qatar-switzerland",
+      "model": "grok-4.3",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.16559825860371669,
+      "p_draw": 0.23050303269860778,
+      "p_away": 0.6038987086976756,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "d4dd1ad37033e28ca0eacc0e026b3aecea662cba041ef5b085590abd0e76a63d"
     },
     {
       "match_id": "GB-switzerland-bosnia_&_herzegovina",
@@ -7845,19 +7845,6 @@
       "match_id": "GC-brazil-morocco",
       "model": null,
       "method": "B2",
-      "as_of": "T-3h",
-      "p_home": 0.5194903558076226,
-      "p_draw": 0.25648620882349227,
-      "p_away": 0.2240234353688851,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "024ddcc9f0070d3f3a3b91f1a9942993c61f77ae1adc5328dee8198289f83152"
-    },
-    {
-      "match_id": "GC-brazil-morocco",
-      "model": null,
-      "method": "B2",
       "as_of": "pre-tournament",
       "p_home": 0.5194903558076226,
       "p_draw": 0.25648620882349227,
@@ -7870,15 +7857,15 @@
     {
       "match_id": "GC-brazil-morocco",
       "model": null,
-      "method": "ENS",
-      "as_of": "pre-tournament",
-      "p_home": 0.585,
-      "p_draw": 0.242,
-      "p_away": 0.173,
+      "method": "B2",
+      "as_of": "T-3h",
+      "p_home": 0.5194903558076226,
+      "p_draw": 0.25648620882349227,
+      "p_away": 0.2240234353688851,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "9f0867813b7c3b99452d7beb84194f42751ea395d76baaadc63877167501aa29"
+      "input_hash": "024ddcc9f0070d3f3a3b91f1a9942993c61f77ae1adc5328dee8198289f83152"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -7892,6 +7879,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "78c4e3da9368ca732f8ad0c0fad2a3c6d91f675c1b0bbfb2930a396f5e321feb"
+    },
+    {
+      "match_id": "GC-brazil-morocco",
+      "model": null,
+      "method": "ENS",
+      "as_of": "pre-tournament",
+      "p_home": 0.585,
+      "p_draw": 0.242,
+      "p_away": 0.173,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "9f0867813b7c3b99452d7beb84194f42751ea395d76baaadc63877167501aa29"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -7936,19 +7936,6 @@
       "match_id": "GC-brazil-morocco",
       "model": "claude-opus-4-8",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.55,
-      "p_draw": 0.26,
-      "p_away": 0.19,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Brazil's superior squad depth and attacking talent make them favorites, but Morocco's strong defensive organization and recent rise (2022 semifinalists) provide real resistance, raising draw and upset chances.",
-      "input_hash": "bb3c9f68940f8d76fb8eaafaa084425e4e47e4e5055ceecd50dacbd57cae60a6"
-    },
-    {
-      "match_id": "GC-brazil-morocco",
-      "model": "claude-opus-4-8",
-      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.58,
       "p_draw": 0.25,
@@ -7960,16 +7947,16 @@
     },
     {
       "match_id": "GC-brazil-morocco",
-      "model": "deepseek-v4-flash",
+      "model": "claude-opus-4-8",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.65,
-      "p_draw": 0.22,
-      "p_away": 0.13,
+      "as_of": "T-3h",
+      "p_home": 0.55,
+      "p_draw": 0.26,
+      "p_away": 0.19,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Brazil is heavily favored due to depth and pedigree, but Morocco's disciplined defense and counter-attacking threat make an upset plausible. Expect a competitive match.",
-      "input_hash": "9b4e938e9c85cfaad66a90bb1233bb12666126e9be1b4c1a5f684c094a50d0c9"
+      "rationale": "Brazil's superior squad depth and attacking talent make them favorites, but Morocco's strong defensive organization and recent rise (2022 semifinalists) provide real resistance, raising draw and upset chances.",
+      "input_hash": "bb3c9f68940f8d76fb8eaafaa084425e4e47e4e5055ceecd50dacbd57cae60a6"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -7983,6 +7970,19 @@
       "p_advance_away": null,
       "rationale": "Brazil has superior talent and depth, but Morocco's organized defense can frustrate. Expected Brazil advantage, but not overwhelming.",
       "input_hash": "512220a701bd5f92e1d1a7f41090793f132fc8ea1a282accc272fa7a7e115344"
+    },
+    {
+      "match_id": "GC-brazil-morocco",
+      "model": "deepseek-v4-flash",
+      "method": "M1",
+      "as_of": "pre-tournament",
+      "p_home": 0.65,
+      "p_draw": 0.22,
+      "p_away": 0.13,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Brazil is heavily favored due to depth and pedigree, but Morocco's disciplined defense and counter-attacking threat make an upset plausible. Expect a competitive match.",
+      "input_hash": "9b4e938e9c85cfaad66a90bb1233bb12666126e9be1b4c1a5f684c094a50d0c9"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -8118,19 +8118,6 @@
       "match_id": "GC-brazil-morocco",
       "model": "grok-4.3",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.67,
-      "p_draw": 0.22,
-      "p_away": 0.11,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Brazil retain elite squad depth and attacking quality despite recent inconsistency; Morocco are compact and dangerous on the counter but lack the resources to dominate over 90 minutes.",
-      "input_hash": "f481f4cc4b7a2aba3048369473f13154c3b6bc8e2e0ddff2effff74125f88a0a"
-    },
-    {
-      "match_id": "GC-brazil-morocco",
-      "model": "grok-4.3",
-      "method": "M1",
       "as_of": "T-3h",
       "p_home": 0.67,
       "p_draw": 0.22,
@@ -8139,6 +8126,19 @@
       "p_advance_away": null,
       "rationale": "Brazil's superior squad depth, experience and attacking quality make them heavy favorites over a solid but less talented Morocco.",
       "input_hash": "589e92dbe76016cc66e54cc5cd3e6d327f9f684b8644d90ecbe40c54c3ec0bc6"
+    },
+    {
+      "match_id": "GC-brazil-morocco",
+      "model": "grok-4.3",
+      "method": "M1",
+      "as_of": "pre-tournament",
+      "p_home": 0.67,
+      "p_draw": 0.22,
+      "p_away": 0.11,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Brazil retain elite squad depth and attacking quality despite recent inconsistency; Morocco are compact and dangerous on the counter but lack the resources to dominate over 90 minutes.",
+      "input_hash": "f481f4cc4b7a2aba3048369473f13154c3b6bc8e2e0ddff2effff74125f88a0a"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -8183,19 +8183,6 @@
       "match_id": "GC-brazil-morocco",
       "model": "claude-opus-4-8",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.5,
-      "p_draw": 0.27,
-      "p_away": 0.23,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Brazil's deep, star-laden squad makes them favorites, but Morocco are FIFA #7, semifinalists in 2022, with elite players (Hakimi, Bounou, Diaz, Amrabat) and strong pre-tournament form. A new Moroccan coach and Brazil's quality tilt the edge to the Selecao, but Morocco can absolutely upset or hold; draw is live.",
-      "input_hash": "d35f858b7dd6c435d98fdc207e7ce411e51da6396ea3410ce03ea50a5d822a2e"
-    },
-    {
-      "match_id": "GC-brazil-morocco",
-      "model": "claude-opus-4-8",
-      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.55,
       "p_draw": 0.26,
@@ -8207,16 +8194,16 @@
     },
     {
       "match_id": "GC-brazil-morocco",
-      "model": "gemini-3.1-pro-preview",
+      "model": "claude-opus-4-8",
       "method": "M2",
       "as_of": "T-3h",
-      "p_home": 0.625,
-      "p_draw": 0.235,
-      "p_away": 0.14,
+      "p_home": 0.5,
+      "p_draw": 0.27,
+      "p_away": 0.23,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Brazil's elite attacking talent and historical World Cup pedigree make them clear favorites. However, Morocco's organized defense, tactical discipline, and recent experience of deep tournament runs make them a tough opponent capable of securing a result, keeping the draw and upset probabilities relevant.",
-      "input_hash": "792f6578aad7e44a2f469f81bb04fa13f19b2c60c4b1417960fa8f13c582e43b"
+      "rationale": "Brazil's deep, star-laden squad makes them favorites, but Morocco are FIFA #7, semifinalists in 2022, with elite players (Hakimi, Bounou, Diaz, Amrabat) and strong pre-tournament form. A new Moroccan coach and Brazil's quality tilt the edge to the Selecao, but Morocco can absolutely upset or hold; draw is live.",
+      "input_hash": "d35f858b7dd6c435d98fdc207e7ce411e51da6396ea3410ce03ea50a5d822a2e"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -8230,6 +8217,19 @@
       "p_advance_away": null,
       "rationale": "Brazil possesses overwhelming attacking depth and elite individual quality, making them clear favorites. However, Morocco's exceptional defensive structure, proven in 2022, and strong tactical discipline will frustrate Brazil. Factoring in Brazil's occasional struggles against compact low blocks, a draw or narrow upset remains a credible threat.",
       "input_hash": "6b338449a1c223a5769624ccf29d6adde50079c075b1a6b882ea2a5ce123478e"
+    },
+    {
+      "match_id": "GC-brazil-morocco",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.625,
+      "p_draw": 0.235,
+      "p_away": 0.14,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Brazil's elite attacking talent and historical World Cup pedigree make them clear favorites. However, Morocco's organized defense, tactical discipline, and recent experience of deep tournament runs make them a tough opponent capable of securing a result, keeping the draw and upset probabilities relevant.",
+      "input_hash": "792f6578aad7e44a2f469f81bb04fa13f19b2c60c4b1417960fa8f13c582e43b"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -8287,19 +8287,6 @@
       "match_id": "GC-brazil-morocco",
       "model": "gpt-5.5-2026-04-23",
       "method": "M2",
-      "as_of": "pre-tournament",
-      "p_home": 0.589,
-      "p_draw": 0.247,
-      "p_away": 0.164,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "f1cac0ebe097fd5b4ddc4be0286d49d101ae9a294f7fc3d6367b05f27299c1e6"
-    },
-    {
-      "match_id": "GC-brazil-morocco",
-      "model": "gpt-5.5-2026-04-23",
-      "method": "M2",
       "as_of": "T-3h",
       "p_home": 0.589,
       "p_draw": 0.244,
@@ -8308,6 +8295,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "818ff48728c8708a025c4476457e092a6f99d74a39bc88623fcbd87a642614b6"
+    },
+    {
+      "match_id": "GC-brazil-morocco",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M2",
+      "as_of": "pre-tournament",
+      "p_home": 0.589,
+      "p_draw": 0.247,
+      "p_away": 0.164,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "f1cac0ebe097fd5b4ddc4be0286d49d101ae9a294f7fc3d6367b05f27299c1e6"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -8365,19 +8365,6 @@
       "match_id": "GC-brazil-morocco",
       "model": "claude-haiku-4-5",
       "method": "M3",
-      "as_of": "T-3h",
-      "p_home": 0.6283738185803278,
-      "p_draw": 0.221344908082613,
-      "p_away": 0.1502812733370591,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "5dbfbcb45e3e60386a4035d4819bb918fd8c350ac111c243b0d103984adfe4a6"
-    },
-    {
-      "match_id": "GC-brazil-morocco",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
       "as_of": "pre-tournament",
       "p_home": 0.6283738185803278,
       "p_draw": 0.221344908082613,
@@ -8386,6 +8373,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "0755a77cad0e63fb118e21f5814b508e406a8a815280acb84ae76222804e8725"
+    },
+    {
+      "match_id": "GC-brazil-morocco",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.6283738185803278,
+      "p_draw": 0.221344908082613,
+      "p_away": 0.1502812733370591,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "5dbfbcb45e3e60386a4035d4819bb918fd8c350ac111c243b0d103984adfe4a6"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -8443,19 +8443,6 @@
       "match_id": "GC-brazil-morocco",
       "model": "deepseek-v4-pro",
       "method": "M3",
-      "as_of": "T-3h",
-      "p_home": 0.4362410636134161,
-      "p_draw": 0.2726667215370906,
-      "p_away": 0.2910922148494934,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "e0eb1dab66737769bffb6d1f4f2ea8300bc35ef23a99d6d2c62a2355f6dfc55a"
-    },
-    {
-      "match_id": "GC-brazil-morocco",
-      "model": "deepseek-v4-pro",
-      "method": "M3",
       "as_of": "pre-tournament",
       "p_home": 0.4362410636134161,
       "p_draw": 0.2726667215370906,
@@ -8464,6 +8451,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "5d8523ec0e2a8e6778fe7b8fed7959a52a0bda14c1cf28860a28af0748b331a6"
+    },
+    {
+      "match_id": "GC-brazil-morocco",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.4362410636134161,
+      "p_draw": 0.2726667215370906,
+      "p_away": 0.2910922148494934,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "e0eb1dab66737769bffb6d1f4f2ea8300bc35ef23a99d6d2c62a2355f6dfc55a"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -8521,19 +8521,6 @@
       "match_id": "GC-brazil-morocco",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.47360906504754785,
-      "p_draw": 0.2666591330984088,
-      "p_away": 0.2597318018540434,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "3f0fd45324d235bd296ee7dc85d80c63aba4a636f345bea759809ac7769f5767"
-    },
-    {
-      "match_id": "GC-brazil-morocco",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.47360906504754785,
       "p_draw": 0.2666591330984088,
@@ -8545,16 +8532,16 @@
     },
     {
       "match_id": "GC-brazil-morocco",
-      "model": "gpt-5.5-2026-04-23",
+      "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
       "as_of": "pre-tournament",
-      "p_home": 0.49735864414430947,
-      "p_draw": 0.2617626314432428,
-      "p_away": 0.24087872441244787,
+      "p_home": 0.47360906504754785,
+      "p_draw": 0.2666591330984088,
+      "p_away": 0.2597318018540434,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "c160fb0db6a72891c85e7932edd48217d3ad13d9f2dc59fab4423851c594dbb2"
+      "input_hash": "3f0fd45324d235bd296ee7dc85d80c63aba4a636f345bea759809ac7769f5767"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -8568,6 +8555,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "9e6b3108b7959c63c16da8a75afe27348896233eba88271a20d5c01582abc37e"
+    },
+    {
+      "match_id": "GC-brazil-morocco",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.49735864414430947,
+      "p_draw": 0.2617626314432428,
+      "p_away": 0.24087872441244787,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "c160fb0db6a72891c85e7932edd48217d3ad13d9f2dc59fab4423851c594dbb2"
     },
     {
       "match_id": "GC-brazil-morocco",
@@ -8690,19 +8690,6 @@
       "match_id": "GC-haiti-scotland",
       "model": "claude-haiku-4-5",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.28,
-      "p_draw": 0.22,
-      "p_away": 0.5,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "a2d84d00cd70581cba706a4d9e770e134fedb3c2c3bcddd02969951a014eae53"
-    },
-    {
-      "match_id": "GC-haiti-scotland",
-      "model": "claude-haiku-4-5",
-      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.28,
       "p_draw": 0.24,
@@ -8711,6 +8698,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "2f283521666373a6a20d475cdb83a7f4a5c64f20adffae996848148218f905f2"
+    },
+    {
+      "match_id": "GC-haiti-scotland",
+      "model": "claude-haiku-4-5",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.28,
+      "p_draw": 0.22,
+      "p_away": 0.5,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "a2d84d00cd70581cba706a4d9e770e134fedb3c2c3bcddd02969951a014eae53"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -8742,19 +8742,6 @@
       "match_id": "GC-haiti-scotland",
       "model": "deepseek-v4-flash",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.12,
-      "p_draw": 0.22,
-      "p_away": 0.66,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Scotland far stronger than Haiti. Scotland's squad depth and experience give clear edge. Haiti competitive but unlikely to overcome talent gap. Pre-match odds reflect Scotland dominance.",
-      "input_hash": "691b53557239a0791cfe946d1782aac3dbd006cfe926895517c778fcb4f55de0"
-    },
-    {
-      "match_id": "GC-haiti-scotland",
-      "model": "deepseek-v4-flash",
-      "method": "M1",
       "as_of": "T-3h",
       "p_home": 0.2,
       "p_draw": 0.25,
@@ -8766,16 +8753,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "deepseek-v4-pro",
+      "model": "deepseek-v4-flash",
       "method": "M1",
       "as_of": "pre-tournament",
-      "p_home": 0.182,
-      "p_draw": 0.263,
-      "p_away": 0.555,
+      "p_home": 0.12,
+      "p_draw": 0.22,
+      "p_away": 0.66,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "54e6ff5fc6261e1f7bbb0189c7e89d2c8011dd32fb667646ee4786e051011f91"
+      "rationale": "Scotland far stronger than Haiti. Scotland's squad depth and experience give clear edge. Haiti competitive but unlikely to overcome talent gap. Pre-match odds reflect Scotland dominance.",
+      "input_hash": "691b53557239a0791cfe946d1782aac3dbd006cfe926895517c778fcb4f55de0"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -8792,16 +8779,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "gemini-3.1-pro-preview",
+      "model": "deepseek-v4-pro",
       "method": "M1",
       "as_of": "pre-tournament",
-      "p_home": 0.115,
-      "p_draw": 0.212,
-      "p_away": 0.673,
+      "p_home": 0.182,
+      "p_draw": 0.263,
+      "p_away": 0.555,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Scotland boasts superior tactical organization and a squad featuring established Premier League talent, making them heavy favorites. Haiti possesses pace and physicality but lacks the depth and top-level experience of the Europeans. Expect Scotland to control possession and create more high-quality chances, though a resilient Haitian defense could keep it competitive.",
-      "input_hash": "36a00acb639df51dc5d9609584cbde2bc2fef8db846a17062d4f1f1c96d8c250"
+      "rationale": null,
+      "input_hash": "54e6ff5fc6261e1f7bbb0189c7e89d2c8011dd32fb667646ee4786e051011f91"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -8818,16 +8805,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "gemini-3.5-flash",
+      "model": "gemini-3.1-pro-preview",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.178,
-      "p_draw": 0.236,
-      "p_away": 0.586,
+      "as_of": "pre-tournament",
+      "p_home": 0.115,
+      "p_draw": 0.212,
+      "p_away": 0.673,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Scotland possesses a stronger squad with players competing in top European leagues, giving them a clear tactical and physical advantage over Haiti. However, Haiti's athletic transition play poses some threat, and group stage dynamics can keep matches tight. Scotland remain solid favorites.",
-      "input_hash": "8149868ef27478dd781cb35ac2eafb8f2b9ca7966e9b25524f6c31bc36cb0c5d"
+      "rationale": "Scotland boasts superior tactical organization and a squad featuring established Premier League talent, making them heavy favorites. Haiti possesses pace and physicality but lacks the depth and top-level experience of the Europeans. Expect Scotland to control possession and create more high-quality chances, though a resilient Haitian defense could keep it competitive.",
+      "input_hash": "36a00acb639df51dc5d9609584cbde2bc2fef8db846a17062d4f1f1c96d8c250"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -8841,6 +8828,19 @@
       "p_advance_away": null,
       "rationale": "Scotland enters as favorites due to a stronger squad depth playing in top European leagues compared to Haiti. However, Haiti's athletic transition game poses a threat. Elo ratings favor Scotland by a significant margin, suggesting a moderate-to-high probability of a Scottish victory on neutral ground.",
       "input_hash": "464454504fd966b3edd048995dc72c31a0e1dd0d9d02b213d957320106dbccc1"
+    },
+    {
+      "match_id": "GC-haiti-scotland",
+      "model": "gemini-3.5-flash",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.178,
+      "p_draw": 0.236,
+      "p_away": 0.586,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Scotland possesses a stronger squad with players competing in top European leagues, giving them a clear tactical and physical advantage over Haiti. However, Haiti's athletic transition play poses some threat, and group stage dynamics can keep matches tight. Scotland remain solid favorites.",
+      "input_hash": "8149868ef27478dd781cb35ac2eafb8f2b9ca7966e9b25524f6c31bc36cb0c5d"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -8937,19 +8937,6 @@
       "match_id": "GC-haiti-scotland",
       "model": "claude-haiku-4-5",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.312,
-      "p_draw": 0.178,
-      "p_away": 0.51,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Scotland heavily favored (42nd vs 83rd ranking). Betting odds ~-188 for Scotland. Haiti competitive qualifier but first World Cup since 1974. Neutral venue slightly reduces home advantage. Scotland's tournament history suggests vulnerability.",
-      "input_hash": "c0b6c1bb8a07fa29b3da0610552aae92b2ace5efff67b4be1626d1ef569118a9"
-    },
-    {
-      "match_id": "GC-haiti-scotland",
-      "model": "claude-haiku-4-5",
-      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.721,
       "p_draw": 0.142,
@@ -8961,16 +8948,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "claude-opus-4-8",
+      "model": "claude-haiku-4-5",
       "method": "M2",
       "as_of": "T-3h",
-      "p_home": 0.27,
-      "p_draw": 0.27,
-      "p_away": 0.46,
+      "p_home": 0.312,
+      "p_draw": 0.178,
+      "p_away": 0.51,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Scotland ranked #42, Haiti #83 (~40-place gap). FOX odds had Haiti at +469 (~18% implied) suggesting Scotland favored. Scotland has European depth (Robertson, McTominay, Gunn) but Haiti competitive in CONCACAF, beat Costa Rica. Nominally Haiti's home game but neutral US venue. Group-stage caution keeps draw probability elevated.",
-      "input_hash": "509c01470fdce9bf51338edfe13f1d4b630d8084b6d320494a802e4d8a4c2538"
+      "rationale": "Scotland heavily favored (42nd vs 83rd ranking). Betting odds ~-188 for Scotland. Haiti competitive qualifier but first World Cup since 1974. Neutral venue slightly reduces home advantage. Scotland's tournament history suggests vulnerability.",
+      "input_hash": "c0b6c1bb8a07fa29b3da0610552aae92b2ace5efff67b4be1626d1ef569118a9"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -8987,16 +8974,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "gemini-3.1-pro-preview",
+      "model": "claude-opus-4-8",
       "method": "M2",
-      "as_of": "pre-tournament",
-      "p_home": 0.092,
-      "p_draw": 0.194,
-      "p_away": 0.714,
+      "as_of": "T-3h",
+      "p_home": 0.27,
+      "p_draw": 0.27,
+      "p_away": 0.46,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Scotland boasts a significantly stronger squad with Premier League experience and solid UEFA pedigree. Haiti, while capable of occasional CONCACAF upsets, lacks the tactical depth and top-flight quality of the Scots. The substantial Elo disparity heavily favors Scotland, making them clear favorites to secure three points.",
-      "input_hash": "0a5c16d5c2661c710d4ec1290a0bdcfd6c1714f86666c3315cebf90d63295dde"
+      "rationale": "Scotland ranked #42, Haiti #83 (~40-place gap). FOX odds had Haiti at +469 (~18% implied) suggesting Scotland favored. Scotland has European depth (Robertson, McTominay, Gunn) but Haiti competitive in CONCACAF, beat Costa Rica. Nominally Haiti's home game but neutral US venue. Group-stage caution keeps draw probability elevated.",
+      "input_hash": "509c01470fdce9bf51338edfe13f1d4b630d8084b6d320494a802e4d8a4c2538"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -9013,16 +9000,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "gemini-3.5-flash",
+      "model": "gemini-3.1-pro-preview",
       "method": "M2",
       "as_of": "pre-tournament",
-      "p_home": 0.16,
-      "p_draw": 0.22,
-      "p_away": 0.62,
+      "p_home": 0.092,
+      "p_draw": 0.194,
+      "p_away": 0.714,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "Scotland enters as strong favorites, boasting superior squad depth and European tournament experience after topping their UEFA qualifying group. Haiti, returning after a 52-year absence, are major underdogs but could prove resilient. Market odds heavily favor Scotland, implying a ~62% win probability, with a draw at ~22% and a Haiti upset at ~16%.",
-      "input_hash": "e02b49388397ff1bd31f4234a3cdc419919fca1f1932c14586cd95bea61dd243"
+      "rationale": "Scotland boasts a significantly stronger squad with Premier League experience and solid UEFA pedigree. Haiti, while capable of occasional CONCACAF upsets, lacks the tactical depth and top-flight quality of the Scots. The substantial Elo disparity heavily favors Scotland, making them clear favorites to secure three points.",
+      "input_hash": "0a5c16d5c2661c710d4ec1290a0bdcfd6c1714f86666c3315cebf90d63295dde"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -9036,6 +9023,19 @@
       "p_advance_away": null,
       "rationale": "Scotland enters their first World Cup since 1998 as clear favorites against Haiti, who are making only their second-ever appearance. Backed by a squad featuring established European league players like Scott McTominay and Andy Robertson, Scotland's superior quality and depth make them highly likely to secure three points, though Haiti's counter-attacking threat keeps them in the mix.",
       "input_hash": "5dfedb0110d0e70dd5da6d597b23b86206b7db63023287628eeffac9c6780237"
+    },
+    {
+      "match_id": "GC-haiti-scotland",
+      "model": "gemini-3.5-flash",
+      "method": "M2",
+      "as_of": "pre-tournament",
+      "p_home": 0.16,
+      "p_draw": 0.22,
+      "p_away": 0.62,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Scotland enters as strong favorites, boasting superior squad depth and European tournament experience after topping their UEFA qualifying group. Haiti, returning after a 52-year absence, are major underdogs but could prove resilient. Market odds heavily favor Scotland, implying a ~62% win probability, with a draw at ~22% and a Haiti upset at ~16%.",
+      "input_hash": "e02b49388397ff1bd31f4234a3cdc419919fca1f1932c14586cd95bea61dd243"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -9223,19 +9223,6 @@
       "match_id": "GC-haiti-scotland",
       "model": "deepseek-v4-pro",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.15933503831899337,
-      "p_draw": 0.2268926366093593,
-      "p_away": 0.6137723250716473,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "091e65f57fa3bede77213846a15166976e0ef58c998d2191b235f5f29c9a7af9"
-    },
-    {
-      "match_id": "GC-haiti-scotland",
-      "model": "deepseek-v4-pro",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.15933503831899337,
       "p_draw": 0.2268926366093593,
@@ -9247,16 +9234,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "gemini-3.1-pro-preview",
+      "model": "deepseek-v4-pro",
       "method": "M3",
       "as_of": "pre-tournament",
-      "p_home": 0.1591695446233085,
-      "p_draw": 0.2267947685231065,
-      "p_away": 0.6140356868535852,
+      "p_home": 0.15933503831899337,
+      "p_draw": 0.2268926366093593,
+      "p_away": 0.6137723250716473,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "1caf52273ea78b11d41166faf0c0f16e72bd8c75f8b73916510f6a1799a647a9"
+      "input_hash": "091e65f57fa3bede77213846a15166976e0ef58c998d2191b235f5f29c9a7af9"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -9273,16 +9260,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "gemini-3.5-flash",
+      "model": "gemini-3.1-pro-preview",
       "method": "M3",
       "as_of": "pre-tournament",
-      "p_home": 0.16319486462191277,
-      "p_draw": 0.22913895345876834,
-      "p_away": 0.6076661819193189,
+      "p_home": 0.1591695446233085,
+      "p_draw": 0.2267947685231065,
+      "p_away": 0.6140356868535852,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "2a90e7e3895c92aa51dbccfeeaff7368d0648dd9e653a4ca2994d7651e1701be"
+      "input_hash": "1caf52273ea78b11d41166faf0c0f16e72bd8c75f8b73916510f6a1799a647a9"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -9299,16 +9286,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "gpt-5.4-mini-2026-03-17",
+      "model": "gemini-3.5-flash",
       "method": "M3",
       "as_of": "pre-tournament",
-      "p_home": 0.2124929355630279,
-      "p_draw": 0.2523507486523588,
-      "p_away": 0.5351563157846133,
+      "p_home": 0.16319486462191277,
+      "p_draw": 0.22913895345876834,
+      "p_away": 0.6076661819193189,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "b22050951c212bc397c3636f3da1292b61a3cb4aae980a6d5894191b49564fec"
+      "input_hash": "2a90e7e3895c92aa51dbccfeeaff7368d0648dd9e653a4ca2994d7651e1701be"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -9325,16 +9312,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "gpt-5.5-2026-04-23",
+      "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
       "as_of": "pre-tournament",
-      "p_home": 0.1339744620658982,
-      "p_draw": 0.2102941697942288,
-      "p_away": 0.655731368139873,
+      "p_home": 0.2124929355630279,
+      "p_draw": 0.2523507486523588,
+      "p_away": 0.5351563157846133,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "b0e72ed8ae1971f0ec22ffdb365d50d6606a95227b23a5d4a880a6c71fa80367"
+      "input_hash": "b22050951c212bc397c3636f3da1292b61a3cb4aae980a6d5894191b49564fec"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -9351,16 +9338,16 @@
     },
     {
       "match_id": "GC-haiti-scotland",
-      "model": "grok-4.3",
+      "model": "gpt-5.5-2026-04-23",
       "method": "M3",
       "as_of": "pre-tournament",
-      "p_home": 0.1564954604542236,
-      "p_draw": 0.2251953928184768,
-      "p_away": 0.6183091467272996,
+      "p_home": 0.1339744620658982,
+      "p_draw": 0.2102941697942288,
+      "p_away": 0.655731368139873,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "481f30824a274e8e8eb9f1dcb59ced047db1af69d492a07edeed279d4d337c4d"
+      "input_hash": "b0e72ed8ae1971f0ec22ffdb365d50d6606a95227b23a5d4a880a6c71fa80367"
     },
     {
       "match_id": "GC-haiti-scotland",
@@ -9374,6 +9361,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "7b19feee00995ffe091e7abe89d3c1ca289d1a83923bcbe1f007a77211563ac8"
+    },
+    {
+      "match_id": "GC-haiti-scotland",
+      "model": "grok-4.3",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.1564954604542236,
+      "p_draw": 0.2251953928184768,
+      "p_away": 0.6183091467272996,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "481f30824a274e8e8eb9f1dcb59ced047db1af69d492a07edeed279d4d337c4d"
     },
     {
       "match_id": "GC-morocco-haiti",
@@ -10614,19 +10614,6 @@
       "match_id": "GD-australia-turkey",
       "model": null,
       "method": "B2",
-      "as_of": "pre-tournament",
-      "p_home": 0.23360633240729475,
-      "p_draw": 0.25959429779266946,
-      "p_away": 0.5067993698000357,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "0d891b3c52a0108f1cb6dce6af2bd27ca019bb5fd1d284edf8e9360278cd20a8"
-    },
-    {
-      "match_id": "GD-australia-turkey",
-      "model": null,
-      "method": "B2",
       "as_of": "T-3h",
       "p_home": 0.23360633240729475,
       "p_draw": 0.25959429779266946,
@@ -10635,6 +10622,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "7947eac4fa0e464151d0fd7832d32ee2f64d4d2f138fef8398fa46a9b6dd3fdc"
+    },
+    {
+      "match_id": "GD-australia-turkey",
+      "model": null,
+      "method": "B2",
+      "as_of": "pre-tournament",
+      "p_home": 0.23360633240729475,
+      "p_draw": 0.25959429779266946,
+      "p_away": 0.5067993698000357,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "0d891b3c52a0108f1cb6dce6af2bd27ca019bb5fd1d284edf8e9360278cd20a8"
     },
     {
       "match_id": "GD-australia-turkey",
@@ -11004,19 +11004,6 @@
       "match_id": "GD-australia-turkey",
       "model": "gemini-3.5-flash",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.188,
-      "p_draw": 0.252,
-      "p_away": 0.56,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Turkey enters this Group D opener as clear favorites, backed by a highly creative midfield featuring Arda G\u00fcler and Hakan \u00c7alhano\u011flu. Australia's compact, defensive setup under Tony Popovic will look to frustrate the Turkish attack, but their limited offensive output makes a Turkey win the most probable outcome, with a draw also quite likely.",
-      "input_hash": "b77590259258a1e9e9cae06ff8972208a49da0f4f3c29b5a7584c30221a56463"
-    },
-    {
-      "match_id": "GD-australia-turkey",
-      "model": "gemini-3.5-flash",
-      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.201,
       "p_draw": 0.258,
@@ -11025,6 +11012,19 @@
       "p_advance_away": null,
       "rationale": "Turkey enters this Group D opener in Vancouver as the favorite, backed by superior technical quality in midfield and a strong UEFA qualifying campaign. Australia\u2019s compact defensive structure under Tony Popovic makes them difficult to break down, but their limited attacking threat tilts the odds toward a Turkish victory, with a draw remaining a highly plausible outcome.",
       "input_hash": "edf01364598bbd17c1053c2d6c6e048f6f963f4e27b11526341f07da25a89f63"
+    },
+    {
+      "match_id": "GD-australia-turkey",
+      "model": "gemini-3.5-flash",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.188,
+      "p_draw": 0.252,
+      "p_away": 0.56,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Turkey enters this Group D opener as clear favorites, backed by a highly creative midfield featuring Arda G\u00fcler and Hakan \u00c7alhano\u011flu. Australia's compact, defensive setup under Tony Popovic will look to frustrate the Turkish attack, but their limited offensive output makes a Turkey win the most probable outcome, with a draw also quite likely.",
+      "input_hash": "b77590259258a1e9e9cae06ff8972208a49da0f4f3c29b5a7584c30221a56463"
     },
     {
       "match_id": "GD-australia-turkey",
@@ -11108,19 +11108,6 @@
       "match_id": "GD-australia-turkey",
       "model": "claude-fable-5",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.28229379509274904,
-      "p_draw": 0.2712359179309968,
-      "p_away": 0.44647028697625407,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "c0e0faaae89183d13295d0726e01e9d8cc1738951859c29869544477f37bd24a"
-    },
-    {
-      "match_id": "GD-australia-turkey",
-      "model": "claude-fable-5",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.28229379509274904,
       "p_draw": 0.2712359179309968,
@@ -11129,6 +11116,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "16380ab9250c102dd666bd4b8389a6ae0222104b844b321b7b34955b7c5486c0"
+    },
+    {
+      "match_id": "GD-australia-turkey",
+      "model": "claude-fable-5",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.28229379509274904,
+      "p_draw": 0.2712359179309968,
+      "p_away": 0.44647028697625407,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "c0e0faaae89183d13295d0726e01e9d8cc1738951859c29869544477f37bd24a"
     },
     {
       "match_id": "GD-australia-turkey",
@@ -11160,19 +11160,6 @@
       "match_id": "GD-australia-turkey",
       "model": "claude-opus-4-8",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.2968897963541969,
-      "p_draw": 0.27350601315616413,
-      "p_away": 0.4296041904896391,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "74333a60318252a65b443612088ace3be739fb5326a9a4560e6b7b06d37218f3"
-    },
-    {
-      "match_id": "GD-australia-turkey",
-      "model": "claude-opus-4-8",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.2968897963541969,
       "p_draw": 0.27350601315616413,
@@ -11184,16 +11171,16 @@
     },
     {
       "match_id": "GD-australia-turkey",
-      "model": "deepseek-v4-flash",
+      "model": "claude-opus-4-8",
       "method": "M3",
-      "as_of": "T-3h",
-      "p_home": 0.33397443490572387,
-      "p_draw": 0.2770444363032728,
-      "p_away": 0.3889811287910032,
+      "as_of": "pre-tournament",
+      "p_home": 0.2968897963541969,
+      "p_draw": 0.27350601315616413,
+      "p_away": 0.4296041904896391,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "535af5aa3b0c1b67acf07c58afd42ac00ac6743a8659f5d33efb8fb19581a109"
+      "input_hash": "74333a60318252a65b443612088ace3be739fb5326a9a4560e6b7b06d37218f3"
     },
     {
       "match_id": "GD-australia-turkey",
@@ -11210,16 +11197,16 @@
     },
     {
       "match_id": "GD-australia-turkey",
-      "model": "deepseek-v4-pro",
+      "model": "deepseek-v4-flash",
       "method": "M3",
       "as_of": "T-3h",
-      "p_home": 0.27674009728259874,
-      "p_draw": 0.270232775564715,
-      "p_away": 0.4530271271526863,
+      "p_home": 0.33397443490572387,
+      "p_draw": 0.2770444363032728,
+      "p_away": 0.3889811287910032,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "ee026ec35e37e7db05753b06d0a542e6d2372aedaaabcd374da6b7dac4f34180"
+      "input_hash": "535af5aa3b0c1b67acf07c58afd42ac00ac6743a8659f5d33efb8fb19581a109"
     },
     {
       "match_id": "GD-australia-turkey",
@@ -11233,6 +11220,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "6a0ecbfb469e5a30b1011cc705ea46f894f40c917c1cab69ff2c81272ab9078d"
+    },
+    {
+      "match_id": "GD-australia-turkey",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.27674009728259874,
+      "p_draw": 0.270232775564715,
+      "p_away": 0.4530271271526863,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "ee026ec35e37e7db05753b06d0a542e6d2372aedaaabcd374da6b7dac4f34180"
     },
     {
       "match_id": "GD-australia-turkey",
@@ -12980,19 +12980,6 @@
       "match_id": "GD-united_states-paraguay",
       "model": null,
       "method": "B1",
-      "as_of": "T-3h",
-      "p_home": 0.2871586724173022,
-      "p_draw": 0.2720507389104937,
-      "p_away": 0.44079058867220405,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "7c11c5624c59026ceab4975c9e0b3fa01ac329e14ba3d53091b7f0e4b37a19f4"
-    },
-    {
-      "match_id": "GD-united_states-paraguay",
-      "model": null,
-      "method": "B1",
       "as_of": "pre-tournament",
       "p_home": 0.2871586724173022,
       "p_draw": 0.2720507389104937,
@@ -13005,15 +12992,15 @@
     {
       "match_id": "GD-united_states-paraguay",
       "model": null,
-      "method": "B2",
-      "as_of": "pre-tournament",
-      "p_home": 0.4452017895190461,
-      "p_draw": 0.27142228230484794,
-      "p_away": 0.2833759281761061,
+      "method": "B1",
+      "as_of": "T-3h",
+      "p_home": 0.2871586724173022,
+      "p_draw": 0.2720507389104937,
+      "p_away": 0.44079058867220405,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "6cc52fd4caeef4bbbcda06161b7244e7a41a10e620eb82fde336854cf88777ef"
+      "input_hash": "7c11c5624c59026ceab4975c9e0b3fa01ac329e14ba3d53091b7f0e4b37a19f4"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13031,15 +13018,15 @@
     {
       "match_id": "GD-united_states-paraguay",
       "model": null,
-      "method": "ENS",
-      "as_of": "T-3h",
-      "p_home": 0.4977777777777778,
-      "p_draw": 0.2737777777777778,
-      "p_away": 0.22844444444444445,
+      "method": "B2",
+      "as_of": "pre-tournament",
+      "p_home": 0.4452017895190461,
+      "p_draw": 0.27142228230484794,
+      "p_away": 0.2833759281761061,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "5860102ec1a1e05e4b88de90abb73a8f70351ae888c5386827287331787535da"
+      "input_hash": "6cc52fd4caeef4bbbcda06161b7244e7a41a10e620eb82fde336854cf88777ef"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13053,6 +13040,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "091370f4162a87ccb90d16854b5335a1f154569c7c82e151410ee163681669e0"
+    },
+    {
+      "match_id": "GD-united_states-paraguay",
+      "model": null,
+      "method": "ENS",
+      "as_of": "T-3h",
+      "p_home": 0.4977777777777778,
+      "p_draw": 0.2737777777777778,
+      "p_away": 0.22844444444444445,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "5860102ec1a1e05e4b88de90abb73a8f70351ae888c5386827287331787535da"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13084,19 +13084,6 @@
       "match_id": "GD-united_states-paraguay",
       "model": "claude-haiku-4-5",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.58,
-      "p_draw": 0.24,
-      "p_away": 0.18,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "3eb8073647071c9efc04fa0938bf6514f588688abb4a3a8b7c03baa264d53fad"
-    },
-    {
-      "match_id": "GD-united_states-paraguay",
-      "model": "claude-haiku-4-5",
-      "method": "M1",
       "as_of": "T-3h",
       "p_home": 0.52,
       "p_draw": 0.26,
@@ -13105,6 +13092,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "401f9032176b57fa0c0401159e82a4ac660b2141f57cdf1ba842af42f0d8313a"
+    },
+    {
+      "match_id": "GD-united_states-paraguay",
+      "model": "claude-haiku-4-5",
+      "method": "M1",
+      "as_of": "pre-tournament",
+      "p_home": 0.58,
+      "p_draw": 0.24,
+      "p_away": 0.18,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "3eb8073647071c9efc04fa0938bf6514f588688abb4a3a8b7c03baa264d53fad"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13136,19 +13136,6 @@
       "match_id": "GD-united_states-paraguay",
       "model": "deepseek-v4-flash",
       "method": "M1",
-      "as_of": "pre-tournament",
-      "p_home": 0.55,
-      "p_draw": 0.25,
-      "p_away": 0.2,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "USA has home advantage and stronger recent form; Paraguay is competitive but missed 2022. Uncertainty remains, so moderate probabilities.",
-      "input_hash": "c76eabc413033b0b15091c1db5d2343fa6250ede6e3b266c78d93f861a13560e"
-    },
-    {
-      "match_id": "GD-united_states-paraguay",
-      "model": "deepseek-v4-flash",
-      "method": "M1",
       "as_of": "T-3h",
       "p_home": 0.65,
       "p_draw": 0.22,
@@ -13157,6 +13144,19 @@
       "p_advance_away": null,
       "rationale": "USA higher ranked and home advantage; Paraguay defensively solid but limited attack. Expect USA control but not blowout.",
       "input_hash": "44f5ea4a04c4de76fc99176fecfac761f56a6b80a2c7b61473fb4460d93bcbab"
+    },
+    {
+      "match_id": "GD-united_states-paraguay",
+      "model": "deepseek-v4-flash",
+      "method": "M1",
+      "as_of": "pre-tournament",
+      "p_home": 0.55,
+      "p_draw": 0.25,
+      "p_away": 0.2,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "USA has home advantage and stronger recent form; Paraguay is competitive but missed 2022. Uncertainty remains, so moderate probabilities.",
+      "input_hash": "c76eabc413033b0b15091c1db5d2343fa6250ede6e3b266c78d93f861a13560e"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13188,19 +13188,6 @@
       "match_id": "GD-united_states-paraguay",
       "model": "gemini-3.1-pro-preview",
       "method": "M1",
-      "as_of": "T-3h",
-      "p_home": 0.472,
-      "p_draw": 0.281,
-      "p_away": 0.247,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "As co-hosts, the US benefits from significant home advantage and possesses a more dynamic attack. Paraguay is defensively resilient but often struggles to generate consistent scoring opportunities. The US is favored, though Paraguay's gritty style makes a low-scoring draw a realistic outcome.",
-      "input_hash": "ae6332f65fa3aee0eb8ba8319d3f3a09032603eaabe2804ce8f382d6a13ff6c3"
-    },
-    {
-      "match_id": "GD-united_states-paraguay",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M1",
       "as_of": "pre-tournament",
       "p_home": 0.515,
       "p_draw": 0.265,
@@ -13212,16 +13199,16 @@
     },
     {
       "match_id": "GD-united_states-paraguay",
-      "model": "gemini-3.5-flash",
+      "model": "gemini-3.1-pro-preview",
       "method": "M1",
       "as_of": "T-3h",
-      "p_home": 0.538,
-      "p_draw": 0.264,
-      "p_away": 0.198,
+      "p_home": 0.472,
+      "p_draw": 0.281,
+      "p_away": 0.247,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "As co-hosts, the United States benefits from significant home advantage and boasts a squad with superior depth and European-level quality compared to Paraguay. While Paraguay's compact defensive structure makes them difficult to break down, the USMNT's athletic advantages and home crowd support make them clear favorites.",
-      "input_hash": "59f9bc667b5ba7b718184c348c8284443dc5b7ea2c159ed14cb028659d64bf5c"
+      "rationale": "As co-hosts, the US benefits from significant home advantage and possesses a more dynamic attack. Paraguay is defensively resilient but often struggles to generate consistent scoring opportunities. The US is favored, though Paraguay's gritty style makes a low-scoring draw a realistic outcome.",
+      "input_hash": "ae6332f65fa3aee0eb8ba8319d3f3a09032603eaabe2804ce8f382d6a13ff6c3"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13235,6 +13222,19 @@
       "p_advance_away": null,
       "rationale": "As co-hosts, the United States benefits from significant home advantage and a stronger overall squad depth. Paraguay remains a defensively resilient side capable of grinding out low-scoring draws, but their limited attacking threat gives the USMNT a clear edge in securing a victory on home soil.",
       "input_hash": "0d8c83edb81f445a3095a3b53dd0895baab4b97497cd35f85b32c4e5fce03d76"
+    },
+    {
+      "match_id": "GD-united_states-paraguay",
+      "model": "gemini-3.5-flash",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.538,
+      "p_draw": 0.264,
+      "p_away": 0.198,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "As co-hosts, the United States benefits from significant home advantage and boasts a squad with superior depth and European-level quality compared to Paraguay. While Paraguay's compact defensive structure makes them difficult to break down, the USMNT's athletic advantages and home crowd support make them clear favorites.",
+      "input_hash": "59f9bc667b5ba7b718184c348c8284443dc5b7ea2c159ed14cb028659d64bf5c"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13370,19 +13370,6 @@
       "match_id": "GD-united_states-paraguay",
       "model": "claude-opus-4-8",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.47,
-      "p_draw": 0.27,
-      "p_away": 0.26,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "Market (USA -110, Draw +240, Paraguay +320) implies ~47% USA. Home crowd boost and superior attack (Pulisic, Balogun) favor USA, but poor 2026 form (3 of 4 lost) and Paraguay's frustrating defensive style plus Enciso doubt raise draw/upset risk. Low-scoring game likely.",
-      "input_hash": "f91a8d9c80aa0c4e809a911f6c1e8cec9eb058c6903f533ead2f59bc969dbe0c"
-    },
-    {
-      "match_id": "GD-united_states-paraguay",
-      "model": "claude-opus-4-8",
-      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.46,
       "p_draw": 0.27,
@@ -13394,16 +13381,16 @@
     },
     {
       "match_id": "GD-united_states-paraguay",
-      "model": "gemini-3.1-pro-preview",
+      "model": "claude-opus-4-8",
       "method": "M2",
       "as_of": "T-3h",
-      "p_home": 0.495,
-      "p_draw": 0.275,
-      "p_away": 0.23,
+      "p_home": 0.47,
+      "p_draw": 0.27,
+      "p_away": 0.26,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "The US benefits from home advantage and a talented squad under Mauricio Pochettino. While Paraguay is defensively resilient under Gustavo Alfaro and battle-tested in CONMEBOL, their historical struggles to score consistently give the hosts a distinct edge in this group stage matchup.",
-      "input_hash": "bbc8161da34f2d1851c5cc30cfc2147a91befe4bb75fa641a0af57d803fc33f9"
+      "rationale": "Market (USA -110, Draw +240, Paraguay +320) implies ~47% USA. Home crowd boost and superior attack (Pulisic, Balogun) favor USA, but poor 2026 form (3 of 4 lost) and Paraguay's frustrating defensive style plus Enciso doubt raise draw/upset risk. Low-scoring game likely.",
+      "input_hash": "f91a8d9c80aa0c4e809a911f6c1e8cec9eb058c6903f533ead2f59bc969dbe0c"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13420,16 +13407,16 @@
     },
     {
       "match_id": "GD-united_states-paraguay",
-      "model": "gemini-3.5-flash",
+      "model": "gemini-3.1-pro-preview",
       "method": "M2",
       "as_of": "T-3h",
-      "p_home": 0.492,
-      "p_draw": 0.286,
-      "p_away": 0.222,
+      "p_home": 0.495,
+      "p_draw": 0.275,
+      "p_away": 0.23,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": "As co-hosts playing in Los Angeles, the United States enter their World Cup opener as favorites. However, Paraguay's highly organized, defensive style under Gustavo Alfaro, combined with the typical cagey nature of tournament openers, makes a draw a strong possibility. The USMNT's home advantage and superior attacking depth give them the edge.",
-      "input_hash": "8ecf0ecf5e9bff6ca5b632572571c0cac551a2b329f4fabc02ede4df1e0c3e6a"
+      "rationale": "The US benefits from home advantage and a talented squad under Mauricio Pochettino. While Paraguay is defensively resilient under Gustavo Alfaro and battle-tested in CONMEBOL, their historical struggles to score consistently give the hosts a distinct edge in this group stage matchup.",
+      "input_hash": "bbc8161da34f2d1851c5cc30cfc2147a91befe4bb75fa641a0af57d803fc33f9"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13446,16 +13433,16 @@
     },
     {
       "match_id": "GD-united_states-paraguay",
-      "model": "gpt-5.4-mini-2026-03-17",
+      "model": "gemini-3.5-flash",
       "method": "M2",
       "as_of": "T-3h",
-      "p_home": 0.455,
-      "p_draw": 0.287,
-      "p_away": 0.258,
+      "p_home": 0.492,
+      "p_draw": 0.286,
+      "p_away": 0.222,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "ccce792a2a39374a5f98b7421aea6d26b042a07d72379b9c67e5322484d7e686"
+      "rationale": "As co-hosts playing in Los Angeles, the United States enter their World Cup opener as favorites. However, Paraguay's highly organized, defensive style under Gustavo Alfaro, combined with the typical cagey nature of tournament openers, makes a draw a strong possibility. The USMNT's home advantage and superior attacking depth give them the edge.",
+      "input_hash": "8ecf0ecf5e9bff6ca5b632572571c0cac551a2b329f4fabc02ede4df1e0c3e6a"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13469,6 +13456,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "479a77e2c09ffdedd6def9db5237d917f550ec3e422867e93c599172f837d47d"
+    },
+    {
+      "match_id": "GD-united_states-paraguay",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.455,
+      "p_draw": 0.287,
+      "p_away": 0.258,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "ccce792a2a39374a5f98b7421aea6d26b042a07d72379b9c67e5322484d7e686"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13500,19 +13500,6 @@
       "match_id": "GD-united_states-paraguay",
       "model": "grok-4.3",
       "method": "M2",
-      "as_of": "T-3h",
-      "p_home": 0.47,
-      "p_draw": 0.29,
-      "p_away": 0.24,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": "US (rank 17) slight home favorites vs Paraguay (41) in WC opener; markets price US win ~47%, draw ~29%, away ~24% reflecting even recent form and defensive Paraguay.",
-      "input_hash": "b8d4fb9a6994f9e3ac58f30fb59461eb5fbc43724c66e437b43bd6a8b67ba896"
-    },
-    {
-      "match_id": "GD-united_states-paraguay",
-      "model": "grok-4.3",
-      "method": "M2",
       "as_of": "pre-tournament",
       "p_home": 0.5,
       "p_draw": 0.28,
@@ -13524,16 +13511,16 @@
     },
     {
       "match_id": "GD-united_states-paraguay",
-      "model": "claude-fable-5",
-      "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.4679284802654521,
-      "p_draw": 0.2677088474553308,
-      "p_away": 0.26436267227921706,
+      "model": "grok-4.3",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.47,
+      "p_draw": 0.29,
+      "p_away": 0.24,
       "p_advance_home": null,
       "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "810039a71f056a9c2a4065cc2e43bbdb37f13ed91f1101ca74a8e21736a46437"
+      "rationale": "US (rank 17) slight home favorites vs Paraguay (41) in WC opener; markets price US win ~47%, draw ~29%, away ~24% reflecting even recent form and defensive Paraguay.",
+      "input_hash": "b8d4fb9a6994f9e3ac58f30fb59461eb5fbc43724c66e437b43bd6a8b67ba896"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13547,6 +13534,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "d464a11aa35b7b33ffd3e42866a47fa977d26e1e07a18bb75f5fe3fdb0562482"
+    },
+    {
+      "match_id": "GD-united_states-paraguay",
+      "model": "claude-fable-5",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.4679284802654521,
+      "p_draw": 0.2677088474553308,
+      "p_away": 0.26436267227921706,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "810039a71f056a9c2a4065cc2e43bbdb37f13ed91f1101ca74a8e21736a46437"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13604,19 +13604,6 @@
       "match_id": "GD-united_states-paraguay",
       "model": "deepseek-v4-flash",
       "method": "M3",
-      "as_of": "T-3h",
-      "p_home": 0.5145064244897313,
-      "p_draw": 0.2577329509053122,
-      "p_away": 0.22776062460495677,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "07482e537f5584dcd57f2155c3ce85b86cc1a28f0389bd8060af7bc7a4c0733c"
-    },
-    {
-      "match_id": "GD-united_states-paraguay",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
       "as_of": "pre-tournament",
       "p_home": 0.5145064244897313,
       "p_draw": 0.2577329509053122,
@@ -13628,16 +13615,16 @@
     },
     {
       "match_id": "GD-united_states-paraguay",
-      "model": "deepseek-v4-pro",
+      "model": "deepseek-v4-flash",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.5192402541675804,
-      "p_draw": 0.25654957238361165,
-      "p_away": 0.22421017344880803,
+      "as_of": "T-3h",
+      "p_home": 0.5145064244897313,
+      "p_draw": 0.2577329509053122,
+      "p_away": 0.22776062460495677,
       "p_advance_home": null,
       "p_advance_away": null,
       "rationale": null,
-      "input_hash": "005e420895550a48e4b34e6cbe00cf3e9aa3b2d27d0c8d051323bdf64ece6cdc"
+      "input_hash": "07482e537f5584dcd57f2155c3ce85b86cc1a28f0389bd8060af7bc7a4c0733c"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13651,6 +13638,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "3e64d6fd84bc1a2bd70d86f623e68eac3a95872129eef45997e72668214db36f"
+    },
+    {
+      "match_id": "GD-united_states-paraguay",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.5192402541675804,
+      "p_draw": 0.25654957238361165,
+      "p_away": 0.22421017344880803,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "005e420895550a48e4b34e6cbe00cf3e9aa3b2d27d0c8d051323bdf64ece6cdc"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -13734,19 +13734,6 @@
       "match_id": "GD-united_states-paraguay",
       "model": "gpt-5.5-2026-04-23",
       "method": "M3",
-      "as_of": "pre-tournament",
-      "p_home": 0.4478024301697673,
-      "p_draw": 0.2710375032870886,
-      "p_away": 0.281160066543144,
-      "p_advance_home": null,
-      "p_advance_away": null,
-      "rationale": null,
-      "input_hash": "3c034f122545308904cb9e045071fabd5004173ff57da373c44e71a55f861ffe"
-    },
-    {
-      "match_id": "GD-united_states-paraguay",
-      "model": "gpt-5.5-2026-04-23",
-      "method": "M3",
       "as_of": "T-3h",
       "p_home": 0.4478024301697673,
       "p_draw": 0.2710375032870886,
@@ -13755,6 +13742,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "ea2c984f1ce9f5175a6e7256162cf4ec1de4c015b7b7179e744a26fb216509bc"
+    },
+    {
+      "match_id": "GD-united_states-paraguay",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M3",
+      "as_of": "pre-tournament",
+      "p_home": 0.4478024301697673,
+      "p_draw": 0.2710375032870886,
+      "p_away": 0.281160066543144,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "3c034f122545308904cb9e045071fabd5004173ff57da373c44e71a55f861ffe"
     },
     {
       "match_id": "GD-united_states-paraguay",
@@ -14995,6 +14995,19 @@
       "match_id": "GE-germany-cura\u00e7ao",
       "model": null,
       "method": "B1",
+      "as_of": "T-3h",
+      "p_home": 0.7296395284994529,
+      "p_draw": 0.1763177518713306,
+      "p_away": 0.0940427196292162,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "05eef36aba27a50ee5a390d9a8715a6fc48ca48ec59993161deff5e6018ef453"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": null,
+      "method": "B1",
       "as_of": "pre-tournament",
       "p_home": 0.7296395284994529,
       "p_draw": 0.1763177518713306,
@@ -15020,6 +15033,19 @@
     {
       "match_id": "GE-germany-cura\u00e7ao",
       "model": null,
+      "method": "B2",
+      "as_of": "T-3h",
+      "p_home": 0.6984754484030589,
+      "p_draw": 0.19136355634705027,
+      "p_away": 0.11016099524989072,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "6c74ccaa425dd7a4983a4677ba3514285dc481d7f03928831ef9db22a2039094"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": null,
       "method": "ENS",
       "as_of": "pre-tournament",
       "p_home": 0.9091666666666666,
@@ -15029,6 +15055,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "7758f04686c8247209cf1a65a97e5c3405d0505094b631bd34d8570e68195c17"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": null,
+      "method": "ENS",
+      "as_of": "T-3h",
+      "p_home": 0.89995625,
+      "p_draw": 0.06860000000000001,
+      "p_away": 0.03144375,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "9b959d1827317d8ae8172a57a9f08bcaed96f8a5570bef5d612685a7aa907942"
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
@@ -15058,6 +15097,19 @@
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
+      "model": "claude-haiku-4-5",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.78,
+      "p_draw": 0.14,
+      "p_away": 0.08,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "883be2ec7e6cbd51adc0f7ab72f2aba1c43c59ede23332a7b0dd9bdfa0c0c5e2"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
       "model": "claude-opus-4-8",
       "method": "M1",
       "as_of": "pre-tournament",
@@ -15068,6 +15120,19 @@
       "p_advance_away": null,
       "rationale": "Germany is a top-tier footballing nation with vastly superior squad depth, ranking, and experience. Cura\u00e7ao, while improving, is a minnow on the global stage. A dominant Germany win is overwhelmingly likely.",
       "input_hash": "f658f2df70849859f2c4ca941461a8aa02c0cd0216f3505937537c7e7c8220f3"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "claude-opus-4-8",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.93,
+      "p_draw": 0.05,
+      "p_away": 0.02,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Germany is an elite footballing nation with vastly superior squad depth, ranking, and pedigree. Cura\u00e7ao is a small Caribbean side competing far above expectations. Germany dominates this matchup overwhelmingly, with only minor draw and upset chances.",
+      "input_hash": "af4c016227c26566120c123410bf64d89c61742db0b13788ca95e9a5495600e3"
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
@@ -15084,6 +15149,19 @@
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
+      "model": "deepseek-v4-flash",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.975,
+      "p_draw": 0.018,
+      "p_away": 0.007,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Massive gulf in quality: Germany is a perennial powerhouse, Cura\u00e7ao ranks far lower. Expect dominant win; draw or upset extremely unlikely.",
+      "input_hash": "04fd1e03bb247bbca0be46b9d075704d3eb1325db77a5638ab101e062e9db0af"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
       "model": "deepseek-v4-pro",
       "method": "M1",
       "as_of": "pre-tournament",
@@ -15097,6 +15175,19 @@
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
+      "model": "deepseek-v4-pro",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.934,
+      "p_draw": 0.053,
+      "p_away": 0.013,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "b872f739c59254ec0976df50472aabd3a7e0a1fff037cf27f15bfa3a2c38ac44"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
       "model": "gemini-3.1-pro-preview",
       "method": "M1",
       "as_of": "pre-tournament",
@@ -15107,6 +15198,32 @@
       "p_advance_away": null,
       "rationale": "Germany possesses an overwhelming advantage in talent, tactical depth, and tournament experience. While Cura\u00e7ao features several European-based professionals, they lack the defensive solidity to withstand Germany's relentless attacking pressure. An upset of this magnitude is historically exceptionally rare in World Cup group stages.",
       "input_hash": "54bdc32b821581d123f37410f3ff3c7034a980e4249e6f1444b0baef392a96e5"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.932,
+      "p_draw": 0.053,
+      "p_away": 0.015,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Germany possesses overwhelming superiority in talent, tactical depth, and tournament experience compared to Cura\u00e7ao. While Cura\u00e7ao features several European-based professionals, the massive gulf in class makes a dominant German victory highly probable, leaving only a marginal chance for a resilient defensive draw or a shock upset.",
+      "input_hash": "0f7cd535f4fc0bd4027791d33cad65d264b1b8accf5f20a674a57efee86c196f"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gemini-3.5-flash",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.9213,
+      "p_draw": 0.0614,
+      "p_away": 0.0173,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Germany is a global powerhouse with elite talent across all positions, while Cura\u00e7ao is a massive underdog that would struggle to contain Germany's high-pressing attack. The gulf in Elo rating and squad depth makes a Germany victory highly probable, though a low-percentage draw or historic upset remains mathematically possible.",
+      "input_hash": "4074e1b4d7499e1f960778de65ee899894baa3aba4aa6720d7ad85e8fbbda42a"
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
@@ -15136,6 +15253,32 @@
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.88,
+      "p_draw": 0.095,
+      "p_away": 0.025,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "eda147214d1c6fc32045d56adc6589b747f783f0b85f1cf0bf60caf922db5d61"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.8546,
+      "p_draw": 0.1068,
+      "p_away": 0.0386,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "51eec8d0d8a2f2bb452f9cc87df6b6974c5a331ec8d01fc74b90388af5125d91"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
       "model": "gpt-5.5-2026-04-23",
       "method": "M1",
       "as_of": "pre-tournament",
@@ -15159,6 +15302,19 @@
       "p_advance_away": null,
       "rationale": "Germany rank ~15th globally with elite squad depth; Cura\u00e7ao (~140th) lack comparable talent or recent results, making an upset improbable.",
       "input_hash": "4d02db776a520ac5f6f82e7786815117bff92b70155f7c13cd10c065c0e53461"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "grok-4.3",
+      "method": "M1",
+      "as_of": "T-3h",
+      "p_home": 0.925,
+      "p_draw": 0.06,
+      "p_away": 0.015,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Germany's elite squad depth and experience overwhelm Cura\u00e7ao's limited resources; a mismatch even in a dead rubber.",
+      "input_hash": "7f6a187d0eadb27c709004954415fa35b76622952a05cdc7d3167b175a05ee1d"
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
@@ -15188,6 +15344,19 @@
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
+      "model": "claude-haiku-4-5",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.8247,
+      "p_draw": 0.0623,
+      "p_away": 0.113,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "be83acba21fa52966ed661542a7da2a907b43c87f2f93a915798510a69a7c518"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
       "model": "claude-opus-4-8",
       "method": "M2",
       "as_of": "pre-tournament",
@@ -15201,6 +15370,19 @@
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
+      "model": "claude-opus-4-8",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.93,
+      "p_draw": 0.05,
+      "p_away": 0.02,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Germany is a perennial top-tier side with elite squad depth; Cura\u00e7ao, while a strong CONCACAF minnow making a debut-level appearance, is vastly outmatched in talent and experience. Heavy mismatch, but draws/upsets carry small nonzero probability.",
+      "input_hash": "7b1796e2573b8294000df1d886a986be74430a9076dd433deb8e5def2339131c"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
       "model": "gemini-3.1-pro-preview",
       "method": "M2",
       "as_of": "pre-tournament",
@@ -15211,6 +15393,32 @@
       "p_advance_away": null,
       "rationale": "Germany boasts overwhelming advantages in squad depth, tactical organization, and elite experience. Although Cura\u00e7ao's hypothetical qualification indicates regional progress, the sheer talent disparity against a global powerhouse makes a German victory overwhelmingly likely. The betting market would price Germany as massive favorites, minimizing upset probability.",
       "input_hash": "261c42270615f3ecb2db958f6ee99dac4c87c1bab2b2e96a49275b3f84470328"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.923,
+      "p_draw": 0.058,
+      "p_away": 0.019,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Germany possesses overwhelming advantages in squad depth, tactical organization, and elite-level experience. Cura\u00e7ao features some capable Dutch-trained professionals but lacks the collective quality to withstand Germany's sustained pressure. A massive talent disparity makes a comfortable German victory highly probable.",
+      "input_hash": "bc33c5d783eb4cd711aca475a23f059ef042b9bf064bfa67a65e7a7f695af904"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gemini-3.5-flash",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.926,
+      "p_draw": 0.051,
+      "p_away": 0.023,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Germany enters their Group E opener as overwhelming favorites against World Cup debutants Cura\u00e7ao, the smallest nation in the tournament. Boasting a massive talent advantage with stars like Musiala and Wirtz, and coming off a nine-match winning streak, Germany is highly likely to secure a comfortable victory, while Cura\u00e7ao focuses on a defensive low block.",
+      "input_hash": "416bb68ca2da6b203aeb9a4dd826ef67ea99ce132741ecd47d9dc604cd94aafb"
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
@@ -15240,6 +15448,19 @@
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.82,
+      "p_draw": 0.13,
+      "p_away": 0.05,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "066feb9bf4f1177f8b6c4afd6d9225cb9f045eb9b67528fe30a63d5407b7bca1"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
       "model": "gpt-5.5-2026-04-23",
       "method": "M2",
       "as_of": "pre-tournament",
@@ -15250,6 +15471,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "6ac92258f3074dc044462aae37195b04e631bdc68204e3f0ece2c6afbd8d1037"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.9187,
+      "p_draw": 0.0541,
+      "p_away": 0.0272,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "f487c6599175cad0f53b4afe71e04d5fcc50b062678d70587214b073855f37d9"
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
@@ -15266,6 +15500,19 @@
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
+      "model": "grok-4.3",
+      "method": "M2",
+      "as_of": "T-3h",
+      "p_home": 0.925,
+      "p_draw": 0.055,
+      "p_away": 0.02,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": "Germany vastly outclasses Cura\u00e7ao in talent, FIFA ranking (~10 vs ~140+), and form; expect dominant home win.",
+      "input_hash": "76e467355d8a4e0a1745d91976d254b6f76f92d0718929e48408476e092a7e18"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
       "model": "claude-fable-5",
       "method": "M3",
       "as_of": "pre-tournament",
@@ -15276,6 +15523,32 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "c608f21e50fb3417db29aeecbf80c34d32a354bd89103a76ed222931f8330657"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "claude-fable-5",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.7942111855668406,
+      "p_draw": 0.14188626093454373,
+      "p_away": 0.06390255349861568,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "27f8a97365d4b2fc0fb564ab72fb423f36b8f090540b5a3fa815a91e5da389ae"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.7514477976368028,
+      "p_draw": 0.16517734269711737,
+      "p_away": 0.08337485966607963,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "3b3228563ecf0d6eb16b734d676f279ee517a1aeeb1adfef52e273b092501d64"
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
@@ -15305,6 +15578,19 @@
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.7946584808667932,
+      "p_draw": 0.14163254197038394,
+      "p_away": 0.0637089771628227,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "6dc511983229a17a2a748a3c9a7346d8e082d119f844f09a8a7312e030150110"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
       "model": "deepseek-v4-flash",
       "method": "M3",
       "as_of": "pre-tournament",
@@ -15315,6 +15601,32 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "511d1faac19e9374c4e541b66fb333be4175f9c99fe4052e189a1e26e174a152"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.8273357466013842,
+      "p_draw": 0.12252877150034988,
+      "p_away": 0.050135481898266096,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "c8c088c35edfa9823fea0330261dc7306607ee3b736e8eaa22a656a524097850"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.8361327466183258,
+      "p_draw": 0.11719302086491956,
+      "p_away": 0.04667423251675451,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "5e0805cf1923c8ecfe00dd6fb337c0f6017ce771773ee3bcd2ab666b5dc41532"
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
@@ -15344,6 +15656,19 @@
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.8274575779415533,
+      "p_draw": 0.12245543813136878,
+      "p_away": 0.05008698392707795,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "0023d7d3a55cd5baee7879ad3c23d2e65ab0394226f46a5145154c5d22279d64"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
       "model": "gemini-3.5-flash",
       "method": "M3",
       "as_of": "pre-tournament",
@@ -15354,6 +15679,32 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "2fd54c404462bc478d7fda832534e301fd1221a84f840bb683bcdf28490a9852"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.8309598937939469,
+      "p_draw": 0.12034055973050962,
+      "p_away": 0.048699546475543865,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "3ca010117c25d41d5fe82776bea5528687c9d02a23884fdefdedc70a9847b157"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.8085811544336754,
+      "p_draw": 0.13363040678004776,
+      "p_away": 0.057788438786277,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "981da33ac8c9f805b1da05009a5415e96da98a40552b09fae007837298ab85cd"
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
@@ -15372,6 +15723,19 @@
       "match_id": "GE-germany-cura\u00e7ao",
       "model": "gpt-5.5-2026-04-23",
       "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.7990090188082819,
+      "p_draw": 0.13915386675346822,
+      "p_away": 0.061837114438249983,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "03952dd12201ffe9f82522c6009411b018dd29cbf5330c14447c9391d2ebd59a"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M3",
       "as_of": "pre-tournament",
       "p_home": 0.7990090188082819,
       "p_draw": 0.13915386675346822,
@@ -15380,6 +15744,19 @@
       "p_advance_away": null,
       "rationale": null,
       "input_hash": "3c1d33857ed36a11c66e1eb6d327b1e62212e5025798913b60205139e006e9c6"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "model": "grok-4.3",
+      "method": "M3",
+      "as_of": "T-3h",
+      "p_home": 0.8349147927010059,
+      "p_draw": 0.11793668347093691,
+      "p_away": 0.047148523828057315,
+      "p_advance_home": null,
+      "p_advance_away": null,
+      "rationale": null,
+      "input_hash": "61c54b6c311e957144602f951387250453cca3cc9d08beb742e807de64031446"
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
@@ -33222,9 +33599,9 @@
       "match_id": "GA-mexico-south_africa",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 1.41,
-      "o_draw": 4.35,
+      "source": "Pinnacle",
+      "o_home": 1.44,
+      "o_draw": 4.6,
       "o_away": 9.0,
       "captured_at": "2026-06-11T16:00:38Z"
     },
@@ -33242,31 +33619,11 @@
       "match_id": "GA-mexico-south_africa",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 1.44,
-      "o_draw": 4.6,
+      "source": "Kambi",
+      "o_home": 1.41,
+      "o_draw": 4.35,
       "o_away": 9.0,
       "captured_at": "2026-06-11T16:00:38Z"
-    },
-    {
-      "match_id": "GA-mexico-south_korea",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 1.85,
-      "o_draw": 3.75,
-      "o_away": 4.9,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GA-mexico-south_korea",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 1.75,
-      "o_draw": 3.6,
-      "o_away": 4.49,
-      "captured_at": "2026-06-10T21:33:36Z"
     },
     {
       "match_id": "GA-mexico-south_korea",
@@ -33286,6 +33643,26 @@
       "o_home": 1.8,
       "o_draw": 3.5,
       "o_away": 4.5,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GA-mexico-south_korea",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Betfair Exchange",
+      "o_home": 1.85,
+      "o_draw": 3.75,
+      "o_away": 4.9,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GA-mexico-south_korea",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 1.75,
+      "o_draw": 3.6,
+      "o_away": 4.49,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -33342,10 +33719,10 @@
       "match_id": "GA-south_korea-czech_republic",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 2.67,
-      "o_draw": 3.1,
-      "o_away": 3.08,
+      "source": "Betfair Exchange",
+      "o_home": 2.72,
+      "o_draw": 3.15,
+      "o_away": 3.1,
       "captured_at": "2026-06-11T23:00:36Z"
     },
     {
@@ -33362,10 +33739,10 @@
       "match_id": "GA-south_korea-czech_republic",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 2.72,
-      "o_draw": 3.15,
-      "o_away": 3.1,
+      "source": "Pinnacle",
+      "o_home": 2.67,
+      "o_draw": 3.1,
+      "o_away": 3.08,
       "captured_at": "2026-06-11T23:00:36Z"
     },
     {
@@ -33392,9 +33769,9 @@
       "match_id": "GB-canada-bosnia_&_herzegovina",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 1.82,
-      "o_draw": 3.45,
+      "source": "Bet365",
+      "o_home": 1.8,
+      "o_draw": 3.5,
       "o_away": 4.75,
       "captured_at": "2026-06-12T16:00:25Z"
     },
@@ -33402,9 +33779,9 @@
       "match_id": "GB-canada-bosnia_&_herzegovina",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 1.8,
-      "o_draw": 3.5,
+      "source": "Kambi",
+      "o_home": 1.82,
+      "o_draw": 3.45,
       "o_away": 4.75,
       "captured_at": "2026-06-12T16:00:25Z"
     },
@@ -33492,16 +33869,6 @@
       "match_id": "GB-qatar-switzerland",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 17.0,
-      "o_draw": 7.8,
-      "o_away": 1.22,
-      "captured_at": "2026-06-13T16:00:48Z"
-    },
-    {
-      "match_id": "GB-qatar-switzerland",
-      "as_of": "T-3h",
-      "snapshot": "T-3h",
       "source": "Bet365",
       "o_home": 15.0,
       "o_draw": 7.5,
@@ -33529,6 +33896,16 @@
       "captured_at": "2026-06-13T16:00:48Z"
     },
     {
+      "match_id": "GB-qatar-switzerland",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Betfair Exchange",
+      "o_home": 17.0,
+      "o_draw": 7.8,
+      "o_away": 1.22,
+      "captured_at": "2026-06-13T16:00:48Z"
+    },
+    {
       "match_id": "GB-switzerland-bosnia_&_herzegovina",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
@@ -33552,6 +33929,16 @@
       "match_id": "GC-brazil-haiti",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 1.07,
+      "o_draw": 11.0,
+      "o_away": 29.0,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GC-brazil-haiti",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Kambi",
       "o_home": 1.08,
       "o_draw": 11.5,
@@ -33566,16 +33953,6 @@
       "o_home": 1.1,
       "o_draw": 14.5,
       "o_away": 38.0,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GC-brazil-haiti",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 1.07,
-      "o_draw": 11.0,
-      "o_away": 29.0,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -33742,20 +34119,20 @@
       "match_id": "GC-scotland-morocco",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 4.4,
-      "o_draw": 3.5,
-      "o_away": 2.04,
+      "source": "Kambi",
+      "o_home": 4.1,
+      "o_draw": 3.3,
+      "o_away": 2.0,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
       "match_id": "GC-scotland-morocco",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 4.1,
-      "o_draw": 3.2,
-      "o_away": 1.95,
+      "source": "Betfair Exchange",
+      "o_home": 4.4,
+      "o_draw": 3.5,
+      "o_away": 2.04,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -33772,10 +34149,10 @@
       "match_id": "GC-scotland-morocco",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Kambi",
+      "source": "Pinnacle",
       "o_home": 4.1,
-      "o_draw": 3.3,
-      "o_away": 2.0,
+      "o_draw": 3.2,
+      "o_away": 1.95,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -33822,26 +34199,6 @@
       "match_id": "GD-australia-turkey",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 5.49,
-      "o_draw": 3.89,
-      "o_away": 1.71,
-      "captured_at": "2026-06-14T01:00:34Z"
-    },
-    {
-      "match_id": "GD-australia-turkey",
-      "as_of": "T-3h",
-      "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 5.25,
-      "o_draw": 3.8,
-      "o_away": 1.67,
-      "captured_at": "2026-06-14T01:00:34Z"
-    },
-    {
-      "match_id": "GD-australia-turkey",
-      "as_of": "T-3h",
-      "snapshot": "T-3h",
       "source": "Kambi",
       "o_home": 5.5,
       "o_draw": 3.75,
@@ -33859,6 +34216,26 @@
       "captured_at": "2026-06-14T01:00:34Z"
     },
     {
+      "match_id": "GD-australia-turkey",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 5.25,
+      "o_draw": 3.8,
+      "o_away": 1.67,
+      "captured_at": "2026-06-14T01:00:34Z"
+    },
+    {
+      "match_id": "GD-australia-turkey",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 5.49,
+      "o_draw": 3.89,
+      "o_away": 1.71,
+      "captured_at": "2026-06-14T01:00:34Z"
+    },
+    {
       "match_id": "GD-turkey-paraguay",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
@@ -33872,20 +34249,20 @@
       "match_id": "GD-turkey-paraguay",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 2.28,
-      "o_draw": 3.2,
-      "o_away": 3.55,
+      "source": "Bet365",
+      "o_home": 2.2,
+      "o_draw": 3.1,
+      "o_away": 3.5,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
       "match_id": "GD-turkey-paraguay",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 2.2,
-      "o_draw": 3.1,
-      "o_away": 3.5,
+      "source": "Betfair Exchange",
+      "o_home": 2.28,
+      "o_draw": 3.2,
+      "o_away": 3.55,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -33972,20 +34349,10 @@
       "match_id": "GD-united_states-paraguay",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 2.16,
-      "o_draw": 3.23,
-      "o_away": 3.99,
-      "captured_at": "2026-06-12T22:01:16Z"
-    },
-    {
-      "match_id": "GD-united_states-paraguay",
-      "as_of": "T-3h",
-      "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 2.05,
-      "o_draw": 3.25,
-      "o_away": 3.75,
+      "source": "Kambi",
+      "o_home": 2.08,
+      "o_draw": 3.15,
+      "o_away": 3.9,
       "captured_at": "2026-06-12T22:01:16Z"
     },
     {
@@ -34002,31 +34369,21 @@
       "match_id": "GD-united_states-paraguay",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 2.08,
-      "o_draw": 3.15,
-      "o_away": 3.9,
+      "source": "Bet365",
+      "o_home": 2.05,
+      "o_draw": 3.25,
+      "o_away": 3.75,
       "captured_at": "2026-06-12T22:01:16Z"
     },
     {
-      "match_id": "GE-ecuador-cura\u00e7ao",
-      "as_of": "pre-tournament",
+      "match_id": "GD-united_states-paraguay",
+      "as_of": "T-3h",
       "snapshot": "T-3h",
       "source": "Pinnacle",
-      "o_home": 1.18,
-      "o_draw": 6.96,
-      "o_away": 11.21,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GE-ecuador-cura\u00e7ao",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 1.23,
-      "o_draw": 7.4,
-      "o_away": 15.5,
-      "captured_at": "2026-06-10T21:33:36Z"
+      "o_home": 2.16,
+      "o_draw": 3.23,
+      "o_away": 3.99,
+      "captured_at": "2026-06-12T22:01:16Z"
     },
     {
       "match_id": "GE-ecuador-cura\u00e7ao",
@@ -34046,6 +34403,26 @@
       "o_home": 1.21,
       "o_draw": 6.4,
       "o_away": 15.0,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GE-ecuador-cura\u00e7ao",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 1.18,
+      "o_draw": 6.96,
+      "o_away": 11.21,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GE-ecuador-cura\u00e7ao",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Betfair Exchange",
+      "o_home": 1.23,
+      "o_draw": 7.4,
+      "o_away": 15.5,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34079,14 +34456,44 @@
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
-      "match_id": "GE-germany-ivory_coast",
-      "as_of": "pre-tournament",
+      "match_id": "GE-germany-cura\u00e7ao",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Kambi",
+      "o_home": 1.03,
+      "o_draw": 19.0,
+      "o_away": 46.0,
+      "captured_at": "2026-06-14T14:00:25Z"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Betfair Exchange",
+      "o_home": 1.06,
+      "o_draw": 25.0,
+      "o_away": 50.0,
+      "captured_at": "2026-06-14T14:00:25Z"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "as_of": "T-3h",
       "snapshot": "T-3h",
       "source": "Bet365",
-      "o_home": 1.55,
-      "o_draw": 4.2,
-      "o_away": 5.5,
-      "captured_at": "2026-06-10T21:33:36Z"
+      "o_home": 1.04,
+      "o_draw": 17.0,
+      "o_away": 29.0,
+      "captured_at": "2026-06-14T14:00:25Z"
+    },
+    {
+      "match_id": "GE-germany-cura\u00e7ao",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 1.05,
+      "o_draw": 21.0,
+      "o_away": 41.0,
+      "captured_at": "2026-06-14T14:00:25Z"
     },
     {
       "match_id": "GE-germany-ivory_coast",
@@ -34116,6 +34523,16 @@
       "o_home": 1.59,
       "o_draw": 4.6,
       "o_away": 5.7,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GE-germany-ivory_coast",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 1.55,
+      "o_draw": 4.2,
+      "o_away": 5.5,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34202,6 +34619,16 @@
       "match_id": "GF-netherlands-sweden",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Kambi",
+      "o_home": 1.65,
+      "o_draw": 3.95,
+      "o_away": 5.3,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GF-netherlands-sweden",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Pinnacle",
       "o_home": 1.6,
       "o_draw": 4.01,
@@ -34226,16 +34653,6 @@
       "o_home": 1.62,
       "o_draw": 4.0,
       "o_away": 5.0,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GF-netherlands-sweden",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 1.65,
-      "o_draw": 3.95,
-      "o_away": 5.3,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34282,20 +34699,20 @@
       "match_id": "GF-tunisia-japan",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 5.22,
-      "o_draw": 3.56,
-      "o_away": 1.66,
+      "source": "Kambi",
+      "o_home": 5.1,
+      "o_draw": 3.6,
+      "o_away": 1.74,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
       "match_id": "GF-tunisia-japan",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 5.8,
-      "o_draw": 3.6,
-      "o_away": 1.72,
+      "source": "Pinnacle",
+      "o_home": 5.22,
+      "o_draw": 3.56,
+      "o_away": 1.66,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34312,10 +34729,10 @@
       "match_id": "GF-tunisia-japan",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 5.1,
+      "source": "Betfair Exchange",
+      "o_home": 5.8,
       "o_draw": 3.6,
-      "o_away": 1.74,
+      "o_away": 1.72,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34362,20 +34779,10 @@
       "match_id": "GG-belgium-iran",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
+      "source": "Kambi",
       "o_home": 1.4,
-      "o_draw": 4.75,
-      "o_away": 7.0,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GG-belgium-iran",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 1.42,
-      "o_draw": 5.0,
-      "o_away": 8.6,
+      "o_draw": 4.7,
+      "o_away": 8.5,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34392,10 +34799,20 @@
       "match_id": "GG-belgium-iran",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Kambi",
+      "source": "Betfair Exchange",
+      "o_home": 1.42,
+      "o_draw": 5.0,
+      "o_away": 8.6,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GG-belgium-iran",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Bet365",
       "o_home": 1.4,
-      "o_draw": 4.7,
-      "o_away": 8.5,
+      "o_draw": 4.75,
+      "o_away": 7.0,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34442,16 +34859,6 @@
       "match_id": "GG-new_zealand-egypt",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 4.33,
-      "o_draw": 3.81,
-      "o_away": 1.72,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GG-new_zealand-egypt",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
       "source": "Kambi",
       "o_home": 5.2,
       "o_draw": 3.6,
@@ -34476,6 +34883,16 @@
       "o_home": 5.0,
       "o_draw": 3.5,
       "o_away": 1.73,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GG-new_zealand-egypt",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 4.33,
+      "o_draw": 3.81,
+      "o_away": 1.72,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34602,6 +35019,16 @@
       "match_id": "GH-uruguay-cape_verde",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 1.44,
+      "o_draw": 4.33,
+      "o_away": 7.0,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GH-uruguay-cape_verde",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Kambi",
       "o_home": 1.46,
       "o_draw": 4.35,
@@ -34616,16 +35043,6 @@
       "o_home": 1.46,
       "o_draw": 4.7,
       "o_away": 8.0,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GH-uruguay-cape_verde",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 1.44,
-      "o_draw": 4.33,
-      "o_away": 7.0,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34752,20 +35169,10 @@
       "match_id": "GI-norway-senegal",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 2.1,
-      "o_draw": 3.3,
-      "o_away": 3.5,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GI-norway-senegal",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 2.09,
-      "o_draw": 3.51,
-      "o_away": 3.28,
+      "source": "Kambi",
+      "o_home": 2.15,
+      "o_draw": 3.45,
+      "o_away": 3.4,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34782,10 +35189,20 @@
       "match_id": "GI-norway-senegal",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 2.15,
-      "o_draw": 3.45,
-      "o_away": 3.4,
+      "source": "Pinnacle",
+      "o_home": 2.09,
+      "o_draw": 3.51,
+      "o_away": 3.28,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GI-norway-senegal",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 2.1,
+      "o_draw": 3.3,
+      "o_away": 3.5,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34912,6 +35329,26 @@
       "match_id": "GJ-jordan-algeria",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 6.5,
+      "o_draw": 3.8,
+      "o_away": 1.53,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GJ-jordan-algeria",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Kambi",
+      "o_home": 6.25,
+      "o_draw": 4.1,
+      "o_away": 1.54,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GJ-jordan-algeria",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Betfair Exchange",
       "o_home": 7.0,
       "o_draw": 4.7,
@@ -34929,23 +35366,13 @@
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
-      "match_id": "GJ-jordan-algeria",
+      "match_id": "GK-colombia-dr_congo",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 6.5,
-      "o_draw": 3.8,
-      "o_away": 1.53,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GJ-jordan-algeria",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 6.25,
-      "o_draw": 4.1,
-      "o_away": 1.54,
+      "source": "Betfair Exchange",
+      "o_home": 1.51,
+      "o_draw": 4.3,
+      "o_away": 8.2,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -34966,16 +35393,6 @@
       "o_home": 1.5,
       "o_draw": 4.0,
       "o_away": 7.0,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GK-colombia-dr_congo",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 1.51,
-      "o_draw": 4.3,
-      "o_away": 8.2,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -35022,6 +35439,16 @@
       "match_id": "GK-portugal-uzbekistan",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Kambi",
+      "o_home": 1.26,
+      "o_draw": 6.0,
+      "o_away": 11.5,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GK-portugal-uzbekistan",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Bet365",
       "o_home": 1.25,
       "o_draw": 6.5,
@@ -35039,13 +35466,23 @@
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
-      "match_id": "GK-portugal-uzbekistan",
+      "match_id": "GK-uzbekistan-colombia",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 1.26,
-      "o_draw": 6.0,
-      "o_away": 11.5,
+      "source": "Betfair Exchange",
+      "o_home": 10.0,
+      "o_draw": 4.9,
+      "o_away": 1.42,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GK-uzbekistan-colombia",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 8.5,
+      "o_draw": 4.5,
+      "o_away": 1.4,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -35066,26 +35503,6 @@
       "o_home": 9.0,
       "o_draw": 4.5,
       "o_away": 1.4,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GK-uzbekistan-colombia",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 8.5,
-      "o_draw": 4.5,
-      "o_away": 1.4,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GK-uzbekistan-colombia",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 10.0,
-      "o_draw": 4.9,
-      "o_away": 1.42,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -35142,10 +35559,10 @@
       "match_id": "GL-england-ghana",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 1.28,
-      "o_draw": 5.32,
-      "o_away": 8.92,
+      "source": "Kambi",
+      "o_home": 1.35,
+      "o_draw": 5.0,
+      "o_away": 9.5,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -35162,10 +35579,10 @@
       "match_id": "GL-england-ghana",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 1.35,
-      "o_draw": 5.0,
-      "o_away": 9.5,
+      "source": "Pinnacle",
+      "o_home": 1.28,
+      "o_draw": 5.32,
+      "o_away": 8.92,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -35212,20 +35629,10 @@
       "match_id": "GL-panama-croatia",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Pinnacle",
-      "o_home": 6.28,
-      "o_draw": 3.68,
-      "o_away": 1.55,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GL-panama-croatia",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Betfair Exchange",
-      "o_home": 6.6,
-      "o_draw": 4.1,
-      "o_away": 1.58,
+      "source": "Bet365",
+      "o_home": 6.0,
+      "o_draw": 4.0,
+      "o_away": 1.53,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -35242,10 +35649,20 @@
       "match_id": "GL-panama-croatia",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 6.0,
-      "o_draw": 4.0,
-      "o_away": 1.53,
+      "source": "Betfair Exchange",
+      "o_home": 6.6,
+      "o_draw": 4.1,
+      "o_away": 1.58,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GL-panama-croatia",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 6.28,
+      "o_draw": 3.68,
+      "o_away": 1.55,
       "captured_at": "2026-06-10T21:33:36Z"
     }
   ],
