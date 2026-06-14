@@ -42,6 +42,9 @@ const MODEL_TIERS = {
   "claude-haiku-4-5": "sibling", "gpt-5.4-mini-2026-03-17": "sibling",
   "gemini-3.5-flash": "sibling", "deepseek-v4-flash": "sibling",
 };
+// Models hidden from the dashboard (turned off / no longer running). Their locked
+// historical forecasts stay in the data; this is a display filter only.
+const HIDDEN_MODELS = new Set(["claude-fable-5"]);
 
 // Leaderboard view state: collapsed top-10 with method/tier filters.
 const LB_TOP_N = 10;
@@ -51,6 +54,7 @@ const LB_TYPES = {
 };
 const LB_TIERS = { all: "All", flagship: "Flagship", mid: "Mid rung", sibling: "Fast & cheap" };
 const LB_VIEW = { type: "all", tier: "all", expanded: false };
+let LB_SORT = null;  // { key, dir } once a leaderboard column is clicked; null = default RPS order
 
 // Vendored SVG flags (site/vendor/flags, lipis/flag-icons, MIT) — Windows does
 // not render country-flag emoji, so images are the only portable option.
@@ -74,7 +78,6 @@ const teamLink = (t) => FLAGS[t] ? `<a class="tlink" href="#/team/${encodeURICom
 const pct = (x) => (x == null ? "—" : (100 * x).toFixed(0) + "%");
 const pct1 = (x) => (x == null ? "—" : (100 * x).toFixed(1) + "%");
 const f3 = (x) => (x == null ? "—" : x.toFixed(3));
-const f4 = (x) => (x == null ? "—" : x.toFixed(4));
 const mean = (a) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : null);
 
 // All displayed times are the VISITOR'S local time (the record itself stays UTC).
@@ -140,6 +143,7 @@ function leaderboard() {
   };
   for (const p of DB.predictions) {
     if (p.p_home == null) continue;
+    if (HIDDEN_MODELS.has(p.model)) continue;
     const m = seriesMeta(p);
     add(m.key, m.label, m.kind, p.match_id, [p.p_home, p.p_draw, p.p_away]);
   }
@@ -165,31 +169,47 @@ function sparkline(values, color = "#7aa2ff") {
 function rpsSeriesOverTime() {
   const played = playedFixtures();
   if (played.length < 2) return null;
-  const primary = (SCORES && SCORES.primary_model) || "claude-fable-5";
-  const wanted = new Map([
-    [`M1·${primary}`, { key: `Blind · ${shortModel(primary)}`, color: WCViz.SERIES_COLORS.M1 }],
-    [`M2·${primary}`, { key: `Web search · ${shortModel(primary)}`, color: WCViz.SERIES_COLORS.M2 }],
-    [`M3·${primary}`, { key: `Ratings engine · ${shortModel(primary)}`, color: WCViz.SERIES_COLORS.M3 }],
+  // One line per active model (within-model mean across its M1/M2/M3 arms per
+  // match), plus the ensemble, baselines, and market as reference lines.
+  const ARMS = ["M1", "M2", "M3"];
+  const refs = new Map([
     ["ENS", { key: "Ensemble", color: WCViz.SERIES_COLORS.ENS }],
     ["B1", { key: "Elo baseline", color: WCViz.SERIES_COLORS.B1 }],
     ["B2", { key: "Squad-value baseline", color: WCViz.SERIES_COLORS.B2 }],
     ["MKT", { key: "Betting market", color: WCViz.SERIES_COLORS.MKT }],
   ]);
-  const acc = new Map([...wanted.keys()].map(k => [k, { sum: 0, n: 0, points: [] }]));
+  const models = [...new Set(DB.predictions
+    .filter(p => p.model && !HIDDEN_MODELS.has(p.model) && ARMS.includes(p.method))
+    .map(p => p.model))];
+  const acc = new Map([...refs.keys(), ...models.map(m => `MODEL·${m}`)]
+    .map(k => [k, { sum: 0, n: 0, points: [] }]));
+  const push = (key, value) => {
+    const a = acc.get(key); if (!a) return;
+    a.sum += value; a.n += 1; a.points.push({ x: a.n, y: a.sum / a.n });
+  };
   for (const fx of played) {
     const o = outcomeVec(fx);
-    for (const p of (DB._predsByMatch[fx.match_id] || [])) {
-      if (p.p_home == null) continue;
-      const key = p.model != null ? `${p.method}·${p.model}` : p.method;
-      const a = acc.get(key); if (!a) continue;
-      a.sum += rps([p.p_home, p.p_draw, p.p_away], o); a.n += 1;
-      a.points.push({ x: a.n, y: a.sum / a.n });
+    const preds = DB._predsByMatch[fx.match_id] || [];
+    for (const p of preds) {
+      if (p.p_home == null || p.model != null || !refs.has(p.method)) continue; // ENS/B1/B2
+      push(p.method, rps([p.p_home, p.p_draw, p.p_away], o));
     }
-    const m = mktVector(fx.match_id);
-    if (m) { const a = acc.get("MKT"); a.sum += rps(m.p, o); a.n += 1; a.points.push({ x: a.n, y: a.sum / a.n }); }
+    const mk = mktVector(fx.match_id);
+    if (mk) push("MKT", rps(mk.p, o));
+    for (const m of models) {
+      const arms = preds.filter(p => p.model === m && p.p_home != null && ARMS.includes(p.method));
+      if (arms.length) push(`MODEL·${m}`, mean(arms.map(p => rps([p.p_home, p.p_draw, p.p_away], o))));
+    }
   }
-  const series = [...acc.entries()].filter(([, a]) => a.points.length >= 2)
-    .map(([k, a]) => ({ key: wanted.get(k).key, color: wanted.get(k).color, points: a.points }));
+  const series = [];
+  for (const m of models) {
+    const a = acc.get(`MODEL·${m}`);
+    if (a.points.length >= 2) series.push({ key: shortModel(m), color: WCViz.modelColor(m), points: a.points });
+  }
+  for (const [k, meta] of refs) {
+    const a = acc.get(k);
+    if (a.points.length >= 2) series.push({ key: meta.key, color: meta.color, points: a.points });
+  }
   return series.length ? series : null;
 }
 
@@ -202,7 +222,7 @@ function latestForecast() {
   const rows = all.filter(f => f.as_of === latest);
   return {
     rows, cps, latest, all,
-    models: rows.filter(f => f.method === "M3"),
+    models: rows.filter(f => f.method === "M3" && !HIDDEN_MODELS.has(f.model)),
     baselines: rows.filter(f => f.method === "B1" || f.method === "B2"),
   };
 }
@@ -382,6 +402,41 @@ function hdaBar(ph, pd, pa) {
   return `<div class="bar"><span class="h" style="width:${ph * 100}%"></span><span class="d" style="width:${pd * 100}%"></span><span class="a" style="width:${pa * 100}%"></span></div>`;
 }
 function tableWrap(html) { return `<div class="tablewrap">${html}</div>`; }
+
+// Click-to-sort for static tables. Reads cell text (or data-sort override),
+// sorts numerically when every value is a number, else alphabetically; clicking
+// a column again reverses it. Headers marked `.nosort` are skipped.
+function attachSort(table) {
+  const head = table.tHead; if (!head) return;
+  const ths = [...head.rows[0].cells];
+  ths.forEach((th, idx) => {
+    if (th.classList.contains("nosort")) return;
+    th.classList.add("sortable");
+    th.addEventListener("click", () => {
+      const tbody = table.tBodies[0]; if (!tbody) return;
+      const rows = [...tbody.rows].filter(r => r.cells.length === ths.length);
+      if (rows.length < 2) return;
+      const dir = th.classList.contains("sort-asc") ? -1 : 1;
+      ths.forEach(h => h.classList.remove("sort-asc", "sort-desc"));
+      th.classList.add(dir === 1 ? "sort-asc" : "sort-desc");
+      const vals = rows.map(r => {
+        const td = r.cells[idx];
+        const raw = (td && td.dataset.sort != null ? td.dataset.sort : td ? td.textContent.trim() : "");
+        return { r, raw, num: parseFloat(raw) };
+      });
+      const numeric = vals.some(v => isFinite(v.num))
+        && vals.every(v => v.raw === "" || v.raw === "—" || isFinite(v.num));
+      vals.sort((a, b) => {
+        if (numeric) {
+          const an = isFinite(a.num) ? a.num : Infinity, bn = isFinite(b.num) ? b.num : Infinity;
+          return an === bn ? 0 : (an - bn) * dir;
+        }
+        return a.raw.localeCompare(b.raw) * dir;
+      });
+      vals.forEach(v => tbody.appendChild(v.r));
+    });
+  });
+}
 function chartBox(id, h = 320) { return `<div class="chartbox" style="height:${h}px"><canvas id="${id}"></canvas></div>`; }
 
 function tieCard(t, { final = false } = {}) {
@@ -603,6 +658,7 @@ function startCountdown() {
 }
 
 function viewLeaderboard() {
+  LB_SORT = null;  // each visit starts in the default RPS order (header indicator fresh)
   const { rows, mktMean } = leaderboard();
   const lede = `<p class="lede">Ten AI models forecast every match of the World Cup — and we score them against the one opponent that's genuinely hard to beat: <strong>the betting market</strong>. Every forecast is locked and published before kickoff, so nobody can quietly rewrite history.</p>`;
   if (!rows.length) {
@@ -640,7 +696,15 @@ function viewLeaderboard() {
     });
   };
   const tbodyHtml = () => {
-    const f = filtered();
+    let f = filtered();
+    if (LB_SORT) {
+      const { key, dir } = LB_SORT;
+      const num = (r) => key === "rank" ? (typeof r._rank === "number" ? r._rank : Infinity)
+        : (r[key] == null ? Infinity : r[key]);
+      f = [...f].sort((a, b) => key === "label"
+        ? a.label.localeCompare(b.label) * dir
+        : (num(a) === num(b) ? 0 : (num(a) - num(b)) * dir));
+    }
     const cut = !LB_VIEW.expanded && f.length > LB_TOP_N + 1;
     let vis = cut ? f.slice(0, LB_TOP_N) : f;
     const mkt = f.find(r => r.key === "MKT");
@@ -658,20 +722,14 @@ function viewLeaderboard() {
     Object.entries(LB_TIERS).map(([k, label]) =>
       `<button type="button" class="fpill${LB_VIEW.tier === k ? " on" : ""}" data-tier="${k}">${label}</button>`).join("");
 
-  const h1 = SCORES && SCORES.h1;
-  const h1Panel = h1 ? `
-    <h2>The official question: does web search make AI forecasts better?</h2>
-    <div class="note">Same model, same match, two forecasts — one blind, one allowed to search the web. Across ${h1.n} matches, searching changed <strong>${esc(shortModel(h1.model))}</strong>'s average forecast error by
-      <strong class="${h1.mean < 0 ? "good" : "bad"}">${h1.mean >= 0 ? "+" : ""}${f4(h1.mean)}</strong>
-      (${h1.mean < 0 ? "search is helping" : "search is hurting"}; 95% confidence range ${f4(h1.ci_low)} to ${f4(h1.ci_high)}).
-      This is the one question this experiment formally registered in advance — the analysis code was frozen before any match was played.</div>` : "";
+  // H1 "official question" panel hidden: it is preregistered for the now-retired
+  // primary model (Fable) and is not reattributed to another model.
 
   const node = el(`<section>
     <h1>Leaderboard</h1>${lede}${heroStrip()}${emailSlim()}
     <div class="lbfilters" id="lb-filters">${pillsHtml()}</div>
-    ${tableWrap(`<table><thead><tr><th class="num">#</th><th>Forecaster</th><th class="num">matches</th><th class="num" title="Ranked Probability Score">forecast error</th><th class="num">vs market</th><th>trend</th></tr></thead><tbody id="lb-body">${tbodyHtml()}</tbody></table>`)}
+    ${tableWrap(`<table id="lb-table"><thead><tr><th class="num sortable" data-key="rank">#</th><th class="sortable" data-key="label">Forecaster</th><th class="num sortable" data-key="n">matches</th><th class="num sortable" data-key="rps" title="Ranked Probability Score">forecast error</th><th class="num sortable" data-key="skill">vs market</th><th>trend</th></tr></thead><tbody id="lb-body">${tbodyHtml()}</tbody></table>`)}
     <p class="muted" style="margin-top:10px">Forecast error is the Ranked Probability Score — how far each probability forecast landed from what actually happened; <strong>lower is better</strong>. “vs market” is how much better (+) or worse (−) than the betting market${mktMean != null ? ` (market average ${f3(mktMean)})` : ""}.</p>
-    ${h1Panel}
     <h2>The race — who's been closest to reality</h2>
     ${chartBox("rps-over-time", 340)}
     ${SCORES && SCORES.leaderboard && SCORES.leaderboard.length ? `<h2>Official scores with uncertainty ranges</h2>${chartBox("skill-bars", 430)}` : ""}
@@ -695,12 +753,22 @@ function viewLeaderboard() {
       LB_VIEW.expanded = b.dataset.expand === "1";
       refresh();
     });
+    const lbHead = node.querySelector("#lb-table thead tr");
+    lbHead.addEventListener("click", (e) => {
+      const th = e.target.closest("th[data-key]"); if (!th) return;
+      const key = th.dataset.key;
+      const dir = (LB_SORT && LB_SORT.key === key && LB_SORT.dir === 1) ? -1 : 1;
+      LB_SORT = { key, dir };
+      [...lbHead.children].forEach(h => h.classList.remove("sort-asc", "sort-desc"));
+      th.classList.add(dir === 1 ? "sort-asc" : "sort-desc");
+      tb.innerHTML = tbodyHtml();
+    });
     const series = rpsSeriesOverTime();
     const box = node.querySelector("#rps-over-time");
     if (series && box) WCViz.rpsOverTime(box, series);
     else if (box) box.closest(".chartbox").outerHTML = `<div class="note">This chart appears once at least two matches have been played.</div>`;
     const sb = node.querySelector("#skill-bars");
-    if (sb) WCViz.skillBars(sb, SCORES.leaderboard.map(r => ({
+    if (sb) WCViz.skillBars(sb, SCORES.leaderboard.filter(r => !HIDDEN_MODELS.has(r.model)).map(r => ({
       ...r, label: r.model ? `${methodName(r.method)} · ${shortModel(r.model)}` : methodName(r.method),
     })));
   };
@@ -802,7 +870,7 @@ function viewMatch(id) {
   }).join("");
   const m = mktVector(id);
   const mktRow = m ? rowFor(`Betting market (${m.source})`, "mkt", { p_home: m.p[0], p_draw: m.p[1], p_away: m.p[2] }, null, "de-vigged") : "";
-  const oddsRows = (DB._oddsByMatch[id] || []).map(r => `<tr><td>${esc(r.source)}</td><td class="muted">${esc(fmtDT(r.captured_at))}</td><td class="num">${r.o_home}</td><td class="num">${r.o_draw}</td><td class="num">${r.o_away}</td></tr>`).join("");
+  const oddsRows = (DB._oddsByMatch[id] || []).map(r => `<tr><td>${esc(r.source)}</td><td class="muted" data-sort="${Date.parse(r.captured_at) || 0}">${esc(fmtDT(r.captured_at))}</td><td class="num">${r.o_home}</td><td class="num">${r.o_draw}</td><td class="num">${r.o_away}</td></tr>`).join("");
   const resultLine = o
     ? `<span class="result">${fx.result.home_goals}–${fx.result.away_goals}</span> · <span class="win">${["home win", "draw", "away win"][o[0] ? 0 : o[1] ? 1 : 2]}</span>`
     : `<span class="muted">${esc(fmtFull(fx.kickoff_utc))}</span>`;
@@ -820,11 +888,11 @@ function viewMatch(id) {
     ${preds.length ? `<h2>Every forecast at a glance</h2><p class="muted">Each dot is one forecaster's probability; the white line is the betting market. Hover any dot for details.</p>${probStrip(preds, m)}` : ""}
     ${batchNote}
     <h2>The forecasts</h2>
-    ${tableWrap(`<table><thead><tr><th>Forecaster</th><th class="num">Home win</th><th class="num">Draw</th><th class="num">Away win</th><th>shape</th><th class="num" title="Ranked Probability Score — lower is better">error</th><th class="hashcol">fingerprint</th></tr></thead>
+    ${tableWrap(`<table class="sortable"><thead><tr><th>Forecaster</th><th class="num">Home win</th><th class="num">Draw</th><th class="num">Away win</th><th class="nosort">shape</th><th class="num" title="Ranked Probability Score — lower is better">error</th><th class="hashcol nosort">fingerprint</th></tr></thead>
       <tbody>${predRows || `<tr><td colspan="7" class="muted">Forecasts for this match lock 3 hours before kickoff.</td></tr>`}${mktRow}</tbody></table>`)}
     ${rationales ? `<h2>In the models' own words</h2><div class="rationales">${rationales}</div>` : ""}
     <h2>Bookmaker odds, as captured</h2>
-    ${tableWrap(`<table><thead><tr><th>Bookmaker</th><th>captured</th><th class="num">Home</th><th class="num">Draw</th><th class="num">Away</th></tr></thead><tbody>${oddsRows || `<tr><td colspan="5" class="muted">Odds are captured 3 hours before kickoff.</td></tr>`}</tbody></table>`)}
+    ${tableWrap(`<table class="sortable"><thead><tr><th>Bookmaker</th><th>captured</th><th class="num">Home</th><th class="num">Draw</th><th class="num">Away</th></tr></thead><tbody>${oddsRows || `<tr><td colspan="5" class="muted">Odds are captured 3 hours before kickoff.</td></tr>`}</tbody></table>`)}
   </section>`);
   node._after = () => wireStripToggles(node);
   return node;
@@ -941,7 +1009,7 @@ function viewGroup(letter) {
     <h1>Group ${esc(L)}</h1>
     <p class="lede">${anyPlayed ? "Live standings and what the ten AI models expect from here." : "Nothing decided yet — this is how the ten AI models expect the group to go."} The top two qualify directly; a strong third place can still sneak through as one of the eight best thirds.</p>
     <h2>Standings</h2>
-    ${tableWrap(`<table><thead><tr><th class="num">#</th><th>Team</th><th class="num" title="wins-draws-losses">W-D-L</th><th class="num" title="goal difference">+/−</th><th class="num">points</th><th class="num">reaches knockouts</th></tr></thead><tbody>${standingsRows}</tbody></table>`)}
+    ${tableWrap(`<table class="sortable"><thead><tr><th class="num">#</th><th>Team</th><th class="num" title="wins-draws-losses">W-D-L</th><th class="num" title="goal difference">+/−</th><th class="num">points</th><th class="num">reaches knockouts</th></tr></thead><tbody>${standingsRows}</tbody></table>`)}
     <h2>Where each team is expected to finish</h2>
     <p class="muted">The models' average view, all four finishing positions per team — hover any segment.</p>
     <div class="group-card posgrid">${posBars}
@@ -996,8 +1064,8 @@ function viewForecast() {
     </tr>`;
   }).join("");
   const head = champ
-    ? `<th class="num">#</th><th>Team</th><th class="num">Wins group</th><th class="num">Knockouts</th><th class="num">Semifinal</th><th class="num">Final</th><th class="num">Champion</th><th>title odds</th>`
-    : `<th class="num">#</th><th>Team</th><th class="num">Wins group</th><th class="num">Reaches knockouts</th><th>shape</th>`;
+    ? `<th class="num">#</th><th>Team</th><th class="num">Wins group</th><th class="num">Knockouts</th><th class="num">Semifinal</th><th class="num">Final</th><th class="num">Champion</th><th class="nosort">title odds</th>`
+    : `<th class="num">#</th><th>Team</th><th class="num">Wins group</th><th class="num">Reaches knockouts</th><th class="nosort">shape</th>`;
 
   const teamOptions = teamsByConsensus.map(({ t }) => `<option value="${esc(t)}"${t === topTeam ? " selected" : ""}>${esc(t)}</option>`).join("");
 
@@ -1011,7 +1079,7 @@ function viewForecast() {
     ${ratingsHeatmap()}
     <h2>Full table — every forecaster, every team</h2>
     <div class="note">A team's "chance to win it all" can't be proven right or wrong by a single tournament — it's tracked for honesty, not scored. Forecast quality is judged on the match-by-match <a href="#/">leaderboard</a>.</div>
-    ${tableWrap(`<table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>`)}
+    ${tableWrap(`<table class="sortable"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>`)}
   </section>`);
 
   node._after = () => {
@@ -1069,7 +1137,7 @@ function viewVerify() {
     <h1>Verify</h1>
     <p class="lede">Don't take our word for any of this. Every forecast is published to a public git repository <strong>before</strong> the match it predicts, stamped with a cryptographic fingerprint (a SHA-256 hash). GitHub records when each push arrived — a timestamp we can't fake or back-date.</p>
     <div class="note">To check a forecast yourself: open the <a href="https://github.com/nikitamed/Robot-League" target="_blank" rel="noopener">public record</a>, find the commit for a match day in the git history, confirm it's dated before the match was played, and compare the fingerprints in the commit message with the ones below. If we'd changed a single digit of any forecast after the fact, the fingerprints wouldn't match.</div>
-    ${tableWrap(`<table><thead><tr><th>match</th><th>forecaster</th><th>fingerprint (SHA-256)</th></tr></thead><tbody>${rows || `<tr><td colspan="3" class="muted">Per-match fingerprints appear with the first locked batch.</td></tr>`}</tbody></table>`)}
+    ${tableWrap(`<table class="sortable"><thead><tr><th>match</th><th>forecaster</th><th class="nosort">fingerprint (SHA-256)</th></tr></thead><tbody>${rows || `<tr><td colspan="3" class="muted">Per-match fingerprints appear with the first locked batch.</td></tr>`}</tbody></table>`)}
   </section>`);
 }
 
@@ -1135,6 +1203,7 @@ function render() {
   else node = viewLeaderboard();
   app().replaceChildren(node);
   if (node._after) node._after();
+  node.querySelectorAll("table.sortable").forEach(attachSort);
   markNav();
   window.scrollTo(0, 0);
 }
