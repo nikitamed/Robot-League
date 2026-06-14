@@ -575,7 +575,7 @@ function fillTicker() {
     `<b>UPDATED</b> ${esc(fmtDT(DB.generated_at))}`,
     `<b>LOCKED FORECASTS</b> ${captured} of 72 matches`,
     played ? `<b>PLAYED</b> ${played}` : null,
-    next ? `<b>NEXT</b> ${flag(next.home)}${esc(next.home)} v ${esc(next.away)}${flag(next.away)} · ${esc(fmtDT(next.kickoff_utc))}` : null,
+    next ? `<b>NEXT</b> ${flag(next.home)}${esc(next.home)} v ${flag(next.away)}${esc(next.away)} · ${esc(fmtDT(next.kickoff_utc))}` : null,
     `<b>10 AI MODELS</b> from 5 labs`,
   ].filter(Boolean);
   t.innerHTML = parts.join(`<span class="sep">│</span>`);
@@ -619,7 +619,7 @@ function heroStrip() {
   const homeTok = next && FLAGS[next.home]
     ? `<a class="tlink" href="#/team/${encodeURIComponent(next.home)}">${flag(next.home)}${esc(next.home)}</a>` : next ? esc(next.home) : "";
   const awayTok = next && FLAGS[next.away]
-    ? `<a class="tlink" href="#/team/${encodeURIComponent(next.away)}">${esc(next.away)}${flag(next.away)}</a>` : next ? esc(next.away) : "";
+    ? `<a class="tlink" href="#/team/${encodeURIComponent(next.away)}">${flag(next.away)}${esc(next.away)}</a>` : next ? esc(next.away) : "";
   const nextCard = next ? `
     <div class="hero-card alt" data-href="#/match/${encodeURIComponent(next.match_id)}" title="Open match page">
       <div class="hero-kicker">${kicker}</div>
