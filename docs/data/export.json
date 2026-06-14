@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-14T03:15:27Z",
+  "generated_at": "2026-06-14T06:00:41Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -100,7 +100,11 @@
       "stage": "group",
       "group": "Group D",
       "kickoff_utc": "2026-06-14T04:00Z",
-      "result": null
+      "result": {
+        "home_goals": 2,
+        "away_goals": 0,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GE-germany-cura\u00e7ao",
