@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-14T01:00:34Z",
+  "generated_at": "2026-06-14T03:15:27Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -87,7 +87,11 @@
       "stage": "group",
       "group": "Group C",
       "kickoff_utc": "2026-06-14T01:00Z",
-      "result": null
+      "result": {
+        "home_goals": 0,
+        "away_goals": 1,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GD-australia-turkey",
