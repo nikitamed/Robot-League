@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-15T19:01:53Z",
+  "generated_at": "2026-06-15T21:00:22Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -178,7 +178,11 @@
       "stage": "group",
       "group": "Group G",
       "kickoff_utc": "2026-06-15T19:00Z",
-      "result": null
+      "result": {
+        "home_goals": 1,
+        "away_goals": 1,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GH-saudi_arabia-uruguay",
