@@ -34,11 +34,10 @@ const METHOD_LABELS = {
   ENS: "Ensemble", B1: "Elo baseline", B2: "Squad-value baseline", MKT: "Betting market",
 };
 const methodName = (m) => METHOD_LABELS[m] || m;
-// Capability-ladder tiers (roster.yaml): flagship / mid rung / cheaper sibling.
+// Capability-ladder tiers (roster.yaml): flagship / cheaper sibling.
 const MODEL_TIERS = {
-  "claude-fable-5": "flagship", "gpt-5.5-2026-04-23": "flagship", "gemini-3.1-pro-preview": "flagship",
+  "claude-opus-4-8": "flagship", "gpt-5.5-2026-04-23": "flagship", "gemini-3.1-pro-preview": "flagship",
   "grok-4.3": "flagship", "deepseek-v4-pro": "flagship",
-  "claude-opus-4-8": "mid",
   "claude-haiku-4-5": "sibling", "gpt-5.4-mini-2026-03-17": "sibling",
   "gemini-3.5-flash": "sibling", "deepseek-v4-flash": "sibling",
 };
@@ -52,7 +51,7 @@ const LB_TYPES = {
   all: ["All", null], blind: ["Blind", ["M1", "M1c"]], search: ["Web search", ["M2", "M2c"]],
   ratings: ["Ratings engine", ["M3"]], bench: ["Ensemble & baselines", ["ENS", "B1", "B2"]],
 };
-const LB_TIERS = { all: "All", flagship: "Flagship", mid: "Mid rung", sibling: "Fast & cheap" };
+const LB_TIERS = { all: "All", flagship: "Flagship", sibling: "Fast & cheap" };
 const LB_VIEW = { type: "all", tier: "all", expanded: false };
 let LB_SORT = null;  // { key, dir } once a leaderboard column is clicked; null = default RPS order
 
