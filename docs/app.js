@@ -695,7 +695,9 @@ function viewLeaderboard() {
       return true;
     });
   };
-  const tbodyHtml = () => {
+  // The set of rows the table currently shows (filter + sort + top-N/expand).
+  // The skill chart mirrors this exact set so the two never disagree.
+  const visibleRows = () => {
     let f = filtered();
     if (LB_SORT) {
       const { key, dir } = LB_SORT;
@@ -709,9 +711,13 @@ function viewLeaderboard() {
     let vis = cut ? f.slice(0, LB_TOP_N) : f;
     const mkt = f.find(r => r.key === "MKT");
     if (mkt && !vis.includes(mkt)) vis = [...vis, mkt];
+    return { vis, total: f.length, cut };
+  };
+  const tbodyHtml = () => {
+    const { vis, total, cut } = visibleRows();
     const more = cut
-      ? `<tr class="morerow"><td colspan="6"><button type="button" data-expand="1">Show all ${f.length} forecasters ▾</button></td></tr>`
-      : (f.length > LB_TOP_N + 1 ? `<tr class="morerow"><td colspan="6"><button type="button" data-expand="0">Show top ${LB_TOP_N} only ▴</button></td></tr>` : "");
+      ? `<tr class="morerow"><td colspan="6"><button type="button" data-expand="1">Show all ${total} forecasters ▾</button></td></tr>`
+      : (total > LB_TOP_N + 1 ? `<tr class="morerow"><td colspan="6"><button type="button" data-expand="0">Show top ${LB_TOP_N} only ▴</button></td></tr>` : "");
     return vis.map(rowHtml).join("") + more;
   };
   const pillsHtml = () =>
@@ -732,15 +738,34 @@ function viewLeaderboard() {
     <p class="muted" style="margin-top:10px">Forecast error is the Ranked Probability Score — how far each probability forecast landed from what actually happened; <strong>lower is better</strong>. “vs market” is how much better (+) or worse (−) than the betting market${mktMean != null ? ` (market average ${f3(mktMean)})` : ""}.</p>
     <h2>The race — who's been closest to reality</h2>
     ${chartBox("rps-over-time", 340)}
-    ${SCORES && SCORES.leaderboard && SCORES.leaderboard.length ? `<h2>Official scores with uncertainty ranges</h2>${chartBox("skill-bars", 430)}` : ""}
+    ${SCORES && SCORES.leaderboard && SCORES.leaderboard.length ? `<h2>Official scores with uncertainty ranges</h2>${chartBox("skill-bars", 340)}` : ""}
     ${groupsGrid()}
   </section>`);
+
+  // Skill-vs-market lookup (scores.json) keyed exactly like the table rows, so
+  // the chart can mirror the table's visible rows in the same order.
+  const skillByKey = new Map();
+  if (SCORES && SCORES.leaderboard) for (const r of SCORES.leaderboard) {
+    if (HIDDEN_MODELS.has(r.model)) continue;
+    skillByKey.set(seriesMeta(r).key, r);
+  }
+  const drawSkill = () => {
+    const sb = node.querySelector("#skill-bars");
+    if (!sb) return;
+    const data = visibleRows().vis
+      .filter(r => r.key !== "MKT")
+      .map(r => { const s = skillByKey.get(r.key); return s ? { label: r.label, skill_vs_mkt: s.skill_vs_mkt, skill_ci: s.skill_ci } : null; })
+      .filter(Boolean);
+    const cb = sb.closest(".chartbox");
+    if (cb) cb.style.height = Math.max(160, data.length * 26 + 70) + "px";
+    WCViz.skillBars(sb, data);
+  };
 
   node._after = () => {
     startCountdown();
     const fl = node.querySelector("#lb-filters");
     const tb = node.querySelector("#lb-body");
-    const refresh = () => { fl.innerHTML = pillsHtml(); tb.innerHTML = tbodyHtml(); };
+    const refresh = () => { fl.innerHTML = pillsHtml(); tb.innerHTML = tbodyHtml(); drawSkill(); };
     fl.addEventListener("click", (e) => {
       const b = e.target.closest(".fpill"); if (!b) return;
       if (b.dataset.type) LB_VIEW.type = b.dataset.type;
@@ -762,15 +787,13 @@ function viewLeaderboard() {
       [...lbHead.children].forEach(h => h.classList.remove("sort-asc", "sort-desc"));
       th.classList.add(dir === 1 ? "sort-asc" : "sort-desc");
       tb.innerHTML = tbodyHtml();
+      drawSkill();
     });
     const series = rpsSeriesOverTime();
     const box = node.querySelector("#rps-over-time");
     if (series && box) WCViz.rpsOverTime(box, series);
     else if (box) box.closest(".chartbox").outerHTML = `<div class="note">This chart appears once at least two matches have been played.</div>`;
-    const sb = node.querySelector("#skill-bars");
-    if (sb) WCViz.skillBars(sb, SCORES.leaderboard.filter(r => !HIDDEN_MODELS.has(r.model)).map(r => ({
-      ...r, label: r.model ? `${methodName(r.method)} · ${shortModel(r.model)}` : methodName(r.method),
-    })));
+    drawSkill();
   };
   return node;
 }

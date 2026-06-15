@@ -177,11 +177,9 @@
   // --- Skill vs market: bars + CI whiskers (floating bars) ------------------
   // rows: scores.json leaderboard entries (skill_vs_mkt + skill_ci), labels resolved.
   function skillBars(canvas, rows) {
+    // Rows arrive pre-filtered and already ordered by the caller to mirror the
+    // leaderboard table's visible rows; render them as given (no re-sort).
     const named = rows.filter(r => r.skill_vs_mkt != null);
-    // Order by RPS (ascending) to match the leaderboard table's ranking, so the
-    // two never disagree on model order. (Sorting by skill_vs_mkt would diverge
-    // once match coverage is uneven, e.g. knockout drops.)
-    named.sort((a, b) => (a.rps ?? Infinity) - (b.rps ?? Infinity));
     return mount(canvas, {
       data: {
         labels: named.map(r => r.label),
@@ -202,7 +200,10 @@
       },
       options: {
         indexAxis: "y", responsive: true, maintainAspectRatio: false,
-        scales: { x: { grid: { color: css("--line") } } },
+        scales: {
+          x: { grid: { color: css("--line") } },
+          y: { ticks: { autoSkip: false } },  // height is sized per-bar; show every label
+        },
         plugins: {
           tooltip: { callbacks: { label: (c) => Array.isArray(c.raw)
             ? `CI [${c.raw[0].toFixed(4)}, ${c.raw[1].toFixed(4)}]`
