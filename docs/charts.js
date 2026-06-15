@@ -178,7 +178,10 @@
   // rows: scores.json leaderboard entries (skill_vs_mkt + skill_ci), labels resolved.
   function skillBars(canvas, rows) {
     const named = rows.filter(r => r.skill_vs_mkt != null);
-    named.sort((a, b) => b.skill_vs_mkt - a.skill_vs_mkt);
+    // Order by RPS (ascending) to match the leaderboard table's ranking, so the
+    // two never disagree on model order. (Sorting by skill_vs_mkt would diverge
+    // once match coverage is uneven, e.g. knockout drops.)
+    named.sort((a, b) => (a.rps ?? Infinity) - (b.rps ?? Infinity));
     return mount(canvas, {
       data: {
         labels: named.map(r => r.label),
