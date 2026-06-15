@@ -713,12 +713,17 @@ function viewLeaderboard() {
     if (mkt && !vis.includes(mkt)) vis = [...vis, mkt];
     return { vis, total: f.length, cut };
   };
+  // The top-N/expand toggle button (shared by the table's morerow and the chart).
+  const expandBtnHtml = () => {
+    const { total, cut } = visibleRows();
+    if (cut) return `<button type="button" data-expand="1">Show all ${total} forecasters ▾</button>`;
+    if (total > LB_TOP_N + 1) return `<button type="button" data-expand="0">Show top ${LB_TOP_N} only ▴</button>`;
+    return "";
+  };
   const tbodyHtml = () => {
-    const { vis, total, cut } = visibleRows();
-    const more = cut
-      ? `<tr class="morerow"><td colspan="6"><button type="button" data-expand="1">Show all ${total} forecasters ▾</button></td></tr>`
-      : (total > LB_TOP_N + 1 ? `<tr class="morerow"><td colspan="6"><button type="button" data-expand="0">Show top ${LB_TOP_N} only ▴</button></td></tr>` : "");
-    return vis.map(rowHtml).join("") + more;
+    const btn = expandBtnHtml();
+    const more = btn ? `<tr class="morerow"><td colspan="6">${btn}</td></tr>` : "";
+    return visibleRows().vis.map(rowHtml).join("") + more;
   };
   const pillsHtml = () =>
     `<span class="flabel">Method</span>` +
@@ -738,7 +743,10 @@ function viewLeaderboard() {
     <p class="muted" style="margin-top:10px">Forecast error is the Ranked Probability Score — how far each probability forecast landed from what actually happened; <strong>lower is better</strong>. “vs market” is how much better (+) or worse (−) than the betting market${mktMean != null ? ` (market average ${f3(mktMean)})` : ""}.</p>
     <h2>The race — who's been closest to reality</h2>
     ${chartBox("rps-over-time", 340)}
-    ${SCORES && SCORES.leaderboard && SCORES.leaderboard.length ? `<h2>Official scores with uncertainty ranges</h2>${chartBox("skill-bars", 340)}` : ""}
+    ${SCORES && SCORES.leaderboard && SCORES.leaderboard.length ? `<h2>Official scores with uncertainty ranges</h2>
+    <div class="lbfilters">${pillsHtml()}</div>
+    ${chartBox("skill-bars", 340)}
+    <div class="lbexpand" id="lb-expand-chart">${expandBtnHtml()}</div>` : ""}
     ${groupsGrid()}
   </section>`);
 
@@ -763,20 +771,28 @@ function viewLeaderboard() {
 
   node._after = () => {
     startCountdown();
-    const fl = node.querySelector("#lb-filters");
     const tb = node.querySelector("#lb-body");
-    const refresh = () => { fl.innerHTML = pillsHtml(); tb.innerHTML = tbodyHtml(); drawSkill(); };
-    fl.addEventListener("click", (e) => {
-      const b = e.target.closest(".fpill"); if (!b) return;
-      if (b.dataset.type) LB_VIEW.type = b.dataset.type;
-      if (b.dataset.tier) LB_VIEW.tier = b.dataset.tier;
-      LB_VIEW.expanded = false;
-      refresh();
-    });
-    tb.addEventListener("click", (e) => {
-      const b = e.target.closest("[data-expand]"); if (!b) return;
-      LB_VIEW.expanded = b.dataset.expand === "1";
-      refresh();
+    // Both control bars (above the table and above the chart) feed one state.
+    const refresh = () => {
+      node.querySelectorAll(".lbfilters").forEach(f => { f.innerHTML = pillsHtml(); });
+      tb.innerHTML = tbodyHtml();
+      const ce = node.querySelector("#lb-expand-chart");
+      if (ce) ce.innerHTML = expandBtnHtml();
+      drawSkill();
+    };
+    // Delegate filter/expand clicks on the whole view, so the table's and the
+    // chart's controls behave identically wherever they live.
+    node.addEventListener("click", (e) => {
+      const pill = e.target.closest(".fpill");
+      if (pill) {
+        if (pill.dataset.type) LB_VIEW.type = pill.dataset.type;
+        if (pill.dataset.tier) LB_VIEW.tier = pill.dataset.tier;
+        LB_VIEW.expanded = false;
+        refresh();
+        return;
+      }
+      const exp = e.target.closest("[data-expand]");
+      if (exp) { LB_VIEW.expanded = exp.dataset.expand === "1"; refresh(); }
     });
     const lbHead = node.querySelector("#lb-table thead tr");
     lbHead.addEventListener("click", (e) => {
