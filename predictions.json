@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-17T01:01:13Z",
+  "generated_at": "2026-06-17T03:00:54Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -243,7 +243,11 @@
       "stage": "group",
       "group": "Group J",
       "kickoff_utc": "2026-06-17T01:00Z",
-      "result": null
+      "result": {
+        "home_goals": 3,
+        "away_goals": 0,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GJ-austria-jordan",
