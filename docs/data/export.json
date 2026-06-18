@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-18T01:16:07Z",
+  "generated_at": "2026-06-18T01:54:01Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -41044,6 +41044,16 @@
       "match_id": "GI-france-iraq",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 1.11,
+      "o_draw": 9.0,
+      "o_away": 19.0,
+      "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GI-france-iraq",
+      "as_of": "pre-tournament",
+      "snapshot": "T-3h",
       "source": "Betfair Exchange",
       "o_home": 1.15,
       "o_draw": 9.4,
@@ -41068,16 +41078,6 @@
       "o_home": 1.11,
       "o_draw": 7.99,
       "o_away": 23.64,
-      "captured_at": "2026-06-10T21:33:36Z"
-    },
-    {
-      "match_id": "GI-france-iraq",
-      "as_of": "pre-tournament",
-      "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 1.11,
-      "o_draw": 9.0,
-      "o_away": 19.0,
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
@@ -41124,16 +41124,6 @@
       "match_id": "GI-france-senegal",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 1.47,
-      "o_draw": 4.4,
-      "o_away": 7.0,
-      "captured_at": "2026-06-16T16:00:51Z"
-    },
-    {
-      "match_id": "GI-france-senegal",
-      "as_of": "T-3h",
-      "snapshot": "T-3h",
       "source": "Pinnacle",
       "o_home": 1.49,
       "o_draw": 4.6,
@@ -41158,6 +41148,16 @@
       "o_home": 1.5,
       "o_draw": 4.8,
       "o_away": 7.6,
+      "captured_at": "2026-06-16T16:00:51Z"
+    },
+    {
+      "match_id": "GI-france-senegal",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Kambi",
+      "o_home": 1.47,
+      "o_draw": 4.4,
+      "o_away": 7.0,
       "captured_at": "2026-06-16T16:00:51Z"
     },
     {
@@ -41204,10 +41204,10 @@
       "match_id": "GI-iraq-norway",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Kambi",
-      "o_home": 15.0,
-      "o_draw": 7.0,
-      "o_away": 1.2,
+      "source": "Bet365",
+      "o_home": 12.0,
+      "o_draw": 6.5,
+      "o_away": 1.22,
       "captured_at": "2026-06-16T19:01:47Z"
     },
     {
@@ -41234,10 +41234,10 @@
       "match_id": "GI-iraq-norway",
       "as_of": "T-3h",
       "snapshot": "T-3h",
-      "source": "Bet365",
-      "o_home": 12.0,
-      "o_draw": 6.5,
-      "o_away": 1.22,
+      "source": "Kambi",
+      "o_home": 15.0,
+      "o_draw": 7.0,
+      "o_away": 1.2,
       "captured_at": "2026-06-16T19:01:47Z"
     },
     {
@@ -41581,6 +41581,16 @@
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
+      "match_id": "GK-portugal-dr_congo",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 1.29,
+      "o_draw": 5.25,
+      "o_away": 11.0,
+      "captured_at": "2026-06-18T01:54:01Z"
+    },
+    {
       "match_id": "GK-portugal-uzbekistan",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
@@ -41701,6 +41711,26 @@
       "captured_at": "2026-06-10T21:33:36Z"
     },
     {
+      "match_id": "GL-england-croatia",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 1.67,
+      "o_draw": 3.9,
+      "o_away": 5.25,
+      "captured_at": "2026-06-18T01:54:01Z"
+    },
+    {
+      "match_id": "GL-england-croatia",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 1.71,
+      "o_draw": 3.84,
+      "o_away": 5.58,
+      "captured_at": "2026-06-18T01:54:01Z"
+    },
+    {
       "match_id": "GL-england-ghana",
       "as_of": "pre-tournament",
       "snapshot": "T-3h",
@@ -41779,6 +41809,26 @@
       "o_draw": 3.4,
       "o_away": 3.65,
       "captured_at": "2026-06-10T21:33:36Z"
+    },
+    {
+      "match_id": "GL-ghana-panama",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Bet365",
+      "o_home": 2.35,
+      "o_draw": 3.2,
+      "o_away": 3.1,
+      "captured_at": "2026-06-18T01:54:01Z"
+    },
+    {
+      "match_id": "GL-ghana-panama",
+      "as_of": "T-3h",
+      "snapshot": "T-3h",
+      "source": "Pinnacle",
+      "o_home": 2.41,
+      "o_draw": 3.21,
+      "o_away": 3.38,
+      "captured_at": "2026-06-18T01:54:01Z"
     },
     {
       "match_id": "GL-panama-croatia",
