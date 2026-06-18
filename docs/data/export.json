@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-18T19:00:43Z",
+  "generated_at": "2026-06-18T21:00:54Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -334,7 +334,11 @@
       "stage": "group",
       "group": "Group B",
       "kickoff_utc": "2026-06-18T19:00Z",
-      "result": null
+      "result": {
+        "home_goals": 4,
+        "away_goals": 1,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GB-canada-qatar",
