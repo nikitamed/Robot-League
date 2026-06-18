@@ -238,5 +238,32 @@
     });
   }
 
-  window.WCViz = { modelColor, SERIES_COLORS, titleRace, reachCurves, trajectory, rpsOverTime, skillBars, ratingBars };
+  // --- Betting returns over time (illustrative) -----------------------------
+  // series: [{ key, color, points:[{x,y}] }]; baseline = 0 (flat P/L) or 100 (Kelly).
+  function returnsChart(canvas, series, yLabel, baseline) {
+    return mount(canvas, {
+      type: "line",
+      data: {
+        datasets: series.map(s => ({
+          label: s.key, data: s.points, borderColor: s.color, backgroundColor: s.color,
+          borderWidth: s.key === "Betting market" ? 2.5 : 1.8,
+          borderDash: s.key === "Betting market" ? [6, 4] : [],
+          pointRadius: 0, tension: 0.1,
+        })),
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false, parsing: false,
+        scales: {
+          x: { type: "linear", title: { display: true, text: "matches played" }, ticks: { precision: 0 } },
+          y: { title: { display: true, text: yLabel }, grid: { color: (c) => c.tick.value === baseline ? css("--muted") : css("--line") } },
+        },
+        plugins: {
+          tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${c.parsed.y >= 0 ? "+" : ""}${c.parsed.y.toFixed(2)}` } },
+          legend: { position: "bottom" },
+        },
+      },
+    });
+  }
+
+  window.WCViz = { modelColor, SERIES_COLORS, titleRace, reachCurves, trajectory, rpsOverTime, skillBars, ratingBars, returnsChart };
 })();

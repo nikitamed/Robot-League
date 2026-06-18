@@ -55,6 +55,11 @@ const LB_TIERS = { all: "All", flagship: "Flagship", sibling: "Fast & cheap" };
 const LB_VIEW = { type: "all", tier: "all", expanded: false };
 let LB_SORT = null;  // { key, dir } once a leaderboard column is clicked; null = default RPS order
 
+// Betting-returns view (illustrative): staking strategy x odds source.
+const RET_STRATS = { value: "Value bets (all +EV)", valbest: "Value (best pick)", pick: "Follow the pick", kelly: "Half-Kelly" };
+const RET_SOURCES = { best: "Best available", pinnacle: "Pinnacle", fair: "De-vigged fair" };
+const RET_VIEW = { strat: "value", source: "best" };
+
 // Vendored SVG flags (site/vendor/flags, lipis/flag-icons, MIT) — Windows does
 // not render country-flag emoji, so images are the only portable option.
 const FLAGS = {
@@ -1168,6 +1173,119 @@ function ratingsHeatmap() {
     <div class="hm-scroll"><div class="hm" style="grid-template-columns: minmax(150px, 190px) repeat(${models.length}, minmax(46px, 1fr))">${head}${body}</div></div>`;
 }
 
+// --- Betting returns engine (illustrative; NOT part of the scored result) ---
+function bettingOdds(mid, source) {
+  if (source === "fair") { const m = mktVector(mid); return m ? m.p.map(x => 1 / x) : null; }
+  const books = {};
+  for (const r of (DB._oddsByMatch[mid] || []).filter(r => r.snapshot === "T-3h")
+    .sort((a, b) => (a.captured_at || "").localeCompare(b.captured_at || "")))
+    books[(r.source || "").toLowerCase()] = [r.o_home, r.o_draw, r.o_away];  // latest per book wins
+  if (source === "pinnacle") return books["pinnacle"] || null;
+  const all = Object.values(books);
+  return all.length ? [0, 1, 2].map(i => Math.max(...all.map(b => b[i]))) : null;  // best available
+}
+function bettingEntries() {
+  const played = new Set(playedFixtures().map(f => f.match_id));
+  const ent = {};
+  for (const p of DB.predictions) {
+    if (p.as_of !== "T-3h" || p.p_home == null || !played.has(p.match_id) || HIDDEN_MODELS.has(p.model)) continue;
+    const m = seriesMeta(p);
+    (ent[m.key] ||= { key: m.key, label: m.label, kind: m.kind, model: p.model, byMatch: {} })
+      .byMatch[p.match_id] = [p.p_home, p.p_draw, p.p_away];
+  }
+  const mkt = { key: "MKT", label: "Betting market", kind: "mkt", model: null, byMatch: {} };
+  for (const f of playedFixtures()) { const v = mktVector(f.match_id); if (v) mkt.byMatch[f.match_id] = v.p; }
+  ent.MKT = mkt;
+  return Object.values(ent);
+}
+function bettingResults(strat, source) {
+  const played = playedFixtures();
+  const rows = bettingEntries().map(e => {
+    let pnl = 0, staked = 0, bets = 0, bank = 100, n = 0;
+    const points = [];
+    for (const f of played) {
+      const p = e.byMatch[f.match_id];
+      const odds = p ? bettingOdds(f.match_id, source) : null;
+      if (p && odds) {
+        const win = outcomeVec(f).indexOf(1);
+        if (strat === "pick") { const i = p.indexOf(Math.max(...p)); staked += 1; bets += 1; pnl += i === win ? odds[i] - 1 : -1; }
+        else if (strat === "value") { for (let i = 0; i < 3; i++) if (p[i] * odds[i] > 1) { staked += 1; bets += 1; pnl += i === win ? odds[i] - 1 : -1; } }
+        else {  // valbest / kelly: act on the single best-edge leg
+          let bi = -1, be = 1; for (let i = 0; i < 3; i++) { const ev = p[i] * odds[i]; if (ev > be) { be = ev; bi = i; } }
+          if (bi >= 0) {
+            if (strat === "valbest") { staked += 1; bets += 1; pnl += bi === win ? odds[bi] - 1 : -1; }
+            else { const b = odds[bi] - 1, fr = (b * p[bi] - (1 - p[bi])) / b, st = 0.5 * Math.max(0, fr) * bank; staked += st; bets += 1; bank += bi === win ? st * (odds[bi] - 1) : -st; }
+          }
+        }
+      }
+      n += 1; points.push({ x: n, y: strat === "kelly" ? bank : pnl });
+    }
+    const roi = staked > 0 ? pnl / staked : null;
+    return { key: e.key, label: e.label, kind: e.kind, model: e.model, bets, staked, pnl, bank, roi, final: strat === "kelly" ? bank : pnl, points };
+  });
+  rows.sort((a, b) => b.final - a.final);
+  return rows;
+}
+
+function viewReturns() {
+  if (!playedFixtures().length || !DB.market_odds.length)
+    return el(`<section><h1>If you'd bet the models</h1><div class="note">Betting returns appear once matches have been played and odds captured.</div></section>`);
+  const isKelly = () => RET_VIEW.strat === "kelly";
+  const pills = (obj, attr, cur) => Object.entries(obj).map(([k, v]) =>
+    `<button type="button" class="fpill${cur === k ? " on" : ""}" data-${attr}="${k}">${esc(v)}</button>`).join("");
+  const controlsHtml = () =>
+    `<div class="lbfilters"><span class="flabel">Strategy</span>${pills(RET_STRATS, "ret-strat", RET_VIEW.strat)}</div>` +
+    `<div class="lbfilters"><span class="flabel">Odds</span>${pills(RET_SOURCES, "ret-source", RET_VIEW.source)}</div>`;
+  const tableHtml = () => {
+    const rows = bettingResults(RET_VIEW.strat, RET_VIEW.source);
+    const body = rows.map((r, i) => {
+      const result = isKelly() ? r.bank.toFixed(1) : (r.pnl >= 0 ? "+" : "") + r.pnl.toFixed(2);
+      const roi = r.roi == null ? "—" : (r.roi >= 0 ? "+" : "") + (100 * r.roi).toFixed(0) + "%";
+      return `<tr class="${r.bets < 5 ? "lown" : ""}">
+        <td class="num muted">${i + 1}</td>
+        <td><span class="pill ${pillClass(r.kind)}" title="${esc(r.key)}">${esc(r.label)}</span></td>
+        <td class="num">${r.bets}</td>
+        <td class="num" data-sort="${r.final}">${result}</td>
+        <td class="num" data-sort="${r.roi == null ? -999 : r.roi}">${roi}</td>
+      </tr>`;
+    }).join("");
+    return `<table class="sortable"><thead><tr><th class="num">#</th><th>Forecaster</th><th class="num">bets</th><th class="num">${isKelly() ? "final bankroll" : "profit / loss"}</th><th class="num">ROI</th></tr></thead><tbody>${body}</tbody></table>`;
+  };
+  const node = el(`<section>
+    <h1>If you'd bet the models</h1>
+    <div class="note">An illustrative lens — <strong>not</strong> part of the scored result. It simulates 1-unit 1X2 bets on each model's pre-kickoff probabilities, settled at the real odds we captured before kickoff. Small samples are very noisy; rows under 5 bets are greyed.</div>
+    <div id="ret-controls">${controlsHtml()}</div>
+    ${chartBox("returns-chart", 360)}
+    <div id="ret-table">${tableWrap(tableHtml())}</div>
+    <p class="muted" style="margin-top:10px">“Value bets” stakes 1u on every outcome priced below the model's probability; “best pick” stakes on the single best-value outcome per match; “follow the pick” backs the model's favourite every match; “Half-Kelly” compounds a bankroll from 100. Odds source changes the price each bet is settled at — “best available” shops all four books, so even the market shows a profit there (pure line-shopping); “de-vigged fair” removes the margin, isolating forecasting skill.</p>
+  </section>`);
+  node._after = () => {
+    const drawChart = () => {
+      const rows = bettingResults(RET_VIEW.strat, RET_VIEW.source);
+      const pick = rows.slice(0, 10);
+      for (const k of ["ENS", "MKT"]) { const r = rows.find(x => x.key === k); if (r && !pick.includes(r)) pick.push(r); }
+      const series = pick.map(r => ({
+        key: r.label,
+        color: r.model ? WCViz.modelColor(r.model) : (WCViz.SERIES_COLORS[r.key] || WCViz.SERIES_COLORS.ENS),
+        points: r.points,
+      }));
+      const box = node.querySelector("#returns-chart");
+      if (box) WCViz.returnsChart(box, series, isKelly() ? "bankroll (start 100)" : "profit / loss (units)", isKelly() ? 100 : 0);
+    };
+    drawChart();  // initial table sort is wired by render()'s central attachSort
+    node.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-ret-strat],[data-ret-source]"); if (!b) return;
+      if (b.dataset.retStrat) RET_VIEW.strat = b.dataset.retStrat;
+      if (b.dataset.retSource) RET_VIEW.source = b.dataset.retSource;
+      node.querySelector("#ret-controls").innerHTML = controlsHtml();
+      node.querySelector("#ret-table").innerHTML = tableWrap(tableHtml());
+      drawChart();
+      node.querySelectorAll("#ret-table table.sortable").forEach(attachSort);
+    });
+  };
+  return node;
+}
+
 function viewVerify() {
   const rows = DB.predictions.filter(p => p.input_hash).slice(0, 200).map(p =>
     `<tr><td class="mono"><a href="#/match/${encodeURIComponent(p.match_id)}">${esc(p.match_id)}</a></td><td><span class="pill ${pillClass(p.model ? "m" : "base")}">${esc(methodName(p.method))}${p.model ? " · " + esc(shortModel(p.model)) : ""}</span></td><td class="mono muted hashfull">${esc(p.input_hash)}</td></tr>`).join("");
@@ -1236,6 +1354,7 @@ function render() {
   else if (h.startsWith("#/bracket")) node = viewBracket();
   else if (h.startsWith("#/matches")) node = viewMatches();
   else if (h.startsWith("#/forecast")) node = viewForecast();
+  else if (h.startsWith("#/returns")) node = viewReturns();
   else if (h.startsWith("#/verify")) node = viewVerify();
   else if (h.startsWith("#/about")) node = viewAbout();
   else node = viewLeaderboard();

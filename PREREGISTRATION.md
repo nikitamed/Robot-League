@@ -188,6 +188,29 @@ with its justification — it is not a free parameter to tune against outcomes.
 
 ## Amendments (dated; the locked text above is never rewritten)
 
+- **2026-06-18.** §3 MKT odds-source redundancy. TheStatsAPI (the locked odds
+  feed) abruptly dropped sharp-book coverage for 2026 fixtures on **2026-06-17**:
+  from that matchday it served only Bet365 — or nothing — for new fixtures, where
+  June 11–16 had carried Pinnacle/Betfair/Bet365/Kambi in full. Pinnacle is the
+  *scored* benchmark, so this erodes the entire model-vs-market comparison going
+  forward. Amendment: when TheStatsAPI yields no sharp book (Pinnacle / Betfair
+  Exchange) for a fixture, the **Pinnacle** 1X2 line is sourced from
+  **API-Football** (`/odds`, "Match Winner" market) at the same T−3h capture
+  instant, joined to fixtures by canonical team pair. The benchmark is unchanged —
+  de-vigged **Pinnacle**, the same book; only the aggregator reporting the price
+  differs, and only when the primary feed lacks it. June 11–16 fixtures keep their
+  TheStatsAPI Pinnacle capture untouched. Code: `feeds/odds.py`
+  (`af_fixture_index` / `fetch_af_odds` / `parse_af_odds`), wired into
+  `capture_odds`.
+  - **Three already-locked fixtures** (GK-portugal-dr_congo, GL-england-croatia,
+    GL-ghana-panama; all kicked off 2026-06-17) had their T−3h odds window lost to
+    the outage — no sharp line was captured at their T−3h instant and that moment
+    cannot be recreated. Their MKT is backfilled from the **API-Football Pinnacle
+    line available post-outage** (a near-closing line, not a true T−3h capture),
+    flagged here so the substitution is on record. Predictions for these fixtures
+    locked normally and their model scores are unaffected; only the market
+    comparison for these three uses a later-than-T−3h Pinnacle price.
+
 - **2026-06-13.** §3 MKT fallback extended. The locked chain is Pinnacle →
   Betfair Exchange → (a fixture with neither sharp book is excluded). Observed on
   matchday 2: TheStatsAPI carried only Bet365 and Kambi for Canada–Bosnia &
