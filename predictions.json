@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-18T22:00:45Z",
+  "generated_at": "2026-06-19T00:15:33Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -347,7 +347,11 @@
       "stage": "group",
       "group": "Group B",
       "kickoff_utc": "2026-06-18T22:00Z",
-      "result": null
+      "result": {
+        "home_goals": 6,
+        "away_goals": 0,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GA-mexico-south_korea",
