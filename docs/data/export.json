@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-19T19:00:46Z",
+  "generated_at": "2026-06-19T21:15:23Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -373,7 +373,11 @@
       "stage": "group",
       "group": "Group D",
       "kickoff_utc": "2026-06-19T19:00Z",
-      "result": null
+      "result": {
+        "home_goals": 2,
+        "away_goals": 0,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GC-scotland-morocco",
