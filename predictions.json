@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-20T21:01:26Z",
+  "generated_at": "2026-06-20T22:00:21Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -438,7 +438,11 @@
       "stage": "group",
       "group": "Group E",
       "kickoff_utc": "2026-06-20T20:00Z",
-      "result": null
+      "result": {
+        "home_goals": 2,
+        "away_goals": 1,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GE-ecuador-cura\u00e7ao",
