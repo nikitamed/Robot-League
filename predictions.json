@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-21T01:01:06Z",
+  "generated_at": "2026-06-21T02:00:07Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -451,7 +451,11 @@
       "stage": "group",
       "group": "Group E",
       "kickoff_utc": "2026-06-21T00:00Z",
-      "result": null
+      "result": {
+        "home_goals": 0,
+        "away_goals": 0,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GF-tunisia-japan",
