@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-22T18:00:47Z",
+  "generated_at": "2026-06-22T19:15:48Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -529,7 +529,11 @@
       "stage": "group",
       "group": "Group J",
       "kickoff_utc": "2026-06-22T17:00Z",
-      "result": null
+      "result": {
+        "home_goals": 2,
+        "away_goals": 0,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GI-france-iraq",
