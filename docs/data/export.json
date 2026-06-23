@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-23T02:00:47Z",
+  "generated_at": "2026-06-23T05:15:18Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -568,7 +568,11 @@
       "stage": "group",
       "group": "Group J",
       "kickoff_utc": "2026-06-23T03:00Z",
-      "result": null
+      "result": {
+        "home_goals": 1,
+        "away_goals": 2,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GK-portugal-uzbekistan",
