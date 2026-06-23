@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-23T20:01:14Z",
+  "generated_at": "2026-06-23T22:15:47Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -594,7 +594,11 @@
       "stage": "group",
       "group": "Group L",
       "kickoff_utc": "2026-06-23T20:00Z",
-      "result": null
+      "result": {
+        "home_goals": 0,
+        "away_goals": 0,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GL-panama-croatia",
