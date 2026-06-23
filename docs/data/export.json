@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-23T17:01:11Z",
+  "generated_at": "2026-06-23T19:00:20Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -581,7 +581,11 @@
       "stage": "group",
       "group": "Group K",
       "kickoff_utc": "2026-06-23T17:00Z",
-      "result": null
+      "result": {
+        "home_goals": 5,
+        "away_goals": 0,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GL-england-ghana",
