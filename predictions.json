@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-25T00:17:32Z",
+  "generated_at": "2026-06-25T03:00:45Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -685,7 +685,11 @@
       "stage": "group",
       "group": "Group A",
       "kickoff_utc": "2026-06-25T01:00Z",
-      "result": null
+      "result": {
+        "home_goals": 0,
+        "away_goals": 3,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GA-south_africa-south_korea",
@@ -694,7 +698,11 @@
       "stage": "group",
       "group": "Group A",
       "kickoff_utc": "2026-06-25T01:00Z",
-      "result": null
+      "result": {
+        "home_goals": 1,
+        "away_goals": 0,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GE-cura\u00e7ao-ivory_coast",
