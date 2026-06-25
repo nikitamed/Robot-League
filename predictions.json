@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-25T20:05:23Z",
+  "generated_at": "2026-06-25T22:00:35Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -711,7 +711,11 @@
       "stage": "group",
       "group": "Group E",
       "kickoff_utc": "2026-06-25T20:00Z",
-      "result": null
+      "result": {
+        "home_goals": 0,
+        "away_goals": 2,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GE-ecuador-germany",
@@ -720,7 +724,11 @@
       "stage": "group",
       "group": "Group E",
       "kickoff_utc": "2026-06-25T20:00Z",
-      "result": null
+      "result": {
+        "home_goals": 2,
+        "away_goals": 1,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GF-japan-sweden",
