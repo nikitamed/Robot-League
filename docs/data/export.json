@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-25T23:01:25Z",
+  "generated_at": "2026-06-26T01:00:42Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -737,7 +737,11 @@
       "stage": "group",
       "group": "Group F",
       "kickoff_utc": "2026-06-25T23:00Z",
-      "result": null
+      "result": {
+        "home_goals": 1,
+        "away_goals": 1,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GF-tunisia-netherlands",
@@ -746,7 +750,11 @@
       "stage": "group",
       "group": "Group F",
       "kickoff_utc": "2026-06-25T23:00Z",
-      "result": null
+      "result": {
+        "home_goals": 1,
+        "away_goals": 3,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GD-paraguay-australia",
