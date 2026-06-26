@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-26T21:02:14Z",
+  "generated_at": "2026-06-26T21:15:36Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -802,7 +802,11 @@
       "stage": "group",
       "group": "Group I",
       "kickoff_utc": "2026-06-26T19:00Z",
-      "result": null
+      "result": {
+        "home_goals": 5,
+        "away_goals": 0,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GH-cape_verde-saudi_arabia",
