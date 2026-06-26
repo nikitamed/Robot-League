@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-26T21:01:00Z",
+  "generated_at": "2026-06-26T21:02:14Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -789,7 +789,11 @@
       "stage": "group",
       "group": "Group I",
       "kickoff_utc": "2026-06-26T19:00Z",
-      "result": null
+      "result": {
+        "home_goals": 1,
+        "away_goals": 4,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GI-senegal-iraq",
