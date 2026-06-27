@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-27T02:00:06Z",
+  "generated_at": "2026-06-27T02:15:24Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -828,7 +828,11 @@
       "stage": "group",
       "group": "Group H",
       "kickoff_utc": "2026-06-27T00:00Z",
-      "result": null
+      "result": {
+        "home_goals": 0,
+        "away_goals": 1,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GG-egypt-iran",
