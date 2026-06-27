@@ -188,6 +188,25 @@ with its justification — it is not a free parameter to tune against outcomes.
 
 ## Amendments (dated; the locked text above is never rewritten)
 
+- **2026-06-27. Knockout scoring & M3 re-rating cadence (§3, §6) — logged before any knockout fixture is captured.**
+  - **§3 knockout-1X2 decision (deadline 2026-06-24):** knockouts are scored on
+    **Brier(advancement) only**. The M1/M2 knockout prompts emit advancement
+    {`p_advance_home`, `p_advance_away`} only — no 90′ {H/D/A} vector — matching the
+    locked knockout prompt; M3/baselines convert ratings to advancement via the
+    engine. Advancement Brier is reported as a **companion** to the group-stage 1X2
+    RPS spine, never blended into it. **No advancement market** is captured: knockout
+    advancement is scored as raw Brier, with no MKT skill companion (the §3 MKT line
+    is 1X2-only and stays group-stage).
+  - **§6 M3 re-rating cadence:** M3 ratings are re-elicited at round checkpoints —
+    **`group-end`** (after MD3), then **`r16` / `qf` / `sf`** — using the locked
+    re-rating prompt (results-since context) and the §7.4 drop-and-flag rules,
+    stored at those `as_of` labels. The post-MD1/MD2 re-ratings were **not** captured
+    in real time and are **not** reconstructed, so the H2 `delta` readout begins at
+    `group-end` (flagged; the early group rounds are not covered). At each checkpoint
+    the forecast Monte Carlo is re-run **conditioned on actual results** (eliminated
+    teams → 0; played knockout winners fixed); champion/reach remain an **unscored
+    trajectory** per §3.
+
 - **2026-06-27. Primary model withdrawn by the provider — §4 rule invoked.**
   Anthropic withdrew `claude-fable-5` mid-tournament (live calls return
   `404: "Claude Fable 5 is not available. Please use Opus 4.8."`; first observed
