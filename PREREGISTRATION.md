@@ -188,6 +188,32 @@ with its justification — it is not a free parameter to tune against outcomes.
 
 ## Amendments (dated; the locked text above is never rewritten)
 
+- **2026-06-27. Primary model withdrawn by the provider — §4 rule invoked.**
+  Anthropic withdrew `claude-fable-5` mid-tournament (live calls return
+  `404: "Claude Fable 5 is not available. Please use Opus 4.8."`; first observed
+  to fail ~2026-06-13, after the model had captured **4** group matches). Per the
+  §4 **provider-withdrawal rule**, the pinned string is **not substituted**:
+  - `claude-fable-5` **remains the named §2 H1 primary**. H1 is therefore reported
+    on its **covered matches only (n=4 paired M1/M2)** — underpowered and flagged
+    as such; it cannot carry the confirmatory claim. The **pre-registered secondary
+    replications (§2)** — the other seven search-capable models, each at full
+    coverage (n≈66) — carry the M2−M1 contrast; this is the substantive H1 result,
+    reported per §9 at harvest.
+  - **H3 capability ladder:** the Anthropic pair (Fable 5 ↔ Haiku 4.5) is broken on
+    the Fable side (M1/M2 n=4 vs n=66); it is reported on covered matches only and
+    excluded from the full-coverage frontier. The OpenAI, Google, and DeepSeek pairs
+    are unaffected.
+  - **M3 for Fable 5 is unaffected** (70 matches): it runs from the frozen
+    pre-tournament ratings (`--m3-from-stored`, no live call), so it carries the
+    pre-withdrawal ratings forward legitimately; no re-ratings are possible.
+  - Captured M1/M2 (4 matches) and all other models are untouched. ENS self-adjusts
+    to whichever models are present per match.
+  - **Operational, no protocol effect:** `roster.yaml` sets Fable 5 to **M3-only**
+    to stop the doomed M1/M2 calls each lock; a **per-model coverage alarm** was
+    added to the scheduler so a future silent withdrawal/outage surfaces in real
+    time (it went unnoticed for ~2 weeks because per-model drops did not reach the
+    monitor). The site hides Fable 5 from per-model displays; this record retains it.
+
 - **2026-06-18.** §3 MKT odds-source redundancy. TheStatsAPI (the locked odds
   feed) abruptly dropped sharp-book coverage for 2026 fixtures on **2026-06-17**:
   from that matchday it served only Bet365 — or nothing — for new fixtures, where

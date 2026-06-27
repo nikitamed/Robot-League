@@ -259,20 +259,42 @@ function buildBracket() {
   const reach = consensusReach(models);
   const groups = groupMembers();
   const teamSet = new Set(Object.values(groups).flat());
+  const standings = groupStandings();
+
+  // A group is "decided" once all its group matches have a result; then the
+  // bracket ranks by REAL standings (points, GD, GF) instead of the forecast.
+  const groupFixtures = {};
+  for (const fx of DB.fixtures)
+    if (fx.stage === "group" && fx.group) (groupFixtures[fx.group.replace("Group", "").trim()] ||= []).push(fx);
+  const groupDecided = (L) => (groupFixtures[L] || []).length > 0 && groupFixtures[L].every(outcomeVec);
+  const allDecided = Object.keys(groups).every(groupDecided);
+  const realKey = (t) => { const s = standings[t]; return s ? s.p * 1e6 + s.gd * 1e3 + s.gf : 0; };
+  const rankByStandings = (teams) => teams.slice().sort((a, b) => {
+    const sa = standings[a] || { p: 0, gd: 0, gf: 0 }, sb = standings[b] || { p: 0, gd: 0, gf: 0 };
+    return (sb.p - sa.p) || (sb.gd - sa.gd) || (sb.gf - sa.gf)
+      || (((reach[b] || {}).reach_r32 || 0) - ((reach[a] || {}).reach_r32 || 0));
+  });
 
   const proj = {};
   for (const [letter, teams] of Object.entries(groups)) {
-    const left = [...teams];
-    const take = (key) => {
-      left.sort((a, b) => ((reach[b] || {})[key] || 0) - ((reach[a] || {})[key] || 0));
-      return left.shift();
-    };
-    proj[letter] = { first: take("win_group"), second: take("runner_up"), third: take("third") };
+    if (groupDecided(letter)) {
+      const o = rankByStandings(teams);
+      proj[letter] = { first: o[0], second: o[1], third: o[2], decided: true };
+    } else {
+      const left = [...teams];
+      const take = (key) => {
+        left.sort((a, b) => ((reach[b] || {})[key] || 0) - ((reach[a] || {})[key] || 0));
+        return left.shift();
+      };
+      proj[letter] = { first: take("win_group"), second: take("runner_up"), third: take("third"), decided: false };
+    }
   }
+  // Best-thirds: real standings once the group stage is complete, else forecast.
   const thirdSlots = {};
   const thirdCodes = [...new Set(kos.flatMap(fx => [fx.home, fx.away]))].filter(c => /^3/.test(c));
   const candidates = Object.entries(proj)
-    .map(([letter, p]) => ({ letter, team: p.third, p: (reach[p.third] || {}).third || 0 }))
+    .map(([letter, p]) => ({ letter, team: p.third,
+      p: allDecided ? realKey(p.third) : ((reach[p.third] || {}).third || 0) }))
     .sort((a, b) => b.p - a.p);
   const usedLetters = new Set();
   for (const cand of candidates) {
@@ -302,11 +324,19 @@ function buildBracket() {
       const fx = byNum[+m[2]];
       if (fx) {
         const a = resolve(fx.home), b = resolve(fx.away);
-        const key = nextKey(+m[2]);
-        const pa = a.team ? ((reach[a.team] || {})[key] || 0) : 0;
-        const pb = b.team ? ((reach[b.team] || {})[key] || 0) : 0;
-        const winner = pa >= pb ? a : b, loser = pa >= pb ? b : a;
-        r.team = m[1].toUpperCase() === "W" ? winner.team : loser.team;
+        const o = outcomeVec(fx), adv = (fx.result || {}).advanced_team;
+        let win = null;
+        if (adv) win = adv === a.team ? a : adv === b.team ? b : null;  // covers ET/penalties
+        else if (o && o[0] === 1) win = a;                             // home win in 90'
+        else if (o && o[2] === 1) win = b;                             // away win in 90'
+        if (!win) {                                                    // unplayed (or 90' draw not yet resolved) -> forecast
+          const key = nextKey(+m[2]);
+          const pa = a.team ? ((reach[a.team] || {})[key] || 0) : 0;
+          const pb = b.team ? ((reach[b.team] || {})[key] || 0) : 0;
+          win = pa >= pb ? a : b;
+        }
+        const lose = win === a ? b : a;
+        r.team = m[1].toUpperCase() === "W" ? win.team : lose.team;
       }
     }
     memo[code] = r;
@@ -315,6 +345,14 @@ function buildBracket() {
 
   function tie(fx, key) {
     const a = resolve(fx.home), b = resolve(fx.away);
+    const o = outcomeVec(fx);
+    if (o) {  // played: show the real result and winner, not advance probabilities
+      const adv = (fx.result || {}).advanced_team;
+      const winner = adv ? (adv === a.team ? "a" : adv === b.team ? "b" : null)
+        : o[0] === 1 ? "a" : o[2] === 1 ? "b" : null;
+      return { fx, a, b, pa: null, pb: null, projected: false, decided: true, winner,
+        score: `${fx.result.home_goals}–${fx.result.away_goals}`, shootout: !!(adv && o[1] === 1) };
+    }
     const pa = a.team ? ((reach[a.team] || {})[key] || 0) : 0;
     const pb = b.team ? ((reach[b.team] || {})[key] || 0) : 0;
     const tot = pa + pb;
@@ -355,7 +393,7 @@ function buildBracket() {
   }
 
   return {
-    projected: kos.some(fx => !teamSet.has(fx.home)),
+    projected: !allDecided,  // once every group is decided, the R32 pairings are real
     proj, thirdSlots, reach, edges,
     rounds: [
       { title: "Round of 32", ties: r32.map(fx => tie(fx, nextKey(num(fx)))) },
@@ -444,17 +482,23 @@ function attachSort(table) {
 function chartBox(id, h = 320) { return `<div class="chartbox" style="height:${h}px"><canvas id="${id}"></canvas></div>`; }
 
 function tieCard(t, { final = false } = {}) {
-  const row = (side, p) => {
-    const fav = p != null && p >= 0.5;
+  const row = (side, p, win) => {
     const name = side.team ? teamLink(side.team) : `<span class="dim">To be decided</span>`;
-    return `<div class="tie-team ${fav ? "fav" : "outp"}">${name}<span class="p">${p == null ? "" : pct(p)}</span></div>`;
+    const cls = t.decided ? (win ? "fav" : "outp") : (p != null && p >= 0.5 ? "fav" : "outp");
+    const tail = t.decided
+      ? (win ? `<span class="p win">✓</span>` : `<span class="p"></span>`)
+      : `<span class="p">${p == null ? "" : pct(p)}</span>`;
+    return `<div class="tie-team ${cls}">${name}${tail}</div>`;
   };
   const fx = t.fx;
+  const meta = t.decided
+    ? `<span class="bk-score">${esc(t.score)}</span>${t.shootout ? ` <span class="dim">pens</span>` : ""}`
+    : `${esc(fmtDT(fx.kickoff_utc))}${fx.ground ? " · " + esc(city(fx.ground)) : ""}`;
   // div, not <a>: team names inside are links to team pages; clicking anywhere
   // else opens the match page (delegated handler on the bracket container).
-  return `<div class="tie${final ? " final" : ""}" data-bk="${esc(fx.match_id)}" data-href="#/match/${encodeURIComponent(fx.match_id)}" title="Open match page">
-    <div class="meta">${esc(fmtDT(fx.kickoff_utc))}${fx.ground ? " · " + esc(city(fx.ground)) : ""}</div>
-    ${row(t.a, t.pa)}${row(t.b, t.pb)}
+  return `<div class="tie${final ? " final" : ""}${t.decided ? " decided" : ""}" data-bk="${esc(fx.match_id)}" data-href="#/match/${encodeURIComponent(fx.match_id)}" title="Open match page">
+    <div class="meta">${meta}</div>
+    ${row(t.a, t.pa, t.winner === "a")}${row(t.b, t.pb, t.winner === "b")}
   </div>`;
 }
 

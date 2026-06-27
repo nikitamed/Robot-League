@@ -184,6 +184,8 @@ pre { background: #070b14; border: 1px solid var(--line); border-radius: 10px; p
 .tie-team.outp { color: var(--dim); font-weight: 500; }
 .tie.final { border-color: rgba(43,255,136,.5); box-shadow: 0 0 24px rgba(43,255,136,.10); }
 .tie.final .meta { color: var(--brand); }
+.bk-score { font: 700 12px var(--mono); color: var(--brand); letter-spacing: .04em; }
+.tie.decided { border-color: rgba(43,255,136,.30); }
 .tie[data-href] { cursor: pointer; transition: border-color .08s ease; }
 .tie[data-href]:hover { border-color: rgba(43,255,136,.45); }
 .tie-team.third { color: var(--muted); }
