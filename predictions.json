@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-27T23:00:32Z",
+  "generated_at": "2026-06-27T23:01:24Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -867,7 +867,11 @@
       "stage": "group",
       "group": "Group L",
       "kickoff_utc": "2026-06-27T21:00Z",
-      "result": null
+      "result": {
+        "home_goals": 2,
+        "away_goals": 1,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GL-panama-england",
@@ -876,7 +880,11 @@
       "stage": "group",
       "group": "Group L",
       "kickoff_utc": "2026-06-27T21:00Z",
-      "result": null
+      "result": {
+        "home_goals": 0,
+        "away_goals": 2,
+        "advanced_team": null
+      }
     },
     {
       "match_id": "GK-colombia-portugal",
