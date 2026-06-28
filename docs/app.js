@@ -159,6 +159,53 @@ function leaderboard() {
   return { rows, mktMean };
 }
 
+// Knockout advancement leaderboard: Brier on who advances (companion to the 1X2
+// board; prereg §3 / 2026-06-27 amendment). 0.5 = a coin flip.
+const brierBin = (p, o) => (p[0] - (o === 0 ? 1 : 0)) ** 2 + (p[1] - (o === 1 ? 1 : 0)) ** 2;
+function advancementLeaderboard() {
+  const adv = {};  // match_id -> 0 (home advanced) | 1 (away advanced)
+  for (const fx of DB.fixtures) {
+    const a = fx.stage === "knockout" && fx.result && fx.result.advanced_team;
+    if (a) adv[fx.match_id] = a === fx.home ? 0 : a === fx.away ? 1 : null;
+  }
+  const series = {};
+  for (const p of DB.predictions) {
+    if (p.p_advance_home == null || HIDDEN_MODELS.has(p.model)) continue;
+    const o = adv[p.match_id];
+    if (o == null) continue;
+    const m = seriesMeta(p);
+    (series[m.key] ||= { label: m.label, kind: m.kind, b: [] }).b.push(brierBin([p.p_advance_home, p.p_advance_away], o));
+  }
+  return Object.entries(series).map(([key, v]) => ({ key, label: v.label, kind: v.kind, brier: mean(v.b), n: v.b.length }))
+    .sort((a, b) => a.brier - b.brier);
+}
+
+// Biggest upsets: decisive results (group win or knockout advance) the models'
+// consensus most underrated. Group + knockout, ranked by how unlikely the winner was.
+function topUpsets(limit = 6) {
+  const out = [];
+  for (const fx of DB.fixtures) {
+    const o = outcomeVec(fx); if (!o) continue;
+    const preds = (DB._predsByMatch[fx.match_id] || []).filter(p => p.model && !HIDDEN_MODELS.has(p.model));
+    const ko = fx.stage === "knockout";
+    let pwin, winner, favorite;
+    if (ko) {
+      const ap = preds.filter(p => p.p_advance_home != null), adv = fx.result.advanced_team;
+      if (!ap.length || !adv) continue;
+      const advHome = adv === fx.home, cHome = mean(ap.map(p => p.p_advance_home));
+      pwin = advHome ? cHome : 1 - cHome; winner = adv; favorite = advHome ? fx.away : fx.home;
+    } else {
+      const wi = o[0] ? 0 : o[2] ? 2 : null; if (wi == null) continue;  // draws aren't upsets
+      const xp = preds.filter(p => p.p_home != null); if (!xp.length) continue;
+      const c = [0, 1, 2].map(i => mean(xp.map(p => [p.p_home, p.p_draw, p.p_away][i])));
+      pwin = c[wi]; winner = wi === 0 ? fx.home : fx.away; favorite = wi === 0 ? fx.away : fx.home;
+    }
+    if (pwin == null || pwin >= 0.45) continue;  // only genuinely surprising winners
+    out.push({ fx, winner, favorite, pwin, ko, score: `${fx.result.home_goals}–${fx.result.away_goals}` });
+  }
+  return out.sort((a, b) => a.pwin - b.pwin).slice(0, limit);
+}
+
 function sparkline(values, color = "#7aa2ff") {
   if (!values || values.length < 2) return "";
   const w = 64, h = 16, lo = Math.min(...values), hi = Math.max(...values);
@@ -616,12 +663,12 @@ function fillTicker() {
   const t = document.getElementById("ticker");
   if (!t) return;
   const captured = new Set(DB.predictions.filter(p => p.as_of === "T-3h").map(p => p.match_id)).size;
-  const next = DB.fixtures.filter(fx => fx.stage === "group" && !outcomeVec(fx))
+  const next = DB.fixtures.filter(fx => !outcomeVec(fx) && fx.kickoff_utc && FLAGS[fx.home] && FLAGS[fx.away])
     .sort((a, b) => (a.kickoff_utc || "").localeCompare(b.kickoff_utc || ""))[0];
   const played = playedFixtures().length;
   const parts = [
     `<b>UPDATED</b> ${esc(fmtDT(DB.generated_at))}`,
-    `<b>LOCKED FORECASTS</b> ${captured} of 72 matches`,
+    `<b>LOCKED FORECASTS</b> ${captured} of ${DB.fixtures.length} matches`,
     played ? `<b>PLAYED</b> ${played}` : null,
     next ? `<b>NEXT</b> ${flag(next.home)}${esc(next.home)} v ${flag(next.away)}${esc(next.away)} · ${esc(fmtDT(next.kickoff_utc))}` : null,
     `<b>10 AI MODELS</b> from 5 labs`,
@@ -795,6 +842,9 @@ function viewLeaderboard() {
     <div class="lbfilters">${pillsHtml()}</div>
     ${chartBox("skill-bars", 340)}
     <div class="lbexpand" id="lb-expand-chart">${expandBtnHtml()}</div>` : ""}
+    ${(() => { const av = advancementLeaderboard(); return av.length ? `<h2>Knockout advancement — calling the ties</h2>
+    <p class="muted">Brier score on <strong>who advances</strong> (lower is better; 0.50 = a coin flip). A companion to the match-result board above — not blended into it.</p>
+    ${tableWrap(`<table class="sortable"><thead><tr><th class="num">#</th><th>Forecaster</th><th class="num">ties</th><th class="num" title="Brier on advancement">advance Brier</th><th class="num">vs coin</th></tr></thead><tbody>${av.map((r, i) => `<tr${i === 0 ? ' class="lead"' : ""}><td class="num muted">${i + 1}</td><td><span class="pill ${pillClass(r.kind)}" title="${esc(r.key)}">${esc(r.label)}</span></td><td class="num">${r.n}</td><td class="num">${f3(r.brier)}</td><td class="num ${0.5 - r.brier >= 0 ? "good" : "bad"}">${0.5 - r.brier >= 0 ? "+" : ""}${f3(0.5 - r.brier)}</td></tr>`).join("")}</tbody></table>`)}` : ""; })()}
     ${groupsGrid()}
   </section>`);
 
@@ -930,53 +980,91 @@ function viewMatches() {
   }).join("");
   const grp = DB.fixtures.filter(fx => fx.stage === "group");
   const ko = DB.fixtures.filter(fx => fx.stage === "knockout");
+  const upsets = topUpsets();
+  const upsetSection = upsets.length ? `<h2>Biggest upsets — results that defied the models</h2>
+    <div class="cards">${upsets.map((u, i) => {
+      const sur = Math.round((0.5 - u.pwin) * 100);
+      return `<a class="card upset${i === 0 ? " big" : ""}" href="#/match/${encodeURIComponent(u.fx.match_id)}">
+        <div class="upset-top"><span class="badge">${u.ko ? "Knockout" : "Group stage"}</span><span class="surprise">+${sur}</span></div>
+        <div class="teams">${team(u.winner)} <span class="dim">${u.ko ? "advanced past" : "beat"}</span> ${team(u.favorite)}</div>
+        <div class="muted" style="font-size:13px;margin-top:4px">models gave <strong>${esc(u.winner)}</strong> only <span class="bad">${pct(u.pwin)}</span> ${u.ko ? "to advance" : "to win"}</div>
+        <div class="barrow"><span class="u" style="width:${u.pwin * 100}%"></span><span class="f" style="width:${(1 - u.pwin) * 100}%"></span></div>
+        <div class="upset-foot"><span class="result">${u.score}</span></div>
+      </a>`;
+    }).join("")}</div>` : "";
   return el(`<section><h1>Matches</h1>
     <p class="lede">Every match, every forecast — locked before kickoff. The bar on each card is the combined view of all ten models (blue = home win, grey = draw, red = away win). Click any match for the full breakdown.</p>
+    ${upsetSection}
     <div class="cards">${groupCards(grp)}</div>
     ${ko.length ? `<h2>Knockout rounds — pairings settle after the group stage · see the <a href="#/bracket">projected bracket</a></h2><div class="cards">${groupCards(ko)}</div>` : ""}
   </section>`);
 }
 
+const advBar = (ph, pa) => `<div class="bar"><span class="h" style="width:${(ph || 0) * 100}%"></span><span class="a" style="width:${(pa || 0) * 100}%"></span></div>`;
+function advStrip(preds, home, away) {
+  const dots = preds.map(p => {
+    const v = p.p_advance_home, fam = famOf(p.method);
+    const color = WCViz.SERIES_COLORS[p.method.replace(/c$/, "")] || WCViz.SERIES_COLORS.B1;
+    const name = p.model ? `${methodName(p.method)} · ${shortModel(p.model)}` : methodName(p.method);
+    return `<span class="dotp" data-fam="${fam}" style="left:${v * 100}%; top:${FAM_LANE[fam]}%; background:${color}" title="${esc(name)}: ${pct1(v)} ${esc(home)} to advance"></span>`;
+  }).join("");
+  const chips = STRIP_FAMS.map(([fam, label, color]) => `<button class="lg" data-fam="${fam}" type="button" title="Click to hide or show"><span class="dot" style="background:${color()}"></span>${label}</button>`).join("");
+  return `<div class="strip"><div class="striprow"><span class="striplabel">advances</span><div class="striptrack">${dots}</div></div>
+    <div class="striprow"><span class="striplabel"></span><div class="striptrack" style="height:0"><span style="position:absolute;left:0;color:var(--dim);font:600 11px var(--mono)">${esc(away)}</span><span style="position:absolute;right:0;color:var(--dim);font:600 11px var(--mono)">${esc(home)}</span></div></div>
+    <div class="legend">${chips}</div></div>`;
+}
+
 function viewMatch(id) {
   const fx = DB._fixById[id];
   if (!fx) return el(`<section><a class="back" href="#/matches">← Matches</a><p>Unknown match.</p></section>`);
-  const preds = (DB._predsByMatch[id] || []).filter(p => p.p_home != null);
+  const isKO = fx.stage === "knockout";
+  const preds = (DB._predsByMatch[id] || []).filter(p => isKO ? p.p_advance_home != null : p.p_home != null);
   const o = outcomeVec(fx);
+  // advancement outcome (knockouts): 0 = home advanced, 1 = away advanced, null = unknown
+  const adv = isKO && fx.result && fx.result.advanced_team
+    ? (fx.result.advanced_team === fx.home ? 0 : fx.result.advanced_team === fx.away ? 1 : null) : null;
   const isLocked = preds.some(p => p.as_of === "T-3h");
-  const rowFor = (label, kind, p, hash, code) => {
-    const r = o ? rps([p.p_home, p.p_draw, p.p_away], o) : null;
-    return `<tr><td><span class="pill ${pillClass(kind)}" title="${esc(code || "")}">${esc(label)}</span></td>
-      <td class="num">${pct(p.p_home)}</td><td class="num">${pct(p.p_draw)}</td><td class="num">${pct(p.p_away)}</td>
-      <td class="shapecol">${hdaBar(p.p_home, p.p_draw, p.p_away)}</td>
-      <td class="num">${f3(r)}</td>
-      <td class="mono muted hashcol">${hash ? esc(hash.slice(0, 10)) : ""}</td></tr>`;
-  };
-  const predRows = preds.map(p => {
-    const m = seriesMeta(p);
-    return rowFor(m.label, m.kind, p, p.input_hash, m.key);
-  }).join("");
-  const m = mktVector(id);
+  const rowFor = isKO
+    ? (label, kind, p, hash, code) => {
+        const b = adv != null ? brierBin([p.p_advance_home, p.p_advance_away], adv) : null;
+        return `<tr><td><span class="pill ${pillClass(kind)}" title="${esc(code || "")}">${esc(label)}</span></td>
+          <td class="num">${pct(p.p_advance_home)}</td><td class="num">${pct(p.p_advance_away)}</td>
+          <td class="shapecol">${advBar(p.p_advance_home, p.p_advance_away)}</td>
+          <td class="num">${f3(b)}</td>
+          <td class="mono muted hashcol">${hash ? esc(hash.slice(0, 10)) : ""}</td></tr>`;
+      }
+    : (label, kind, p, hash, code) => {
+        const r = o ? rps([p.p_home, p.p_draw, p.p_away], o) : null;
+        return `<tr><td><span class="pill ${pillClass(kind)}" title="${esc(code || "")}">${esc(label)}</span></td>
+          <td class="num">${pct(p.p_home)}</td><td class="num">${pct(p.p_draw)}</td><td class="num">${pct(p.p_away)}</td>
+          <td class="shapecol">${hdaBar(p.p_home, p.p_draw, p.p_away)}</td>
+          <td class="num">${f3(r)}</td>
+          <td class="mono muted hashcol">${hash ? esc(hash.slice(0, 10)) : ""}</td></tr>`;
+      };
+  const predRows = preds.map(p => { const m = seriesMeta(p); return rowFor(m.label, m.kind, p, p.input_hash, m.key); }).join("");
+  const m = isKO ? null : mktVector(id);  // no advancement market is captured (prereg amendment)
   const mktRow = m ? rowFor(`Betting market (${m.source})`, "mkt", { p_home: m.p[0], p_draw: m.p[1], p_away: m.p[2] }, null, "de-vigged") : "";
   const oddsRows = (DB._oddsByMatch[id] || []).map(r => `<tr><td>${esc(r.source)}</td><td class="muted" data-sort="${Date.parse(r.captured_at) || 0}">${esc(fmtDT(r.captured_at))}</td><td class="num">${r.o_home}</td><td class="num">${r.o_draw}</td><td class="num">${r.o_away}</td></tr>`).join("");
   const resultLine = o
-    ? `<span class="result">${fx.result.home_goals}–${fx.result.away_goals}</span> · <span class="win">${["home win", "draw", "away win"][o[0] ? 0 : o[1] ? 1 : 2]}</span>`
+    ? `<span class="result">${fx.result.home_goals}–${fx.result.away_goals}</span> · <span class="win">${isKO ? (adv != null ? `${esc(adv === 0 ? fx.home : fx.away)} advanced` : "decided") : ["home win", "draw", "away win"][o[0] ? 0 : o[1] ? 1 : 2]}</span>`
     : `<span class="muted">${esc(fmtFull(fx.kickoff_utc))}</span>`;
   const rationales = preds.filter(p => p.rationale && p.model && (p.method === "M1" || p.method === "M2"))
-    .map(p => `<details><summary>${esc(methodName(p.method))} · ${esc(shortModel(p.model))} — home ${pct(p.p_home)}, draw ${pct(p.p_draw)}, away ${pct(p.p_away)}</summary><p>${esc(p.rationale)}</p></details>`).join("");
+    .map(p => `<details><summary>${esc(methodName(p.method))} · ${esc(shortModel(p.model))} — ${isKO ? `${esc(fx.home)} ${pct(p.p_advance_home)} · ${esc(fx.away)} ${pct(p.p_advance_away)}` : `home ${pct(p.p_home)}, draw ${pct(p.p_draw)}, away ${pct(p.p_away)}`}</summary><p>${esc(p.rationale)}</p></details>`).join("");
   const batchNote = preds.length
     ? (isLocked
-      ? `<div class="note">These forecasts are <strong>locked</strong> — captured 3 hours before kickoff and published with cryptographic fingerprints before the match started.</div>`
+      ? `<div class="note">These forecasts are <strong>locked</strong> — captured 3 hours before kickoff and published with cryptographic fingerprints before the match started.${isKO ? " A knockout is single-elimination, so the models forecast <strong>who advances</strong> (a 90-minute draw is settled by extra time / penalties)." : ""}</div>`
       : `<div class="note">These are the <strong>pre-tournament forecasts</strong>, made before the World Cup began. They update one final time — and lock for scoring — 3 hours before kickoff.</div>`)
     : "";
+  const cols = 7;
   const node = el(`<section>
     <a class="back" href="#/matches">← Matches</a>
     <h1>${teamLink(fx.home)} <span class="dim">v</span> ${teamLink(fx.away)}</h1>
     <p class="lede">${fx.group ? `<a class="tlink" href="#/group/${esc(fx.group.replace("Group", "").trim())}">${esc(fx.group)}</a>` : "Knockout"}${fx.ground ? " · " + esc(fx.ground) : ""} · ${resultLine}</p>
-    ${preds.length ? `<h2>Every forecast at a glance</h2><p class="muted">Each dot is one forecaster's probability; the white line is the betting market. Hover any dot for details.</p>${probStrip(preds, m)}` : ""}
+    ${preds.length ? `<h2>Every forecast at a glance</h2><p class="muted">${isKO ? "Each dot is one forecaster's probability that the home side advances." : "Each dot is one forecaster's probability; the white line is the betting market."} Hover any dot for details.</p>${isKO ? advStrip(preds, fx.home, fx.away) : probStrip(preds, m)}` : ""}
     ${batchNote}
     <h2>The forecasts</h2>
-    ${tableWrap(`<table class="sortable"><thead><tr><th>Forecaster</th><th class="num">Home win</th><th class="num">Draw</th><th class="num">Away win</th><th class="nosort">shape</th><th class="num" title="Ranked Probability Score — lower is better">error</th><th class="hashcol nosort">fingerprint</th></tr></thead>
-      <tbody>${predRows || `<tr><td colspan="7" class="muted">Forecasts for this match lock 3 hours before kickoff.</td></tr>`}${mktRow}</tbody></table>`)}
+    ${tableWrap(`<table class="sortable"><thead><tr><th>Forecaster</th>${isKO ? `<th class="num">${esc(fx.home)} adv</th><th class="num">${esc(fx.away)} adv</th>` : `<th class="num">Home win</th><th class="num">Draw</th><th class="num">Away win</th>`}<th class="nosort">shape</th><th class="num" title="${isKO ? "Brier on advancement — lower is better" : "Ranked Probability Score — lower is better"}">${isKO ? "Brier" : "error"}</th><th class="hashcol nosort">fingerprint</th></tr></thead>
+      <tbody>${predRows || `<tr><td colspan="${cols}" class="muted">Forecasts for this match lock 3 hours before kickoff.</td></tr>`}${mktRow}</tbody></table>`)}
     ${rationales ? `<h2>In the models' own words</h2><div class="rationales">${rationales}</div>` : ""}
     <h2>Bookmaker odds, as captured</h2>
     ${tableWrap(`<table class="sortable"><thead><tr><th>Bookmaker</th><th>captured</th><th class="num">Home</th><th class="num">Draw</th><th class="num">Away</th></tr></thead><tbody>${oddsRows || `<tr><td colspan="5" class="muted">Odds are captured 3 hours before kickoff.</td></tr>`}</tbody></table>`)}

@@ -184,6 +184,13 @@ pre { background: #070b14; border: 1px solid var(--line); border-radius: 10px; p
 .tie-team.outp { color: var(--dim); font-weight: 500; }
 .tie.final { border-color: rgba(43,255,136,.5); box-shadow: 0 0 24px rgba(43,255,136,.10); }
 .tie.final .meta { color: var(--brand); }
+.card.upset.big { border-color: rgba(255,77,109,.45); }
+.upset-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.badge { font: 800 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: 3px 7px; border-radius: 5px; background: rgba(255,77,109,.15); color: var(--hot); border: 1px solid rgba(255,77,109,.35); }
+.surprise { font: 800 20px var(--mono); color: var(--hot); }
+.barrow { display: flex; height: 8px; border-radius: 5px; overflow: hidden; background: rgba(8,12,22,.8); margin: 9px 0 2px; }
+.barrow .u { background: linear-gradient(90deg,#d8455f,#ff5d6d); } .barrow .f { background: linear-gradient(90deg,#2c3c66,#4d7dde); }
+.upset-foot { margin-top: 8px; }
 .bk-score { font: 700 12px var(--mono); color: var(--brand); letter-spacing: .04em; }
 .tie.decided { border-color: rgba(43,255,136,.30); }
 .tie[data-href] { cursor: pointer; transition: border-color .08s ease; }
