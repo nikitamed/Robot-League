@@ -1002,17 +1002,19 @@ function viewMatches() {
 
 const advBar = (ph, pa) => `<div class="bar"><span class="h" style="width:${(ph || 0) * 100}%"></span><span class="a" style="width:${(pa || 0) * 100}%"></span></div>`;
 function advStrip(preds, home, away, mktAdv) {
+  // Left = home, right = away (matches the "Home v Away" title); a home-favored dot
+  // sits toward the left, so its position is (1 − p_advance_home).
   const dots = preds.map(p => {
     const v = p.p_advance_home, fam = famOf(p.method);
     const color = WCViz.SERIES_COLORS[p.method.replace(/c$/, "")] || WCViz.SERIES_COLORS.B1;
     const name = p.model ? `${methodName(p.method)} · ${shortModel(p.model)}` : methodName(p.method);
-    return `<span class="dotp" data-fam="${fam}" style="left:${v * 100}%; top:${FAM_LANE[fam]}%; background:${color}" title="${esc(name)}: ${pct1(v)} ${esc(home)} to advance"></span>`;
+    return `<span class="dotp" data-fam="${fam}" style="left:${(1 - v) * 100}%; top:${FAM_LANE[fam]}%; background:${color}" title="${esc(name)}: ${pct1(v)} ${esc(home)} to advance"></span>`;
   }).join("");
   const mid = `<span class="strip-mid" title="50% — toss-up"></span>`;
-  const mk = mktAdv != null ? `<span class="mktmark" style="left:${mktAdv * 100}%" title="Betting market (from 1X2): ${pct1(mktAdv)} ${esc(home)} to advance"></span>` : "";
+  const mk = mktAdv != null ? `<span class="mktmark" style="left:${(1 - mktAdv) * 100}%" title="Betting market (from 1X2): ${pct1(mktAdv)} ${esc(home)} to advance"></span>` : "";
   const chips = STRIP_FAMS.map(([fam, label, color]) => `<button class="lg" data-fam="${fam}" type="button" title="Click to hide or show"><span class="dot" style="background:${color()}"></span>${label}</button>`).join("");
   return `<div class="strip"><div class="striprow"><span class="striplabel">advances</span><div class="striptrack">${mid}${dots}${mk}</div></div>
-    <div class="striprow"><span class="striplabel"></span><div class="striptrack" style="height:0"><span style="position:absolute;left:0;color:var(--dim);font:600 11px var(--mono)">${esc(away)}</span><span style="position:absolute;left:50%;transform:translateX(-50%);color:var(--dim);font:600 11px var(--mono)">50%</span><span style="position:absolute;right:0;color:var(--dim);font:600 11px var(--mono)">${esc(home)}</span></div></div>
+    <div class="striprow"><span class="striplabel"></span><div class="striptrack" style="height:0"><span style="position:absolute;left:0;color:var(--dim);font:600 11px var(--mono)">${esc(home)}</span><span style="position:absolute;left:50%;transform:translateX(-50%);color:var(--dim);font:600 11px var(--mono)">50%</span><span style="position:absolute;right:0;color:var(--dim);font:600 11px var(--mono)">${esc(away)}</span></div></div>
     <div class="legend">${chips}<span><span class="dot mktdot"></span>Betting market (from 1X2)</span></div></div>`;
 }
 
