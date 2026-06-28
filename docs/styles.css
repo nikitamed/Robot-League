@@ -153,6 +153,7 @@ pre { background: #070b14; border: 1px solid var(--line); border-radius: 10px; p
 .strip.off-M1 .dotp[data-fam="M1"], .strip.off-M2 .dotp[data-fam="M2"],
 .strip.off-M3 .dotp[data-fam="M3"], .strip.off-OTH .dotp[data-fam="OTH"] { display: none; }
 .mktmark { position: absolute; top: -3px; bottom: -3px; width: 3px; background: #fff; transform: translateX(-50%); border-radius: 2px; box-shadow: 0 0 8px rgba(255,255,255,.5); cursor: help; }
+.strip-mid { position: absolute; left: 50%; top: -3px; bottom: -3px; width: 0; border-left: 1px dashed rgba(255,255,255,.22); }
 .lg { display: inline-flex; align-items: center; gap: 5px; background: var(--panel2); color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 11px; font: 600 12px var(--display); cursor: pointer; }
 .lg:hover { color: var(--ink); border-color: #3a4a6e; }
 .lg.off { opacity: .4; text-decoration: line-through; }

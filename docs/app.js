@@ -1001,17 +1001,19 @@ function viewMatches() {
 }
 
 const advBar = (ph, pa) => `<div class="bar"><span class="h" style="width:${(ph || 0) * 100}%"></span><span class="a" style="width:${(pa || 0) * 100}%"></span></div>`;
-function advStrip(preds, home, away) {
+function advStrip(preds, home, away, mktAdv) {
   const dots = preds.map(p => {
     const v = p.p_advance_home, fam = famOf(p.method);
     const color = WCViz.SERIES_COLORS[p.method.replace(/c$/, "")] || WCViz.SERIES_COLORS.B1;
     const name = p.model ? `${methodName(p.method)} · ${shortModel(p.model)}` : methodName(p.method);
     return `<span class="dotp" data-fam="${fam}" style="left:${v * 100}%; top:${FAM_LANE[fam]}%; background:${color}" title="${esc(name)}: ${pct1(v)} ${esc(home)} to advance"></span>`;
   }).join("");
+  const mid = `<span class="strip-mid" title="50% — toss-up"></span>`;
+  const mk = mktAdv != null ? `<span class="mktmark" style="left:${mktAdv * 100}%" title="Betting market (from 1X2): ${pct1(mktAdv)} ${esc(home)} to advance"></span>` : "";
   const chips = STRIP_FAMS.map(([fam, label, color]) => `<button class="lg" data-fam="${fam}" type="button" title="Click to hide or show"><span class="dot" style="background:${color()}"></span>${label}</button>`).join("");
-  return `<div class="strip"><div class="striprow"><span class="striplabel">advances</span><div class="striptrack">${dots}</div></div>
-    <div class="striprow"><span class="striplabel"></span><div class="striptrack" style="height:0"><span style="position:absolute;left:0;color:var(--dim);font:600 11px var(--mono)">${esc(away)}</span><span style="position:absolute;right:0;color:var(--dim);font:600 11px var(--mono)">${esc(home)}</span></div></div>
-    <div class="legend">${chips}</div></div>`;
+  return `<div class="strip"><div class="striprow"><span class="striplabel">advances</span><div class="striptrack">${mid}${dots}${mk}</div></div>
+    <div class="striprow"><span class="striplabel"></span><div class="striptrack" style="height:0"><span style="position:absolute;left:0;color:var(--dim);font:600 11px var(--mono)">${esc(away)}</span><span style="position:absolute;left:50%;transform:translateX(-50%);color:var(--dim);font:600 11px var(--mono)">50%</span><span style="position:absolute;right:0;color:var(--dim);font:600 11px var(--mono)">${esc(home)}</span></div></div>
+    <div class="legend">${chips}<span><span class="dot mktdot"></span>Betting market (from 1X2)</span></div></div>`;
 }
 
 function viewMatch(id) {
@@ -1042,8 +1044,14 @@ function viewMatch(id) {
           <td class="mono muted hashcol">${hash ? esc(hash.slice(0, 10)) : ""}</td></tr>`;
       };
   const predRows = preds.map(p => { const m = seriesMeta(p); return rowFor(m.label, m.kind, p, p.input_hash, m.key); }).join("");
-  const m = isKO ? null : mktVector(id);  // no advancement market is captured (prereg amendment)
-  const mktRow = m ? rowFor(`Betting market (${m.source})`, "mkt", { p_home: m.p[0], p_draw: m.p[1], p_away: m.p[2] }, null, "de-vigged") : "";
+  const m = mktVector(id);  // de-vigged 1X2 (group AND knockout odds are captured)
+  // No "to advance" market is captured (prereg amendment), but we can derive the market's
+  // advance probability from its 1X2: P(home advances) = P(home win) + P(draw) split toward
+  // the stronger side. This is illustrative (display only), not the scored benchmark.
+  const mktAdv = isKO && m ? m.p[0] + m.p[1] * m.p[0] / (m.p[0] + m.p[2]) : null;
+  const mktRow = !m ? "" : (isKO
+    ? rowFor(`Betting market (from 1X2, ${m.source})`, "mkt", { p_advance_home: mktAdv, p_advance_away: 1 - mktAdv }, null, "derived from 1X2")
+    : rowFor(`Betting market (${m.source})`, "mkt", { p_home: m.p[0], p_draw: m.p[1], p_away: m.p[2] }, null, "de-vigged"));
   const oddsRows = (DB._oddsByMatch[id] || []).map(r => `<tr><td>${esc(r.source)}</td><td class="muted" data-sort="${Date.parse(r.captured_at) || 0}">${esc(fmtDT(r.captured_at))}</td><td class="num">${r.o_home}</td><td class="num">${r.o_draw}</td><td class="num">${r.o_away}</td></tr>`).join("");
   const resultLine = o
     ? `<span class="result">${fx.result.home_goals}–${fx.result.away_goals}</span> · <span class="win">${isKO ? (adv != null ? `${esc(adv === 0 ? fx.home : fx.away)} advanced` : "decided") : ["home win", "draw", "away win"][o[0] ? 0 : o[1] ? 1 : 2]}</span>`
@@ -1060,7 +1068,7 @@ function viewMatch(id) {
     <a class="back" href="#/matches">← Matches</a>
     <h1>${teamLink(fx.home)} <span class="dim">v</span> ${teamLink(fx.away)}</h1>
     <p class="lede">${fx.group ? `<a class="tlink" href="#/group/${esc(fx.group.replace("Group", "").trim())}">${esc(fx.group)}</a>` : "Knockout"}${fx.ground ? " · " + esc(fx.ground) : ""} · ${resultLine}</p>
-    ${preds.length ? `<h2>Every forecast at a glance</h2><p class="muted">${isKO ? "Each dot is one forecaster's probability that the home side advances." : "Each dot is one forecaster's probability; the white line is the betting market."} Hover any dot for details.</p>${isKO ? advStrip(preds, fx.home, fx.away) : probStrip(preds, m)}` : ""}
+    ${preds.length ? `<h2>Every forecast at a glance</h2><p class="muted">${isKO ? "Each dot is one forecaster's probability that the home side advances." : "Each dot is one forecaster's probability; the white line is the betting market."} Hover any dot for details.</p>${isKO ? advStrip(preds, fx.home, fx.away, mktAdv) : probStrip(preds, m)}` : ""}
     ${batchNote}
     <h2>The forecasts</h2>
     ${tableWrap(`<table class="sortable"><thead><tr><th>Forecaster</th>${isKO ? `<th class="num">${esc(fx.home)} adv</th><th class="num">${esc(fx.away)} adv</th>` : `<th class="num">Home win</th><th class="num">Draw</th><th class="num">Away win</th>`}<th class="nosort">shape</th><th class="num" title="${isKO ? "Brier on advancement — lower is better" : "Ranked Probability Score — lower is better"}">${isKO ? "Brier" : "error"}</th><th class="hashcol nosort">fingerprint</th></tr></thead>
