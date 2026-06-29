@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-29T17:30:51Z",
+  "generated_at": "2026-06-29T17:52:31Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -62315,18 +62315,18 @@
       "model": null,
       "method": "B1",
       "team": "Argentina",
-      "p_champion": 0.16974,
+      "p_champion": 0.17188,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.86522,
-        "reach_qf": 0.67284,
-        "reach_sf": 0.44072,
-        "reach_final": 0.28164,
-        "champion": 0.16974
+        "reach_r16": 0.86986,
+        "reach_qf": 0.67864,
+        "reach_sf": 0.44984,
+        "reach_final": 0.28894,
+        "champion": 0.17188
       }
     },
     {
@@ -62334,18 +62334,18 @@
       "model": null,
       "method": "B1",
       "team": "Spain",
-      "p_champion": 0.16552,
+      "p_champion": 0.1675,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.75688,
-        "reach_qf": 0.501,
-        "reach_sf": 0.38726,
-        "reach_final": 0.26262,
-        "champion": 0.16552
+        "reach_r16": 0.75144,
+        "reach_qf": 0.49898,
+        "reach_sf": 0.38408,
+        "reach_final": 0.26186,
+        "champion": 0.1675
       }
     },
     {
@@ -62353,18 +62353,18 @@
       "model": null,
       "method": "B1",
       "team": "France",
-      "p_champion": 0.0969,
+      "p_champion": 0.09498,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.68096,
-        "reach_qf": 0.45568,
-        "reach_sf": 0.30716,
-        "reach_final": 0.17356,
-        "champion": 0.0969
+        "reach_r16": 0.68542,
+        "reach_qf": 0.45394,
+        "reach_sf": 0.3024,
+        "reach_final": 0.171,
+        "champion": 0.09498
       }
     },
     {
@@ -62372,18 +62372,18 @@
       "model": null,
       "method": "B1",
       "team": "England",
-      "p_champion": 0.07524,
+      "p_champion": 0.0753,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.78198,
-        "reach_qf": 0.46576,
-        "reach_sf": 0.27258,
-        "reach_final": 0.14342,
-        "champion": 0.07524
+        "reach_r16": 0.77926,
+        "reach_qf": 0.46354,
+        "reach_sf": 0.27276,
+        "reach_final": 0.1403,
+        "champion": 0.0753
       }
     },
     {
@@ -62391,18 +62391,18 @@
       "model": null,
       "method": "B1",
       "team": "Colombia",
-      "p_champion": 0.06378,
+      "p_champion": 0.06038,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.83808,
-        "reach_qf": 0.4914,
-        "reach_sf": 0.2456,
-        "reach_final": 0.1295,
-        "champion": 0.06378
+        "reach_r16": 0.83402,
+        "reach_qf": 0.488,
+        "reach_sf": 0.23826,
+        "reach_final": 0.12456,
+        "champion": 0.06038
       }
     },
     {
@@ -62410,37 +62410,18 @@
       "model": null,
       "method": "B1",
       "team": "Brazil",
-      "p_champion": 0.0492,
+      "p_champion": 0.0481,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.57376,
-        "reach_qf": 0.3562,
-        "reach_sf": 0.19296,
-        "reach_final": 0.09666,
-        "champion": 0.0492
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Netherlands",
-      "p_champion": 0.04526,
-      "reach": {
-        "win_group": 1.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.60472,
-        "reach_qf": 0.41232,
-        "reach_sf": 0.2033,
-        "reach_final": 0.09622,
-        "champion": 0.04526
+        "reach_r16": 0.57608,
+        "reach_qf": 0.35544,
+        "reach_sf": 0.19054,
+        "reach_final": 0.09534,
+        "champion": 0.0481
       }
     },
     {
@@ -62448,18 +62429,18 @@
       "model": null,
       "method": "B1",
       "team": "Portugal",
-      "p_champion": 0.04234,
+      "p_champion": 0.04116,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.56332,
-        "reach_qf": 0.2388,
-        "reach_sf": 0.15694,
-        "reach_final": 0.08534,
-        "champion": 0.04234
+        "reach_r16": 0.5626,
+        "reach_qf": 0.24078,
+        "reach_sf": 0.1566,
+        "reach_final": 0.08368,
+        "champion": 0.04116
       }
     },
     {
@@ -62467,56 +62448,37 @@
       "model": null,
       "method": "B1",
       "team": "Germany",
-      "p_champion": 0.03812,
+      "p_champion": 0.04098,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.7568,
-        "reach_qf": 0.3399,
-        "reach_sf": 0.19116,
-        "reach_final": 0.08664,
-        "champion": 0.03812
+        "reach_r16": 0.7585,
+        "reach_qf": 0.34356,
+        "reach_sf": 0.19344,
+        "reach_final": 0.08972,
+        "champion": 0.04098
       }
     },
     {
       "as_of": "group-end",
       "model": null,
       "method": "B1",
-      "team": "Belgium",
-      "p_champion": 0.02982,
+      "team": "Netherlands",
+      "p_champion": 0.04052,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.61146,
-        "reach_qf": 0.39504,
-        "reach_sf": 0.14918,
-        "reach_final": 0.07014,
-        "champion": 0.02982
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Norway",
-      "p_champion": 0.02936,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 1.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.67362,
-        "reach_qf": 0.31646,
-        "reach_sf": 0.1472,
-        "reach_final": 0.06488,
-        "champion": 0.02936
+        "reach_r16": 0.60196,
+        "reach_qf": 0.38204,
+        "reach_sf": 0.1877,
+        "reach_final": 0.08804,
+        "champion": 0.04052
       }
     },
     {
@@ -62524,37 +62486,56 @@
       "model": null,
       "method": "B1",
       "team": "Ecuador",
-      "p_champion": 0.02836,
+      "p_champion": 0.0295,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.55936,
-        "reach_qf": 0.27528,
-        "reach_sf": 0.14142,
-        "reach_final": 0.06384,
-        "champion": 0.02836
+        "reach_r16": 0.55214,
+        "reach_qf": 0.2729,
+        "reach_sf": 0.13982,
+        "reach_final": 0.06418,
+        "champion": 0.0295
       }
     },
     {
       "as_of": "group-end",
       "model": null,
       "method": "B1",
-      "team": "Switzerland",
-      "p_champion": 0.02044,
+      "team": "Norway",
+      "p_champion": 0.029,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.68036,
+        "reach_qf": 0.31804,
+        "reach_sf": 0.14954,
+        "reach_final": 0.06536,
+        "champion": 0.029
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Belgium",
+      "p_champion": 0.02874,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.52792,
-        "reach_qf": 0.25544,
-        "reach_sf": 0.10756,
-        "reach_final": 0.04776,
-        "champion": 0.02044
+        "reach_r16": 0.61246,
+        "reach_qf": 0.39542,
+        "reach_sf": 0.15022,
+        "reach_final": 0.0701,
+        "champion": 0.02874
       }
     },
     {
@@ -62562,18 +62543,37 @@
       "model": null,
       "method": "B1",
       "team": "Japan",
-      "p_champion": 0.0196,
+      "p_champion": 0.0211,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.42624,
-        "reach_qf": 0.23168,
-        "reach_sf": 0.108,
-        "reach_final": 0.04604,
-        "champion": 0.0196
+        "reach_r16": 0.42392,
+        "reach_qf": 0.23076,
+        "reach_sf": 0.10882,
+        "reach_final": 0.04754,
+        "champion": 0.0211
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Switzerland",
+      "p_champion": 0.0209,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.52822,
+        "reach_qf": 0.25758,
+        "reach_sf": 0.10892,
+        "reach_final": 0.0494,
+        "champion": 0.0209
       }
     },
     {
@@ -62581,75 +62581,18 @@
       "model": null,
       "method": "B1",
       "team": "Croatia",
-      "p_champion": 0.01912,
+      "p_champion": 0.02086,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.43668,
-        "reach_qf": 0.16266,
-        "reach_sf": 0.0968,
-        "reach_final": 0.04562,
-        "champion": 0.01912
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Senegal",
-      "p_champion": 0.0165,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.47208,
-        "reach_qf": 0.2172,
-        "reach_sf": 0.0877,
-        "reach_final": 0.03874,
-        "champion": 0.0165
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Mexico",
-      "p_champion": 0.01542,
-      "reach": {
-        "win_group": 1.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.44064,
-        "reach_qf": 0.19468,
-        "reach_sf": 0.08986,
-        "reach_final": 0.03726,
-        "champion": 0.01542
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Morocco",
-      "p_champion": 0.01306,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 1.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.39528,
-        "reach_qf": 0.2341,
-        "reach_sf": 0.09286,
-        "reach_final": 0.0348,
-        "champion": 0.01306
+        "reach_r16": 0.4374,
+        "reach_qf": 0.1614,
+        "reach_sf": 0.09712,
+        "reach_final": 0.04702,
+        "champion": 0.02086
       }
     },
     {
@@ -62657,18 +62600,75 @@
       "model": null,
       "method": "B1",
       "team": "Canada",
-      "p_champion": 0.01156,
+      "p_champion": 0.01584,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.71594,
-        "reach_qf": 0.29118,
-        "reach_sf": 0.10454,
-        "reach_final": 0.03564,
-        "champion": 0.01156
+        "reach_r16": 1.0,
+        "reach_qf": 0.4023,
+        "reach_sf": 0.14382,
+        "reach_final": 0.04884,
+        "champion": 0.01584
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Senegal",
+      "p_champion": 0.0155,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.47178,
+        "reach_qf": 0.21742,
+        "reach_sf": 0.0868,
+        "reach_final": 0.03798,
+        "champion": 0.0155
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Mexico",
+      "p_champion": 0.01486,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.44786,
+        "reach_qf": 0.19892,
+        "reach_sf": 0.0911,
+        "reach_final": 0.0363,
+        "champion": 0.01486
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Morocco",
+      "p_champion": 0.01218,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.39804,
+        "reach_qf": 0.21566,
+        "reach_sf": 0.08442,
+        "reach_final": 0.03242,
+        "champion": 0.01218
       }
     },
     {
@@ -62676,37 +62676,18 @@
       "model": null,
       "method": "B1",
       "team": "Paraguay",
-      "p_champion": 0.01092,
+      "p_champion": 0.01062,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.31904,
-        "reach_qf": 0.1532,
-        "reach_sf": 0.07432,
-        "reach_final": 0.02874,
-        "champion": 0.01092
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Australia",
-      "p_champion": 0.00804,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 1.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.57244,
-        "reach_qf": 0.17224,
-        "reach_sf": 0.0669,
-        "reach_final": 0.02454,
-        "champion": 0.00804
+        "reach_r16": 0.31458,
+        "reach_qf": 0.15096,
+        "reach_sf": 0.07312,
+        "reach_final": 0.02746,
+        "champion": 0.01062
       }
     },
     {
@@ -62714,18 +62695,18 @@
       "model": null,
       "method": "B1",
       "team": "Austria",
-      "p_champion": 0.00764,
+      "p_champion": 0.008,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.24312,
-        "reach_qf": 0.09754,
-        "reach_sf": 0.05112,
-        "reach_final": 0.02136,
-        "champion": 0.00764
+        "reach_r16": 0.24856,
+        "reach_qf": 0.09884,
+        "reach_sf": 0.05164,
+        "reach_final": 0.02112,
+        "champion": 0.008
       }
     },
     {
@@ -62733,18 +62714,37 @@
       "model": null,
       "method": "B1",
       "team": "Algeria",
-      "p_champion": 0.00674,
+      "p_champion": 0.00748,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.38854,
-        "reach_qf": 0.20922,
-        "reach_sf": 0.05952,
-        "reach_final": 0.02152,
-        "champion": 0.00674
+        "reach_r16": 0.38754,
+        "reach_qf": 0.20658,
+        "reach_sf": 0.05924,
+        "reach_final": 0.02196,
+        "champion": 0.00748
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Australia",
+      "p_champion": 0.00736,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.57146,
+        "reach_qf": 0.16882,
+        "reach_sf": 0.06428,
+        "reach_final": 0.0228,
+        "champion": 0.00736
       }
     },
     {
@@ -62752,18 +62752,18 @@
       "model": null,
       "method": "B1",
       "team": "United States",
-      "p_champion": 0.0054,
+      "p_champion": 0.00512,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.51986,
-        "reach_qf": 0.20882,
-        "reach_sf": 0.05294,
-        "reach_final": 0.01718,
-        "champion": 0.0054
+        "reach_r16": 0.51838,
+        "reach_qf": 0.2094,
+        "reach_sf": 0.05474,
+        "reach_final": 0.01782,
+        "champion": 0.00512
       }
     },
     {
@@ -62771,18 +62771,18 @@
       "model": null,
       "method": "B1",
       "team": "Sweden",
-      "p_champion": 0.00426,
+      "p_champion": 0.00442,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.48014,
-        "reach_qf": 0.18692,
-        "reach_sf": 0.04624,
-        "reach_final": 0.01484,
-        "champion": 0.00426
+        "reach_r16": 0.48162,
+        "reach_qf": 0.1886,
+        "reach_sf": 0.04636,
+        "reach_final": 0.01566,
+        "champion": 0.00442
       }
     },
     {
@@ -62790,18 +62790,18 @@
       "model": null,
       "method": "B1",
       "team": "Egypt",
-      "p_champion": 0.00272,
+      "p_champion": 0.0025,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.42756,
-        "reach_qf": 0.10652,
-        "reach_sf": 0.03402,
-        "reach_final": 0.01006,
-        "champion": 0.00272
+        "reach_r16": 0.42854,
+        "reach_qf": 0.10358,
+        "reach_sf": 0.0336,
+        "reach_final": 0.0103,
+        "champion": 0.0025
       }
     },
     {
@@ -62809,18 +62809,18 @@
       "model": null,
       "method": "B1",
       "team": "Ivory Coast",
-      "p_champion": 0.00218,
+      "p_champion": 0.0023,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.32638,
-        "reach_qf": 0.09566,
-        "reach_sf": 0.02984,
-        "reach_final": 0.0078,
-        "champion": 0.00218
+        "reach_r16": 0.31964,
+        "reach_qf": 0.09576,
+        "reach_sf": 0.02856,
+        "reach_final": 0.00828,
+        "champion": 0.0023
       }
     },
     {
@@ -62828,18 +62828,18 @@
       "model": null,
       "method": "B1",
       "team": "DR Congo",
-      "p_champion": 0.00098,
+      "p_champion": 0.00112,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.21802,
-        "reach_qf": 0.06428,
-        "reach_sf": 0.01814,
-        "reach_final": 0.0044,
-        "champion": 0.00098
+        "reach_r16": 0.22074,
+        "reach_qf": 0.06464,
+        "reach_sf": 0.01886,
+        "reach_final": 0.0048,
+        "champion": 0.00112
       }
     },
     {
@@ -62847,18 +62847,18 @@
       "model": null,
       "method": "B1",
       "team": "Bosnia & Herzegovina",
-      "p_champion": 0.00078,
+      "p_champion": 0.00084,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.2432,
-        "reach_qf": 0.05122,
-        "reach_sf": 0.01462,
-        "reach_final": 0.00384,
-        "champion": 0.00078
+        "reach_r16": 0.2415,
+        "reach_qf": 0.05154,
+        "reach_sf": 0.0151,
+        "reach_final": 0.0033,
+        "champion": 0.00084
       }
     },
     {
@@ -62866,37 +62866,18 @@
       "model": null,
       "method": "B1",
       "team": "Cape Verde",
-      "p_champion": 0.0005,
+      "p_champion": 0.00068,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.13478,
-        "reach_qf": 0.0484,
-        "reach_sf": 0.01156,
-        "reach_final": 0.0023,
-        "champion": 0.0005
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "South Africa",
-      "p_champion": 0.00028,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 1.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.28406,
-        "reach_qf": 0.0624,
-        "reach_sf": 0.01204,
-        "reach_final": 0.00194,
-        "champion": 0.00028
+        "reach_r16": 0.13014,
+        "reach_qf": 0.04896,
+        "reach_sf": 0.01184,
+        "reach_final": 0.00264,
+        "champion": 0.00068
       }
     },
     {
@@ -62904,101 +62885,25 @@
       "model": null,
       "method": "B1",
       "team": "Ghana",
-      "p_champion": 0.00022,
+      "p_champion": 0.00028,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.16192,
-        "reach_qf": 0.03596,
-        "reach_sf": 0.00594,
-        "reach_final": 0.00116,
-        "champion": 0.00022
+        "reach_r16": 0.16598,
+        "reach_qf": 0.037,
+        "reach_sf": 0.00646,
+        "reach_final": 0.00128,
+        "champion": 0.00028
       }
     },
     {
       "as_of": "group-end",
       "model": null,
       "method": "B1",
-      "team": "Iran",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Iraq",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "New Zealand",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Uruguay",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Saudi Arabia",
+      "team": "Panama",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -63036,13 +62941,13 @@
       "as_of": "group-end",
       "model": null,
       "method": "B1",
-      "team": "Tunisia",
+      "team": "Scotland",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
+        "third": 1.0,
+        "fourth": 0.0,
         "reach_r32": 0.0,
         "reach_r16": 0.0,
         "reach_qf": 0.0,
@@ -63055,7 +62960,7 @@
       "as_of": "group-end",
       "model": null,
       "method": "B1",
-      "team": "Cura\u00e7ao",
+      "team": "Iraq",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -63093,83 +62998,7 @@
       "as_of": "group-end",
       "model": null,
       "method": "B1",
-      "team": "Uzbekistan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Scotland",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Haiti",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "South Korea",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B1",
-      "team": "Panama",
+      "team": "Jordan",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -63207,7 +63036,178 @@
       "as_of": "group-end",
       "model": null,
       "method": "B1",
-      "team": "Jordan",
+      "team": "Cura\u00e7ao",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "South Africa",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Tunisia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "South Korea",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Iran",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Uruguay",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Uzbekistan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "New Zealand",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Saudi Arabia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B1",
+      "team": "Haiti",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -63227,18 +63227,18 @@
       "model": null,
       "method": "B2",
       "team": "France",
-      "p_champion": 0.30004,
+      "p_champion": 0.29686,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.92054,
-        "reach_qf": 0.70542,
-        "reach_sf": 0.59532,
-        "reach_final": 0.42876,
-        "champion": 0.30004
+        "reach_r16": 0.92048,
+        "reach_qf": 0.70238,
+        "reach_sf": 0.591,
+        "reach_final": 0.42384,
+        "champion": 0.29686
       }
     },
     {
@@ -63246,18 +63246,18 @@
       "model": null,
       "method": "B2",
       "team": "England",
-      "p_champion": 0.25826,
+      "p_champion": 0.26112,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.89484,
-        "reach_qf": 0.77136,
-        "reach_sf": 0.57104,
-        "reach_final": 0.46114,
-        "champion": 0.25826
+        "reach_r16": 0.89608,
+        "reach_qf": 0.77426,
+        "reach_sf": 0.57488,
+        "reach_final": 0.46146,
+        "champion": 0.26112
       }
     },
     {
@@ -63265,18 +63265,18 @@
       "model": null,
       "method": "B2",
       "team": "Spain",
-      "p_champion": 0.12896,
+      "p_champion": 0.12924,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.8438,
-        "reach_qf": 0.54392,
-        "reach_sf": 0.43152,
-        "reach_final": 0.21874,
-        "champion": 0.12896
+        "reach_r16": 0.84084,
+        "reach_qf": 0.54218,
+        "reach_sf": 0.42826,
+        "reach_final": 0.21842,
+        "champion": 0.12924
       }
     },
     {
@@ -63284,18 +63284,18 @@
       "model": null,
       "method": "B2",
       "team": "Portugal",
-      "p_champion": 0.05496,
+      "p_champion": 0.0546,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.73692,
-        "reach_qf": 0.3464,
-        "reach_sf": 0.25092,
-        "reach_final": 0.10712,
-        "champion": 0.05496
+        "reach_r16": 0.73592,
+        "reach_qf": 0.34726,
+        "reach_sf": 0.24982,
+        "reach_final": 0.10692,
+        "champion": 0.0546
       }
     },
     {
@@ -63303,18 +63303,18 @@
       "model": null,
       "method": "B2",
       "team": "Brazil",
-      "p_champion": 0.05478,
+      "p_champion": 0.05454,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.75156,
-        "reach_qf": 0.48706,
-        "reach_sf": 0.2067,
-        "reach_final": 0.13792,
-        "champion": 0.05478
+        "reach_r16": 0.74772,
+        "reach_qf": 0.48274,
+        "reach_sf": 0.20498,
+        "reach_final": 0.13614,
+        "champion": 0.05454
       }
     },
     {
@@ -63322,18 +63322,18 @@
       "model": null,
       "method": "B2",
       "team": "Argentina",
-      "p_champion": 0.05178,
+      "p_champion": 0.05302,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.76898,
-        "reach_qf": 0.5822,
-        "reach_sf": 0.38972,
-        "reach_final": 0.1517,
-        "champion": 0.05178
+        "reach_r16": 0.77454,
+        "reach_qf": 0.58776,
+        "reach_sf": 0.39822,
+        "reach_final": 0.15624,
+        "champion": 0.05302
       }
     },
     {
@@ -63341,18 +63341,18 @@
       "model": null,
       "method": "B2",
       "team": "Germany",
-      "p_champion": 0.0414,
+      "p_champion": 0.04404,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.79076,
-        "reach_qf": 0.25132,
-        "reach_sf": 0.16696,
-        "reach_final": 0.08408,
-        "champion": 0.0414
+        "reach_r16": 0.79104,
+        "reach_qf": 0.25312,
+        "reach_sf": 0.17104,
+        "reach_final": 0.08844,
+        "champion": 0.04404
       }
     },
     {
@@ -63360,18 +63360,18 @@
       "model": null,
       "method": "B2",
       "team": "Netherlands",
-      "p_champion": 0.02316,
+      "p_champion": 0.02178,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.60762,
-        "reach_qf": 0.44534,
-        "reach_sf": 0.12994,
-        "reach_final": 0.05572,
-        "champion": 0.02316
+        "reach_r16": 0.60566,
+        "reach_qf": 0.43316,
+        "reach_sf": 0.12512,
+        "reach_final": 0.05356,
+        "champion": 0.02178
       }
     },
     {
@@ -63379,18 +63379,18 @@
       "model": null,
       "method": "B2",
       "team": "Senegal",
-      "p_champion": 0.01176,
+      "p_champion": 0.0111,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.56148,
-        "reach_qf": 0.32886,
-        "reach_sf": 0.16158,
-        "reach_final": 0.0463,
-        "champion": 0.01176
+        "reach_r16": 0.56426,
+        "reach_qf": 0.33206,
+        "reach_sf": 0.16234,
+        "reach_final": 0.04728,
+        "champion": 0.0111
       }
     },
     {
@@ -63398,18 +63398,18 @@
       "model": null,
       "method": "B2",
       "team": "Norway",
-      "p_champion": 0.0109,
+      "p_champion": 0.0107,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.53032,
-        "reach_qf": 0.22686,
-        "reach_sf": 0.06938,
-        "reach_final": 0.0379,
-        "champion": 0.0109
+        "reach_r16": 0.5344,
+        "reach_qf": 0.23046,
+        "reach_sf": 0.06996,
+        "reach_final": 0.03764,
+        "champion": 0.0107
       }
     },
     {
@@ -63424,10 +63424,10 @@
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.6179,
-        "reach_qf": 0.35066,
-        "reach_sf": 0.10728,
-        "reach_final": 0.02948,
+        "reach_r16": 0.61916,
+        "reach_qf": 0.35238,
+        "reach_sf": 0.11034,
+        "reach_final": 0.03014,
         "champion": 0.01042
       }
     },
@@ -63436,18 +63436,18 @@
       "model": null,
       "method": "B2",
       "team": "Ivory Coast",
-      "p_champion": 0.00748,
+      "p_champion": 0.00704,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.46968,
-        "reach_qf": 0.1907,
-        "reach_sf": 0.05618,
-        "reach_final": 0.0288,
-        "champion": 0.00748
+        "reach_r16": 0.4656,
+        "reach_qf": 0.18892,
+        "reach_sf": 0.05366,
+        "reach_final": 0.028,
+        "champion": 0.00704
       }
     },
     {
@@ -63455,18 +63455,18 @@
       "model": null,
       "method": "B2",
       "team": "Morocco",
-      "p_champion": 0.00596,
+      "p_champion": 0.00564,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.39238,
-        "reach_qf": 0.2524,
-        "reach_sf": 0.05404,
-        "reach_final": 0.01894,
-        "champion": 0.00596
+        "reach_r16": 0.39434,
+        "reach_qf": 0.24828,
+        "reach_sf": 0.05312,
+        "reach_final": 0.01778,
+        "champion": 0.00564
       }
     },
     {
@@ -63474,18 +63474,18 @@
       "model": null,
       "method": "B2",
       "team": "Switzerland",
-      "p_champion": 0.005,
+      "p_champion": 0.00524,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.43852,
-        "reach_qf": 0.23514,
-        "reach_sf": 0.10322,
-        "reach_final": 0.02466,
-        "champion": 0.005
+        "reach_r16": 0.43574,
+        "reach_qf": 0.2326,
+        "reach_sf": 0.10038,
+        "reach_final": 0.02482,
+        "champion": 0.00524
       }
     },
     {
@@ -63493,18 +63493,18 @@
       "model": null,
       "method": "B2",
       "team": "Colombia",
-      "p_champion": 0.00496,
+      "p_champion": 0.00446,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.53374,
-        "reach_qf": 0.23814,
-        "reach_sf": 0.10282,
-        "reach_final": 0.02422,
-        "champion": 0.00496
+        "reach_r16": 0.53198,
+        "reach_qf": 0.23764,
+        "reach_sf": 0.1,
+        "reach_final": 0.02332,
+        "champion": 0.00446
       }
     },
     {
@@ -63512,18 +63512,18 @@
       "model": null,
       "method": "B2",
       "team": "Sweden",
-      "p_champion": 0.00436,
+      "p_champion": 0.00418,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.5123,
-        "reach_qf": 0.25004,
-        "reach_sf": 0.06538,
-        "reach_final": 0.01446,
-        "champion": 0.00436
+        "reach_r16": 0.51424,
+        "reach_qf": 0.25056,
+        "reach_sf": 0.06446,
+        "reach_final": 0.01516,
+        "champion": 0.00418
       }
     },
     {
@@ -63531,18 +63531,18 @@
       "model": null,
       "method": "B2",
       "team": "Ecuador",
-      "p_champion": 0.00392,
+      "p_champion": 0.00388,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.57804,
-        "reach_qf": 0.11668,
-        "reach_sf": 0.04166,
-        "reach_final": 0.01864,
-        "champion": 0.00392
+        "reach_r16": 0.57104,
+        "reach_qf": 0.1139,
+        "reach_sf": 0.04162,
+        "reach_final": 0.01934,
+        "champion": 0.00388
       }
     },
     {
@@ -63550,18 +63550,18 @@
       "model": null,
       "method": "B2",
       "team": "United States",
-      "p_champion": 0.00372,
+      "p_champion": 0.00356,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.4877,
-        "reach_qf": 0.2314,
-        "reach_sf": 0.05692,
-        "reach_final": 0.01256,
-        "champion": 0.00372
+        "reach_r16": 0.48576,
+        "reach_qf": 0.23194,
+        "reach_sf": 0.0605,
+        "reach_final": 0.01396,
+        "champion": 0.00356
       }
     },
     {
@@ -63569,18 +63569,18 @@
       "model": null,
       "method": "B2",
       "team": "Ghana",
-      "p_champion": 0.00322,
+      "p_champion": 0.00296,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.46626,
-        "reach_qf": 0.19786,
-        "reach_sf": 0.07982,
-        "reach_final": 0.01806,
-        "champion": 0.00322
+        "reach_r16": 0.46802,
+        "reach_qf": 0.1977,
+        "reach_sf": 0.07878,
+        "reach_final": 0.01594,
+        "champion": 0.00296
       }
     },
     {
@@ -63588,37 +63588,18 @@
       "model": null,
       "method": "B2",
       "team": "Croatia",
-      "p_champion": 0.00206,
+      "p_champion": 0.00212,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.26308,
-        "reach_qf": 0.06608,
-        "reach_sf": 0.03204,
-        "reach_final": 0.00736,
-        "champion": 0.00206
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Egypt",
-      "p_champion": 0.00196,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 1.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.51954,
-        "reach_qf": 0.16294,
-        "reach_sf": 0.06486,
-        "reach_final": 0.01222,
-        "champion": 0.00196
+        "reach_r16": 0.26408,
+        "reach_qf": 0.06718,
+        "reach_sf": 0.0326,
+        "reach_final": 0.00744,
+        "champion": 0.00212
       }
     },
     {
@@ -63626,18 +63607,18 @@
       "model": null,
       "method": "B2",
       "team": "Algeria",
-      "p_champion": 0.00166,
+      "p_champion": 0.00206,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.3821,
-        "reach_qf": 0.1679,
-        "reach_sf": 0.03704,
-        "reach_final": 0.00706,
-        "champion": 0.00166
+        "reach_r16": 0.38084,
+        "reach_qf": 0.16512,
+        "reach_sf": 0.03576,
+        "reach_final": 0.0073,
+        "champion": 0.00206
       }
     },
     {
@@ -63645,18 +63626,56 @@
       "model": null,
       "method": "B2",
       "team": "Japan",
-      "p_champion": 0.0016,
+      "p_champion": 0.00204,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.24844,
-        "reach_qf": 0.09538,
+        "reach_r16": 0.25228,
+        "reach_qf": 0.09788,
         "reach_sf": 0.02158,
-        "reach_final": 0.00878,
-        "champion": 0.0016
+        "reach_final": 0.00952,
+        "champion": 0.00204
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "Canada",
+      "p_champion": 0.00202,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 1.0,
+        "reach_qf": 0.31856,
+        "reach_sf": 0.04384,
+        "reach_final": 0.00996,
+        "champion": 0.00202
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "Egypt",
+      "p_champion": 0.00162,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.5206,
+        "reach_qf": 0.16064,
+        "reach_sf": 0.06374,
+        "reach_final": 0.0123,
+        "champion": 0.00162
       }
     },
     {
@@ -63671,10 +63690,10 @@
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.48046,
-        "reach_qf": 0.14538,
-        "reach_sf": 0.057,
-        "reach_final": 0.01022,
+        "reach_r16": 0.4794,
+        "reach_qf": 0.14314,
+        "reach_sf": 0.0557,
+        "reach_final": 0.0091,
         "champion": 0.00146
       }
     },
@@ -63683,56 +63702,18 @@
       "model": null,
       "method": "B2",
       "team": "Mexico",
-      "p_champion": 0.0014,
+      "p_champion": 0.00114,
       "reach": {
         "win_group": 1.0,
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.42196,
-        "reach_qf": 0.06612,
-        "reach_sf": 0.02052,
-        "reach_final": 0.00802,
-        "champion": 0.0014
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Canada",
-      "p_champion": 0.00124,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 1.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.56636,
-        "reach_qf": 0.18306,
-        "reach_sf": 0.02524,
-        "reach_final": 0.00586,
-        "champion": 0.00124
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "DR Congo",
-      "p_champion": 0.00084,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.10516,
-        "reach_qf": 0.04584,
-        "reach_sf": 0.01294,
-        "reach_final": 0.00508,
-        "champion": 0.00084
+        "reach_r16": 0.42896,
+        "reach_qf": 0.06704,
+        "reach_sf": 0.021,
+        "reach_final": 0.00748,
+        "champion": 0.00114
       }
     },
     {
@@ -63740,18 +63721,18 @@
       "model": null,
       "method": "B2",
       "team": "Cape Verde",
-      "p_champion": 0.00076,
+      "p_champion": 0.00102,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.23102,
-        "reach_qf": 0.10948,
-        "reach_sf": 0.04098,
-        "reach_final": 0.00634,
-        "champion": 0.00076
+        "reach_r16": 0.22546,
+        "reach_qf": 0.10846,
+        "reach_sf": 0.04084,
+        "reach_final": 0.0066,
+        "champion": 0.00102
       }
     },
     {
@@ -63759,56 +63740,37 @@
       "model": null,
       "method": "B2",
       "team": "Austria",
-      "p_champion": 0.00076,
+      "p_champion": 0.00074,
       "reach": {
         "win_group": 0.0,
         "runner_up": 1.0,
         "third": 0.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.1562,
-        "reach_qf": 0.0436,
-        "reach_sf": 0.0189,
-        "reach_final": 0.00328,
-        "champion": 0.00076
+        "reach_r16": 0.15916,
+        "reach_qf": 0.04338,
+        "reach_sf": 0.01826,
+        "reach_final": 0.0031,
+        "champion": 0.00074
       }
     },
     {
       "as_of": "group-end",
       "model": null,
       "method": "B2",
-      "team": "South Africa",
-      "p_champion": 0.00048,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 1.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.43364,
-        "reach_qf": 0.1192,
-        "reach_sf": 0.01384,
-        "reach_final": 0.00282,
-        "champion": 0.00048
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Bosnia & Herzegovina",
-      "p_champion": 0.00048,
+      "team": "DR Congo",
+      "p_champion": 0.00062,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.20924,
-        "reach_qf": 0.02276,
-        "reach_sf": 0.00742,
-        "reach_final": 0.00204,
-        "champion": 0.00048
+        "reach_r16": 0.10392,
+        "reach_qf": 0.0448,
+        "reach_sf": 0.01232,
+        "reach_final": 0.00482,
+        "champion": 0.00062
       }
     },
     {
@@ -63816,158 +63778,44 @@
       "model": null,
       "method": "B2",
       "team": "Paraguay",
-      "p_champion": 0.00026,
+      "p_champion": 0.00042,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
         "reach_r32": 1.0,
-        "reach_r16": 0.07946,
-        "reach_qf": 0.0205,
-        "reach_sf": 0.00724,
-        "reach_final": 0.00172,
-        "champion": 0.00026
+        "reach_r16": 0.07952,
+        "reach_qf": 0.02088,
+        "reach_sf": 0.00736,
+        "reach_final": 0.00176,
+        "champion": 0.00042
       }
     },
     {
       "as_of": "group-end",
       "model": null,
       "method": "B2",
-      "team": "Cura\u00e7ao",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Turkey",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Iraq",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Tunisia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Scotland",
-      "p_champion": 0.0,
+      "team": "Bosnia & Herzegovina",
+      "p_champion": 0.00036,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
+        "reach_r32": 1.0,
+        "reach_r16": 0.20896,
+        "reach_qf": 0.02362,
+        "reach_sf": 0.00852,
+        "reach_final": 0.00222,
+        "champion": 0.00036
       }
     },
     {
       "as_of": "group-end",
       "model": null,
       "method": "B2",
-      "team": "Haiti",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Uruguay",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Jordan",
+      "team": "Czech Republic",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -64005,6 +63853,177 @@
       "as_of": "group-end",
       "model": null,
       "method": "B2",
+      "team": "Uzbekistan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "South Africa",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "Jordan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "South Korea",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "Iraq",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "Haiti",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "Scotland",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "Uruguay",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "Turkey",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
       "team": "Saudi Arabia",
       "p_champion": 0.0,
       "reach": {
@@ -64024,7 +64043,7 @@
       "as_of": "group-end",
       "model": null,
       "method": "B2",
-      "team": "New Zealand",
+      "team": "Cura\u00e7ao",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -64043,7 +64062,26 @@
       "as_of": "group-end",
       "model": null,
       "method": "B2",
-      "team": "Uzbekistan",
+      "team": "Panama",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": null,
+      "method": "B2",
+      "team": "Tunisia",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -64081,45 +64119,7 @@
       "as_of": "group-end",
       "model": null,
       "method": "B2",
-      "team": "South Korea",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Panama",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": null,
-      "method": "B2",
-      "team": "Czech Republic",
+      "team": "New Zealand",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -64174,6 +64174,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Argentina",
+      "p_champion": 0.13784,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.82316,
+        "reach_qf": 0.5897,
+        "reach_sf": 0.39108,
+        "reach_final": 0.23712,
+        "champion": 0.13784
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "grok-4.3",
       "method": "M3",
       "team": "Argentina",
@@ -64208,6 +64227,25 @@
         "reach_sf": 0.3408,
         "reach_final": 0.20576,
         "champion": 0.12268
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "France",
+      "p_champion": 0.12226,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.78566,
+        "reach_qf": 0.5124,
+        "reach_sf": 0.33014,
+        "reach_final": 0.20582,
+        "champion": 0.12226
       }
     },
     {
@@ -64516,6 +64554,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "England",
+      "p_champion": 0.0858,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.76034,
+        "reach_qf": 0.47892,
+        "reach_sf": 0.27726,
+        "reach_final": 0.15568,
+        "champion": 0.0858
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "claude-opus-4-8",
       "method": "M3",
       "team": "Spain",
@@ -64569,6 +64626,25 @@
         "reach_sf": 0.24848,
         "reach_final": 0.14578,
         "champion": 0.08342
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Brazil",
+      "p_champion": 0.08292,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.60988,
+        "reach_qf": 0.42854,
+        "reach_sf": 0.25338,
+        "reach_final": 0.1458,
+        "champion": 0.08292
       }
     },
     {
@@ -64896,6 +64972,44 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Spain",
+      "p_champion": 0.06428,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.6663,
+        "reach_qf": 0.3681,
+        "reach_sf": 0.22362,
+        "reach_final": 0.11996,
+        "champion": 0.06428
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Netherlands",
+      "p_champion": 0.06392,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.5905,
+        "reach_qf": 0.41022,
+        "reach_sf": 0.21328,
+        "reach_final": 0.1201,
+        "champion": 0.06392
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "grok-4.3",
       "method": "M3",
       "team": "Spain",
@@ -65063,6 +65177,44 @@
         "reach_sf": 0.19174,
         "reach_final": 0.1014,
         "champion": 0.05272
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Belgium",
+      "p_champion": 0.0526,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.71362,
+        "reach_qf": 0.42824,
+        "reach_sf": 0.21812,
+        "reach_final": 0.10766,
+        "champion": 0.0526
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Germany",
+      "p_champion": 0.05152,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.75454,
+        "reach_qf": 0.35222,
+        "reach_sf": 0.19472,
+        "reach_final": 0.10204,
+        "champion": 0.05152
       }
     },
     {
@@ -65333,6 +65485,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Portugal",
+      "p_champion": 0.04542,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.563,
+        "reach_qf": 0.30038,
+        "reach_sf": 0.17536,
+        "reach_final": 0.08762,
+        "champion": 0.04542
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "gemini-3.1-pro-preview",
       "method": "M3",
       "team": "Germany",
@@ -65542,6 +65713,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Colombia",
+      "p_champion": 0.0386,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.64468,
+        "reach_qf": 0.3571,
+        "reach_sf": 0.1732,
+        "reach_final": 0.0833,
+        "champion": 0.0386
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
       "team": "Belgium",
@@ -65595,6 +65785,25 @@
         "reach_sf": 0.14984,
         "reach_final": 0.07712,
         "champion": 0.03722
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Mexico",
+      "p_champion": 0.03674,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.6574,
+        "reach_qf": 0.31974,
+        "reach_sf": 0.16098,
+        "reach_final": 0.07834,
+        "champion": 0.03674
       }
     },
     {
@@ -65979,6 +66188,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Switzerland",
+      "p_champion": 0.02692,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.55766,
+        "reach_qf": 0.29228,
+        "reach_sf": 0.133,
+        "reach_final": 0.06088,
+        "champion": 0.02692
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
       "team": "Croatia",
@@ -66055,6 +66283,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Japan",
+      "p_champion": 0.0261,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.39012,
+        "reach_qf": 0.23798,
+        "reach_sf": 0.11544,
+        "reach_final": 0.05576,
+        "champion": 0.0261
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "gemini-3.1-pro-preview",
       "method": "M3",
       "team": "Croatia",
@@ -66074,25 +66321,6 @@
     },
     {
       "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "United States",
-      "p_champion": 0.02562,
-      "reach": {
-        "win_group": 1.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.55332,
-        "reach_qf": 0.28322,
-        "reach_sf": 0.12582,
-        "reach_final": 0.0581,
-        "champion": 0.02562
-      }
-    },
-    {
-      "as_of": "group-end",
       "model": "grok-4.3",
       "method": "M3",
       "team": "Switzerland",
@@ -66106,6 +66334,25 @@
         "reach_r16": 0.51388,
         "reach_qf": 0.275,
         "reach_sf": 0.12872,
+        "reach_final": 0.0581,
+        "champion": 0.02562
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "United States",
+      "p_champion": 0.02562,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.55332,
+        "reach_qf": 0.28322,
+        "reach_sf": 0.12582,
         "reach_final": 0.0581,
         "champion": 0.02562
       }
@@ -66184,6 +66431,25 @@
         "reach_sf": 0.11832,
         "reach_final": 0.05366,
         "champion": 0.02366
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Morocco",
+      "p_champion": 0.0236,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.4095,
+        "reach_qf": 0.25356,
+        "reach_sf": 0.109,
+        "reach_final": 0.05294,
+        "champion": 0.0236
       }
     },
     {
@@ -66317,6 +66583,25 @@
         "reach_sf": 0.10808,
         "reach_final": 0.05074,
         "champion": 0.02228
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Croatia",
+      "p_champion": 0.02194,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.437,
+        "reach_qf": 0.20442,
+        "reach_sf": 0.10668,
+        "reach_final": 0.04768,
+        "champion": 0.02194
       }
     },
     {
@@ -66488,6 +66773,25 @@
         "reach_sf": 0.10712,
         "reach_final": 0.04714,
         "champion": 0.0206
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "United States",
+      "p_champion": 0.02044,
+      "reach": {
+        "win_group": 1.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.55996,
+        "reach_qf": 0.27394,
+        "reach_sf": 0.11818,
+        "reach_final": 0.04932,
+        "champion": 0.02044
       }
     },
     {
@@ -67195,6 +67499,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Senegal",
+      "p_champion": 0.01324,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.44234,
+        "reach_qf": 0.20636,
+        "reach_sf": 0.0827,
+        "reach_final": 0.03488,
+        "champion": 0.01324
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "gemini-3.5-flash",
       "method": "M3",
       "team": "Egypt",
@@ -67214,6 +67537,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Egypt",
+      "p_champion": 0.01304,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.55482,
+        "reach_qf": 0.20154,
+        "reach_sf": 0.09026,
+        "reach_final": 0.0367,
+        "champion": 0.01304
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "grok-4.3",
       "method": "M3",
       "team": "Canada",
@@ -67229,6 +67571,25 @@
         "reach_sf": 0.0869,
         "reach_final": 0.03408,
         "champion": 0.01294
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Canada",
+      "p_champion": 0.01278,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 1.0,
+        "reach_qf": 0.33622,
+        "reach_sf": 0.1096,
+        "reach_final": 0.0381,
+        "champion": 0.01278
       }
     },
     {
@@ -67311,25 +67672,6 @@
       "as_of": "group-end",
       "model": "gpt-5.5-2026-04-23",
       "method": "M3",
-      "team": "Austria",
-      "p_champion": 0.01218,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 1.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.35622,
-        "reach_qf": 0.1502,
-        "reach_sf": 0.07172,
-        "reach_final": 0.03002,
-        "champion": 0.01218
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.5-2026-04-23",
-      "method": "M3",
       "team": "Canada",
       "p_champion": 0.01218,
       "reach": {
@@ -67342,6 +67684,25 @@
         "reach_qf": 0.2163,
         "reach_sf": 0.08068,
         "reach_final": 0.03182,
+        "champion": 0.01218
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M3",
+      "team": "Austria",
+      "p_champion": 0.01218,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.35622,
+        "reach_qf": 0.1502,
+        "reach_sf": 0.07172,
+        "reach_final": 0.03002,
         "champion": 0.01218
       }
     },
@@ -67366,25 +67727,6 @@
     },
     {
       "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Australia",
-      "p_champion": 0.01202,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 1.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.48448,
-        "reach_qf": 0.18114,
-        "reach_sf": 0.07766,
-        "reach_final": 0.03034,
-        "champion": 0.01202
-      }
-    },
-    {
-      "as_of": "group-end",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
       "team": "Norway",
@@ -67399,6 +67741,25 @@
         "reach_qf": 0.16326,
         "reach_sf": 0.06884,
         "reach_final": 0.02896,
+        "champion": 0.01202
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Australia",
+      "p_champion": 0.01202,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.48448,
+        "reach_qf": 0.18114,
+        "reach_sf": 0.07766,
+        "reach_final": 0.03034,
         "champion": 0.01202
       }
     },
@@ -67613,6 +67974,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Sweden",
+      "p_champion": 0.01018,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.44004,
+        "reach_qf": 0.19084,
+        "reach_sf": 0.07268,
+        "reach_final": 0.02754,
+        "champion": 0.01018
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "gpt-5.5-2026-04-23",
       "method": "M3",
       "team": "Ghana",
@@ -67723,6 +68103,25 @@
         "reach_sf": 0.07638,
         "reach_final": 0.02668,
         "champion": 0.00948
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Norway",
+      "p_champion": 0.00938,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.52616,
+        "reach_qf": 0.17864,
+        "reach_sf": 0.06876,
+        "reach_final": 0.02642,
+        "champion": 0.00938
       }
     },
     {
@@ -67974,25 +68373,6 @@
     },
     {
       "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Paraguay",
-      "p_champion": 0.00776,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.30928,
-        "reach_qf": 0.12508,
-        "reach_sf": 0.05062,
-        "reach_final": 0.0201,
-        "champion": 0.00776
-      }
-    },
-    {
-      "as_of": "group-end",
       "model": "grok-4.3",
       "method": "M3",
       "team": "Australia",
@@ -68007,6 +68387,25 @@
         "reach_qf": 0.1536,
         "reach_sf": 0.06228,
         "reach_final": 0.02164,
+        "champion": 0.00776
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Paraguay",
+      "p_champion": 0.00776,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.30928,
+        "reach_qf": 0.12508,
+        "reach_sf": 0.05062,
+        "reach_final": 0.0201,
         "champion": 0.00776
       }
     },
@@ -68145,6 +68544,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Austria",
+      "p_champion": 0.0071,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.3337,
+        "reach_qf": 0.1271,
+        "reach_sf": 0.0544,
+        "reach_final": 0.01904,
+        "champion": 0.0071
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "grok-4.3",
       "method": "M3",
       "team": "Paraguay",
@@ -68198,6 +68616,25 @@
         "reach_sf": 0.05976,
         "reach_final": 0.0203,
         "champion": 0.00694
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Australia",
+      "p_champion": 0.00686,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.44518,
+        "reach_qf": 0.1439,
+        "reach_sf": 0.05902,
+        "reach_final": 0.02032,
+        "champion": 0.00686
       }
     },
     {
@@ -68293,6 +68730,25 @@
         "reach_sf": 0.0456,
         "reach_final": 0.01736,
         "champion": 0.00668
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Ivory Coast",
+      "p_champion": 0.0066,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.47384,
+        "reach_qf": 0.15484,
+        "reach_sf": 0.05712,
+        "reach_final": 0.02088,
+        "champion": 0.0066
       }
     },
     {
@@ -68426,6 +68882,25 @@
         "reach_sf": 0.04098,
         "reach_final": 0.01482,
         "champion": 0.0054
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Ghana",
+      "p_champion": 0.00532,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.35532,
+        "reach_qf": 0.14426,
+        "reach_sf": 0.05078,
+        "reach_final": 0.0172,
+        "champion": 0.00532
       }
     },
     {
@@ -68601,6 +69076,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Ecuador",
+      "p_champion": 0.00444,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.3426,
+        "reach_qf": 0.1168,
+        "reach_sf": 0.0411,
+        "reach_final": 0.01388,
+        "champion": 0.00444
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "claude-haiku-4-5",
       "method": "M3",
       "team": "Ghana",
@@ -68753,25 +69247,6 @@
     },
     {
       "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Cape Verde",
-      "p_champion": 0.00346,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 1.0,
-        "third": 0.0,
-        "fourth": 0.0,
-        "reach_r32": 1.0,
-        "reach_r16": 0.25226,
-        "reach_qf": 0.10406,
-        "reach_sf": 0.03722,
-        "reach_final": 0.01176,
-        "champion": 0.00346
-      }
-    },
-    {
-      "as_of": "group-end",
       "model": "deepseek-v4-flash",
       "method": "M3",
       "team": "Algeria",
@@ -68786,6 +69261,25 @@
         "reach_qf": 0.10694,
         "reach_sf": 0.03264,
         "reach_final": 0.00994,
+        "champion": 0.00346
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Cape Verde",
+      "p_champion": 0.00346,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.25226,
+        "reach_qf": 0.10406,
+        "reach_sf": 0.03722,
+        "reach_final": 0.01176,
         "champion": 0.00346
       }
     },
@@ -68848,6 +69342,63 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Algeria",
+      "p_champion": 0.00288,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.28638,
+        "reach_qf": 0.10698,
+        "reach_sf": 0.03096,
+        "reach_final": 0.00928,
+        "champion": 0.00288
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Paraguay",
+      "p_champion": 0.0026,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.21434,
+        "reach_qf": 0.0772,
+        "reach_sf": 0.02586,
+        "reach_final": 0.0082,
+        "champion": 0.0026
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "DR Congo",
+      "p_champion": 0.00212,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.23966,
+        "reach_qf": 0.08454,
+        "reach_sf": 0.02596,
+        "reach_final": 0.00766,
+        "champion": 0.00212
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
       "team": "South Africa",
@@ -68905,6 +69456,25 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Cape Verde",
+      "p_champion": 0.00142,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.17684,
+        "reach_qf": 0.06486,
+        "reach_sf": 0.01996,
+        "reach_final": 0.00518,
+        "champion": 0.00142
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "deepseek-v4-flash",
       "method": "M3",
       "team": "Bosnia & Herzegovina",
@@ -68920,6 +69490,25 @@
         "reach_sf": 0.017,
         "reach_final": 0.00484,
         "champion": 0.00116
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Bosnia & Herzegovina",
+      "p_champion": 0.00114,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.24546,
+        "reach_qf": 0.05818,
+        "reach_sf": 0.0174,
+        "reach_final": 0.0047,
+        "champion": 0.00114
       }
     },
     {
@@ -69000,85 +69589,9 @@
     },
     {
       "as_of": "group-end",
-      "model": "grok-4.3",
+      "model": "gemini-3.1-pro-preview",
       "method": "M3",
-      "team": "Scotland",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Panama",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Tunisia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.5-flash",
-      "method": "M3",
-      "team": "Turkey",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.5-2026-04-23",
-      "method": "M3",
-      "team": "Iraq",
+      "team": "Cura\u00e7ao",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69114,275 +69627,9 @@
     },
     {
       "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Turkey",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Scotland",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Haiti",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Qatar",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "South Korea",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.5-flash",
-      "method": "M3",
-      "team": "Tunisia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Czech Republic",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.5-flash",
-      "method": "M3",
-      "team": "Iran",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.5-flash",
-      "method": "M3",
-      "team": "New Zealand",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.5-flash",
-      "method": "M3",
-      "team": "Saudi Arabia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.5-2026-04-23",
+      "model": "grok-4.3",
       "method": "M3",
       "team": "Uzbekistan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.5-flash",
-      "method": "M3",
-      "team": "Uruguay",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.5-flash",
-      "method": "M3",
-      "team": "Iraq",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.5-2026-04-23",
-      "method": "M3",
-      "team": "Jordan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Saudi Arabia",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69437,9 +69684,66 @@
     },
     {
       "as_of": "group-end",
-      "model": "gemini-3.5-flash",
+      "model": "grok-4.3",
       "method": "M3",
-      "team": "Jordan",
+      "team": "Panama",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Czech Republic",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "South Korea",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Qatar",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69475,9 +69779,28 @@
     },
     {
       "as_of": "group-end",
-      "model": "gemini-3.5-flash",
+      "model": "gpt-5.5-2026-04-23",
       "method": "M3",
-      "team": "Czech Republic",
+      "team": "Iran",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Haiti",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69494,9 +69817,28 @@
     },
     {
       "as_of": "group-end",
-      "model": "gpt-5.5-2026-04-23",
+      "model": "gemini-3.1-pro-preview",
       "method": "M3",
-      "team": "Iran",
+      "team": "Turkey",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Scotland",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69532,7 +69874,178 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Turkey",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "grok-4.3",
+      "method": "M3",
+      "team": "Jordan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Cura\u00e7ao",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "gpt-5.5-2026-04-23",
+      "method": "M3",
+      "team": "Jordan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M3",
+      "team": "Tunisia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "grok-4.3",
+      "method": "M3",
+      "team": "Iraq",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.5-2026-04-23",
+      "method": "M3",
+      "team": "Uzbekistan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "grok-4.3",
+      "method": "M3",
+      "team": "Uruguay",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "grok-4.3",
+      "method": "M3",
+      "team": "Saudi Arabia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
       "method": "M3",
       "team": "Tunisia",
       "p_champion": 0.0,
@@ -69570,6 +70083,101 @@
     },
     {
       "as_of": "group-end",
+      "model": "grok-4.3",
+      "method": "M3",
+      "team": "New Zealand",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Iran",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "New Zealand",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "grok-4.3",
+      "method": "M3",
+      "team": "Iran",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Saudi Arabia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "gpt-5.5-2026-04-23",
       "method": "M3",
       "team": "Turkey",
@@ -69589,7 +70197,26 @@
     },
     {
       "as_of": "group-end",
-      "model": "gemini-3.5-flash",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Uruguay",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.5-2026-04-23",
       "method": "M3",
       "team": "Panama",
       "p_champion": 0.0,
@@ -69608,7 +70235,45 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Iraq",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "grok-4.3",
+      "method": "M3",
+      "team": "Tunisia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
       "team": "Czech Republic",
       "p_champion": 0.0,
@@ -69629,44 +70294,6 @@
       "as_of": "group-end",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
-      "team": "Iran",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.5-flash",
-      "method": "M3",
-      "team": "Haiti",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "grok-4.3",
-      "method": "M3",
       "team": "South Korea",
       "p_champion": 0.0,
       "reach": {
@@ -69684,9 +70311,47 @@
     },
     {
       "as_of": "group-end",
+      "model": "grok-4.3",
+      "method": "M3",
+      "team": "Cura\u00e7ao",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
-      "team": "New Zealand",
+      "team": "Qatar",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Jordan",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69724,7 +70389,7 @@
       "as_of": "group-end",
       "model": "grok-4.3",
       "method": "M3",
-      "team": "Qatar",
+      "team": "Turkey",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69744,6 +70409,25 @@
       "model": "gpt-5.5-2026-04-23",
       "method": "M3",
       "team": "Haiti",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-flash",
+      "method": "M3",
+      "team": "Uzbekistan",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69781,6 +70465,25 @@
       "as_of": "group-end",
       "model": "grok-4.3",
       "method": "M3",
+      "team": "Scotland",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
       "team": "Haiti",
       "p_champion": 0.0,
       "reach": {
@@ -69798,9 +70501,9 @@
     },
     {
       "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
+      "model": "deepseek-v4-flash",
       "method": "M3",
-      "team": "Tunisia",
+      "team": "Panama",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69817,9 +70520,123 @@
     },
     {
       "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Czech Republic",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "grok-4.3",
       "method": "M3",
       "team": "Haiti",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "South Africa",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 1.0,
+        "third": 0.0,
+        "fourth": 0.0,
+        "reach_r32": 1.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "South Korea",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Scotland",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "grok-4.3",
+      "method": "M3",
+      "team": "Qatar",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Qatar",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69855,15 +70672,15 @@
     },
     {
       "as_of": "group-end",
-      "model": "gemini-3.5-flash",
+      "model": "grok-4.3",
       "method": "M3",
-      "team": "Qatar",
+      "team": "South Korea",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
         "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
+        "third": 1.0,
+        "fourth": 0.0,
         "reach_r32": 0.0,
         "reach_r16": 0.0,
         "reach_qf": 0.0,
@@ -69874,9 +70691,9 @@
     },
     {
       "as_of": "group-end",
-      "model": "grok-4.3",
+      "model": "deepseek-v4-pro",
       "method": "M3",
-      "team": "Turkey",
+      "team": "Haiti",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69912,9 +70729,66 @@
     },
     {
       "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Scotland",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
       "model": "grok-4.3",
       "method": "M3",
-      "team": "Cura\u00e7ao",
+      "team": "Czech Republic",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Panama",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Turkey",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69934,6 +70808,63 @@
       "model": "claude-haiku-4-5",
       "method": "M3",
       "team": "Panama",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Cura\u00e7ao",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Turkey",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Cura\u00e7ao",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -69988,9 +70919,9 @@
     },
     {
       "as_of": "group-end",
-      "model": "gemini-3.5-flash",
+      "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
-      "team": "South Korea",
+      "team": "Iran",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -70007,9 +70938,9 @@
     },
     {
       "as_of": "group-end",
-      "model": "claude-haiku-4-5",
+      "model": "gpt-5.4-mini-2026-03-17",
       "method": "M3",
-      "team": "Jordan",
+      "team": "New Zealand",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -70026,1358 +70957,9 @@
     },
     {
       "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Uruguay",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "grok-4.3",
+      "model": "deepseek-v4-pro",
       "method": "M3",
       "team": "Tunisia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Iraq",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Uruguay",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "grok-4.3",
-      "method": "M3",
-      "team": "Iran",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "grok-4.3",
-      "method": "M3",
-      "team": "New Zealand",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Qatar",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "grok-4.3",
-      "method": "M3",
-      "team": "Saudi Arabia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Tunisia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "grok-4.3",
-      "method": "M3",
-      "team": "Uruguay",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Panama",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "grok-4.3",
-      "method": "M3",
-      "team": "Iraq",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "New Zealand",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Iran",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Iraq",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Cura\u00e7ao",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Turkey",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "grok-4.3",
-      "method": "M3",
-      "team": "Jordan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Jordan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Uzbekistan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Scotland",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "grok-4.3",
-      "method": "M3",
-      "team": "Uzbekistan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Haiti",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Qatar",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Uzbekistan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "grok-4.3",
-      "method": "M3",
-      "team": "Panama",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Czech Republic",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "South Korea",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Jordan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "South Korea",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Panama",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Czech Republic",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Qatar",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-haiku-4-5",
-      "method": "M3",
-      "team": "Czech Republic",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Panama",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Haiti",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gpt-5.4-mini-2026-03-17",
-      "method": "M3",
-      "team": "Cura\u00e7ao",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Scotland",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Uzbekistan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Turkey",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Turkey",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "South Korea",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Cura\u00e7ao",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Jordan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Iraq",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Uruguay",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Saudi Arabia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Iraq",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "New Zealand",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Tunisia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Iran",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Tunisia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Iran",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "New Zealand",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Uruguay",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Saudi Arabia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Cura\u00e7ao",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Uruguay",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Turkey",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Iraq",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Scotland",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Scotland",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Saudi Arabia",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Haiti",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "New Zealand",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Jordan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Qatar",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Iran",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "gemini-3.1-pro-preview",
-      "method": "M3",
-      "team": "Cura\u00e7ao",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "deepseek-v4-flash",
-      "method": "M3",
-      "team": "Uzbekistan",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 0.0,
-        "fourth": 1.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "South Korea",
-      "p_champion": 0.0,
-      "reach": {
-        "win_group": 0.0,
-        "runner_up": 0.0,
-        "third": 1.0,
-        "fourth": 0.0,
-        "reach_r32": 0.0,
-        "reach_r16": 0.0,
-        "reach_qf": 0.0,
-        "reach_sf": 0.0,
-        "reach_final": 0.0,
-        "champion": 0.0
-      }
-    },
-    {
-      "as_of": "group-end",
-      "model": "claude-opus-4-8",
-      "method": "M3",
-      "team": "Czech Republic",
       "p_champion": 0.0,
       "reach": {
         "win_group": 0.0,
@@ -71396,6 +70978,443 @@
       "as_of": "group-end",
       "model": "gpt-5.5-2026-04-23",
       "method": "M3",
+      "team": "Iraq",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Jordan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Iran",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "New Zealand",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Iraq",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Saudi Arabia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Iran",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Uruguay",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Uruguay",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Iraq",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Uruguay",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Saudi Arabia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "New Zealand",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Iran",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Iraq",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Jordan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Tunisia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Jordan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Iraq",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
+      "team": "Uzbekistan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Uruguay",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Saudi Arabia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Iraq",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "deepseek-v4-pro",
+      "method": "M3",
       "team": "Panama",
       "p_champion": 0.0,
       "reach": {
@@ -71403,6 +71422,101 @@
         "runner_up": 0.0,
         "third": 0.0,
         "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Uzbekistan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Saudi Arabia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Turkey",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "New Zealand",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Iran",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
         "reach_r32": 0.0,
         "reach_r16": 0.0,
         "reach_qf": 0.0,
@@ -71422,6 +71536,804 @@
         "runner_up": 0.0,
         "third": 1.0,
         "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "New Zealand",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Tunisia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Haiti",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Iran",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Panama",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Czech Republic",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Tunisia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Qatar",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Cura\u00e7ao",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "South Korea",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Turkey",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.5-flash",
+      "method": "M3",
+      "team": "Czech Republic",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Panama",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Scotland",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "South Korea",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Haiti",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Cura\u00e7ao",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Turkey",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Qatar",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Uzbekistan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Qatar",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "South Korea",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Haiti",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Jordan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Czech Republic",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Scotland",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Haiti",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Qatar",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Scotland",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Iraq",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "South Korea",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "method": "M3",
+      "team": "Tunisia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Czech Republic",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Panama",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Uruguay",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Uzbekistan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Saudi Arabia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Jordan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "New Zealand",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-opus-4-8",
+      "method": "M3",
+      "team": "Uruguay",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 1.0,
+        "fourth": 0.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "gemini-3.1-pro-preview",
+      "method": "M3",
+      "team": "Tunisia",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
+        "reach_r32": 0.0,
+        "reach_r16": 0.0,
+        "reach_qf": 0.0,
+        "reach_sf": 0.0,
+        "reach_final": 0.0,
+        "champion": 0.0
+      }
+    },
+    {
+      "as_of": "group-end",
+      "model": "claude-haiku-4-5",
+      "method": "M3",
+      "team": "Jordan",
+      "p_champion": 0.0,
+      "reach": {
+        "win_group": 0.0,
+        "runner_up": 0.0,
+        "third": 0.0,
+        "fourth": 1.0,
         "reach_r32": 0.0,
         "reach_r16": 0.0,
         "reach_qf": 0.0,
@@ -83239,6 +84151,294 @@
       "model": "deepseek-v4-flash",
       "as_of": "group-end",
       "rating": 50.4
+    },
+    {
+      "team": "Algeria",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 62.06
+    },
+    {
+      "team": "Argentina",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 92.84400000000001
+    },
+    {
+      "team": "Australia",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 67.616
+    },
+    {
+      "team": "Austria",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 70.884
+    },
+    {
+      "team": "Belgium",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 83.94
+    },
+    {
+      "team": "Bosnia & Herzegovina",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 57.02
+    },
+    {
+      "team": "Brazil",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 90.404
+    },
+    {
+      "team": "Canada",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 68.116
+    },
+    {
+      "team": "Cape Verde",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 56.928
+    },
+    {
+      "team": "Colombia",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 81.54400000000001
+    },
+    {
+      "team": "Croatia",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 79.532
+    },
+    {
+      "team": "Cura\u00e7ao",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 42.564
+    },
+    {
+      "team": "Czech Republic",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 64.112
+    },
+    {
+      "team": "DR Congo",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 61.172000000000004
+    },
+    {
+      "team": "Ecuador",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 65.52799999999999
+    },
+    {
+      "team": "Egypt",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 72.512
+    },
+    {
+      "team": "England",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 88.968
+    },
+    {
+      "team": "France",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 93.49600000000001
+    },
+    {
+      "team": "Germany",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 84.056
+    },
+    {
+      "team": "Ghana",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 67.124
+    },
+    {
+      "team": "Haiti",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 44.464
+    },
+    {
+      "team": "Iran",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 71.04400000000001
+    },
+    {
+      "team": "Iraq",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 41.684000000000005
+    },
+    {
+      "team": "Ivory Coast",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 68.272
+    },
+    {
+      "team": "Japan",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 79.94800000000001
+    },
+    {
+      "team": "Jordan",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 48.012
+    },
+    {
+      "team": "Mexico",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 81.396
+    },
+    {
+      "team": "Morocco",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 79.17999999999999
+    },
+    {
+      "team": "Netherlands",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 87.88
+    },
+    {
+      "team": "New Zealand",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 50.70399999999999
+    },
+    {
+      "team": "Norway",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 70.104
+    },
+    {
+      "team": "Panama",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 50.976
+    },
+    {
+      "team": "Paraguay",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 62.967999999999996
+    },
+    {
+      "team": "Portugal",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 85.588
+    },
+    {
+      "team": "Qatar",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 47.815999999999995
+    },
+    {
+      "team": "Saudi Arabia",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 53.760000000000005
+    },
+    {
+      "team": "Scotland",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 61.932
+    },
+    {
+      "team": "Senegal",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 73.336
+    },
+    {
+      "team": "South Africa",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 59.136
+    },
+    {
+      "team": "South Korea",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 68.35600000000001
+    },
+    {
+      "team": "Spain",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 87.732
+    },
+    {
+      "team": "Sweden",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 71.232
+    },
+    {
+      "team": "Switzerland",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 78.44800000000001
+    },
+    {
+      "team": "Tunisia",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 53.36
+    },
+    {
+      "team": "Turkey",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 64.39200000000001
+    },
+    {
+      "team": "United States",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 76.624
+    },
+    {
+      "team": "Uruguay",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 76.6
+    },
+    {
+      "team": "Uzbekistan",
+      "model": "deepseek-v4-pro",
+      "as_of": "group-end",
+      "rating": 45.256
     },
     {
       "team": "Algeria",
