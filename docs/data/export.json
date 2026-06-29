@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-06-29T22:00:34Z",
+  "generated_at": "2026-06-29T23:31:23Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -971,7 +971,11 @@
       "stage": "knockout",
       "group": null,
       "kickoff_utc": "2026-06-29T20:30Z",
-      "result": null
+      "result": {
+        "home_goals": 1,
+        "away_goals": 1,
+        "advanced_team": "Paraguay"
+      }
     },
     {
       "match_id": "M075",
