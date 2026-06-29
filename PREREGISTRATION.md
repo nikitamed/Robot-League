@@ -188,6 +188,23 @@ with its justification — it is not a free parameter to tune against outcomes.
 
 ## Amendments (dated; the locked text above is never rewritten)
 
+- **2026-06-29. `deepseek-v4-pro` output-token ceiling raised (§6, operational).**
+  At the `group-end` re-rating, `deepseek-v4-pro` returned **empty output on all 5
+  samples** and was dropped. Diagnosis: the model's reasoning on the longer
+  re-rate prompt (results-since context + per-team delta justifications) exceeds
+  the 8 192-token completion ceiling and is truncated mid-reasoning (`finish_reason
+  = length`, 0 content tokens) — confirmed at 8 192 and 16 384 (both fully consumed
+  by reasoning). Reasoning length is **variable per call**; at a 64 000 ceiling the
+  model terminates normally (`finish_reason = stop`, ~10.6k tokens used, valid
+  48-team JSON). Amendment: `roster.yaml` raises this model's `max_tokens` to
+  **64 000**. This is **operational headroom only** — the model stops when finished
+  and reasoning behaviour (default effort, locked prompt) is **unchanged**; it is
+  not a methodology or prompt change. **Already-captured data stands**: the
+  pre-tournament ratings and all group-stage M1 predictions were produced within
+  8 192 and are unaffected. The change applies to this and subsequent
+  (`r16`/`qf`/`sf`) checkpoints. Only `deepseek-v4-pro` is affected; no other
+  roster entry is touched.
+
 - **2026-06-27. Knockout scoring & M3 re-rating cadence (§3, §6) — logged before any knockout fixture is captured.**
   - **§3 knockout-1X2 decision (deadline 2026-06-24):** knockouts are scored on
     **Brier(advancement) only**. The M1/M2 knockout prompts emit advancement
