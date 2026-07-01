@@ -148,23 +148,25 @@
 
   // --- Cumulative mean RPS over matches (lower = better) --------------------
   // series: [{key, color, points: [{x: matchNo, y: cumMeanRps}]}]
-  function rpsOverTime(canvas, series) {
+  function rpsOverTime(canvas, series, opts = {}) {
+    const xLabel = opts.xLabel || "matches played";
+    const yLabel = opts.yLabel || "average forecast error — lower is better";
     return mount(canvas, {
       type: "line",
       data: {
         datasets: series.map(s => ({
           label: s.key, data: s.points,
           borderColor: s.color, backgroundColor: s.color,
-          borderWidth: s.key === "MKT" ? 2.5 : 1.8,
-          borderDash: s.key === "MKT" ? [6, 4] : [],
+          borderWidth: s.width != null ? s.width : (s.key === "MKT" ? 2.5 : 1.8),
+          borderDash: s.dash != null ? s.dash : (s.key === "MKT" ? [6, 4] : []),
           pointRadius: 0, tension: 0.15,
         })),
       },
       options: {
         responsive: true, maintainAspectRatio: false, parsing: false,
         scales: {
-          x: { type: "linear", title: { display: true, text: "matches played" }, ticks: { precision: 0 } },
-          y: { title: { display: true, text: "average forecast error — lower is better" } },
+          x: { type: "linear", title: { display: true, text: xLabel }, ticks: { precision: 0 } },
+          y: { title: { display: true, text: yLabel } },
         },
         plugins: {
           tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${c.parsed.y.toFixed(4)}` } },

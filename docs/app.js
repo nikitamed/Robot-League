@@ -180,6 +180,60 @@ function advancementLeaderboard() {
     .sort((a, b) => a.brier - b.brier);
 }
 
+// Knockout companion to rpsSeriesOverTime: cumulative-mean advancement Brier as
+// each tie resolves, one line per model (within-model mean over its arms) plus
+// the baselines and a 0.50 coin-flip reference. No market line — advancement is
+// Brier-only with no MKT companion (prereg §3 / 2026-06-27 amendment).
+function advBrierSeriesOverTime() {
+  const ties = DB.fixtures
+    .filter(fx => fx.stage === "knockout" && fx.result && fx.result.advanced_team)
+    .sort((a, b) => (a.kickoff_utc || "").localeCompare(b.kickoff_utc || ""));
+  if (ties.length < 2) return null;
+  const ARMS = ["M1", "M2", "M3"];
+  const refs = new Map([
+    ["ENS", { key: "Ensemble", color: WCViz.SERIES_COLORS.ENS }],
+    ["B1", { key: "Elo baseline", color: WCViz.SERIES_COLORS.B1 }],
+    ["B2", { key: "Squad-value baseline", color: WCViz.SERIES_COLORS.B2 }],
+  ]);
+  const models = [...new Set(DB.predictions
+    .filter(p => p.model && !HIDDEN_MODELS.has(p.model) && p.p_advance_home != null && ARMS.includes(p.method))
+    .map(p => p.model))];
+  const acc = new Map([...refs.keys(), ...models.map(m => `MODEL·${m}`)]
+    .map(k => [k, { sum: 0, n: 0, points: [] }]));
+  const push = (key, value) => {
+    const a = acc.get(key); if (!a) return;
+    a.sum += value; a.n += 1; a.points.push({ x: a.n, y: a.sum / a.n });
+  };
+  for (const fx of ties) {
+    const o = fx.result.advanced_team === fx.home ? 0 : fx.result.advanced_team === fx.away ? 1 : null;
+    if (o == null) continue;
+    const preds = DB._predsByMatch[fx.match_id] || [];
+    for (const p of preds) {
+      if (p.p_advance_home == null || p.model != null || !refs.has(p.method)) continue; // ENS/B1/B2
+      push(p.method, brierBin([p.p_advance_home, p.p_advance_away], o));
+    }
+    for (const m of models) {
+      const arms = preds.filter(p => p.model === m && p.p_advance_home != null && ARMS.includes(p.method));
+      if (arms.length) push(`MODEL·${m}`, mean(arms.map(p => brierBin([p.p_advance_home, p.p_advance_away], o))));
+    }
+  }
+  const series = [];
+  for (const m of models) {
+    const a = acc.get(`MODEL·${m}`);
+    if (a.points.length >= 2) series.push({ key: shortModel(m), color: WCViz.modelColor(m), points: a.points });
+  }
+  for (const [k, meta] of refs) {
+    const a = acc.get(k);
+    if (a.points.length >= 2) series.push({ key: meta.key, color: meta.color, points: a.points });
+  }
+  if (series.length) {
+    const maxN = Math.max(...series.map(s => s.points.length));
+    series.push({ key: "Coin flip", color: "rgba(231,235,243,.5)", dash: [6, 4], width: 1.5,
+      points: Array.from({ length: maxN }, (_, i) => ({ x: i + 1, y: 0.5 })) });
+  }
+  return series.length ? series : null;
+}
+
 // Biggest upsets: decisive results (group win or knockout advance) the models'
 // consensus most underrated. Group + knockout, ranked by how unlikely the winner was.
 function topUpsets(limit = 6) {
@@ -218,7 +272,11 @@ function sparkline(values, color = "#7aa2ff") {
 }
 
 function rpsSeriesOverTime() {
-  const played = playedFixtures();
+  // 1X2 RPS spine — group stage only. Knockouts are scored on advancement Brier
+  // (a separate companion, never blended in), so this chart ends at the group
+  // stage; otherwise only the market line (which keeps a 90′ 1X2) would extend
+  // into the knockouts while every model line froze. See advBrierSeriesOverTime.
+  const played = playedFixtures().filter(fx => fx.stage === "group");
   if (played.length < 2) return null;
   // One line per active model (within-model mean across its M1/M2/M3 arms per
   // match), plus the ensemble, baselines, and market as reference lines.
@@ -844,6 +902,7 @@ function viewLeaderboard() {
     <div class="lbexpand" id="lb-expand-chart">${expandBtnHtml()}</div>` : ""}
     ${(() => { const av = advancementLeaderboard(); return av.length ? `<h2>Knockout advancement — calling the ties</h2>
     <p class="muted">Brier score on <strong>who advances</strong> (lower is better; 0.50 = a coin flip). A companion to the match-result board above — not blended into it.</p>
+    ${advBrierSeriesOverTime() ? chartBox("adv-over-time", 340) : ""}
     ${tableWrap(`<table class="sortable"><thead><tr><th class="num">#</th><th>Forecaster</th><th class="num">ties</th><th class="num" title="Brier on advancement">advance Brier</th><th class="num">vs coin</th></tr></thead><tbody>${av.map((r, i) => `<tr${i === 0 ? ' class="lead"' : ""}><td class="num muted">${i + 1}</td><td><span class="pill ${pillClass(r.kind)}" title="${esc(r.key)}">${esc(r.label)}</span></td><td class="num">${r.n}</td><td class="num">${f3(r.brier)}</td><td class="num ${0.5 - r.brier >= 0 ? "good" : "bad"}">${0.5 - r.brier >= 0 ? "+" : ""}${f3(0.5 - r.brier)}</td></tr>`).join("")}</tbody></table>`)}` : ""; })()}
     ${groupsGrid()}
   </section>`);
@@ -907,6 +966,9 @@ function viewLeaderboard() {
     const box = node.querySelector("#rps-over-time");
     if (series && box) WCViz.rpsOverTime(box, series);
     else if (box) box.closest(".chartbox").outerHTML = `<div class="note">This chart appears once at least two matches have been played.</div>`;
+    const advSeries = advBrierSeriesOverTime();
+    const advBox = node.querySelector("#adv-over-time");
+    if (advSeries && advBox) WCViz.rpsOverTime(advBox, advSeries, { xLabel: "knockout ties resolved", yLabel: "advancement Brier — lower is better" });
     drawSkill();
   };
   return node;
