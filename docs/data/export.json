@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "generated_at": "2026-07-03T22:30:41Z",
+  "generated_at": "2026-07-04T00:46:55Z",
   "fixtures": [
     {
       "match_id": "GA-mexico-south_africa",
@@ -1127,7 +1127,11 @@
       "stage": "knockout",
       "group": null,
       "kickoff_utc": "2026-07-03T22:00Z",
-      "result": null
+      "result": {
+        "home_goals": 1,
+        "away_goals": 1,
+        "advanced_team": "Argentina"
+      }
     },
     {
       "match_id": "M087",
