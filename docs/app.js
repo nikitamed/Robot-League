@@ -207,7 +207,7 @@ function advBrierSeriesOverTime() {
   for (const fx of ties) {
     const o = fx.result.advanced_team === fx.home ? 0 : fx.result.advanced_team === fx.away ? 1 : null;
     if (o == null) continue;
-    const preds = DB._predsByMatch[fx.match_id] || [];
+    const preds = (DB._predsByMatch[fx.match_id] || []).filter(p => p.as_of === "T-3h");
     for (const p of preds) {
       if (p.p_advance_home == null || p.model != null || !refs.has(p.method)) continue; // ENS/B1/B2
       push(p.method, brierBin([p.p_advance_home, p.p_advance_away], o));
@@ -298,7 +298,10 @@ function rpsSeriesOverTime() {
   };
   for (const fx of played) {
     const o = outcomeVec(fx);
-    const preds = DB._predsByMatch[fx.match_id] || [];
+    // Only the locked, scored snapshot (T-3h) — matching the scorer — so ENS/B1/B2
+    // aren't double-counted across the pre-tournament + T-3h snapshots (models were
+    // already collapsed by the mean-over-arms below; the reference lines were not).
+    const preds = (DB._predsByMatch[fx.match_id] || []).filter(p => p.as_of === "T-3h");
     for (const p of preds) {
       if (p.p_home == null || p.model != null || !refs.has(p.method)) continue; // ENS/B1/B2
       push(p.method, rps([p.p_home, p.p_draw, p.p_away], o));
