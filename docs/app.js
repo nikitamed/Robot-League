@@ -6,6 +6,9 @@
 
 let DB = null;     // export.json
 let SCORES = null; // scores.json (optional; null until the scorer has run)
+let KO_DECIDED = {}; // ko_decided.json (optional): how drawn knockout ties were
+                     // settled (extra time vs penalties) — display metadata only;
+                     // the scored record stores the 90' score + advanced_team.
 let TICK = null;   // live countdown interval
 
 // Email capture (Kit / ConvertKit). Zero-backend: a plain form POST to the
@@ -151,10 +154,20 @@ function leaderboard() {
     const m = seriesMeta(p);
     add(m.key, m.label, m.kind, p.match_id, [p.p_home, p.p_draw, p.p_away]);
   }
-  for (const fx of DB.fixtures) { const m = mktVector(fx.match_id); if (m) add("MKT", `Betting market (${m.source})`, "mkt", fx.match_id, m.p); }
+  // Group stage only: the market also has 1X2 odds on knockout matches, but the
+  // models forecast advancement there — the board compares on the shared slate.
+  for (const fx of DB.fixtures) { if (fx.stage !== "group") continue; const m = mktVector(fx.match_id); if (m) add("MKT", `Betting market (${m.source})`, "mkt", fx.match_id, m.p); }
   const mktMean = mean(series.MKT ? series.MKT.rpss : []);
   const rows = Object.entries(series).map(([k, v]) => ({ key: k, label: v.label, kind: v.kind, rps: mean(v.rpss), n: v.rpss.length, byMid: v.byMid }));
-  rows.forEach(r => r.skill = (mktMean != null && r.key !== "MKT") ? (mktMean - r.rps) : null);
+  // Skill is PAIRED (per shared match, like the frozen scorer): the market also
+  // has 1X2 odds on knockout matches where models forecast advancement only, so
+  // an unpaired mktMean - rps mixes match sets and overstates the gap.
+  const mk = series.MKT ? series.MKT.byMid : null;
+  rows.forEach(r => {
+    if (!mk || r.key === "MKT") { r.skill = null; return; }
+    const d = Object.keys(r.byMid).filter(mid => mk[mid] != null).map(mid => mk[mid] - r.byMid[mid]);
+    r.skill = d.length ? mean(d) : null;
+  });
   rows.sort((a, b) => a.rps - b.rps);
   return { rows, mktMean };
 }
@@ -415,8 +428,10 @@ function buildBracket() {
     const m = fx.match_id.match(/^M(\d+)$/);
     if (m) byNum[+m[1]] = fx;
   }
-  const final = kos.find(fx => /^W10[12]$/i.test(fx.home));
-  const third = kos.find(fx => /^L10[12]$/i.test(fx.home));
+  // Once played, the final/third-place carry real team names under their
+  // stable ids (M104/M103) — the slot-code shells they replace are dropped at load.
+  const final = kos.find(fx => /^W10[12]$/i.test(fx.home)) || byNum[104];
+  const third = kos.find(fx => /^L10[12]$/i.test(fx.home)) || byNum[103];
   const nextKey = (num) => num <= 88 ? "reach_r16" : num <= 96 ? "reach_qf" : num <= 100 ? "reach_sf" : "reach_final";
 
   const memo = {};
@@ -458,8 +473,13 @@ function buildBracket() {
       const adv = (fx.result || {}).advanced_team;
       const winner = adv ? (adv === a.team ? "a" : adv === b.team ? "b" : null)
         : o[0] === 1 ? "a" : o[2] === 1 ? "b" : null;
+      // Drawn ties: the record keeps the 90' score; ko_decided.json says how the
+      // tie was actually settled. Without it, show the 90' score and no badge —
+      // never guess penalties.
+      const kd = KO_DECIDED[fx.match_id];
       return { fx, a, b, pa: null, pb: null, projected: false, decided: true, winner,
-        score: `${fx.result.home_goals}–${fx.result.away_goals}`, shootout: !!(adv && o[1] === 1) };
+        score: kd ? `${kd.et[0]}–${kd.et[1]}` : `${fx.result.home_goals}–${fx.result.away_goals}`,
+        extra: kd ? kd.by : null, pens: kd && kd.p ? `${kd.p[0]}–${kd.p[1]}` : null };
     }
     const pa = a.team ? ((reach[a.team] || {})[key] || 0) : 0;
     const pb = b.team ? ((reach[b.team] || {})[key] || 0) : 0;
@@ -467,11 +487,26 @@ function buildBracket() {
     return { fx, a, b, pa: tot ? pa / tot : null, pb: tot ? pb / tot : null, projected: a.projected || b.projected };
   }
 
-  const refs = (fx) => [fx.home, fx.away].map(c => (c.match(/^[WL](\d+)$/i) || [])[1]).filter(Boolean).map(Number);
-  const sf = final ? refs(final).map(n => byNum[n]) : [byNum[101], byNum[102]].filter(Boolean);
-  const qf = sf.flatMap(fx => refs(fx).map(n => byNum[n]));
-  const r16 = qf.flatMap(fx => refs(fx).map(n => byNum[n]));
-  const r32 = r16.flatMap(fx => refs(fx).map(n => byNum[n]));
+  // A tie's slot codes (W73) are rewritten to real team names once its feeder
+  // resolves, so the W-code chain alone can't rebuild the rounds late in the
+  // tournament. Walk by winner instead: a tie is fed by the two previous-round
+  // ties (in that round's match-number range) whose winners it hosts.
+  const winnerOf = (fx) => {
+    const r = fx.result;
+    if (!r) return null;
+    return r.advanced_team
+      || (r.home_goals > r.away_goals ? fx.home : r.away_goals > r.home_goals ? fx.away : null);
+  };
+  const feeders = (fx, lo, hi) => [fx.home, fx.away].map(code => {
+    const m = code.match(/^[WL](\d+)$/i);
+    if (m) return byNum[+m[1]];
+    for (let n = lo; n <= hi; n++) if (byNum[n] && winnerOf(byNum[n]) === code) return byNum[n];
+  }).filter(Boolean);
+  const sfF = final ? feeders(final, 101, 102) : [];
+  const sf = (sfF.length ? sfF : [byNum[101], byNum[102]]).filter(Boolean);
+  const qf = sf.flatMap(fx => feeders(fx, 97, 100));
+  const r16 = qf.flatMap(fx => feeders(fx, 89, 96));
+  const r32 = r16.flatMap(fx => feeders(fx, 73, 88));
   const num = (fx) => +(fx.match_id.match(/^M(\d+)$/) || [])[1];
 
   // Flow-chart edges: group -> R32 (from slot codes; dashed while projected),
@@ -486,13 +521,13 @@ function buildBracket() {
     else if (/^3/.test(code)) { const t = thirdSlots[code]; letter = t ? teamGroup[t] : null; }
     if (letter) edges.push({ from: `G-${letter}`, to: fx.match_id, dashed });
   };
-  for (const fx of [...r32, ...r16, ...qf, ...sf, ...(final ? [final] : [])]) {
-    for (const code of [fx.home, fx.away]) {
-      const m = code.match(/^W(\d+)$/i);
-      if (m && byNum[+m[1]]) edges.push({ from: byNum[+m[1]].match_id, to: fx.match_id, dashed: false });
-      else groupEdge(code, fx);
-    }
-  }
+  for (const fx of r32) for (const code of [fx.home, fx.away]) groupEdge(code, fx);
+  const winEdges = (list, lo, hi) => {
+    for (const fx of list) for (const f of feeders(fx, lo, hi))
+      edges.push({ from: f.match_id, to: fx.match_id, dashed: false });
+  };
+  winEdges(r16, 73, 88); winEdges(qf, 89, 96); winEdges(sf, 97, 100);
+  if (final) winEdges([final], 101, 102);
   if (third) {
     // The third-place match is structurally fed by the semifinal losers.
     const unresolved = !teamSet.has(third.home);
@@ -600,7 +635,7 @@ function tieCard(t, { final = false } = {}) {
   };
   const fx = t.fx;
   const meta = t.decided
-    ? `<span class="bk-score">${esc(t.score)}</span>${t.shootout ? ` <span class="dim">pens</span>` : ""}`
+    ? `<span class="bk-score">${esc(t.score)}</span>${t.extra === "pens" ? ` <span class="dim">pens ${esc(t.pens || "")}</span>` : t.extra === "et" ? ` <span class="dim">aet</span>` : ""}`
     : `${esc(fmtDT(fx.kickoff_utc))}${fx.ground ? " · " + esc(city(fx.ground)) : ""}`;
   // div, not <a>: team names inside are links to team pages; clicking anywhere
   // else opens the match page (delegated handler on the bracket container).
@@ -727,12 +762,15 @@ function fillTicker() {
   const next = DB.fixtures.filter(fx => !outcomeVec(fx) && fx.kickoff_utc && FLAGS[fx.home] && FLAGS[fx.away])
     .sort((a, b) => (a.kickoff_utc || "").localeCompare(b.kickoff_utc || ""))[0];
   const played = playedFixtures().length;
+  const fin = DB._fixById.M104;
+  const champ = !next && fin && fin.result && fin.result.advanced_team;
   const parts = [
     `<b>UPDATED</b> ${esc(fmtDT(DB.generated_at))}`,
     `<b>LOCKED FORECASTS</b> ${captured} of ${DB.fixtures.length} matches`,
     played ? `<b>PLAYED</b> ${played}` : null,
     next ? `<b>NEXT</b> ${flag(next.home)}${esc(next.home)} v ${flag(next.away)}${esc(next.away)} · ${esc(fmtDT(next.kickoff_utc))}` : null,
-    `<b>10 AI MODELS</b> from 5 labs`,
+    champ ? `<b>TOURNAMENT COMPLETE</b> champions ${flag(champ)}${esc(champ)}` : null,
+    `<b>10 AI MODELS</b> from 5 labs · 1 withdrawn mid-tournament`,
   ].filter(Boolean);
   t.innerHTML = parts.join(`<span class="sep">│</span>`);
 }
@@ -782,17 +820,33 @@ function heroStrip() {
       <div class="countdown" id="countdown" data-kickoff="${esc(next.kickoff_utc)}" data-locked="${locked ? 1 : 0}">—</div>
       <div class="hero-sub">${homeTok} v ${awayTok} · ${esc(fmtFull(next.kickoff_utc))}${next.ground ? " · " + esc(city(next.ground)) : ""}</div>
     </div>` : "";
-  return (leaderCard || nextCard) ? `<div class="hero">${leaderCard}${nextCard}</div>` : "";
+  // No next match once the tournament is over: the second hero slot shows the champions.
+  const fin = !next ? DB._fixById.M104 : null;
+  const champ = fin && fin.result && fin.result.advanced_team;
+  const champCard = champ ? (() => {
+    const r = fin.result, loser = champ === fin.home ? fin.away : fin.home;
+    const kd = KO_DECIDED[fin.match_id];
+    const wf = (h, a) => champ === fin.home ? `${h}–${a}` : `${a}–${h}`;  // winner-first
+    const how = kd && kd.by === "et" ? `${wf(kd.et[0], kd.et[1])} in extra time`
+      : kd && kd.by === "pens" ? `${wf(kd.p[0], kd.p[1])} on penalties after a ${wf(kd.et[0], kd.et[1])} draw`
+      : r.home_goals === r.away_goals ? `after a ${r.home_goals}–${r.away_goals} draw in normal time`
+      : `${wf(r.home_goals, r.away_goals)} in the final`;
+    return `
+    <div class="hero-card alt" data-href="#/match/${encodeURIComponent(fin.match_id)}" title="Open the final">
+      <div class="hero-kicker">Tournament complete · world champions 🏆</div>
+      <div class="hero-big">${teamLink(champ)}</div>
+      <div class="hero-sub">beat ${teamLink(loser)} ${how} · ${esc(fmtDT(fin.kickoff_utc))}</div>
+    </div>`; })() : "";
+  return (leaderCard || nextCard || champCard) ? `<div class="hero">${leaderCard}${nextCard}${champCard}</div>` : "";
 }
 
 function startCountdown() {
-  const node = document.getElementById("countdown");
-  if (!node) return;
-  const card = node.closest("[data-href]");
-  if (card) card.addEventListener("click", (e) => {
+  document.querySelectorAll(".hero [data-href]").forEach(card => card.addEventListener("click", (e) => {
     if (e.target.closest("a")) return; // team links navigate themselves
     location.hash = card.dataset.href;
-  });
+  }));
+  const node = document.getElementById("countdown");
+  if (!node) return;
   const kick = Date.parse(node.dataset.kickoff);
   if (!isFinite(kick)) { node.textContent = "—"; return; }
   if (Date.now() >= kick) { node.classList.add("live"); node.textContent = "● LIVE"; return; } // match underway
@@ -1532,19 +1586,20 @@ function viewAbout() {
 
     <h2>How scoring works, in plain words</h2>
     <div class="note">Say a model gives Mexico a 60% chance to win, and Mexico wins. Good forecast — small error. If Mexico had lost, that 60% would cost a bigger error. The score (the <strong>Ranked Probability Score</strong>) also cares about <em>how wrong</em>: confidently predicting a home win when the away side wins hurts more than predicting a draw. Every forecaster gets the same matches, so the average error is directly comparable. <strong>Lower is better.</strong></div>
+    <div class="note">In the knockout rounds the question changes to "who goes through?", so those matches are scored with the matching two-outcome yardstick — the <strong>Brier score</strong> on each forecaster's advance probability. It gets its own table and is never blended into the group-stage standings. The uncertainty ranges you see on the leaderboard are bootstrap confidence intervals: how much a ranking could move on a different run of the same matches.</div>
 
     <h2>Why you can trust it</h2>
     <div class="kv">
       <div>Locked before kickoff</div><div>Forecasts can't be edited after the fact — each batch is published with cryptographic fingerprints before the match starts. <a href="#/verify">Check one yourself</a>.</div>
-      <div>Rules fixed in advance</div><div>The methodology — what gets measured, how, and the one official question — was written down, hashed, and published <em>before the first match</em>. No moving the goalposts.</div>
-      <div>One official question</div><div>Does giving an AI web search make its forecasts better or worse? (Same model, same match, search on vs. off.) Everything else here is shown for interest, clearly labeled.</div>
+      <div>Rules fixed in advance</div><div>The methodology — what gets measured, how, and the one official question — was written down, hashed, and published <em>before the first match</em>. That includes the scoring code itself, frozen before kickoff. When reality intervened mid-tournament (a feed outage, a provider change), the deviation was logged as a dated amendment in the public record — the locked text is never rewritten. No moving the goalposts.</div>
+      <div>One official question</div><div>Does giving an AI web search make its forecasts better or worse? (Same model, same match, search on vs. off.) Everything else here is shown for interest, clearly labeled. Full disclosure: Anthropic withdrew the designated primary model, Claude Fable 5, four matches in — so the official comparison ended underpowered. It is reported as-is in the record, not quietly reassigned to another model.</div>
       <div>Losses stay up</div><div>If the AIs lose to the bookmakers — or to the embarrassingly simple baselines — that's the result. The honesty is the product.</div>
     </div>
 
     <h2>The fine print</h2>
     <p class="muted">The full locked protocol (the preregistration), every forecast, the raw captured odds, and this site live in the public record:
     <a href="https://github.com/nikitamed/Robot-League" target="_blank" rel="noopener">github.com/nikitamed/Robot-League</a>.
-    The roster: Claude Fable 5, Claude Opus 4.8, Claude Haiku 4.5, GPT-5.5, GPT-5.4 mini, Gemini 3.1 Pro, Gemini 3.5 Flash, Grok 4.3, DeepSeek v4 Pro, DeepSeek v4 Flash — exact model versions pinned in the protocol. Times on this site are shown in your local timezone.</p>
+    The roster: Claude Fable 5 <span class="dim">(withdrawn by Anthropic four matches in; its locked forecasts stay in the record)</span>, Claude Opus 4.8, Claude Haiku 4.5, GPT-5.5, GPT-5.4 mini, Gemini 3.1 Pro, Gemini 3.5 Flash, Grok 4.3, DeepSeek v4 Pro, DeepSeek v4 Flash — exact model versions pinned in the protocol. Times on this site are shown in your local timezone.</p>
     ${emailCapture()}
   </section>`);
 }
@@ -1585,9 +1640,20 @@ async function main() {
     const res = await fetch("./data/scores.json");
     if (res.ok) SCORES = await res.json();
   } catch { /* optional until the scorer has run */ }
+  try {
+    const res = await fetch("./data/ko_decided.json");
+    if (res.ok) KO_DECIDED = await res.json();
+  } catch { /* optional; without it drawn ties just omit the aet/pens badge */ }
   const skey = (p) => `${p.match_id}|${p.method}|${p.model || ""}`;
   const locked = new Set(DB.predictions.filter(p => p.as_of === "T-3h").map(skey));
   DB.predictions = DB.predictions.filter(p => p.as_of === "T-3h" || !locked.has(skey(p)));
+  // The final/third-place shells (w101-w102 / l101-l102) predate the stable
+  // M103/M104 ids and duplicate them with no result — drop each once its real
+  // fixture exists, or they render as a phantom unplayed match everywhere.
+  const ids = new Set(DB.fixtures.map(f => f.match_id));
+  DB.fixtures = DB.fixtures.filter(f =>
+    !(f.match_id === "w101-w102" && ids.has("M104")) &&
+    !(f.match_id === "l101-l102" && ids.has("M103")));
   DB._fixById = Object.fromEntries(DB.fixtures.map(f => [f.match_id, f]));
   DB._oddsByMatch = {}; for (const o of DB.market_odds) (DB._oddsByMatch[o.match_id] ||= []).push(o);
   DB._predsByMatch = {}; for (const p of DB.predictions) (DB._predsByMatch[p.match_id] ||= []).push(p);
